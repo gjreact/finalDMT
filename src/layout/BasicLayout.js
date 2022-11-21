@@ -2,7 +2,7 @@ import logo from "../asset/images/logo.png"
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "../asset/css/slite.css";
-import RemitterBalancePage from "../pages/DMT/Remitter/RemitterBalance/RemitterBalancePage";
+import SideMenu from "../pages/SideBar/SideMenu";
 
 function BasicLayout() {
   return (
@@ -14,7 +14,7 @@ function BasicLayout() {
              <img className="align-center" style={{width:"100%",maxWidth:"150px"}} src={logo} alt="Paymento_Logo" />
             </div>
             <div>
-              <RemitterBalancePage />
+              <SideMenu />
             </div>
           </Col>
           <Col className="xs-12 md-10 bg-white">
