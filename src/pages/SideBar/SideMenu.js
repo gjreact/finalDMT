@@ -8,7 +8,7 @@ function SideMenu() {
     <div className="mt-5 bg-dark">
       <Accordion className="" defaultActiveKey="0">
         <Accordion.Item className="sideMenuColor" eventKey="0">
-          <Accordion.Header>DMT</Accordion.Header>
+          <Accordion.Header style={{margin:"0px",padding:"0px"}}>DMT</Accordion.Header>
           <Accordion.Body className="zeropadding">
           
           <Accordion defaultActiveKey="0" className="sideMenuTransparent" flush>

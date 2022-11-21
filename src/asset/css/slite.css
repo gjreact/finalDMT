@@ -32,3 +32,6 @@ a{
 .zeropadding{
   padding: 0px;
 }
+.accordion-button{
+  padding: 4%;
+}
