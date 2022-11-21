@@ -1,6 +1,34 @@
+@import '../../theme/theme.css';
 .containerr {
   height: 100vh;
 }
 .Roww{
     height: 100vh;
+}
+
+.overflow{
+  overflow:hidden;
+}
+.sideMenuColor{
+  background-color: var(--SideMenueBgColor);
+}
+.sideMenuTransparent{
+  background-color: rgba(221, 221, 221, 0.9);
+  padding: 10px 2px 3px 6px;
+}
+.activeMenu{
+  color: white;
+  background-color: rgba(76, 76, 76, 0.108);
+}
+.activeMenu :hover {
+ color: red;
+}
+a{
+  text-decoration: none;
+  display: block;
+  color: rgb(35, 2, 101);
+  font-family: "Gill Sans", sans-serif;;
+}
+.zeropadding{
+  padding: 0px;
 }
