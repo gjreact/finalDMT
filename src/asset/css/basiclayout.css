@@ -1,0 +1,30 @@
+.containerr {
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  /* z-index: 10; */
+}
+.Roww1{
+    height: 100vh;
+    position: relative;
+}
+.left-section{
+  height:100%;
+  /* z-index: 1; */
+}
+
+.Roww{
+  height: 100vh;
+}
+.dark-box{
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top:0;
+  bottom: 0;
+  background: gray;
+}
+.zindex{
+  z-index:1;
+}
