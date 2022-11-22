@@ -14,9 +14,12 @@ function BasicLayout() {
             <div className="mt-3 d-flex justify-content-center">
              <img className="align-center" style={{width:"100%",maxWidth:"150px"}} src={logo} alt="Paymento_Logo" />
             </div>
+            <hr />
             <div>
               <SideMenu />
             </div>
+            <hr />
+            <h6>Documentation Powered by Paymento</h6>
           </Col>
           <Col className="xs-12 md-10 bg-white">
             
