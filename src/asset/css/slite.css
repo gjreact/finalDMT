@@ -12,13 +12,13 @@
 .sideMenuColor{
   background-color: var(--SideMenueBgColor);
 }
-.sideMenuTransparent{
-  background-color: rgba(221, 221, 221, 0.9);
+.accordion-body{
+  background-color: var(--SideMenueBgColor);
   padding: 10px 2px 3px 6px;
 }
-.activeMenu{
+.list-group-item{
   color: white;
-  background-color: rgba(76, 76, 76, 0.108);
+  background-color:var(--SideMenueBgColor);
 }
 .activeMenu :hover {
  color: red;
@@ -27,7 +27,7 @@
 a{
   text-decoration: none;
   display: block;
-  color: rgb(35, 2, 101);
+  color: var(--textColor);
   font-family: "Gill Sans", sans-serif;;
 }
 .zeropadding{
@@ -35,9 +35,28 @@ a{
 }
 .accordion-button{
   padding: 4%;
+  background-color: brown;
 }
 hr{
   margin-top: 20px;
   color: rgb(255, 26, 22);
   border-top:1px dashed red;
+}
+.dmt{
+  background-color: red;
+}
+.accordion-button{
+  background-color: var(--SideMenueBgColor);
+  color: rgb(252, 252, 252);
+  border-radius: 10%;
+}
+.listButton{
+background: rgba(154, 156, 156, 0.163);
+border: 0px ;
+border-radius: 10%;
+padding-left: 5px;
+}
+button.accordion-button.collapsed::after{
+  background-color: var(--textColor,0.2);
+  
 }

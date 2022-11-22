@@ -21,8 +21,9 @@ function BasicLayout() {
             <hr />
             <h6>Documentation Powered by Paymento</h6>
           </Col>
-          <Col className="xs-12 md-10 bg-white">
+          <Col className="xs-12 md-10 bg-white zeropadding">
             
+              
           </Col>
         </Row>
       </Container>

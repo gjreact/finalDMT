@@ -2,19 +2,15 @@ import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import "../../asset/css/slite.css";
 import ListGroup from 'react-bootstrap/ListGroup';
+import icon from "../../asset/images/list.svg"
 
 function SideMenu() {
   return (
-    <div className="mt-5 bg-dark">
-      <Accordion className="" defaultActiveKey="0">
-        <Accordion.Item className="sideMenuColor" eventKey="0">
-          <Accordion.Header style={{margin:"0px",padding:"0px"}}>DMT</Accordion.Header>
-          <Accordion.Body className="zeropadding">
-          
-          <Accordion defaultActiveKey="0" className="sideMenuTransparent" flush>
+    <div className="mt-5 bg-dark">  
+          <Accordion defaultActiveKey="0" className="sideMenuColor" flush>
               <Accordion.Item eventKey="0">
-                <Accordion.Header>Remitter</Accordion.Header>
-                <Accordion.Body className="sideMenuTransparent">
+                <Accordion.Header className="body-bg">Remitter</Accordion.Header>
+                <Accordion.Body>
                   <ListGroup style={{overflow:"hidden",margin:"0px"}}>
                     <ListGroup.Item className="activeMenu"><a href="#">Remitter Information</a></ListGroup.Item>
                     <ListGroup.Item><a href="#">Remitter Send-OTP</a></ListGroup.Item>
@@ -27,7 +23,7 @@ function SideMenu() {
               </Accordion.Item>
               <Accordion.Item  className="overflow" eventKey="1">
                 <Accordion.Header>Beneficiary</Accordion.Header>
-                <Accordion.Body className="sideMenuTransparent" >
+                <Accordion.Body >
                 <ListGroup >
                     <ListGroup.Item ><a href="#">Beneficiary Create</a></ListGroup.Item>
                     <ListGroup.Item><a href="#">Beneficiary List</a></ListGroup.Item>
@@ -37,7 +33,7 @@ function SideMenu() {
               </Accordion.Item>
               <Accordion.Item eventKey="2">
                 <Accordion.Header>Send Money</Accordion.Header>
-                <Accordion.Body className="sideMenuTransparent">
+                <Accordion.Body>
                 <ListGroup>
                     <ListGroup.Item><a href="#">Send Money</a></ListGroup.Item>
                 </ListGroup>
@@ -45,17 +41,14 @@ function SideMenu() {
               </Accordion.Item>
               <Accordion.Item eventKey="3">
                 <Accordion.Header>Transaction Money</Accordion.Header>
-                <Accordion.Body className="sideMenuTransparent">
+                <Accordion.Body>
                 <ListGroup>
                     <ListGroup.Item><a href="#">Transaction Money</a></ListGroup.Item>
                 </ListGroup>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
-            
-          </Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
+            {/* <button className="listButton"><img src={icon} alt="listMenu" /></button> */}
     </div>
   );
 }
