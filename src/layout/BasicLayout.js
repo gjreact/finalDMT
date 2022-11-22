@@ -37,7 +37,7 @@ function BasicLayout() {
                     response system will provide remitter details. If the
                     remitter mobile number is not queried before, then system
                     will hit an OTP on the remitter mobile number to initiate
-                    the registration process
+                    the registration process wedwedwedwedw ewewewer ewrdfasdfsdfgfd ef
                   </p>
                 </Row>
               </Col>
