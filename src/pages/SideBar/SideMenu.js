@@ -1,6 +1,6 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
-import "../../asset/css/slite.css";
+import "../../asset/css/basiclayout.css";
 import ListGroup from 'react-bootstrap/ListGroup';
 import icon from "../../asset/images/list.svg"
 

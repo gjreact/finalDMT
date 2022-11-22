@@ -1,7 +1,7 @@
 import logo from "../asset/images/logo.png"
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import "../asset/css/slite.css";
+import "../asset/css/basiclayout.css";
 import SideMenu from "../pages/SideBar/SideMenu";
 import '../theme/theme.css';
 
