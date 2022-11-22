@@ -3,6 +3,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "../asset/css/basiclayout.css";
 import SideMenu from "../pages/SideBar/SideMenu";
+import '../theme/theme.css';
 // import RemitterPage from "../pages/DMT/Remitter/RemitterPage";
 import "../asset/css/heading.css";
 
@@ -11,7 +12,7 @@ function BasicLayout() {
     <>
       <Container fluid className="margin-0 containerr">
         <Row className="Roww">
-          <Col className="d-none d-md-block bg-dark col-2 left-section">
+          <Col className="d-none d-md-block sideMenuColor col-3">
             <div className="mt-3 d-flex justify-content-center">
               <img
                 className="align-center"
@@ -20,16 +21,21 @@ function BasicLayout() {
                 alt="Paymento_Logo"
               />
             </div>
+            <hr />
             <div>
               <SideMenu />
             </div>
+            <hr />
+            <h6>Documentation Powered by Paymento</h6>
           </Col>
 
           <Col className="xs-12 md-10 bg-white overflow-scroll ">
             <Row className="Roww1">
               <Col className="dark-box d-none d-sm-block ">darkboxxxx</Col>
+
               <Col className="col-12 col-sm-6">
                 <Row>
+                
                   <h1 className="heading mb-0">1.Remitter</h1>
                   <p className="px-4  mb-0">
                     With these APIs we can check the Remitter mobile number is
@@ -37,12 +43,12 @@ function BasicLayout() {
                     response system will provide remitter details. If the
                     remitter mobile number is not queried before, then system
                     will hit an OTP on the remitter mobile number to initiate
-                    the registration process wedwedwedwedw ewewewer ewrdfasdfsdfgfd ef
+                    the registration process
                   </p>
                 </Row>
               </Col>
-              {/* {children} */}
               <Col className="col-12 col-sm-6 bg-dark zindex"></Col>
+
               <Col className="col-12 col-sm-6">
                 <Row>
                   <h2 className="mb-0 mt-0">a.Remitter Information</h2>
