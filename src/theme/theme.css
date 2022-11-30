@@ -1,12 +1,18 @@
 :root {
-    --SideMenueBgColor:#10102C;
+    --HeadingH1:#170256;
+    --HeadingH2:#085e61;
+    --paragraphBackground:#f3f8f380;
+    --SideMenueBgColor:#ffffff;
+    --hambergerButton:#495274;
     --ContentBgColor: #495274;
-    --textColor : #ffffff;
-    --link-color:#10102C;
-    --link-section:#26264b9f;
+    --textColor : #f60c0c;
+    --codebg:#090125d5;
+    --codehead:#000010db;
     --code-cyan:rgb(19, 192, 192);
     --code-yellow:rgb(210, 191, 20);
+    --accordion-button-color: #37415e;
+    --accordian-logo:url("../asset/images/down-arrow-red.png");
+    --paymento-logo:url("../asset/images/logo_blue.png");
   }
 
-  
-
+ 
