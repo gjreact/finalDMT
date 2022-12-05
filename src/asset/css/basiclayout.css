@@ -176,7 +176,7 @@ button.accordion-button.collapsed::after{
 /* border end */
 
 .scrollbar{
-  overflow: scroll;
+  overflow: hidden;
   overflow-x: hidden;
 }
 .dark-box-color{
@@ -314,6 +314,7 @@ padding-left: 5px;
 .request-text-heading{
   background-color:#191D1F;
   font-size:20px;
+
 }
 .request-wrapper{
   background-color:rgba(0,0,0,0.8);

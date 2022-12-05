@@ -21,6 +21,7 @@ import swift from '../../../../asset/images/swift.jpeg';
 
 import {ListBeneficiaryCode, PHPListBeneficiary, PythonListBeneficiary, ShellListBeneficiary} from "../ResponseBeneficiary/ListBeneficiaryCode";
 import { CreateBeneficiaryCode } from "../ResponseBeneficiary/CreateBeneficiaryCode";
+import Bar from "../../../Bar";
 
 
 const BeneficiaryListPage = () => {
@@ -35,7 +36,8 @@ const BeneficiaryListPage = () => {
 
     {/* Beneficiary create page starts... */}
 
-    <Col className="col-12 col-sm-7" >
+    <Col className="col-12 col-sm-7 border" >
+      <Bar />
       <Row >
         <h2 className="mb-0 ">List Beneficiary</h2>
         <p className="px-4  mb-5">
@@ -84,7 +86,7 @@ const BeneficiaryListPage = () => {
       </Row>
 
     </Col>
-    <Col id="style-1" className="col-12 col-sm-5  link-heading scrollbar pt-5" >
+    <Col id="style-1" className="col-12 col-sm-5 link-heading scrollbar pt-5" >
 {toggleState === 1 && <ListBeneficiaryCode/>}
 {toggleState === 2 && <PythonListBeneficiary/>}
 {toggleState === 3 && <ShellListBeneficiary/>}

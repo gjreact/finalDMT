@@ -17,21 +17,123 @@ import objectiveC from '../../../../asset/images/objectiveC.png';
 import C from '../../../../asset/images/C.png';
 import CPlusPlus from '../../../../asset/images/CPlusPlus.png';
 import swift from '../../../../asset/images/swift.jpeg';
-
 import { DeleteBeneficiaryCode, PHPDeleteBeneficiary, PythonDeleteBeneficiary, ShellDeleteBeneficiary } from "../ResponseBeneficiary/DeleteBeneficiaryCode";
+import Bar from "../../../Bar";
+
 const BeneficiaryDeletePage = () => {
+
+    const [horizontalIconArray, setHorizontalIconArray] = useState([
+    {
+      icon: java,
+      text: "java",
+    },
+    {
+      icon: python,
+      text: "python",
+    },
+    {
+      icon: shell,
+      text: "shell",
+    },
+    {
+      icon: php,
+      text: "php",
+    }
+  ]);
+  const dummyArray = [];
+  const cacheArray = [];
+  const [verticalIconArray, setVerticalIconArray] = useState([
+    {
+      icon: node,
+      text: "Node JS",
+    },
+    {
+      icon: powershell,
+      text: "Powershell",
+    },
+    {
+      icon: csharp,
+      text: "Csharp",
+    },
+    {
+      icon: http,
+      text: "HTTP",
+    },
+    {
+      icon: js,
+      text: "Javascript",
+    },
+    {
+      icon: kotlin,
+      text: "Kotlin",
+    },
+    {
+      icon: objectiveC,
+      text: "ObjectiveC",
+    },
+    {
+      icon: C,
+      text: "C",
+    },
+    {
+      icon: CPlusPlus,
+      text: "C++",
+    },
+    {
+      icon: swift,
+      text: "Swift",
+    },
+    {
+      icon: Go,
+      text: "Go",
+    },
+    {
+      icon: ruby,
+      text: "ruby",
+    }
+  ]);
+
+  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
     setToggleState(index);
   };
+
+  const pushItem = (icon, index) => {
+    dummyArray[0] = icon;
+
+    setVerticalIconArray([
+      ...verticalIconArray,
+      verticalIconArray.splice(index, 1),
+    ]);
+
+    cacheArray[0] = horizontalIconArray[horizontalIconArray.length - 1];
+
+    setHorizontalIconArray(
+      ...horizontalIconArray,
+      horizontalIconArray.splice(horizontalIconArray.length - 1, 1)
+    );
+
+    setHorizontalIconArray([
+      ...horizontalIconArray,
+      (horizontalIconArray[horizontalIconArray.length - 1] = dummyArray[0]),
+    ]);
+
+    setVerticalIconArray([
+      ...verticalIconArray,
+      (verticalIconArray[index] = cacheArray[0]),
+    ]);
+  };
+
   return <>
 
 
 
     {/* Beneficiary delete page starts... */}
 
-    <Col className="col-12 col-sm-7">
+    <Col className="col-12 col-sm-7 border">
+      <Bar />
       <Row >
         <h2 className="mb-0 mt-0 p-3">Delete Beneficiary</h2>
         <p className="px-4  mb-5">
@@ -91,48 +193,52 @@ const BeneficiaryDeletePage = () => {
 
 
     </Col>
-    <Col id="style-1" className="col-12 col-sm-5 zindex link-heading scrollbar pt-5" >
+    <Col id="style-1" className="col-12 col-sm-5 link-heading scrollbar pt-5" >
 
 
-    {toggleState === 1 && <DeleteBeneficiaryCode />}
+      {toggleState === 1 && <DeleteBeneficiaryCode />}
       {toggleState === 2 && <PythonDeleteBeneficiary />}
       {toggleState === 3 && <ShellDeleteBeneficiary />}
       {toggleState === 4 && <PHPDeleteBeneficiary />}
-      {toggleState === 5 && <PHPDeleteBeneficiary />}
-      {toggleState === 6 && <PHPDeleteBeneficiary />}
-      {toggleState === 7 && <PHPDeleteBeneficiary />}
-      {toggleState === 8 && <PHPDeleteBeneficiary />}
-      {toggleState === 9 && <PHPDeleteBeneficiary />}
-      {toggleState === 10 && <PHPDeleteBeneficiary />}
-      {toggleState === 11 && <PHPDeleteBeneficiary />}
-      {toggleState === 12 && <PHPDeleteBeneficiary />}
+      
 
       <div className="lang-btns d-flex justify-content-evenly">
-        <button style={{ outline: "none", border: "none", background: "transparent" }} id="java" onClick={() => toggleTab(1)}><img src={java} height="20" width="20" /></button>
-        <button style={{ outline: "none", border: "none", background: "transparent" }} id="python" onClick={() => toggleTab(2)}><img src={python} height="20" width="20" /></button>
-        <button style={{ outline: "none", border: "none", background: "transparent" }} id="shell" onClick={() => toggleTab(3)}><img src={shell} height="20" width="20" /></button>
-        <button style={{ outline: "none", border: "none", background: "transparent" }} id="" onClick={() => toggleTab(4)}><img src={php} height="20" width="20" /></button>
-        <button style={{ outline: "none", border: "none", background: "transparent" }} id="" onClick={() => toggleTab(5)}><img src={Go} height="20" width="20" /></button>
-        {/* <button style={{outline:"none",border:"none",background:"transparent"}} id="php" onClick={() =>setDropdown(!dropdown)}>
-         </svg></button> */}
+      {horizontalIconArray.map((iconName, index) => {
+            return (
+              <button
+                style={{
+                  outline: "none",
+                  border: "none",
+                  background: "transparent",
+                }}
+                id={iconName.icon}
+                key={index}
+                onClick={() => toggleTab(index)}
+              >
+                <img src={iconName.icon} height="20" width="20" />
+              </button>
+            );
+          })}
+          
         <Dropdown>
           <Dropdown.Toggle variant="light" id="dropdown-basic">
 
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1"><img src={node} height="20" width="20" />  <span style={{ fontSize: "13px" }}>Node js</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-2"><img src={powershell} height="20" width="20" />   <span style={{ fontSize: "13px" }}>Powershell</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><img src={csharp} height="20" width="20" />  <span style={{ fontSize: "13px" }}> Csharp</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><img src={http} height="20" width="20" />  <span style={{ fontSize: "13px" }}> HTTP</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><img src={js} height="20" width="20" />  <span style={{ fontSize: "13px" }}> Javascript</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><img src={kotlin} height="20" width="20" />  <span style={{ fontSize: "13px" }}> Kotlin</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><img src={ruby} height="20" width="20" />  <span style={{ fontSize: "13px" }}> Ruby</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><img src={objectiveC} height="20" width="20" />  <span style={{ fontSize: "13px" }}> Objective C</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><img src={C} height="20" width="20" />  <span style={{ fontSize: "13px" }}>  C</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><img src={CPlusPlus} height="20" width="20" />  <span style={{ fontSize: "13px" }}>  C++</span></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><img src={swift} height="20" width="20" />  <span style={{ fontSize: "13px" }}>  Swift</span></Dropdown.Item>
-          </Dropdown.Menu>
+          {verticalIconArray.map(({ icon, text }, index) => {
+                // console.log(verticalIconArray, "view");
+                return (
+                  <Dropdown.Item
+                    onClick={() => pushItem({ icon, text }, index)}
+                    key={index}
+                  >
+                    <img src={icon} height="20" width="20" />
+                    <span style={{ fontSize: "13px" }}>{text}</span>
+                  </Dropdown.Item>
+                );
+              })}
+            </Dropdown.Menu>
         </Dropdown>
       </div>
 
