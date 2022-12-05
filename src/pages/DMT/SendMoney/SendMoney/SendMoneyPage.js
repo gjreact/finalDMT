@@ -9,7 +9,8 @@ const SendMoneyPage = () => {
 
               {/* Beneficiary create page starts... */}
 
-              <Col className="col-12 col-sm-6">
+              <Col className="col-12 col-sm-7 border">
+                <Bar/>
                 <Row >
               
                   <h2 className="mb-0 mt-0 p-3">Send Money</h2>
@@ -80,7 +81,7 @@ const SendMoneyPage = () => {
         
               </Col>
               
-              <Col  id="style-1" className="col-12 col-sm-6 zindex link-heading scrollbar pt-2">
+              <Col  id="style-1" className="col-12 col-sm-5 zindex link-heading scrollbar pt-2">
           
                 <Row className="link-heading">
                  

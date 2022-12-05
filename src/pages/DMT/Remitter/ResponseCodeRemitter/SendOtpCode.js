@@ -11,27 +11,24 @@ const copyToClipboard = (id) => {
    copy(c);
 };
 
-export const JavaRemitter = () => {
+export const JavaResendOtp = () => {
    return <> <CodeWrapper heading="Request">
 
       <div className="request-wrapper" >
 
          <JavaWrapper />
-         <br /> <code className="code-yellow">\"beneficiaryName\": \"anu\",\r\n  \"beneficiaryBankId\": \"36\"</code>,
-         <br /> <code className="code-yellow">\r\n        \"remitterMobileNumber\": \"7902900295\",\r\n </code>
-         <br /> <code className="code-yellow">\"beneficiaryMobileNumber\":\"8596321478\",\r\n        \"accountNumber\":  </code>
-         <br /> <code className="code-yellow">\"88654888892\",\r\n        \"address\": \"Calicut \",\r\n </code>
-         <br /> <code className="code-yellow">\"ifscCode\": \"UTIB0002916\",\r\n        \"accountHolderName\": \"Venu\", </code>
-         <br /> <code className="code-yellow">\r\n        \"branchName\": \"Mavoor Road\"\r\n");</code>
-         <br /><code className="text-white">Request request = <code>new</code> Request.Builder()</code> <br />
-         <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code>) <br />
-         <code className="text-white">.method(</code><code className="code-yellow">"POST"</code><code className="text-white">,body)</code><br />
-         <code className="text-white">.addHeader(</code><code className="code-yellow">"apiKey"</code><code className="code-yellow">, apiKey</code>) <br />
-         <code className="text-white">.addHeader(</code><code className="code-yellow">"Authorization"</code><code className="code-yellow">, "Bearer token"</code>) <br />
-         <code className="text-white">.addHeader(</code><code className="code-yellow">"Content-Type"</code><code className="code-yellow">, "application/json"</code>)  <br />
-         <code className="text-white">.build();</code><br />
-         <code className="text-white">Response response = client.newCall(request).execute();</code>
-
+         <h1></h1>
+         <br/><code className="text-white">OkHttpClient client = <code >new</code>  OkHttpClient().newnewBuilder()</code>
+          <br/><code className="text-white">.build();</code>
+          <br/><code className="text-white">MediaType mediaType = MediaType.parse( <code className="code-yellow">"application/json"</code>);</code>
+          <br/><code className="text-white">RequestBody body = RequestBody.create(mediaType, <code className="code-yellow"> <span className="output">\r\n        \"remitterphone\":\"7902626443\",\r\n    \"remitterName\":\"anu\"\r\n </span>  \r\n" <code className="text-white" >);</code> </code></code>
+          <br/><code className="text-white">Request request = <code>new</code>  Request.Builder()</code>
+          <br/><code className="text-white">.url( <code className="code-yellow" >"http://194.195.113.218:8090/paymento/remitter-reg/send-otp"</code>)</code>
+          <br/><code  className="text-white">.method(<code  className="code-yellow" >"POST"</code>, body)</code>
+          <br/><code className="text-white">.addHeader(<code  className="code-yellow" >"apiKey"</code>, <code  className="code-yellow" >"apiKey"</code>)</code>
+          <br/><code className="text-white">.addHeader(<code  className="code-yellow" >"Content-Type", "application/json"</code>)</code>
+           <br/> <code className="text-white">.build();</code>
+          <br/> <code className="text-white">Response response = client.newCall(request).execute();</code>
 
       </div>
 
@@ -40,8 +37,8 @@ export const JavaRemitter = () => {
       <CodeWrapper heading="Response">
 
          <div className="response-wrapper" >
-
-            <br /><code className="text-white">OkHttpClient client = <code >new</code>  OkHttpClient().newnewBuilder()</code>
+               <code> java responce</code>
+            {/* <br /><code className="text-white">OkHttpClient client = <code >new</code>  OkHttpClient().newnewBuilder()</code>
             <br /><code className="text-white">.build();</code>
             <br /><code className="text-white">MediaType mediaType = MediaType.parse( <code className="code-yellow">"application/json"</code>);</code>
             <br /><code className="text-white">RequestBody body = RequestBody.create(mediaType,</code> <code className="code-yellow">"<span className="output">\r\n        \"remitterPhone\":\"7902900295\"\r\n </span>  <code className="text-white" >);</code> </code>
@@ -53,44 +50,44 @@ export const JavaRemitter = () => {
             <br /><code className="text-white">.addHeader(<code className="code-yellow" >"Content-Type", "application/json"</code>)</code>
             <br /> <code className="text-white">.build();</code>
             <br /> <code className="text-white">Response response = client.newCall(request).execute();</code>
+          */}
          </div>
       </CodeWrapper>
 
    </>
 };
 
-export const PythonRemitter = () => {
+export const PythonResendOtp = () => {
    return <>
       <CodeWrapper heading="Request">
 
          <div className="request-wrapper">
-            <br /> <code>import</code>  <code className="text-white">requests</code>
-            <br /> <code>import</code> <code className="text-white">json</code><br />
-            <code className="text-white"> url =</code> <code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code><br />
-            <code className="text-white">payload = json.dumps</code>( <span className="output  text-white"><br />
+         <div>
+    
+    <br/> <code>import</code>  <code className="text-white">requests</code>
+    <br/> <code>import</code> <code className="text-white">json</code><br/>
+    <code className="text-white"> url =</code> <code className="code-yellow">"http://194.195.113.218:8090/paymento/remitter-reg/send-otp"</code><br/>
+    <code className="text-white">payload = json.dumps(</code><code className="output link-heading text-white"><br/>
 
-               <code>"beneficiaryName"</code>  <span>: </span> <code className="code-yellow">"anu",</code><br />
-               <code>"beneficiaryBankId" </code> <span>: </span><code className="code-cyan"> 36,</code><br />
-               <code>"remitterMobileNumber" </code> <span>: </span><code className="code-cyan"> 7902900295,</code><br />
-               <code>"beneficiaryMobileNumber"</code>  <span>: </span> <code className="code-cyan">8596321478,</code><br />
-               <code>"accountNumber"</code>  <span>: </span> <code className="code-cyan">88654888892,</code><br />
-               <code>"address" </code> <span>: </span> <code className="code-yellow">Calicut,</code><br />
-               <code>"ifscCode" </code> <span>: </span> <code className="code-yellow">UTIB0002916,</code><br />
-               <code>"accountHolderName" </code> <span>: </span><code className="code-yellow"> Venu,</code><br />
-               <code>"branchName"</code>  <span>: </span> <code className="code-yellow">Mavoor Road</code>  <br />
+ 
+    <code>"remitterPhone" </code> <span>: </span><code className="code-cyan"> "7902626443",</code><br />
+    <code>"remitterName" </code> <span>: </span><code className="code-cyan"> "anu"</code><br />
+  
+  
+   )</code><br/>
 
-            </span>) <br />
+   <code className="text-white">
+   headers = <p className="output link-heading text-white"><br/>
+   <code>'apiKey'</code>: <code className="code-yellow">'apiKey'</code> ,<br/>
+   <code>'Content-Type'</code>:<code className="code-yellow"> 'application/json'</code><br/>
+   </p>
+  </code>
+  <code className="text-white">
+   response = requests.request(<code className="code-yellow">"POST"</code>, url, headers=headers, data=payload)<br/>
 
-            <code className="text-white">
-               headers = <span className="output  text-white"><br />
-                  <code>'apiKey'</code>: <code className="code-yellow">'apiKey'</code> ,<br />
-                  <code >'Authorization'</code>: <code className="code-yellow">'Bearer  token'</code>,<br />
-                  <code>'Content-Type'</code>:<code className="code-yellow"> 'application/json'</code><br />
-               </span>
-            </code><br />
-
-            <code className="text-white">response = requests.request(</code><code className="code-yellow">"POST"</code><code className="text-white">, url, headers=headers, data=payload)</code><br />
-            <code>print</code><code className="text-white">(response.text)</code>
+ <code>print</code>(response.text )
+ </code>
+ </div>
          </div>
 
 
@@ -99,8 +96,8 @@ export const PythonRemitter = () => {
       <CodeWrapper heading="Response">
 
          <div className="response-wrapper" >
-
-            <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
+               <code>python responce</code>
+            {/* <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
             .build();
             <br />MediaType mediaType = MediaType.parse(<code className="code-yellow">"application/json"</code>);
             <br /><code className="text-white">RequestBody body = RequestBody.create(mediaType,</code>  <code className="code-yellow">"\r\n  </code>
@@ -118,30 +115,32 @@ export const PythonRemitter = () => {
             <code className="text-white">.addHeader(</code><code className="code-yellow">"Content-Type"</code><code className="code-yellow">, "application/json"</code>)  <br />
             <code className="text-white">.build();</code><br />
             <code className="text-white">Response response = client.newCall(request).execute();</code>
+          */}
          </div>
       </CodeWrapper>
    </>
 }
 
-export const ShellRemitter = () => {
+export const ShellResendOtp = () => {
    return <>
       <CodeWrapper heading="Request">
          <div className="request-wrapper">
 
             <ShellWrapper />
-            <br /> <code className="text-white"> --body-data </code>
-            <span>'</span><span className="output  text-white"><br />
-               <code>"beneficiaryName"</code>  <span>: </span> <code className="code-yellow">"anu",</code><br />
-               <code>"beneficiaryBankId" </code> <span>: </span><code className="code-cyan"> 36,</code><br />
-               <code>"remitterMobileNumber" </code> <span>: </span><code className="code-cyan"> "7902900295,</code><br />
-               <code>"beneficiaryMobileNumber"</code>  <span>: </span> <code className="code-cyan">8596321478,</code><br />
-               <code>"accountNumber"</code>  <span>: </span> <code className="code-cyan">88654888892,</code><br />
-               <code>"address" </code> <span>: </span> <code className="code-yellow">Calicut,</code><br />
-               <code>"ifscCode" </code> <span>: </span> <code className="code-yellow">UTIB0002916,</code><br />
-               <code>"accountHolderName" </code> <span>: </span><code className="code-yellow"> Venu,</code><br />
-               <code>"branchName"</code>  <span>: </span> <code className="code-yellow">Mavoor Road</code>  <br />
-            </span><span>'   \</span> <br />
-            <code className="code-yellow">'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary'</code>
+            <div>
+               <br/> <code className="text-white">wget --no-check-certificate --quiet \</code>  
+               <br/> <code className="text-white">--method POST \</code>
+               <br/> <code className="text-white">  --timeout=0 \</code>
+               <br/> <code className="text-white">  --header <code className="code-yellow"> 'apiKey':'apiKey' \</code></code>
+               <br/> <code className="text-white">--header  <code className="code-yellow"> 'Content-Type: application/json' \</code></code>
+               <br/> <code className="text-white">--body-data '</code>
+               <p className="output link-heading text-white"><br/>       
+               <code>"remitterPhone" </code> <span>: </span><code className="code-cyan"> "7902626443",</code><br />
+               <code> "remitterName" </code> <span>: </span><code className="code-cyan"> "anu"</code><br />
+               </p>     
+               <br/> <code className="code-yellow">' \</code>
+               <br/><code className="code-yellow">'http://194.195.113.218:8090/paymento/remitter-reg/send-otp'</code>
+              </div>
          </div>
 
       </CodeWrapper>
@@ -149,8 +148,8 @@ export const ShellRemitter = () => {
       <CodeWrapper heading="Response">
 
          <div className="response-wrapper" >
-
-            <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
+               <code>shell responce</code>
+            {/* <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
             .build();
             <br />MediaType mediaType = MediaType.parse(<code className="code-yellow">"application/json"</code>);
             <br /><code className="text-white">RequestBody body = RequestBody.create(mediaType,</code>  <code className="code-yellow">"\r\n  </code>
@@ -168,59 +167,57 @@ export const ShellRemitter = () => {
             <code className="text-white">.addHeader(</code><code className="code-yellow">"Content-Type"</code><code className="code-yellow">, "application/json"</code>)  <br />
             <code className="text-white">.build();</code><br />
             <code className="text-white">Response response = client.newCall(request).execute();</code>
+             */}
          </div>
       </CodeWrapper>
    </>
 }
 
-export const PHPRemitter = () => {
+export const PHPResendOtp = () => {
    return <>
       <CodeWrapper heading="Request">
 
          <div className="request-wrapper">
-            <code>	&#60;&#63;php</code><br />
+         <div>
+          <br/> <code className="text-white">$curl = curl_init();</code>
+          <br/><code className="text-white">curl_setopt_array($curl, <code>array</code>(</code>
+          <br/><code>CURLOPT_URL =&#62;<code> 'http://194.195.113.218:8090/paymento/remitter-reg/send-otp'</code>,</code>
+          <br/><code className="text-white">CURLOPT_RETURNTRANSFER =&#62; <code>true</code>,</code>
+          <br/><code className="text-white"> CURLOPT_ENCODING =&#62;<code className="code-yellow">''</code>,</code>
+          <br/><code className="text-white"> CURLOPT_MAXREDIRS =&#62; 10,</code>
+          <br/><code className="text-white"> CURLOPT_TIMEOUT =&#62; 0,</code>
+          <br/><code className="text-white">   CURLOPT_FOLLOWLOCATION =&#62; <code>true</code>,</code>
+          <br/><code className="text-white">CURLOPT_HTTP_VERSION =&#62; CURL_HTTP_VERSION_1_1,</code>
+          <br/><code className="text-white"> CURLOPT_CUSTOMREQUEST =&#62;  <code className="code-yellow">'POST'</code>,</code>
+          <br/><code className="text-white"> CURLOPT_POSTFIELDS =&#62;</code><code className="code-yellow"> '
+          <code className="output code-yellow" ><br/>
+          "remitterPhone":"7902626443",<br/>
+          "remitterName":"anu",<br/>
+        </code>
+        <br/>  
+          '          ,<br/>
+          <code className="text-white">CURLOPT_HTTPHEADER =&#62; <code>array</code> ( <br/>
+          <code className="code-yellow">'apiKey': 'apiKey', <br/>
+              'Content-Type: application/json'</code><br/>
+            </code>
+ 
+  ),<br/>
+          ));
+          </code>
+          <br/>
+          <code className="text-white">$response = curl_exec($curl);</code>
+          <br></br><code className="text-white">curl_close($curl);</code>
+          <br/><code className="text-white"><code>echo </code>$response;</code>
+          </div>
 
-            <code className="text-white">$curl = curl_init();</code>
-
-            <code className="text-white">curl_setopt_array(<code className="code-yelllow">$curl,<code className="text-white"> array(</code></code></code><br />
-            <code>CURLOPT_URL =&#62; <code className="code-yellow">'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary',</code></code><br />
-            <code>CURLOPT_RETURNTRANSFER =&#62; <code className="code-yellow">true,</code></code><br />
-            <code>CURLOPT_ENCODING =&#62;  <code className="code-yellow">'',</code></code><br />
-            <code>CURLOPT_MAXREDIRS =&#62;  <code className="code-cyan">10,</code></code><br />
-            <code>CURLOPT_TIMEOUT =&#62;  <code className="code-cyan">0,</code></code><br />
-            <code>CURLOPT_FOLLOWLOCATION =&#62;  <code className="code-yellow">true,</code></code><br />
-            <code>CURLOPT_HTTP_VERSION =&#62;  <code className="code-yellow">CURL_HTTP_VERSION_1_1,</code></code><br />
-            <code>CURLOPT_CUSTOMREQUEST =&#62;  <code className="code-yellow">'POST',</code></code><br />
-            <code>CURLOPT_POSTFIELDS =&#62; <code>'</code></code><br />
-            <span className="output text-white"><br />
-               <code>"beneficiaryName"</code>  <span>: </span> <code className="code-yellow">"anu",</code><br />
-               <code>"beneficiaryBankId" </code> <span>: </span><code className="code-cyan"> 36,</code><br />
-               <code>"remitterMobileNumber" </code> <span>: </span><code className="code-cyan"> "7902900295,</code><br />
-               <code>"beneficiaryMobileNumber"</code>  <span>: </span> <code className="code-cyan">8596321478,</code><br />
-               <code>"accountNumber"</code>  <span>: </span> <code className="code-cyan">88654888892,</code><br />
-               <code>"address" </code> <span>: </span> <code className="code-yellow">Calicut,</code><br />
-               <code>"ifscCode" </code> <span>: </span> <code className="code-yellow">UTIB0002916,</code><br />
-               <code>"accountHolderName" </code> <span>: </span><code className="code-yellow"> Venu,</code><br />
-               <code>"branchName"</code>  <span>: </span> <code className="code-yellow">Mavoor Road</code>  <br />
-            </span><code>',</code><br />
-
-
-            <code>CURLOPT_HTTPHEADER =&#62; <code>array(</code></code>
-            <code>'apiKey <span>: </span> <code className="code-yellow">apiKey',</code></code> <br />
-            <code>"Authorization <span>: </span><code className="code-cyan">Bearer  token', </code></code><br />
-            <code>'Content-Type  <span>: </span><code className="code-cyan"> application/json'</code></code><br />
-            <code>),</code><br />
-            <code className="text-white">$response = curl_exec($curl);</code><br />
-            <code className="text-white">curl_close($curl);</code><br />
-            <code>echo <code className="text-white">$response</code></code>;
          </div>
       </CodeWrapper>
 
       <CodeWrapper heading="Response">
 
          <div className="response-wrapper" >
-
-            <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
+               <code>Php responce</code>
+            {/* <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
             .build();
             <br />MediaType mediaType = MediaType.parse(<code className="code-yellow">"application/json"</code>);
             <br /><code className="text-white">RequestBody body = RequestBody.create(mediaType,</code>  <code className="code-yellow">"\r\n  </code>
@@ -238,29 +235,32 @@ export const PHPRemitter = () => {
             <code className="text-white">.addHeader(</code><code className="code-yellow">"Content-Type"</code><code className="code-yellow">, "application/json"</code>)  <br />
             <code className="text-white">.build();</code><br />
             <code className="text-white">Response response = client.newCall(request).execute();</code>
+             */}
          </div>
       </CodeWrapper>
+
+
    </>
 }
-// arya mol code started================================
 
-export const NodeRemitterInfoCode= () => {
+export const NodeSendOtpCode= () => {
    return <> <CodeWrapper heading="Request">
 
       <div className="request-wrapper" id="node" >
       <span className="d-flex justify-content-between "><code>var <code className="text-white"> request =</code> <code>require</code><code>('request');</code></code><AiOutlineCopy className="copyicon" onClick={()=>copyToClipboard("node")} />  </span>
      <code>var </code> <code className="text-white">options = </code><span className="output text-white"><br />
         <code>'method' :</code><code className="code-yellow">'POST'</code><br />
-        <code>'url' :<code className="code-yellow">'http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify',</code></code><br />
+        <code>'url' :<code className="code-yellow">'http://194.195.113.218:8090/paymento/remitter-reg/send-otp'</code></code><br />
         <code className="text-white">
                headers = <span className="output  text-white"><br />
                   <code>'apiKey'</code>: <code className="code-yellow">'apiKey'</code> ,<br />
                   <code >'Authorization'</code>: <code className="code-yellow">'Bearer  token'</code>,<br />
                   <code>'Content-Type'</code>:<code className="code-yellow"> 'application/json'</code><br />
-               </span>
+               </span>,
             </code><br />
             <code className="text-white"> body :</code><code className="text-white">JSON.stringify</code><code className="code-yellow">(<span className="output"><br />
-               <code>"remitterPhone" :</code><code>"7902900295"</code><br />
+               <code>"remitterPhone" :</code><code>"7902900295" ,</code><br />
+               <code>"remitterName" :</code><code>"anu" </code><br />
                </span>)</code><br />
      </span><code className="text-white">;</code><br />
      <code className="text-white">
@@ -276,28 +276,46 @@ export const NodeRemitterInfoCode= () => {
    </CodeWrapper>
    
     <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>shell responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+
+    <div className="response-wrapper" >
+
+       <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
+       .build();
+       <br /><code className="text-white">MediaType mediaType = MediaType.parse(</code><code className="code-yellow">"application/json"</code>);
+       <br /><code className="text-white">RequestBody body = RequestBody.create(mediaType,</code>  <code className="code-yellow">"\r\n  </code>
+       <br /> <code className="code-yellow">\"beneficiaryName\": \"anu\",\r\n  \"beneficiaryBankId\": \"36\"</code>,
+       <br /> <code className="code-yellow">\r\n        \"remitterMobileNumber\": \"7902900295\",\r\n </code>
+       <br /> <code className="code-yellow">\"beneficiaryMobileNumber\":\"8596321478\",\r\n        \"accountNumber\":  </code>
+       <br /> <code className="code-yellow">\"88654888892\",\r\n        \"address\": \"Calicut \",\r\n </code>
+       <br /> <code className="code-yellow">\"ifscCode\": \"UTIB0002916\",\r\n        \"accountHolderName\": \"Venu\", </code>
+       <br /> <code className="code-yellow">\r\n        \"branchName\": \"Mavoor Road\"\r\n");</code>
+       <br /><code className="text-white">Request request = <code>new</code> Request.Builder()</code> <br />
+       <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code>) <br />
+       <code className="text-white">.method(</code><code className="code-yellow">"POST"</code><code className="text-white">,body)</code><br />
+       <code className="text-white">.addHeader(</code><code className="code-yellow">"apiKey"</code><code className="code-yellow">, apiKey</code>) <br />
+       <code className="text-white">.addHeader(</code><code className="code-yellow">"Authorization"</code><code className="code-yellow">, "Bearer token"</code>) <br />
+       <code className="text-white">.addHeader(</code><code className="code-yellow">"Content-Type"</code><code className="code-yellow">, "application/json"</code>)  <br />
+       <code className="text-white">.build();</code><br />
+       <code className="text-white">Response response = client.newCall(request).execute();</code>
+    </div>
+    </CodeWrapper>
    
     </>
 };
 
-
-export const JavascriptRemitterInfoCode = () => {
+export const JavascriptSendOtpCode = () => {
    return <>
       <CodeWrapper heading="Request">
 
          <div className="request-wrapper" id="javascript">
-         <span className="d-flex justify-content-between "><code>var myHeaders = <code>new</code> <code className="text-white">Headers();</code></code><AiOutlineCopy className="copyicon" onClick={()=>copyToClipboard("javascript")} /> </span>
+         <span className="d-flex justify-content-between "> <code>var myHeaders = <code>new</code> <code className="text-white">Headers();</code></code><AiOutlineCopy className="copyicon" onClick={()=>copyToClipboard("javascript")} /></span>
             <code className="text-white">myHeaders.</code><code>append</code><code className="text-white">(</code><code className="code-yellow">"apiKey", apiKey</code><code className="text-white">);</code><br />
             <code className="text-white">myHeaders.</code><code>append</code><code className="text-white">(</code><code className="code-yellow">"Authorization","Bearer token"</code><code className="text-white">);</code><br />
             <code className="text-white">myHeaders.</code><code>append</code><code className="text-white">(</code><code className="code-yellow">"Content-Type","application/json"</code><code className="text-white">);</code><br />
 
             <code className="text-white">var raw = </code><code className="text-white">JSON.stringify</code><code className="code-yellow">(<span className="output text-white"><br />
                <code>"remitterPhone" :</code><code>"7902900295"</code><br />
+               <code>"remitterName" :</code><code>"anu" </code><br />
                </span>)</code><br />
             <code className="text-white">var requestOptions = </code><span className="output text-white"><br />
                <code>"method" :</code><code>"POST"</code><br />
@@ -306,7 +324,7 @@ export const JavascriptRemitterInfoCode = () => {
                <code>"redirect" :</code><code>"follow"</code><br />
                </span><code className="text-white">;</code><br />
 
-               <code>fetch</code><code className="text-white">(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify", requestOptions </code><code className="text-white">)</code><br />
+               <code>fetch</code><code className="text-white">(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/remitter-reg/send-otp", requestOptions </code><code className="text-white">)</code><br />
   <code>.then</code><code className="text-white">(</code><code className="code-yellow">response =&#62; response.text()</code><code className="text-white">)</code><br />
   <code>.then</code><code className="text-white">(</code><code className="code-yellow">result =&#62; console.log(result)</code><code className="text-white">)</code><br />
   <code>.catch</code><code className="text-white">(</code><code className="code-yellow">error =&#62; console.log('error',error)</code><code className="text-white">);</code>
@@ -317,31 +335,49 @@ export const JavascriptRemitterInfoCode = () => {
       </CodeWrapper>
 
       <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>shell responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+
+    <div className="response-wrapper" >
+
+       <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
+       .build();
+       <br />MediaType mediaType = MediaType.parse(<code className="code-yellow">"application/json"</code>);
+       <br /><code className="text-white">RequestBody body = RequestBody.create(mediaType,</code>  <code className="code-yellow">"\r\n  </code>
+       <br /> <code className="code-yellow">\"beneficiaryName\": \"anu\",\r\n  \"beneficiaryBankId\": \"36\"</code>,
+       <br /> <code className="code-yellow">\r\n        \"remitterMobileNumber\": \"7902900295\",\r\n </code>
+       <br /> <code className="code-yellow">\"beneficiaryMobileNumber\":\"8596321478\",\r\n        \"accountNumber\":  </code>
+       <br /> <code className="code-yellow">\"88654888892\",\r\n        \"address\": \"Calicut \",\r\n </code>
+       <br /> <code className="code-yellow">\"ifscCode\": \"UTIB0002916\",\r\n        \"accountHolderName\": \"Venu\", </code>
+       <br /> <code className="code-yellow">\r\n        \"branchName\": \"Mavoor Road\"\r\n");</code>
+       <br /><code className="text-white">Request request = <code>new</code> Request.Builder()</code> <br />
+       <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code>) <br />
+       <code className="text-white">.method(</code><code className="code-yellow">"POST"</code><code className="text-white">,body)</code><br />
+       <code className="text-white">.addHeader(</code><code className="code-yellow">"apiKey"</code><code className="code-yellow">, apiKey</code>) <br />
+       <code className="text-white">.addHeader(</code><code className="code-yellow">"Authorization"</code><code className="code-yellow">, "Bearer token"</code>) <br />
+       <code className="text-white">.addHeader(</code><code className="code-yellow">"Content-Type"</code><code className="code-yellow">, "application/json"</code>)  <br />
+       <code className="text-white">.build();</code><br />
+       <code className="text-white">Response response = client.newCall(request).execute();</code>
+    </div>
+    </CodeWrapper>
    </>
 }
 
-export const SwiftRemitterInfoCode = () => {
+export const SwiftSendOtpCode = () => {
    return <>
       <CodeWrapper heading="Request">
          <div className="request-wrapper" id="swift">
 
 
-         <span className="d-flex justify-content-between "><code>import<code className="text-white">Foundation</code></code><AiOutlineCopy className="copyicon" onClick={()=>copyToClipboard("swift")} /></span>
+         <span className="d-flex justify-content-between "><code>import <code className="text-white">Foundation</code></code><AiOutlineCopy className="copyicon" onClick={()=>copyToClipboard("swift")} /></span>
 <code>#if</code><code className="text-white"> canImport</code><code className="text-white">(</code><code className="code-yellow">FoundationNetworking</code><code className="text-white">)</code><br />
 <code>import</code> <code className="code-yellow">FoundationNetworking</code><br />
 <code>#endif</code><br />
 
 <code>var</code> <code className="text-white">semaphore =</code><code className="code-yellow"> DispatchSemaphore</code> <code className="text-white">(</code><code className="text-white">value: 0</code><code className="text-white">)</code><br />
 
-<code>let</code> <code className="text-white">parameters =</code> <code>"<span className="output text-white"><code className="code-yellow">\r\n    \"remitterPhone\":\"7902900295\"\r\n</code></span></code><br />
+<code>let</code> <code className="text-white">parameters =</code> <code>"<span className="output text-white"><code className="code-yellow">\r\n    \"remitterPhone\":\"7902900295\",\r\n    \"remitterName\":\"anu\"\r\n</code></span></code><br />
 <code>let</code> <code className="text-white">postData =</code> <code className="code-yellow">parameters.data</code><code className="text-white">(</code><code className="text-white">using: .utf8</code><code className="text-white">)</code><br />
 
-<code>var <code className="text-white"> request = URLRequest</code><code className="text-white">(</code>url: <code>URL</code><code className="text-white">(</code><code className="text-white">string:</code> <code className="code-yellow">"http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify"</code><code className="text-white">)</code><code className="code-yellow">!,timeoutInterval: Double.infinity</code><code className="text-white">)</code></code><br />
+<code>var <code className="text-white"> request = URLRequest</code><code className="text-white">(</code>url: <code>URL</code><code className="text-white">(</code><code className="text-white">string:</code> <code className="code-yellow">"http://194.195.113.218:8090/paymento/remitter-reg/send-otp"</code><code className="text-white">)</code><code className="code-yellow">!,timeoutInterval: Double.infinity</code><code className="text-white">)</code></code><br />
 
 <code className="text-white">request.addValue(</code><code className="code-yellow">apiKey, forHTTPHeaderField: "apiKey"</code><code className="text-white">)</code><br />
 <code className="text-white">request.addValue(</code><code className="code-yellow">"Bearer token", forHTTPHeaderField: "Authorization"</code><code className="text-white">)</code><br />
@@ -368,13 +404,34 @@ export const SwiftRemitterInfoCode = () => {
       </CodeWrapper>
 
       <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>shell responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+
+    <div className="response-wrapper" >
+
+       <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
+       .build();
+       <br />MediaType mediaType = MediaType.parse(<code className="code-yellow">"application/json"</code>);
+       <br /><code className="text-white">RequestBody body = RequestBody.create(mediaType,</code>  <code className="code-yellow">"\r\n  </code>
+       <br /> <code className="code-yellow">\"beneficiaryName\": \"anu\",\r\n  \"beneficiaryBankId\": \"36\"</code>,
+       <br /> <code className="code-yellow">\r\n        \"remitterMobileNumber\": \"7902900295\",\r\n </code>
+       <br /> <code className="code-yellow">\"beneficiaryMobileNumber\":\"8596321478\",\r\n        \"accountNumber\":  </code>
+       <br /> <code className="code-yellow">\"88654888892\",\r\n        \"address\": \"Calicut \",\r\n </code>
+       <br /> <code className="code-yellow">\"ifscCode\": \"UTIB0002916\",\r\n        \"accountHolderName\": \"Venu\", </code>
+       <br /> <code className="code-yellow">\r\n        \"branchName\": \"Mavoor Road\"\r\n");</code>
+       <br /><code className="text-white">Request request = <code>new</code> Request.Builder()</code> <br />
+       <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code>) <br />
+       <code className="text-white">.method(</code><code className="code-yellow">"POST"</code><code className="text-white">,body)</code><br />
+       <code className="text-white">.addHeader(</code><code className="code-yellow">"apiKey"</code><code className="code-yellow">, apiKey</code>) <br />
+       <code className="text-white">.addHeader(</code><code className="code-yellow">"Authorization"</code><code className="code-yellow">, "Bearer token"</code>) <br />
+       <code className="text-white">.addHeader(</code><code className="code-yellow">"Content-Type"</code><code className="code-yellow">, "application/json"</code>)  <br />
+       <code className="text-white">.build();</code><br />
+       <code className="text-white">Response response = client.newCall(request).execute();</code>
+    </div>
+    </CodeWrapper>
    </>
 }
+
+
+
 
 
 

@@ -5,7 +5,7 @@ import Bar from "../../Bar";
 function Authentication() {
   return (
     <>
-      <Col className="col-9 authparagraph border-end">
+      <Col className="col-lg-10  col-md-12 col-sm-12 authparagraph border-end">
         <Bar />
         <h1 className="mb-0 mt-0 heading">Authentication</h1>
         <Row className="h-100 w-90">
