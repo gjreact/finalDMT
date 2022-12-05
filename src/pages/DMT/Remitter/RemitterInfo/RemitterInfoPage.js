@@ -106,10 +106,12 @@ function RemitterInfoPage() {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (id) => {
+    console.log(id)
     setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
+
     toggleTab(icon.id)
     dummyArray[0] = icon;
 
