@@ -17,25 +17,42 @@ import objectiveC from '../../../../asset/images/objectiveC.png';
 import C from '../../../../asset/images/C.png';
 import CPlusPlus from '../../../../asset/images/CPlusPlus.png';
 import swift from '../../../../asset/images/swift.jpeg';
-import { JavaRemitter,PythonRemitter,ShellRemitter,PHPRemitter } from "../ResponseCodeRemitter/RemitterInfoCode";
-import Bar from "../../../Bar";
+import { JavaRemitter,
+  PythonRemitter,
+  ShellRemitter,
+  PHPRemitter,
+  NodeRemitterInfoCode,
+  JavascriptRemitterInfoCode,
+  SwiftRemitterInfoCode,
+  GonativeRemitterInfo,
+  ClibcurlRemitterInfo,
+  CrestsharpRemitterInfo,
+  RubyRemitterInfo,
+  PowerShellRemitterInfo,
+
+  } from "../ResponseCodeRemitter/RemitterInfoCode";
+  import Bar from "../../../Bar";
 
 
 function RemitterInfoPage() {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
-    {
+      {
+      id:0,
       icon: java,
       text: "java",
     },
     {
+      id:1,
       icon: python,
       text: "python",
     },
     {
+      id:2,
       icon: shell,
       text: "shell",
     },
     {
+      id:3,
       icon: php,
       text: "php",
     }
@@ -44,50 +61,42 @@ function RemitterInfoPage() {
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
+      id:4,
       icon: node,
       text: "Node JS",
     },
     {
+      id:5,
       icon: powershell,
       text: "Powershell",
     },
     {
+      id:6,
       icon: csharp,
       text: "Csharp",
     },
     {
-      icon: http,
-      text: "HTTP",
-    },
-    {
+      id:7,
       icon: js,
       text: "Javascript",
     },
     {
-      icon: kotlin,
-      text: "Kotlin",
-    },
-    {
-      icon: objectiveC,
-      text: "ObjectiveC",
-    },
-    {
+      id:8,
       icon: C,
       text: "C",
     },
     {
-      icon: CPlusPlus,
-      text: "C++",
-    },
-    {
+      id:9,
       icon: swift,
       text: "Swift",
     },
     {
+      id:10,
       icon: Go,
       text: "Go",
     },
     {
+      id:11,
       icon: ruby,
       text: "ruby",
     }
@@ -96,11 +105,12 @@ function RemitterInfoPage() {
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(1);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const toggleTab = (id) => {
+    setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
+    toggleTab(icon.id)
     dummyArray[0] = icon;
 
     setVerticalIconArray([
@@ -203,15 +213,23 @@ function RemitterInfoPage() {
 
       <Col id="style-1" className="col-12 col-sm-5 link-heading scrollbar pt-5 " >
 
+      
       {toggleState === 0 && <JavaRemitter />}
       {toggleState === 1 && <PythonRemitter />}
       {toggleState === 2 && <ShellRemitter />}
       {toggleState === 3 && <PHPRemitter />}
-      {toggleState === 4 && <PHPRemitter />}
+      {toggleState === 4 && <NodeRemitterInfoCode />}
+      {toggleState === 5 && <JavascriptRemitterInfoCode />}
+      {toggleState === 6 && <SwiftRemitterInfoCode />}
+      {toggleState === 7 && <GonativeRemitterInfo />}
+      {toggleState === 8 && <ClibcurlRemitterInfo />}
+      {toggleState === 9 && <CrestsharpRemitterInfo />}
+      {toggleState === 10 && <RubyRemitterInfo />}
+      {toggleState === 11 && <PowerShellRemitterInfo />}
       
 
       <div className="lang-btns d-flex justify-content-evenly">
-      {horizontalIconArray.map((iconName, index) => {
+      {horizontalIconArray.map((iconName,id, index) => {
             return (
               <button
                 style={{
@@ -220,25 +238,28 @@ function RemitterInfoPage() {
                   background: "transparent",
                 }}
                 id={iconName.icon}
-                key={index}
-                onClick={() => toggleTab(index)}
+                key={id}
+                onClick={() => toggleTab(id)} 
+                className="togglebuttton"
               >
                 <img src={iconName.icon} height="20" width="20" />
               </button>
             );
           })}
+
+{/* =========================== */}
         <Dropdown>
           <Dropdown.Toggle variant="light" id="dropdown-basic">
 
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-          {verticalIconArray.map(({ icon, text }, index) => {
+          {verticalIconArray.map(({ icon, text,id }, index) => {
                 // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text }, index)}
-                    key={index}
+                    onClick={() => pushItem({ icon, text,id}, index)}
+                    key={id}
                   >
                     <img src={icon} height="20" width="20" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
@@ -247,7 +268,13 @@ function RemitterInfoPage() {
               })}
               </Dropdown.Menu>
         </Dropdown>
+
+{/* =========================== */}
+
+
+
 </div>
+
 
       </Col>
 

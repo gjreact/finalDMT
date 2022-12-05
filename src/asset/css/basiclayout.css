@@ -330,3 +330,13 @@ padding-left: 5px;
   padding: 30px 10px 30px 30px;
 }
   /* aryas code end */
+
+.togglebuttton{
+  outline: "none"l;
+  border : "none";
+  background: "transparent"
+}
+
+.togglebuttton::hover{
+  background-color: "red";
+}

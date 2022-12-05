@@ -9,6 +9,8 @@ const copyToClipboard = (id) => {
   var c = document.getElementById(id).innerText;
   copy(c);
 };
+
+
 export const JavaSendMoney = () => {
 return <>
         <CodeWrapper heading="Request">
