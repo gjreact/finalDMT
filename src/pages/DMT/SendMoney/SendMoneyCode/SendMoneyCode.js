@@ -1,300 +1,289 @@
 import React from "react";
-
-import CodeWrapper from "../../CodeWrapper/CodeWrapper";
-import ShellWrapper from "../../CodeWrapper/ShellWrapper";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
+import CodeWrapper from "../../CodeWrapper/CodeWrapper";
+import ShellWrapper from "../../CodeWrapper/ShellWrapper";
 
 const copyToClipboard = (id) => {
 
-   var c = document.getElementById(id).innerText;
-   copy(c);
+  var c = document.getElementById(id).innerText;
+  copy(c);
 };
+export const JavaSendMoney = () => {
+return <>
+        <CodeWrapper heading="Request">
 
-
-export const JavaRemitterBalance = () => {
-  return (
-    <>
-      <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <br />
-          <code className="text-white">
-            OkHttpClient client = <code>new</code>{" "}
-            OkHttpClient().newnewBuilder()
-          </code>
-          <br />
-          <code className="text-white">.build();</code>
-          <br />
-          <code className="text-white">
-            MediaType mediaType = MediaType.parse({" "}
-            <code className="code-yellow">"application/json"</code>);
-          </code>
-          <br />
-          <code className="text-white">
-            RequestBody body = RequestBody.create(mediaType,{" "}
-            <code className="code-yellow">
-              {" "}
-              <span className="output">
-                \r\n \"remitterphone\":\"7902900295\"{" "}
-              </span>{" "}
-              \r\n" <code className="text-white">);</code>{" "}
-            </code>
-          </code>
-          <br />
-          <code className="text-white">
-            Request request = <code>new</code> Request.Builder()
-          </code>
-          <br />
-          <code className="text-white">
-            .url({" "}
-            <code className="code-yellow">
-              "localhost:8084/paymento/remitter-reg/check-balance"
-            </code>
-            )
-          </code>
-          <br />
-          <code className="text-white">
-            .method(<code className="code-yellow">"POST"</code>, body)
-          </code>
-          <br />
-          <code className="text-white">
-            .addHeader(<code className="code-yellow">"apiKey"</code>,{" "}
-            <code className="code-yellow">"apiKey"</code>)
-          </code>
-          <br />
-          <code className="text-white">
-            .addHeader(
-            <code className="code-yellow">"Authorization", "Bearer token"</code>
-            )
-          </code>
-          <br />
-          <code className="text-white">
-            .addHeader(
-            <code className="code-yellow">
-              "Content-Type", "application/json"
-            </code>
-            )
-          </code>
-          <br />
-          <code className="text-white">.build();</code>
-          <br />
-          <code className="text-white">
-            Response response = client.newCall(request).execute();
-          </code>
-        </div>
-      </CodeWrapper>
-
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>java responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
-    </>
-  );
-};
-
-export const PythonRemitterBalance = () => {
-  return (
-    <>
-      <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <br /> <code>import</code>{" "}
-          <code className="text-white">requests</code>
-          <br /> <code>import</code> <code className="text-white">json</code>
-          <br />
-          <code className="text-white"> url =</code>{" "}
+        <br />
+       <code className="text-white">
+          OkHttpClient client = <code>new</code> OkHttpClient().newnewBuilder()
+        </code><AiOutlineCopy className="copyicon" onClick={() => copyToClipboard("python")} />
+        <br />
+        <code className="text-white">.build();</code>
+        <br />
+        <code className="text-white">
+          MediaType mediaType = MediaType.parse({" "}
+          <code className="code-yellow">"application/json"</code>);
+        </code>
+        <br />
+        <code className="text-white">
+          RequestBody body = RequestBody.create(mediaType,
+        </code>{" "}
+        <code className="code-yellow">
+          "\r\n{" "}
+          <span className="output">
+            \r\n \"beneficiaryId\":36, \r\n \"remitterId\":26,\r\n
+            \"Amount\":200\r\n{" "}
+          </span>{" "}
+          \r\n\r\n\t \r\n" <code className="text-white">);</code>{" "}
+        </code>
+        <br />
+        <code className="text-white">
+          Request request = <code>new</code> Request.Builder()
+        </code>
+        <br />
+        <code className="text-white">
+          .url({" "}
           <code className="code-yellow">
-            "http://194.195.113.218:8090/paymento/remitter-reg/send-otp"
+            "http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money"
           </code>
-          <br />
-          <code className="text-white">payload = json.dumps(</code>
-          <code className="outputtext-white">
-            <br />
-            <code>"remitterPhone" </code> <span>: </span>
-            <code className="code-cyan"> "7902900295",</code>
-            <br />)
-          </code>
-          <br />
-          <code className="text-white">
-            headers ={" "}
-            <span className="output ">
-              <br />
-              <code>'apiKey'</code>:{" "}
-              <code className="code-yellow">'apiKey'</code> ,<br />
-              <code>'Authorization'</code>:{" "}
-              <code className="code-yellow">'Bearer token'</code> ,<br />
-              <code>'Content-Type'</code>:
-              <code className="code-yellow"> 'application/json'</code>
-              <br />
-            </span>
-          </code>
-          <br />
-          <code className="text-white">
-            response = requests.request(
-            <code className="code-yellow">"POST"</code>, url, headers=headers,
-            data=payload)
-            <br />
-            <code>print</code>
-            <code className="text-white">(response.text)</code>
-          </code>
-        </div>
-      </CodeWrapper>
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>python responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
-    </>
-  );
-};
-
-export const ShellRemitterBalance = () => {
-  return (
-    <>
-      <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <ShellWrapper />
-          <span className="output  text-white">
-            <br />
-            <code>"remitterPhone" </code> <span>: </span>
-            <code className="code-cyan"> "7902900295"</code>
-            <br />
-          </span>
-          <br /> <code className="code-yellow">' \</code>
-          <br />
+          )
+        </code>
+        <br />
+        <code className="text-white">
+          .method(<code className="code-yellow">"POST"</code>, body)
+        </code>
+        <br />
+        <code className="text-white">
+          .addHeader(<code className="code-yellow">"apiKey"</code>,{" "}
           <code className="code-yellow">
-            'localhost:8084/paymento/remitter-reg/check-balance'
+            "apikey"
           </code>
-        </div>
-      </CodeWrapper>
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>shell responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
-    </>
-  );
+          )
+        </code>
+        <br />
+        <code className="text-white">
+          .addHeader(
+          <code className="code-yellow">
+            "Content-Type", "application/json"
+          </code>
+          )
+        </code>
+        <br /> <code className="text-white">.build();</code>
+        <br />{" "}
+        <code className="text-white">
+          Response response = client.newCall(request).execute();
+        </code>
+                    
+                    
+          </CodeWrapper>
+            </>;
 };
 
-export const PHPRemitterBalance = () => {
-  return (
-    <>
-      <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <code> &#60;&#63;php</code>
+export const PythonSendMoney = () =>{
+return  <>
+    
+       <CodeWrapper heading="Request">
+
+       <br /> <code>import</code> <code className="text-white">requests</code>
+        <br /> <code>import</code> <code className="text-white">json</code>
+        <br />
+        <code className="text-white"> url =</code>{" "}
+        <code className="code-yellow">
+          "http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money"
+        </code>
+        <br />
+        <code className="text-white">payload = json.dumps</code>({" "}
+        <p className="output link-heading text-white">
           <br />
-          <code className="text-white">$curl = curl_init();</code>
+          <code>"beneficiaryBankId" </code> <span>: </span>
+          <code className="code-cyan"> 36,</code>
           <br />
+          <code>"remitterId" </code> <span>: </span>
+          <code className="code-cyan"> 26,</code>
+          <br />
+          <code> "Amount"</code> <span>: </span>
+          <code className="code-cyan"> 200</code>
+          <br />
+        </p>
+        ) <br />
+        <code className="text-white">
+          headers ={" "}
+          <p className="output link-heading text-white">
+            <br />
+            <code>'apiKey'</code>: <code className="code-yellow">'apiKey'</code>{" "}
+            ,
+            <br />
+            <code>'Content-Type'</code>:
+            <code className="code-yellow"> 'application/json'</code>
+            <br />
+          </p>
+        </code>
+        <code className="text-white">
+          response = requests.request(
+          <code className="code-yellow">"POST"</code>, url, headers=headers,
+          data=payload)
+          <br />
+          <code>print</code>(response.text className="text-white")
+        </code>
+                    
+                    
+          </CodeWrapper>
+          </>
+ 
+};
+
+
+
+export const ShellSendMoney= () => {
+   return  <>
+   
+   <CodeWrapper heading="Request">
+
+   <div className="request-wrapper">
+   <code className="text-white">
+          wget --no-check-certificate --quiet \
+        </code>
+        <br /> <code className="text-white">--method POST \</code>
+        <br /> <code className="text-white"> --timeout=0 \</code>
+        <br />{" "}
+        <code className="text-white">
+          {" "}
+          --header{" "}
+          <code className="code-yellow">
+            {" "}
+            'apiKey': "apiKey" \
+          </code>
+        </code>
+        <br />{" "}
+        <code className="text-white">
+          --header{" "}
+          <code className="code-yellow">
+            {" "}
+            'Content-Type: application/json' \
+          </code>
+        </code>
+        <br /> <code className="text-white">--body-data '</code>
+        <p className="output link-heading text-white">
+          <br />
+          <code>"beneficiaryBankId" </code> <span>: </span>
+          <code className="code-cyan"> 36,</code>
+          <br />
+          <code>"remitterId" </code> <span>: </span>
+          <code className="code-cyan"> 26,</code>
+          <br />
+          <code> "Amount"</code> <span>: </span>
+          <code className="code-cyan"> 200</code>
+          <br />
+        </p>
+        <br /> <code className="code-yellow">' \</code>
+        <br />
+        <code className="code-yellow">
+          'http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money'
+        </code>
+        
+      </div>      
+    </CodeWrapper>   
+   </>        
+   
+ };
+
+ export const PHPSendMoney= () => {
+   return <>
+   <CodeWrapper heading="Request">
+
+   <div className="request-wrapper">
+   <br /> <code className="text-white">$curl = curl_init();</code>
+        <br />
+        <code className="text-white">
+          curl_setopt_array($curl, <code>array</code>(
+        </code>
+        <br />
+        <code>
+          CURLOPT_URL =&#62;
+          <code>
+            {" "}
+            'http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money'
+          </code>
+          ,
+        </code>
+        <br />
+        <code className="text-white">
+          CURLOPT_RETURNTRANSFER =&#62; <code>true</code>,
+        </code>
+        <br />
+        <code className="text-white">
+          {" "}
+          CURLOPT_ENCODING =&#62;<code className="code-yellow">''</code>,
+        </code>
+        <br />
+        <code className="text-white"> CURLOPT_MAXREDIRS =&#62; 10,</code>
+        <br />
+        <code className="text-white"> CURLOPT_TIMEOUT =&#62; 0,</code>
+        <br />
+        <code className="text-white">
+          {" "}
+          CURLOPT_FOLLOWLOCATION =&#62; <code>true</code>,
+        </code>
+        <br />
+        <code className="text-white">
+          CURLOPT_HTTP_VERSION =&#62; CURL_HTTP_VERSION_1_1,
+        </code>
+        <br />
+        <code className="text-white">
+          {" "}
+          CURLOPT_CUSTOMREQUEST =&#62;{" "}
+          <code className="code-yellow">'POST'</code>,
+        </code>
+        <br />
+        <code className="text-white"> CURLOPT_POSTFIELDS =&#62;</code>
+        <code className="code-yellow">
+          {" "}
+          '<br/>
+          <code className="output code-yellow">
+            <br />
+            "beneficiaryId":36,
+            <br />
+            "remitterId":26,
+            <br />
+            "Amount":200
+            <br />
+          </code>
+          
+          <br />
+          ' ,<br />
           <code className="text-white">
-            curl_setopt_array(
-            <code className="code-yelllow">
-              $curl,<code className="text-white"> array(</code>
-            </code>
-          </code>
-          <br />
-          <code>
-            CURLOPT_URL =&#62;{" "}
+            CURLOPT_HTTPHEADER =&#62; <code>array</code> ( <br />
             <code className="code-yellow">
-              'localhost:8084/paymento/remitter-reg/check-balance',
+              'apiKey': "apiKey", <br />
+              'Content-Type: application/json'
             </code>
-          </code>
-          <br />
-          <code>
-            CURLOPT_RETURNTRANSFER =&#62;{" "}
-            <code className="code-yellow">true,</code>
-          </code>
-          <br />
-          <code>
-            CURLOPT_ENCODING =&#62; <code className="code-yellow">'',</code>
-          </code>
-          <br />
-          <code>
-            CURLOPT_MAXREDIRS =&#62; <code className="code-cyan">10,</code>
-          </code>
-          <br />
-          <code>
-            CURLOPT_TIMEOUT =&#62; <code className="code-cyan">0,</code>
-          </code>
-          <br />
-          <code>
-            CURLOPT_FOLLOWLOCATION =&#62;{" "}
-            <code className="code-yellow">true,</code>
-          </code>
-          <br />
-          <code>
-            CURLOPT_HTTP_VERSION =&#62;{" "}
-            <code className="code-yellow">CURL_HTTP_VERSION_1_1,</code>
-          </code>
-          <br />
-          <code>
-            CURLOPT_CUSTOMREQUEST =&#62;{" "}
-            <code className="code-yellow">'POST',</code>
-          </code>
-          <br />
-          <code>
-            CURLOPT_POSTFIELDS =&#62; <code>'</code>
-          </code>
-          <br />
-          <span className="output text-white">
             <br />
-            <code>"remitterPhone"</code> <span>: </span>{" "}
-            <code className="code-yellow">7902900295</code>
-            <br />
-          </span>
-          <code>',</code>
-          <br />
-          <code>
-            CURLOPT_HTTPHEADER =&#62; <code>array(</code>
           </code>
-          <code>
-            'apiKey <span>: </span>{" "}
-            <code className="code-yellow">apiKey',</code>
-          </code>{" "}
+          ),
           <br />
-          <code>
-            "Authorization <span>: </span>
-            <code className="code-cyan">Bearer token', </code>
-          </code>
-          <br />
-          <code>
-            'Content-Type <span>: </span>
-            <code className="code-cyan"> application/json'</code>
-          </code>
-          <br />
-          <code>),</code>
-          <br />
-          <code className="text-white">$response = curl_exec($curl);</code>
-          <br />
-          <code className="text-white">curl_close($curl);</code>
-          <br />
-          <code>
-            echo <code className="text-white">$response</code>
-          </code>
-          ;
+          ));
+        </code>
+        <br />
+        <code className="text-white">$response = curl_exec($curl);</code>
+        <br />
+        <code className="text-white">
+          <code>echo </code>$response;
+        </code>
+
         </div>
-      </CodeWrapper>
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>php responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
-    </>
-  );
-};
+   </CodeWrapper> 
+   </>
+ };
 
 
-export const NodeRemitterBalanceCode= () => {
+ export const NodeSendMoney= () => {
   return <> <CodeWrapper heading="Request">
 
-     <div className="request-wrapper" >
-     <span className="d-flex justify-content-between "><code>var <code className="text-white"> request =</code> <code>require</code><code>('request');</code></code><AiOutlineCopy className="copyicon" onClick={()=>copyToClipboard("java")} />  </span>
+     <div className="request-wrapper" id="node">
+     <span className="d-flex justify-content-between"> <code>var <code className="text-white"> request =</code> <code>require</code><code>('request');</code>  </code><AiOutlineCopy className="copyicon" onClick={() => copyToClipboard("node")} /></span>
     <code>var </code> <code className="text-white">options = </code><span className="output text-white"><br />
        <code>'method' :</code><code className="code-yellow">'POST'</code><br />
-       <code>'url' :<code className="code-yellow">'http://194.195.113.218:8090/paymento/remitter-reg/check-balance',</code></code><br />
+       <code>'url' :<code className="code-yellow">'http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money\n',</code></code><br />
        <code className="text-white">
               headers = <span className="output  text-white"><br />
                  <code>'apiKey'</code>: <code className="code-yellow">'apiKey'</code> ,<br />
@@ -303,8 +292,10 @@ export const NodeRemitterBalanceCode= () => {
               </span>
            </code><br />
            <code className="text-white"> body :</code><code className="text-white">JSON.stringify</code><code className="code-yellow">(<span className="output"><br />
-              <code>"remitterPhone" :</code><code>"7902626443"</code><br />
-              </span>)</code><br />
+           <code>"beneficiaryId"</code>  <span>: </span> <code className="code-yellow">36,</code><br />
+           <code>"remitterId"</code>  <span>: </span> <code className="code-yellow">26,</code><br />
+           <code>"Amount"</code>  <span>: </span> <code className="code-yellow">200</code><br />
+                        </span>)</code><br />
     </span><code className="text-white">;</code><br />
     <code className="text-white">
      request(options,<code>function</code><code className="text-white">(error,response)</code><br />
@@ -320,7 +311,7 @@ export const NodeRemitterBalanceCode= () => {
   
    <CodeWrapper heading="Response">
 
-   <div className="response-wrapper" >
+   <div className="response-wrapper" id="javascript">
 
       <code className="text-white">OkHttpClient client =</code> <code>new</code> <code className="text-white">OkHttpClient().newBuilder()</code>  <br />
       .build();
@@ -333,7 +324,7 @@ export const NodeRemitterBalanceCode= () => {
       <br /> <code className="code-yellow">\"ifscCode\": \"UTIB0002916\",\r\n        \"accountHolderName\": \"Venu\", </code>
       <br /> <code className="code-yellow">\r\n        \"branchName\": \"Mavoor Road\"\r\n");</code>
       <br /><code className="text-white">Request request = <code>new</code> Request.Builder()</code> <br />
-      <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code>) <br />
+      <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money\n"</code>) <br />
       <code className="text-white">.method(</code><code className="code-yellow">"POST"</code><code className="text-white">,body)</code><br />
       <code className="text-white">.addHeader(</code><code className="code-yellow">"apiKey"</code><code className="code-yellow">, apiKey</code>) <br />
       <code className="text-white">.addHeader(</code><code className="code-yellow">"Authorization"</code><code className="code-yellow">, "Bearer token"</code>) <br />
@@ -346,18 +337,21 @@ export const NodeRemitterBalanceCode= () => {
    </>
 };
 
-export const JavascriptRemitterBalanceCode = () => {
+export const JavascriptSendMoney = () => {
   return <>
      <CodeWrapper heading="Request">
 
         <div className="request-wrapper">
-          <span className="d-flex justify-content-between "> <code>var myHeaders = <code>new</code> <code className="text-white">Headers();</code></code><AiOutlineCopy className="copyicon" onClick={()=>copyToClipboard("java")} /></span>
+        <span className="d-flex justify-content-between"> <code>var myHeaders = <code>new</code> <code className="text-white">Headers();</code></code><AiOutlineCopy className="copyicon" onClick={() => copyToClipboard("javascript")} /></span>
            <code className="text-white">myHeaders.</code><code>append</code><code className="text-white">(</code><code className="code-yellow">"apiKey", apiKey</code><code className="text-white">);</code><br />
            <code className="text-white">myHeaders.</code><code>append</code><code className="text-white">(</code><code className="code-yellow">"Authorization","Bearer token"</code><code className="text-white">);</code><br />
            <code className="text-white">myHeaders.</code><code>append</code><code className="text-white">(</code><code className="code-yellow">"Content-Type","application/json"</code><code className="text-white">);</code><br />
 
            <code className="text-white">var raw = </code><code className="text-white">JSON.stringify</code><code className="code-yellow">(<span className="output text-white"><br />
-              <code>"remitterPhone" :</code><code>"7902626443"</code><br />
+           <code>"beneficiaryId"</code>  <span>: </span> <code className="code-yellow">36,</code><br />
+           <code>"remitterId"</code>  <span>: </span> <code className="code-yellow">26,</code><br />
+           <code>"Amount"</code>  <span>: </span> <code className="code-yellow">200</code><br />
+
               </span>)</code><br />
            <code className="text-white">var requestOptions = </code><span className="output text-white"><br />
               <code>"method" :</code><code>"POST"</code><br />
@@ -365,8 +359,7 @@ export const JavascriptRemitterBalanceCode = () => {
               <code>"body" :</code><code>"raw"</code><br />
               <code>"redirect" :</code><code>"follow"</code><br />
               </span><code className="text-white">;</code><br />
-
-              <code>fetch</code><code className="text-white">(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/remitter-reg/check-balance", requestOptions </code><code className="text-white">)</code><br />
+ <code className="code-yellow">"http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money\n", requestOptions </code><code className="text-white">)</code><br />
  <code>.then</code><code className="text-white">(</code><code className="code-yellow">response =&#62; response.text()</code><code className="text-white">)</code><br />
  <code>.then</code><code className="text-white">(</code><code className="code-yellow">result =&#62; console.log(result)</code><code className="text-white">)</code><br />
  <code>.catch</code><code className="text-white">(</code><code className="code-yellow">error =&#62; console.log('error',error)</code><code className="text-white">);</code>
@@ -391,7 +384,7 @@ export const JavascriptRemitterBalanceCode = () => {
       <br /> <code className="code-yellow">\"ifscCode\": \"UTIB0002916\",\r\n        \"accountHolderName\": \"Venu\", </code>
       <br /> <code className="code-yellow">\r\n        \"branchName\": \"Mavoor Road\"\r\n");</code>
       <br /><code className="text-white">Request request = <code>new</code> Request.Builder()</code> <br />
-      <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code>) <br />
+      <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/remitter-reg/delete-beneficiary\n"</code>) <br />
       <code className="text-white">.method(</code><code className="code-yellow">"POST"</code><code className="text-white">,body)</code><br />
       <code className="text-white">.addHeader(</code><code className="code-yellow">"apiKey"</code><code className="code-yellow">, apiKey</code>) <br />
       <code className="text-white">.addHeader(</code><code className="code-yellow">"Authorization"</code><code className="code-yellow">, "Bearer token"</code>) <br />
@@ -403,23 +396,23 @@ export const JavascriptRemitterBalanceCode = () => {
   </>
 }
 
-export const SwiftRemitterBalanceCode = () => {
+export const SwiftSendMoney = () => {
   return <>
      <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="swift">
 
 
-       <span className="d-flex justify-content-between "> <code>import <code className="text-white">Foundation</code></code><AiOutlineCopy className="copyicon" onClick={()=>copyToClipboard("java")} /></span>
+        <span className="d-flex justify-content-between"><code>import <code className="text-white">Foundation</code></code><AiOutlineCopy className="copyicon" onClick={() => copyToClipboard("swift")} /></span>
 <code>#if</code><code className="text-white"> canImport</code><code className="text-white">(</code><code className="code-yellow">FoundationNetworking</code><code className="text-white">)</code><br />
 <code>import</code> <code className="code-yellow">FoundationNetworking</code><br />
 <code>#endif</code><br />
 
 <code>var</code> <code className="text-white">semaphore =</code><code className="code-yellow"> DispatchSemaphore</code> <code className="text-white">(</code><code className="text-white">value: 0</code><code className="text-white">)</code><br />
 
-<code>let</code> <code className="text-white">parameters =</code> <code>"<span className="output text-white"><code className="code-yellow">\r\n     \"remitterphone\":\"7902626443\"\r\n</code></span></code><br />
+<code>let</code> <code className="text-white">parameters =</code> <code>"<span className="output text-white"><code className="code-yellow">\r\n          \"beneficiaryId\":36,\r\n    \"remitterId\":26,\r\n    \"Amount\":200\r\n</code></span></code><br />
 <code>let</code> <code className="text-white">postData =</code> <code className="code-yellow">parameters.data</code><code className="text-white">(</code><code className="text-white">using: .utf8</code><code className="text-white">)</code><br />
 
-<code>var <code className="text-white"> request = URLRequest</code><code className="text-white">(</code>url: <code>URL</code><code className="text-white">(</code><code className="text-white">string:</code> <code className="code-yellow">"http://194.195.113.218:8090/paymento/remitter-reg/check-balance"</code><code className="text-white">)</code><code className="code-yellow">!,timeoutInterval: Double.infinity</code><code className="text-white">)</code></code><br />
+<code>var <code className="text-white"> request = URLRequest</code><code className="text-white">(</code>url: <code>URL</code><code className="text-white">(</code><code className="text-white">string:</code> <code className="code-yellow">"http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money\n"</code><code className="text-white">)</code><code className="code-yellow">!,timeoutInterval: Double.infinity</code><code className="text-white">)</code></code><br />
 
 <code className="text-white">request.addValue(</code><code className="code-yellow">apiKey, forHTTPHeaderField: "apiKey"</code><code className="text-white">)</code><br />
 <code className="text-white">request.addValue(</code><code className="code-yellow">"Bearer token", forHTTPHeaderField: "Authorization"</code><code className="text-white">)</code><br />
