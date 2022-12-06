@@ -24,23 +24,35 @@ import {
   PythonSendMoney,
   ShellSendMoney,
   PHPSendMoney,
+  NodeSendMoney,
+  PowershellSendMoneyCode,
+  CrestsharpSendMoney,
+  JavascriptSendMoney,
+  ClibcurlSendMoney,
+  SwiftSendMoney,
+  RubySendMoneyCode,
+  GonativeSendMoney,
 } from "../SendMoneyCode/SendMoneyCode";
 import Bar from "../../../Bar";
 const SendMoneyPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
+      id: 0,
       icon: java,
       text: "java",
     },
     {
+      id: 1,
       icon: python,
       text: "python",
     },
     {
+      id: 2,
       icon: shell,
       text: "shell",
     },
     {
+      id: 3,
       icon: php,
       text: "php",
     },
@@ -49,50 +61,42 @@ const SendMoneyPage = () => {
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
+      id: 4,
       icon: node,
       text: "Node JS",
     },
     {
+      id: 5,
       icon: powershell,
       text: "Powershell",
     },
     {
+      id: 6,
       icon: csharp,
       text: "Csharp",
     },
     {
-      icon: http,
-      text: "HTTP",
-    },
-    {
+      id: 7,
       icon: js,
       text: "Javascript",
     },
     {
-      icon: kotlin,
-      text: "Kotlin",
-    },
-    {
-      icon: objectiveC,
-      text: "ObjectiveC",
-    },
-    {
+      id: 8,
       icon: C,
       text: "C",
     },
     {
-      icon: CPlusPlus,
-      text: "C++",
-    },
-    {
+      id: 9,
       icon: swift,
       text: "Swift",
     },
     {
+      id: 10,
       icon: Go,
       text: "Go",
     },
     {
+      id: 11,
       icon: ruby,
       text: "ruby",
     },
@@ -101,11 +105,12 @@ const SendMoneyPage = () => {
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(1);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const toggleTab = (id) => {
+    setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
+    toggleTab(icon.id);
     dummyArray[0] = icon;
 
     setVerticalIconArray([
@@ -209,7 +214,14 @@ const SendMoneyPage = () => {
         {toggleState === 1 && <PythonSendMoney />}
         {toggleState === 2 && <ShellSendMoney />}
         {toggleState === 3 && <PHPSendMoney />}
-        {toggleState === 4 && <PHPSendMoney />}
+        {toggleState === 4 && <NodeSendMoney />}
+        {toggleState === 5 && <PowershellSendMoneyCode />}
+        {toggleState === 6 && <CrestsharpSendMoney />}
+        {toggleState === 7 && <JavascriptSendMoney />}
+        {toggleState === 8 && <ClibcurlSendMoney />}
+        {toggleState === 9 && <SwiftSendMoney />}
+        {toggleState === 10 && <GonativeSendMoney />}
+        {toggleState === 11 && <RubySendMoneyCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
@@ -223,7 +235,7 @@ const SendMoneyPage = () => {
                 }}
                 id={iconName.icon}
                 key={index}
-                onClick={() => toggleTab(index)}
+                onClick={() => toggleTab(iconName.id)}
               >
                 <img src={iconName.icon} height="20" width="20" />
               </button>
@@ -236,11 +248,11 @@ const SendMoneyPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text }, index) => {
+              {verticalIconArray.map(({ icon, text,id }, index) => {
                 // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text }, index)}
+                    onClick={() => pushItem({ icon, text,id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />
