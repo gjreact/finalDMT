@@ -41,7 +41,7 @@ const BeneficiaryCreatePage = () => {
     {
       icon: php,
       text: "php",
-    }
+    },
   ]);
   const dummyArray = [];
   const cacheArray = [];
@@ -93,7 +93,7 @@ const BeneficiaryCreatePage = () => {
     {
       icon: ruby,
       text: "ruby",
-    }
+    },
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
@@ -249,7 +249,7 @@ const BeneficiaryCreatePage = () => {
       </Col>
       <Col
         id="style-1"
-          className="col-12 col-sm-5  link-heading scrollbar pt-5 "
+        className="col-12 col-sm-5  link-heading scrollbar pt-5 "
       >
         {toggleState === 0 && <CreateBeneficiaryCode />}
         {toggleState === 1 && <PythonBeneficiary />}

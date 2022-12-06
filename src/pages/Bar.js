@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from '../asset/images/logo_blue.png';
+import logo from "../asset/images/logo_blue.png";
 import "../asset/css/basiclayout.css";
 import "../pages/SideBar/SideMenu";
 import Offcanvas from "react-bootstrap/Offcanvas";
@@ -21,7 +21,10 @@ function Bar() {
         onHide={handleClose}
       >
         <Offcanvas.Header
-          style={{ backgroundColor: "var(--SideMenueBgColor)", variant: "white" }}
+          style={{
+            backgroundColor: "var(--SideMenueBgColor)",
+            variant: "white",
+          }}
           closeButton
           closeVariant="white"
         >
@@ -37,11 +40,11 @@ function Bar() {
             />
           </div>
         </Offcanvas.Header>
-        <hr className="hrline"/>
+        <hr className="hrline" />
         <Offcanvas.Body style={{ backgroundColor: "10102C" }}>
-          <SideMenu onClick={handleClose}/>
+          <SideMenu onClick={handleClose} />
         </Offcanvas.Body>
-        <hr className="hrline"/>
+        <hr className="hrline" />
         <h6 className="docHead">Documentation Powered by Paymento</h6>
       </Offcanvas>
     </div>

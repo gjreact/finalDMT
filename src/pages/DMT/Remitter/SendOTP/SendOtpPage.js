@@ -1,6 +1,6 @@
-import React,{ useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Dropdown, Table } from "react-bootstrap";
-import '../../../../asset/css/basiclayout.css'
+import "../../../../asset/css/basiclayout.css";
 import SideMenu from "../../../../pages/SideBar/SideMenu";
 import logo from "../../../../asset/images/logo.png";
 import shell from "../../../../asset/images/shell.jpg";
@@ -44,7 +44,7 @@ const SendOtpPage = () => {
     {
       icon: php,
       text: "php",
-    }
+    },
   ]);
   const dummyArray = [];
   const cacheArray = [];
@@ -96,7 +96,7 @@ const SendOtpPage = () => {
     {
       icon: ruby,
       text: "ruby",
-    }
+    },
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
@@ -131,129 +131,138 @@ const SendOtpPage = () => {
       (verticalIconArray[index] = cacheArray[0]),
     ]);
   };
- 
- return (
-<>
 
-              {/* Remitter Information */}
+  return (
+    <>
+      {/* Remitter Information */}
 
-              <Col className="col-12 col-sm-7 border">
-                <Bar />
-                <Row >
-                  <h2 className="mb-0 mt-0">Remitter Send OTP</h2>
-                   <p className="px-4  mb-5">
-                     As mentioned in Remitter Information API, if a remitter is not found registered in the system, then by this API remitter can register themselves, by filling below details with OTP.
-                     Using this otp Can verify the remitter
-                   </p>
-                   <div className="m table-responsive">
-                     <Table striped bordered hover responsive id="style-1" className="scrollbar">
-                       <thead >
-                         <tr>
-                           <th>Sl.no</th>
-                           <th>HTTP Response Code</th>
-                           <th>Response Code</th>
-                           <th>Message</th>
-                         </tr>
-                       </thead>
-                       <tbody>
-                         <tr>
-                           <td>1</td>
-                           <td>404</td>
-                           <td>0</td>
-                           <td>Remitter already exist</td>
-                         </tr>
-                         <tr>
-                           <td>2</td>
-                           <td>404</td>
-                           <td>105</td>
-                           <td>Enter a valid name</td>
-                         </tr>
-                         <tr>
-                           <td>3</td>
-                           <td>404</td>
-                           <td>102</td>
-                           <td>Invalid mobile  number</td>
-                         </tr>
-                       </tbody>
-                     </Table>
-                   </div>
+      <Col className="col-12 col-sm-7 border">
+        <Bar />
+        <Row>
+          <h2 className="mb-0 mt-0">Remitter Send OTP</h2>
+          <p className="px-4  mb-5">
+            As mentioned in Remitter Information API, if a remitter is not found
+            registered in the system, then by this API remitter can register
+            themselves, by filling below details with OTP. Using this otp Can
+            verify the remitter
+          </p>
+          <div className="m table-responsive">
+            <Table
+              striped
+              bordered
+              hover
+              responsive
+              id="style-1"
+              className="scrollbar"
+            >
+              <thead>
+                <tr>
+                  <th>Sl.no</th>
+                  <th>HTTP Response Code</th>
+                  <th>Response Code</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>404</td>
+                  <td>0</td>
+                  <td>Remitter already exist</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>404</td>
+                  <td>105</td>
+                  <td>Enter a valid name</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>404</td>
+                  <td>102</td>
+                  <td>Invalid mobile number</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
 
-                   <h3 className=" p-3 link-font-size">URL:</h3>
-                   <code className=" pt-5 pb-5 url-link">
-                     http://194.195.113.218:8090/paymento/remitter-reg/send-otp
-                   </code>
-                   <h3 className="link-font-size">Method:</h3>
-                   <p className=" p-3">POST</p>
-                   <h3 className=" p-3 link-font-size">Header:</h3>
-                   <p className="output " ><br /> <code>"apiKey"</code>
-                     <span>
-                       :
-                     </span>
-                     <code className="code-yellow">"abs1nxxxxx"</code><br />
-                   </p>
-                   <h3 className=" p-3 link-font-size">Request:</h3>
-                   <p className="output  " ><br /> <code>"remitterPhone"</code>
-                     <span>
-                       :
-                     </span>
-                     <code className="code-cyan">"7902900295"</code><br />
-                     <code>"remitterName"</code><span>:</span><code className="code-yellow">"anu"</code>
-                     <br />
-                   </p>
-                 </Row>
-               </Col>
-               <Col id="style-1" 
-                  className="col-12 col-sm-5  link-heading scrollbar pt-5" >
-              
-              {toggleState === 0 && <JavaResendOtp />}
-              {toggleState === 1 && <PythonResendOtp />}
-              {toggleState === 2 && <ShellResendOtp />}
-              {toggleState === 3 && <PHPResendOtp />}
+          <h3 className=" p-3 link-font-size">URL:</h3>
+          <code className=" pt-5 pb-5 url-link">
+            http://194.195.113.218:8090/paymento/remitter-reg/send-otp
+          </code>
+          <h3 className="link-font-size">Method:</h3>
+          <p className=" p-3">POST</p>
+          <h3 className=" p-3 link-font-size">Header:</h3>
+          <p className="output ">
+            <br /> <code>"apiKey"</code>
+            <span>:</span>
+            <code className="code-yellow">"abs1nxxxxx"</code>
+            <br />
+          </p>
+          <h3 className=" p-3 link-font-size">Request:</h3>
+          <p className="output  ">
+            <br /> <code>"remitterPhone"</code>
+            <span>:</span>
+            <code className="code-cyan">"7902900295"</code>
+            <br />
+            <code>"remitterName"</code>
+            <span>:</span>
+            <code className="code-yellow">"anu"</code>
+            <br />
+          </p>
+        </Row>
+      </Col>
+      <Col
+        id="style-1"
+        className="col-12 col-sm-5  link-heading scrollbar pt-5"
+      >
+        {toggleState === 0 && <JavaResendOtp />}
+        {toggleState === 1 && <PythonResendOtp />}
+        {toggleState === 2 && <ShellResendOtp />}
+        {toggleState === 3 && <PHPResendOtp />}
 
-              <div className="lang-btns d-flex justify-content-evenly">
-                  {horizontalIconArray.map((iconName, index) => {
-                    return (
-                      <button
-                        style={{
-                          outline: "none",
-                          border: "none",
-                          background: "transparent",
-                        }}
-                        id={iconName.icon}
-                        key={index}
-                        onClick={() => toggleTab(index)}
-                      >
-                        <img src={iconName.icon} height="20" width="20" />
-                      </button>
-                    );
-                  })}
+        <div className="lang-btns d-flex justify-content-evenly">
+          {horizontalIconArray.map((iconName, index) => {
+            return (
+              <button
+                style={{
+                  outline: "none",
+                  border: "none",
+                  background: "transparent",
+                }}
+                id={iconName.icon}
+                key={index}
+                onClick={() => toggleTab(index)}
+              >
+                <img src={iconName.icon} height="20" width="20" />
+              </button>
+            );
+          })}
 
-                  <Dropdown>
-                    <Dropdown.Toggle
-                      variant="light"
-                      id="dropdown-basic"
-                    ></Dropdown.Toggle>
+          <Dropdown>
+            <Dropdown.Toggle
+              variant="light"
+              id="dropdown-basic"
+            ></Dropdown.Toggle>
 
-                    <Dropdown.Menu>
-                      {verticalIconArray.map(({ icon, text }, index) => {
-                        // console.log(verticalIconArray, "view");
-                        return (
-                          <Dropdown.Item
-                            onClick={() => pushItem({ icon, text }, index)}
-                            key={index}
-                          >
-                            <img src={icon} height="20" width="20" />
-                            <span style={{ fontSize: "13px" }}>{text}</span>
-                          </Dropdown.Item>
-                        );
-                      })}
-                    </Dropdown.Menu>
-                  </Dropdown>
-            </div>
+            <Dropdown.Menu>
+              {verticalIconArray.map(({ icon, text }, index) => {
+                // console.log(verticalIconArray, "view");
+                return (
+                  <Dropdown.Item
+                    onClick={() => pushItem({ icon, text }, index)}
+                    key={index}
+                  >
+                    <img src={icon} height="20" width="20" />
+                    <span style={{ fontSize: "13px" }}>{text}</span>
+                  </Dropdown.Item>
+                );
+              })}
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
 
-
-
-                 {/* <Row className="link-heading">
+        {/* <Row className="link-heading">
                    <h3 className="text-white link-section p-3">Response:</h3>
                    <h5 className="text-white link-heading p-3">SUCCESS </h5>
                    <p className="output link-heading text-white " >
@@ -279,11 +288,10 @@ const SendOtpPage = () => {
                      <br /> <code>"responseCode"</code> <span>: </span><code className="code-yellow">" "</code><br />
                    </p>
                  </Row> */}
-               </Col>
-              {/* Remitter Information  ends...*/}
-
-      </>
-    )
+      </Col>
+      {/* Remitter Information  ends...*/}
+    </>
+  );
 };
 
 export default SendOtpPage;

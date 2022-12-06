@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Dropdown, Table } from "react-bootstrap";
-import '../../../../asset/css/basiclayout.css'
+import "../../../../asset/css/basiclayout.css";
 import SideMenu from "../../../../pages/SideBar/SideMenu";
 import logo from "../../../../asset/images/logo.png";
 import shell from "../../../../asset/images/shell.jpg";
@@ -27,9 +27,7 @@ import {
   PHPVerifyOtp,
 } from "../ResponseCodeRemitter/VerifyOtpCode";
 
-
 const VerifyOtpPage = () => {
-
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
       icon: java,
@@ -46,7 +44,7 @@ const VerifyOtpPage = () => {
     {
       icon: php,
       text: "php",
-    }
+    },
   ]);
   const dummyArray = [];
   const cacheArray = [];
@@ -98,7 +96,7 @@ const VerifyOtpPage = () => {
     {
       icon: ruby,
       text: "ruby",
-    }
+    },
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
@@ -134,86 +132,86 @@ const VerifyOtpPage = () => {
     ]);
   };
 
+  return (
+    <>
+      {/* Remitter verify otp starts... */}
 
-  return <>
+      <Col className="col-12 col-sm-7 border ">
+        <Bar />
+        <Row>
+          <h2 className="mb-0 mt-0 p-3">Verify Remitter OTP</h2>
+          <p className="px-4  mb-5">
+            As mentioned in Remitter information, if a remitter is not found
+            registered in the system, then by this API remitter can register
+            themselves, by filling below details with OTP and ReferenceID
+            received from " Remitter send OTP".
+          </p>
+          <div className="m">
+            <Table striped bordered hover responsive>
+              <thead>
+                <tr>
+                  <th>Sl.no</th>
+                  <th>HTTP Response Code</th>
+                  <th>Response Code</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>208</td>
+                  <td>81</td>
+                  <td>Invalid OTP</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>208</td>
+                  <td>82</td>
+                  <td>Invalid ReferenceID</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
 
-           
+          <h3 className=" link-font-size">URL:</h3>
+          <code className="pt-5 pb-5 url-link">
+            http://194.195.113.218:8090/paymento/remitter-reg/verify-otp
+          </code>
+          <h3 className=" p-3 link-font-size">Method:</h3>
+          <p className=" p-3">POST</p>
 
+          <h3 className="p-3 link-font-size">Header:</h3>
+          <p className="output ">
+            <br /> <code>"apiKey"</code>
+            <span>:</span>
+            "abs1nxxxxx"
+            <br />
+          </p>
 
-              {/* Remitter verify otp starts... */}
+          <h3 className=" p-3 link-font-size">Request:</h3>
+          <p className="output">
+            <br />
+            <code>"otp"</code> <span>: </span>
+            <code className="code-cyan"> "017111" </code> <br />
+            <code>"otpRefferenceId"</code> <span>: </span>{" "}
+            <code className="code-yellow">"URMDiiD2UQkIkkQy" </code> <br />
+            <code>"mobile"</code> <span>: </span>{" "}
+            <code className="code-cyan">"7902626443" </code> <br />
+            <code>"remitterType"</code> <span>: </span>{" "}
+            <code className="code-cyan">3 </code> <br />
+          </p>
+        </Row>
+      </Col>
+      <Col
+        id="style-1"
+        className="col-12 col-sm-5  link-heading scrollbar pt-5"
+      >
+        {toggleState === 0 && <JavaVerifyOtp />}
+        {toggleState === 1 && <PythonVerifyOtp />}
+        {toggleState === 2 && <ShellVerifyOtp />}
+        {toggleState === 3 && <PHPVerifyOtp />}
 
-              <Col className="col-12 col-sm-7 border " >
-                <Bar />
-                <Row >
-                
-                  <h2 className="mb-0 mt-0 p-3">Verify Remitter OTP</h2>
-                  <p className="px-4  mb-5">
-                  As mentioned in  Remitter information, if a remitter is not found registered in the system,
-                   then by this API remitter can register themselves, by filling below details with OTP and ReferenceID received from " Remitter send OTP".
-                  </p>
-                  <div className="m">
-                  <Table striped bordered hover responsive>
-      <thead >
-        <tr>
-          <th>Sl.no</th>
-          <th>HTTP Response Code</th>
-          <th>Response Code</th>
-          <th>Message</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>208</td>
-          <td>81</td>
-          <td>Invalid OTP</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>208</td>
-          <td>82</td>
-          <td>Invalid ReferenceID</td>
-        </tr>
-        
-     
-      </tbody>
-    </Table>
-    </div>
-
-    <h3 className=" link-font-size">URL:</h3>
-              <code className="pt-5 pb-5 url-link">
-              http://194.195.113.218:8090/paymento/remitter-reg/verify-otp
-                  </code>
-                  <h3 className=" p-3 link-font-size">Method:</h3>
-                  <p className=" p-3">POST</p>
- 
-                  <h3 className="p-3 link-font-size">Header:</h3>
-                   <p className="output " ><br/> <code>"apiKey"</code>
-                  <span>
-                    :
-                  </span>
-                  "abs1nxxxxx"<br/>
-                  </p>
-
-                  <h3 className=" p-3 link-font-size">Request:</h3>
-                   <p className="output" ><br/>
-                    <code>"otp"</code>  <span>: </span><code className="code-cyan"> "017111" </code>  <br />
-                    <code>"otpRefferenceId"</code>  <span>: </span> <code className="code-yellow">"URMDiiD2UQkIkkQy" </code>  <br />
-                    <code>"mobile"</code>  <span>: </span> <code className="code-cyan">"7902626443"   </code> <br />
-                    <code>"remitterType"</code>  <span>: </span> <code className="code-cyan">3 </code> <br/>
-                    
-                  </p>
-
-                </Row>
-        
-              </Col>
-              <Col  id="style-1" className="col-12 col-sm-5  link-heading scrollbar pt-5" >
-              {toggleState === 0 && <JavaVerifyOtp />}
-              {toggleState === 1 && <PythonVerifyOtp />}
-              {toggleState === 2 && <ShellVerifyOtp />}
-              {toggleState === 3 && <PHPVerifyOtp />}
-
-              <div className="lang-btns d-flex justify-content-evenly">
+        <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
@@ -253,15 +251,11 @@ const VerifyOtpPage = () => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-             
-              </Col>
-            
+      </Col>
 
-              {/* Remitter verify otp  ends...*/}
-
-      
-          
-  </>;
+      {/* Remitter verify otp  ends...*/}
+    </>
+  );
 };
 
 export default VerifyOtpPage;
