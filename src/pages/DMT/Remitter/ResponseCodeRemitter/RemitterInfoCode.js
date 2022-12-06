@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 import JavaWrapper from "../../CodeWrapper/JavaWrapper";
 import ShellWrapper from "../../CodeWrapper/ShellWrapper";
@@ -12,6 +12,7 @@ const copyToClipboard = (id) => {
 };
 
 export const JavaRemitter = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -73,9 +74,9 @@ export const JavaRemitter = () => {
           </code>
         </div>
       </CodeWrapper>
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>

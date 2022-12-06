@@ -1,9 +1,12 @@
 import React from 'react';
 
-function RemitterInfoResponse() {
+function RemitterInfoResponse({response}) {
   return (
     <>
-        <h6 className="text-secondary ">If Remitter Exist : </h6>
+
+        {response === 1 ? (
+        <>
+          <h6 className="text-secondary ">If Remitter Exist : </h6>
         <p className="output  text-white ">
           <br /> <code>"status"</code> <span>: </span>
           <code className="code-cyan">"200"</code>,
@@ -52,6 +55,27 @@ function RemitterInfoResponse() {
             <br />
           </p>
         </p>
+        </>
+      ) : response === 2 ? (
+        <>
+          <h5 className="text-white">UNKNOWN RESPONSE </h5>
+          <span className="output  text-white ">
+            <br /> <code>"status"</code> <span>: </span>
+            <code className="code-cyan">"404"</code>
+            <br /> <code>"success"</code> <span>: </span>
+            <code className="code-cyan">"false"</code>
+            <br /> <code>"message"</code> <span>: </span>
+            <code className="code-yellow">"Remitter Doesn't exist "</code>
+            <br /> <code>"responseCode"</code> <span>: </span>
+            <code className="code-yellow">"501"</code>
+            <br />
+          </span>
+        </>
+      ) : (
+        <>
+          <h6>Please choose responce code</h6>
+        </>
+      )}
     </>
   )
 }
