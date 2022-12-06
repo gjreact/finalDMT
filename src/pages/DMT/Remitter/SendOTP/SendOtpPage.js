@@ -20,10 +20,10 @@ import C from "../../../../asset/images/C.png";
 import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
 import swift from "../../../../asset/images/swift.jpeg";
 import {
-  JavaResendOtp,
-  PythonResendOtp,
-  ShellResendOtp,
-  PHPResendOtp,
+  JavaSendOtp,
+  PythonSendOtp,
+  ShellSendOtp,
+  PHPSendOtp,
 } from "../ResponseCodeRemitter/SendOtpCode";
 import Bar from "../../../Bar";
 
@@ -216,10 +216,10 @@ const SendOtpPage = () => {
         id="style-1"
         className="col-12 col-sm-5  link-heading scrollbar pt-5"
       >
-        {toggleState === 0 && <JavaResendOtp />}
-        {toggleState === 1 && <PythonResendOtp />}
-        {toggleState === 2 && <ShellResendOtp />}
-        {toggleState === 3 && <PHPResendOtp />}
+        {toggleState === 0 && <JavaSendOtp />}
+        {toggleState === 1 && <PythonSendOtp />}
+        {toggleState === 2 && <ShellSendOtp />}
+        {toggleState === 3 && <PHPSendOtp />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {

@@ -150,7 +150,7 @@ const BeneficiaryCreatePage = () => {
             remitter's mobile number and bank details.
           </p>
           <div className="m">
-            <Table striped bordered hover responsive>
+            <Table striped bordered hover responsive id="tableDesign">
               <thead>
                 <tr>
                   <th>Sl.no</th>

@@ -11,7 +11,7 @@ const copyToClipboard = (id) => {
   copy(c);
 };
 
-export const JavaResendOtp = () => {
+export const JavaSendOtp = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
@@ -89,7 +89,7 @@ export const JavaResendOtp = () => {
   );
 };
 
-export const PythonResendOtp = () => {
+export const PythonSendOtp = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
@@ -147,7 +147,7 @@ export const PythonResendOtp = () => {
   );
 };
 
-export const ShellResendOtp = () => {
+export const ShellSendOtp = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
@@ -189,7 +189,7 @@ export const ShellResendOtp = () => {
             <code className="code-yellow">
               'http://194.195.113.218:8090/paymento/remitter-reg/send-otp'
             </code>
-                    {" "}
+            {" "}
           </div>
         </div>
       </CodeWrapper>
@@ -203,7 +203,7 @@ export const ShellResendOtp = () => {
   );
 };
 
-export const PHPResendOtp = () => {
+export const PHPSendOtp = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
