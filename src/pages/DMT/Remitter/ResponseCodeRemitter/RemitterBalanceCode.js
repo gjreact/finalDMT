@@ -1,5 +1,4 @@
 import React from "react";
-
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 import ShellWrapper from "../../CodeWrapper/ShellWrapper";
 import copy from "copy-to-clipboard";

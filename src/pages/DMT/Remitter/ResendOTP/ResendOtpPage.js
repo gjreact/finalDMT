@@ -138,7 +138,7 @@ const ResendOtpPage = () => {
         <Bar />
         <Row>
           <h2 className="mb-0 mt-0 p-3">Remitter Resend OTP</h2>
-          <p className="px-4  mb-5">
+          <p className="px-4  mb-5 content-bg">
             For any kind of reasons if the remitter send otp to get failed or
             the remitter not verified using the OTP, This endpoint using for
             resend the OTP
@@ -177,22 +177,22 @@ const ResendOtpPage = () => {
           </div>
 
           <h3 className=" p-3 link-font-size">URL:</h3>
-          <code className=" pt-5 pb-5 url-link">
+          <code className="py-4 url-link">
             http://194.195.113.218:8090/paymento/remitter-reg/resend-otp
           </code>
-          <h3 className=" p-3 link-font-size">Method:</h3>
-          <p className="">POST</p>
+          <h3 className="py-2 link-font-size">Method:</h3>
+          <p className="content-bg">POST</p>
 
-          <h3 className=" p-3 link-font-size">Header:</h3>
-          <p className="output ">
+          <h3 className="py-2 link-font-size">Header:</h3>
+          <p className="output content-bg">
             <br /> <code>"apiKey"</code>
             <span>:</span>
             <code className="code-yellow"> "abs1nxxxxx"</code>
             <br />
           </p>
 
-          <h3 className=" p-3 link-font-size">Request:</h3>
-          <p className="output">
+          <h3 className="py-2 link-font-size">Request:</h3>
+          <p className="output content-bg">
             <br /> <code>"remitterPhone"</code>
             <span>:</span>
             <code className="code-yellow">"7902626443"</code>

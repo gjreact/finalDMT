@@ -4,6 +4,7 @@ import JavaWrapper from "../../CodeWrapper/JavaWrapper";
 import ShellWrapper from "../../CodeWrapper/ShellWrapper";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
+import RemitterInfoResponse from "./ResponseCode/RemitterInfoResponse";
 
 const copyToClipboard = (id) => {
   var c = document.getElementById(id).innerText;
@@ -74,8 +75,7 @@ export const JavaRemitter = () => {
       </CodeWrapper>
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>java responce</code>
-          {/* <code>code area</code> */}
+          <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -154,8 +154,7 @@ export const PythonRemitter = () => {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>python responce</code>
-          {/* <code>code area</code> */}
+          <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -208,8 +207,7 @@ export const ShellRemitter = () => {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>shell responce</code>
-          {/* <code>code area</code> */}
+          <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -338,8 +336,7 @@ export const PHPRemitter = () => {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>php responce</code>
-          {/* <code>code area</code> */}
+        <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -427,8 +424,7 @@ export const NodeRemitterInfoCode = () => {
       </CodeWrapper>
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>node responce</code>
-          {/* <code>code area</code> */}
+        <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -530,8 +526,7 @@ export const JavascriptRemitterInfoCode = () => {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>js responce</code>
-          {/* <code>code area</code> */}
+        <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -668,8 +663,7 @@ export const SwiftRemitterInfoCode = () => {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>SwiftRemitterInfoCode</code>
-          {/* <code>code area</code> */}
+        <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -805,8 +799,7 @@ export function GonativeRemitterInfo() {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>GO responce</code>
-          {/* <code>code area</code> */}
+        <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </div>
@@ -898,8 +891,7 @@ export function ClibcurlRemitterInfo() {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>C responce</code>
-          {/* <code>code area</code> */}
+        <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -997,8 +989,7 @@ export function CrestsharpRemitterInfo() {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>C# responce</code>
-          {/* <code>code area</code> */}
+        <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -1089,8 +1080,7 @@ export function RubyRemitterInfo() {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>ruby responce</code>
-          {/* <code>code area</code> */}
+        <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>
@@ -1150,8 +1140,7 @@ export function PowerShellRemitterInfo() {
 
       <CodeWrapper heading="Response">
         <div className="response-wrapper">
-          <code>powershell responce</code>
-          {/* <code>code area</code> */}
+        <RemitterInfoResponse />
         </div>
       </CodeWrapper>
     </>

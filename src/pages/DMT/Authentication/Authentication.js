@@ -9,7 +9,7 @@ function Authentication() {
         <Bar />
         <h1 className="mb-0 mt-0 heading">Authentication</h1>
         <Row className="h-100 w-90">
-          <p className="px-4  mb-0 ">
+          <p className="px-4  mb-0 content-bg">
             <p className="authparagraph">
               All API requests must be authenticated with a developer_key in the
               request. Your API keys carry many privileges, so be sure to keep

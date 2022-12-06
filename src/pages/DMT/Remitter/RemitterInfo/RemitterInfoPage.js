@@ -144,7 +144,7 @@ function RemitterInfoPage() {
 
         <Row>
           <h1 className="heading">Remitter</h1>
-          <p>
+          <p className="content-bg">
             With these APIs we can check the Remitter mobile number is already
             registered with our database, if yes then the response system will
             provide remitter details. If the remitter mobile number is not
@@ -153,8 +153,8 @@ function RemitterInfoPage() {
           </p>
 
           <h2 className="mb-0 mt-0 ">Remitter Information</h2>
-          <p className="px-4  mb-5 ">
-            WUsing this API You can use this API to check if the customer has
+          <p className="px-4  mb-5 content-bg">
+            Using this API You can use this API to check if the customer has
             been created on our platform. If not, you must create the customer
             before using Eko related services (like Money Transfer) for him/her.
           </p>
@@ -179,21 +179,21 @@ function RemitterInfoPage() {
             </Table>
 
             <Row>
-              <h3 className="mt-3 link-font-size">URL:</h3>
-              <code className="pb-5 url-link">
+              <h3 className="py-2 link-font-size">URL:</h3>
+              <code className="py-4 url-link">
                 http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify
               </code>
 
-              <h3 className="m-0 link-font-size">Request:</h3>
-              <p className="output    m-0">
+              <h3 className="py-2 link-font-size">Request:</h3>
+              <p className="output content-bg  m-0">
                 <br /> <code>"remitterPhone"</code>
                 <span>:</span>
                 "7902900295"
                 <br />
               </p>
 
-              <h3 className="m-0 link-font-size">Header:</h3>
-              <p className="output ">
+              <h3 className="py-2 link-font-size">Header:</h3>
+              <p className="output content-bg">
                 <br /> <code>"apiKey"</code>
                 <span>:</span>
                 <code className="code-yellow "> "abs1nxxxxx"</code>

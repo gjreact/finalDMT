@@ -136,7 +136,7 @@ const BeneficiaryCreatePage = () => {
       <Col className="col-12 col-sm-7 boder">
         <Row>
           <h1 className="heading mb-0">Beneficiary</h1>
-          <p className="px-4 mb-0 backroundP-tag">
+          <p className="px-4 mb-0 content-bg">
             Beneficiary is the bank account who receives the funds remitted by
             the remitter mobile number.
             <br />A beneficiary is someone to whom one can transfer money or to
@@ -145,7 +145,7 @@ const BeneficiaryCreatePage = () => {
             Create, Delete and Fetch beneficiaries for your customers.
           </p>
           <h2 className="mb-0 mt-0 p-3">Register Beneficiary</h2>
-          <p className="px-4  mb-5">
+          <p className="px-4  mb-5 content-bg">
             Beneficiary need to be registered in the system through the
             remitter's mobile number and bank details.
           </p>
@@ -201,22 +201,22 @@ const BeneficiaryCreatePage = () => {
           </div>
 
           <h3 className=" p-3 link-font-size">URL:</h3>
-          <code className=" pt-5 pb-5 url-link">
+          <code className="py-4 url-link">
             http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary
           </code>
-          <h3 className=" p-3 link-font-size">Method:</h3>
-          <p className="p-3">POST</p>
+          <h3 className="py-2 link-font-size">Method:</h3>
+          <p className="content-bg">POST</p>
 
-          <h3 className=" p-3 link-font-size">Header:</h3>
-          <p className="output ">
+          <h3 className="py-2 link-font-size">Header:</h3>
+          <p className="output content-bg">
             <br /> <code>"apiKey"</code>
             <span>:</span>
             "abs1nxxxxx"
             <br />
           </p>
 
-          <h3 className=" p-3 p-3link-font-size">Request:</h3>
-          <p className="output">
+          <h3 className="py-2 p-3link-font-size">Request:</h3>
+          <p className="output content-bg">
             <br />
             <code>"beneficiaryName"</code> <span>: </span>{" "}
             <code className="code-yellow">"anu",</code>

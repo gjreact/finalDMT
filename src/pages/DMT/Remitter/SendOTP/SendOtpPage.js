@@ -140,7 +140,7 @@ const SendOtpPage = () => {
         <Bar />
         <Row>
           <h2 className="mb-0 mt-0">Remitter Send OTP</h2>
-          <p className="px-4  mb-5">
+          <p className="px-4  mb-5 content-bg">
             As mentioned in Remitter Information API, if a remitter is not found
             registered in the system, then by this API remitter can register
             themselves, by filling below details with OTP. Using this otp Can
@@ -186,21 +186,21 @@ const SendOtpPage = () => {
             </Table>
           </div>
 
-          <h3 className=" p-3 link-font-size">URL:</h3>
-          <code className=" pt-5 pb-5 url-link">
+          <h3 className="py-2 link-font-size">URL:</h3>
+          <code className="py-4 url-link">
             http://194.195.113.218:8090/paymento/remitter-reg/send-otp
           </code>
-          <h3 className="link-font-size">Method:</h3>
-          <p className=" p-3">POST</p>
-          <h3 className=" p-3 link-font-size">Header:</h3>
-          <p className="output ">
+          <h3 className="py-2 link-font-size">Method:</h3>
+          <p className="content-bg">POST</p>
+          <h3 className="py-2 link-font-size">Header:</h3>
+          <p className="output content-bg">
             <br /> <code>"apiKey"</code>
             <span>:</span>
             <code className="code-yellow">"abs1nxxxxx"</code>
             <br />
           </p>
-          <h3 className=" p-3 link-font-size">Request:</h3>
-          <p className="output  ">
+          <h3 className="py-2 link-font-size">Request:</h3>
+          <p className="output content-bg">
             <br /> <code>"remitterPhone"</code>
             <span>:</span>
             <code className="code-cyan">"7902900295"</code>
