@@ -1170,3 +1170,215 @@ export function CrestsharpBeneficiaryRegister() {
     </>
   );
 }
+
+export const RubyRegisterBeneficiary = () => {
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper" id="Ruby">
+          <div>
+            <code className="text-white">require</code>
+            <code className="code-yellow">"uri"</code>
+            <br />
+            <code className="text-white">require</code>
+            <code className="code-yellow">"json"</code>
+            <br />
+            <code className="text-white">require</code>
+            <code className="code-yellow">"net/http"</code>
+            <br />
+            <code className="text-white">url = URI</code>
+            <code className="code-yellow">
+              ("http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary")
+            </code>
+            <br />
+            <code className="text-white">
+              http = Net<code>::</code>HTTP.new(url.host, url.port);
+            </code>
+            <br />
+            <code className="text-white">
+              request = Net<code>::</code>HTTP<code>::</code>Post.new(url)
+            </code>
+            <br />
+
+            <code className="text-white">
+              {" "}
+              request
+              <span className="code-yellow">
+                {" "}
+                ["apikey"]<span className="text-white"> = </span>
+                "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No"
+                <br />
+              </span>
+            </code>
+            <code className="text-white">
+              {" "}
+              request
+              <span className="code-yellow">
+                {" "}
+                ["Authorization"]<span className="text-white"> = </span>"Bearer"
+                <span className="output">
+                  <span className="output">token</span>
+                </span>
+                <br />
+              </span>
+            </code>
+            <br />
+            <code className="text-white">
+              {" "}
+              request
+              <span className="code-yellow">
+                {" "}
+                ["Content-Type"]<span className="text-white"> = </span>
+                "application/json"
+                <br />
+              </span>
+            </code>
+            <br />
+            <code className="text-white">
+              request.body = JSON.dump(
+              <span className="output">
+                <br />
+                <code className="code-yellow">
+                  "beneficiaryName" : "anu",
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "beneficiaryBankId" : 36,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "remitterMobileNumber" : 7902900295,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "beneficiaryMobileNumber" : 790290029,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "accountNumber" : 8865488888,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "address" : "Calicut",
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "ifscCode" : UTIB0002916,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "accountHolderName" : "Venu",
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "branchName" : "Mavoor Road"
+                  <br />
+                </code>
+              </span>
+              )
+            </code>
+            <br />
+            <code className="text-white">response = http.request(request)</code>
+            <br />
+            <code className="text-white">puts response.read_body</code>
+          </div>
+        </div>
+      </CodeWrapper>
+
+      <CodeWrapper heading="Response">
+        <div className="response-wrapper">
+          <div>
+            <code>Ruby response</code>
+          </div>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
+
+export const PowershellRegisterBeneficiary = () => {
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper" id="Powershell">
+          <div>
+            <code className="text-white">$headers = New-Object</code>
+            <code className="code-yellow">
+              "System.collections.Generic.Dictionary[String],[String]"
+            </code>
+            <br />
+            <code className="text-white">$headers.Add</code>
+            <code className="code-yellow">
+              ("apikey", "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No")
+            </code>
+            <br />
+            <code className="text-white">$headers.Add</code>
+            <code className="code-yellow">
+              ("Authorization", "Bearer
+              <span className="output">
+                <span className="output">tokken</span>
+              </span>
+              )
+            </code>
+            <br />
+            <code className="text-white">$headers.Add</code>
+            <code className="code-yellow">
+              ("Content-Type", "application/json")
+            </code>
+            <br />
+            <code className="text-white">
+              $body ={" "}
+              <span className="output code-yellow">
+                <br /> <span className="text-white">'n</span> "beneficiaryName`"
+                : `"anu`",
+                <br />
+                <span className="text-white">'n</span> "beneficiaryBankId`" :
+                36,
+                <br />
+                <span className="text-white">'n</span> "remitterMobileNumber`" :
+                7902900295,
+                <br />
+                <span className="text-white">'n</span>{" "}
+                `n`"beneficiaryMobileNumber`" : 790290029,
+                <br />
+                <span className="text-white">'n</span> "accountNumber`" :
+                8865488888,
+                <br />
+                <span className="text-white">'n</span> "address`" : `"Calicut`",
+                <br />
+                <span className="text-white">'n</span> "ifscCode`" :
+                UTIB0002916,
+                <br />
+                <span className="text-white">'n</span> "accountHolderName`" :
+                `"Venu`",
+                <br />
+                <span className="text-white">'n</span> `n`"branchName`" :
+                `"Mavoor Road`"
+                <br />
+                <code className="text-white">
+                  'n"
+                  <br />
+                </code>
+              </span>
+            </code>
+            <br />
+            <code className="text-white">$response = Invoke-RestMethod</code>
+            <code className="code-yellow">
+              'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary'
+              <span className="text-white">-Method </span>'POST'
+              <span className="text-white">-Headers $headers -Body $body</span>
+            </code>
+            <br />
+            <code className="text-white">$response | ConvertTo-Json</code>
+          </div>
+        </div>
+      </CodeWrapper>
+
+      <CodeWrapper heading="Response">
+        <div className="response-wrapper">
+          <code>Powershell response</code>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};

@@ -860,3 +860,156 @@ export function CrestsharpBeneficiaryDelete() {
     </>
   );
 }
+
+export const RubyDeleteBeneficiary = () => {
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper" id="Ruby">
+          <div>
+            <code className="text-white">require</code>
+            <code className="code-yellow">"uri"</code>
+            <br />
+            <code className="text-white">require</code>
+            <code className="code-yellow">"json"</code>
+            <br />
+            <code className="text-white">require</code>
+            <code className="code-yellow">"net/http"</code>
+            <br />
+            <code className="text-white">url = URI</code>
+            <code className="code-yellow">
+              ("http://194.195.113.218:8090/paymento/remitter-reg/delete-beneficiary")
+            </code>
+            <br />
+            <code className="text-white">
+              http = Net<code>::</code>HTTP.new(url.host, url.port);
+            </code>
+            <br />
+            <code className="text-white">
+              request = Net<code>::</code>HTTP<code>::</code>Post.new(url)
+            </code>
+            <br />
+
+            <code className="text-white">
+              {" "}
+              request
+              <span className="code-yellow">
+                {" "}
+                ["apikey"]<span className="text-white"> = </span>
+                "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No"
+                <br />
+              </span>
+            </code>
+            <code className="text-white">
+              {" "}
+              request
+              <span className="code-yellow">
+                {" "}
+                ["Authorization"]<span className="text-white"> = </span>"Bearer"
+                <span className="output">
+                  <span className="output">token</span>
+                </span>
+                <br />
+              </span>
+            </code>
+            <br />
+            <code className="text-white">
+              {" "}
+              request
+              <span className="code-yellow">
+                {" "}
+                ["Content-Type"]<span className="text-white"> = </span>
+                "application/json"
+                <br />
+              </span>
+            </code>
+            <br />
+            <code className="text-white">
+              request.body = JSON.dump(
+              <span className="output">
+                <br />
+                <code className="code-yellow">
+                  "remitterPhone": "7902626443"
+                  <br />
+                </code>
+              </span>
+              )
+            </code>
+            <br />
+            <code className="text-white">response = http.request(request)</code>
+            <br />
+            <code className="text-white">puts response.read_body</code>
+          </div>
+        </div>
+      </CodeWrapper>
+
+      <CodeWrapper heading="Response">
+        <div className="response-wrapper">
+          <div>
+            <code>Ruby response</code>
+          </div>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
+
+export const PowershellDeleteBeneficiary = () => {
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper" id="Powershell">
+          <div>
+            <code className="text-white">$headers = New-Object</code>
+            <code className="code-yellow">
+              "System.collections.Generic.Dictionary[String],[String]"
+            </code>
+            <br />
+            <code className="text-white">$headers.Add</code>
+            <code className="code-yellow">
+              ("apikey", "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No")
+            </code>
+            <br />
+            <code className="text-white">$headers.Add</code>
+            <code className="code-yellow">
+              ("Authorization", "Bearer
+              <span className="output">
+                <span className="output">tokken</span>
+              </span>
+              )
+            </code>
+            <code className="text-white">$headers.Add</code>
+            <code className="code-yellow">
+              ("Content-Type", "application/json")
+            </code>
+            <br />
+            <code className="text-white">
+              $body ={" "}
+              <span className="output code-yellow">
+                {" "}
+                <span className="text-white">'n</span>{" "}
+                `"remitterPhone`":`"7902626443`"
+                <br />
+                <code className="text-white">'n"</code>
+              </span>
+            </code>
+            <code className="text-white">$response = Invoke-RestMethod</code>
+            <code className="code-yellow">
+              'http://194.195.113.218:8090/paymento/remitter-reg/delete-beneficiary'
+              <span className="text-white">-Method </span>'POST'
+              <span className="text-white">-Headers $headers -Body $body</span>
+            </code>
+            <br />
+            <code className="text-white">$response | ConvertTo-Json</code>
+          </div>
+        </div>
+      </CodeWrapper>
+
+      <CodeWrapper heading="Response">
+        <div className="response-wrapper">
+          <code>Powershell response</code>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
