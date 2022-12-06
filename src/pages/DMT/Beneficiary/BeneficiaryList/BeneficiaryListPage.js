@@ -19,8 +19,8 @@ import C from '../../../../asset/images/C.png';
 import CPlusPlus from '../../../../asset/images/CPlusPlus.png';
 import swift from '../../../../asset/images/swift.jpeg';
 
-import {ListBeneficiaryCode, PHPListBeneficiary, PythonListBeneficiary, ShellListBeneficiary} from "../ResponseBeneficiary/ListBeneficiaryCode";
-import { CreateBeneficiaryCode } from "../ResponseBeneficiary/CreateBeneficiaryCode";
+import {ListBeneficiaryCode, PHPListBeneficiary, PythonListBeneficiary, ShellListBeneficiary} from "../RequestBeneficiary/ListBeneficiaryCode";
+import { CreateBeneficiaryCode } from "../RequestBeneficiary/CreateBeneficiaryCode";
 import Bar from "../../../Bar";
 
 

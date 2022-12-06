@@ -17,7 +17,7 @@ import objectiveC from '../../../../asset/images/objectiveC.png';
 import C from '../../../../asset/images/C.png';
 import CPlusPlus from '../../../../asset/images/CPlusPlus.png';
 import swift from '../../../../asset/images/swift.jpeg';
-import { DeleteBeneficiaryCode, PHPDeleteBeneficiary, PythonDeleteBeneficiary, ShellDeleteBeneficiary } from "../ResponseBeneficiary/DeleteBeneficiaryCode";
+import { DeleteBeneficiaryCode, PHPDeleteBeneficiary, PythonDeleteBeneficiary, ShellDeleteBeneficiary } from "../RequestBeneficiary/DeleteBeneficiaryCode";
 import Bar from "../../../Bar";
 
 const BeneficiaryDeletePage = () => {
@@ -196,10 +196,10 @@ const BeneficiaryDeletePage = () => {
     <Col id="style-1" className="col-12 col-sm-5 link-heading scrollbar pt-5" >
 
 
-      {toggleState === 1 && <DeleteBeneficiaryCode />}
-      {toggleState === 2 && <PythonDeleteBeneficiary />}
-      {toggleState === 3 && <ShellDeleteBeneficiary />}
-      {toggleState === 4 && <PHPDeleteBeneficiary />}
+      {toggleState === 0 && <DeleteBeneficiaryCode />}
+      {toggleState === 1 && <PythonDeleteBeneficiary />}
+      {toggleState === 2 && <ShellDeleteBeneficiary />}
+      {toggleState === 3 && <PHPDeleteBeneficiary />}
       
 
       <div className="lang-btns d-flex justify-content-evenly">

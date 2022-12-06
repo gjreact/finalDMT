@@ -22,7 +22,7 @@ import {
   PHPBeneficiary,
   PythonBeneficiary,
   ShellBeneficiary,
-} from "../ResponseBeneficiary/CreateBeneficiaryCode";
+} from "../RequestBeneficiary/CreateBeneficiaryCode";
 
 const BeneficiaryCreatePage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([

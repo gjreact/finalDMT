@@ -5,6 +5,7 @@ import { AiOutlineCopy } from "react-icons/ai";
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 import JavaWrapper from "../../CodeWrapper/JavaWrapper";
 import ShellWrapper from "../../CodeWrapper/ShellWrapper";
+import ListBeneficiaryResponse from "../ResponseBeneficiary/ListBeneficiaryResponse";
 
 const copyToClipboard = (id) => {
 
@@ -33,12 +34,7 @@ export const ListBeneficiaryCode = () => {
     </div>
   </CodeWrapper>
 
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>java responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <ListBeneficiaryResponse />
 </>
 
 };
@@ -71,12 +67,8 @@ export const PythonListBeneficiary = () => {
 
 
   </CodeWrapper>
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>python responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <ListBeneficiaryResponse />
+
   </>
 }
 
@@ -97,12 +89,8 @@ export const ShellListBeneficiary = () => {
 
   </CodeWrapper>
 
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>Shell responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <ListBeneficiaryResponse />
+
   
   </>
 }
@@ -145,12 +133,8 @@ export const PHPListBeneficiary = () => {
     </div>
   </CodeWrapper>
   
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>PHP responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <ListBeneficiaryResponse />
+
   </>
 }
 
@@ -185,12 +169,8 @@ export const NodeListBeneficiary= () => {
 
   </CodeWrapper>
   
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>Node responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <ListBeneficiaryResponse />
+
   
    </>
 };
@@ -225,12 +205,8 @@ export const JavascriptListBeneficiary = () => {
 
      </CodeWrapper>
 
-     <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>JS responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+     <ListBeneficiaryResponse />
+
   </>
 }
 
@@ -276,12 +252,8 @@ export const SwiftListBeneficiary = () => {
 
      </CodeWrapper>
 
-     <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>Swift responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+     <ListBeneficiaryResponse />
+
 </>
 }
 
@@ -319,12 +291,8 @@ export function CrestsharpBeneficiaryList(){
  </div>
  </CodeWrapper>
 
- <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>C# responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+ <ListBeneficiaryResponse />
+
     </>
   )
 }
@@ -391,12 +359,8 @@ export function GonativeBeneficiaryList(){
   </div>
  </CodeWrapper>
 
- <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>GO responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+ <ListBeneficiaryResponse />
+
 
 
     </>
@@ -432,12 +396,8 @@ export function ClibcurlBeneficiaryList(){
    </div>
  </CodeWrapper>
 
- <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>C responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+ <ListBeneficiaryResponse />
+
     </>
   )
 }

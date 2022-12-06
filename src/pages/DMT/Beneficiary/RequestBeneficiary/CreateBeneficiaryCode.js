@@ -7,6 +7,7 @@ import { AiOutlineCopy } from "react-icons/ai";
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 import JavaWrapper from "../../CodeWrapper/JavaWrapper";
 import ShellWrapper from "../../CodeWrapper/ShellWrapper";
+import CreateBeneficiaryResponse from "../ResponseBeneficiary/CreateBeneficiaryResponse";
 
 const copyToClipboard = (id) => {
 
@@ -40,12 +41,7 @@ export const CreateBeneficiaryCode = () => {
 
    </CodeWrapper>
    
-    <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>java responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+   <CreateBeneficiaryResponse />
    
     </>
 };
@@ -87,12 +83,7 @@ export const PythonBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>Python Beneficiarye </code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+      <CreateBeneficiaryResponse />
    </>
 }
 
@@ -119,12 +110,7 @@ export const ShellBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>Shell Beneficiarye </code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+      <CreateBeneficiaryResponse />
    </>
 }
 
@@ -171,12 +157,7 @@ export const PHPBeneficiary = () => {
          </div>
          </CodeWrapper>
 
-         <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>php Beneficiarye </code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+         <CreateBeneficiaryResponse />
 
       
             </>
@@ -220,12 +201,7 @@ export const NodeRegisterBeneficiary= () => {
 
    </CodeWrapper>
    
-   <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>node Beneficiarye </code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+   <CreateBeneficiaryResponse />
    
     </>
 };
@@ -268,12 +244,7 @@ export const JavascriptRegisterBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>js Beneficiarye </code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+      <CreateBeneficiaryResponse />
    </>
 }
 
@@ -319,12 +290,7 @@ export const SwiftRegisterBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>swift Beneficiarye </code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+      <CreateBeneficiaryResponse />
    </>
 }
 
@@ -414,12 +380,7 @@ export function GonativeBeneficiaryRegister(){
    </code>
    </div>
   </CodeWrapper>
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>GO Beneficiarye </code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <CreateBeneficiaryResponse />
      </>
    )
  }
@@ -454,12 +415,7 @@ export function GonativeBeneficiaryRegister(){
     </div>
   </CodeWrapper>
 
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>C Beneficiarye </code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <CreateBeneficiaryResponse />
      </>
    )
  }
@@ -530,13 +486,8 @@ export function GonativeBeneficiaryRegister(){
   </div>
   </CodeWrapper>
 
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>C# Beneficiarye </code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
-
+  
+  <CreateBeneficiaryResponse />
   </>
  
    )

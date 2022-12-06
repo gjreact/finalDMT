@@ -5,6 +5,7 @@ import {  AiOutlineCopy } from "react-icons/ai";
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 import JavaWrapper from "../../CodeWrapper/JavaWrapper";
 import ShellWrapper from "../../CodeWrapper/ShellWrapper";
+import DeleteBeneficiaryResponse from "../ResponseBeneficiary/DeleteBeneficiaryResponse";
 
 const copyToClipboard = (id) => {
 
@@ -29,12 +30,7 @@ export const DeleteBeneficiaryCode = () => {
    </div>
    </CodeWrapper>
 
-   <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>java responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+   <DeleteBeneficiaryResponse />
 </>
    };
 
@@ -70,12 +66,7 @@ export const PythonDeleteBeneficiary = () =>{
    
     </CodeWrapper>
 
-    <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>Python responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+    <DeleteBeneficiaryResponse />
      </>
     }
 
@@ -94,12 +85,7 @@ export const ShellDeleteBeneficiary = () =>{
  
             </CodeWrapper>
 
-            <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>Shell responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+            <DeleteBeneficiaryResponse />
             </>
     }
 
@@ -139,12 +125,7 @@ export const PHPDeleteBeneficiary = () =>{
           </div>
           </CodeWrapper>
 
-           <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>php responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+          <DeleteBeneficiaryResponse />
            </>
   } 
 
@@ -179,12 +160,7 @@ export const PHPDeleteBeneficiary = () =>{
 
    </CodeWrapper>
    
-   <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>node responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+   <DeleteBeneficiaryResponse />
    
     </>
 };
@@ -220,12 +196,7 @@ export const JavascriptDeleteBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>JS responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+      <DeleteBeneficiaryResponse />
    </>
 }
 
@@ -271,12 +242,7 @@ export const SwiftDeleteBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>Swift responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+      <DeleteBeneficiaryResponse />
    </>
 }
 
@@ -310,12 +276,7 @@ export function ClibcurlBeneficiaryDelete(){
     </div>
   </CodeWrapper>
 
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>C responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <DeleteBeneficiaryResponse />
      </>
    )
  }
@@ -385,12 +346,7 @@ export function ClibcurlBeneficiaryDelete(){
    </div>
   </CodeWrapper>
 
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>GO responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <DeleteBeneficiaryResponse />
      </>
    )
  }
@@ -422,12 +378,7 @@ export function ClibcurlBeneficiaryDelete(){
  </div>
   </CodeWrapper> 
 
-  <CodeWrapper heading="Response">
-        <div className="response-wrapper">
-          <code>C# responce</code>
-          {/* <code>code area</code> */}
-        </div>
-      </CodeWrapper>
+  <DeleteBeneficiaryResponse />
  </>
    )
  }

@@ -1,23 +1,24 @@
-import React,{useState} from "react";
-import { Col, Container, NavLink,Dropdown, Row, Table } from "react-bootstrap";
-import '../../../../asset/css/basiclayout.css'
+import React, { useState } from "react";
+import { Col, Container, NavLink, Dropdown, Row, Table } from "react-bootstrap";
+import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
-import Go from '../../../../asset/images/Go.png';
-import java from '../../../../asset/images/java.png';
-import python from '../../../../asset/images/python.png';
-import php from '../../../../asset/images/php.png';
-import node from '../../../../asset/images/node.png';
-import powershell from '../../../../asset/images/powershell.svg';
-import csharp from '../../../../asset/images/csharp.png';
-import http from '../../../../asset/images/http.png';
-import js from '../../../../asset/images/js.png';
-import kotlin from '../../../../asset/images/kotlin.jpeg';
-import ruby from '../../../../asset/images/ruby.png';
-import objectiveC from '../../../../asset/images/objectiveC.png';
-import C from '../../../../asset/images/C.png';
-import CPlusPlus from '../../../../asset/images/CPlusPlus.png';
-import swift from '../../../../asset/images/swift.jpeg';
-import { JavaRemitter,
+import Go from "../../../../asset/images/Go.png";
+import java from "../../../../asset/images/java.png";
+import python from "../../../../asset/images/python.png";
+import php from "../../../../asset/images/php.png";
+import node from "../../../../asset/images/node.png";
+import powershell from "../../../../asset/images/powershell.svg";
+import csharp from "../../../../asset/images/csharp.png";
+import http from "../../../../asset/images/http.png";
+import js from "../../../../asset/images/js.png";
+import kotlin from "../../../../asset/images/kotlin.jpeg";
+import ruby from "../../../../asset/images/ruby.png";
+import objectiveC from "../../../../asset/images/objectiveC.png";
+import C from "../../../../asset/images/C.png";
+import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
+import swift from "../../../../asset/images/swift.jpeg";
+import {
+  JavaRemitter,
   PythonRemitter,
   ShellRemitter,
   PHPRemitter,
@@ -29,90 +30,87 @@ import { JavaRemitter,
   CrestsharpRemitterInfo,
   RubyRemitterInfo,
   PowerShellRemitterInfo,
-
-  } from "../ResponseCodeRemitter/RemitterInfoCode";
-  import Bar from "../../../Bar";
-
+} from "../ResponseCodeRemitter/RemitterInfoCode";
+import Bar from "../../../Bar";
 
 function RemitterInfoPage() {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
-      {
-      id:0,
+    {
+      id: 0,
       icon: java,
       text: "java",
     },
     {
-      id:1,
+      id: 1,
       icon: python,
       text: "python",
     },
     {
-      id:2,
+      id: 2,
       icon: shell,
       text: "shell",
     },
     {
-      id:3,
+      id: 3,
       icon: php,
       text: "php",
-    }
+    },
   ]);
   const dummyArray = [];
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
-      id:4,
+      id: 4,
       icon: node,
       text: "Node JS",
     },
     {
-      id:5,
+      id: 5,
       icon: powershell,
       text: "Powershell",
     },
     {
-      id:6,
+      id: 6,
       icon: csharp,
       text: "Csharp",
     },
     {
-      id:7,
+      id: 7,
       icon: js,
       text: "Javascript",
     },
     {
-      id:8,
+      id: 8,
       icon: C,
       text: "C",
     },
     {
-      id:9,
+      id: 9,
       icon: swift,
       text: "Swift",
     },
     {
-      id:10,
+      id: 10,
       icon: Go,
       text: "Go",
     },
     {
-      id:11,
+      id: 11,
       icon: ruby,
       text: "ruby",
-    }
+    },
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (id) => {
-    console.log(id)
+    console.log(id);
     setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
-
-    toggleTab(icon.id)
+    toggleTab(icon.id);
     dummyArray[0] = icon;
 
     setVerticalIconArray([
@@ -156,19 +154,18 @@ function RemitterInfoPage() {
 
           <h2 className="mb-0 mt-0 ">Remitter Information</h2>
           <p className="px-4  mb-5 ">
-            WUsing this API You can use this API to check if the
-            customer has been created on our platform. If not, you must
-            create the customer before using Eko related services (like
-            Money Transfer) for him/her.
+            WUsing this API You can use this API to check if the customer has
+            been created on our platform. If not, you must create the customer
+            before using Eko related services (like Money Transfer) for him/her.
           </p>
           <div className="m">
             <Table striped bordered hover responsive>
-              <thead >
+              <thead>
                 <tr>
-                  <th  >Sl.no</th>
-                  <th >HTTP Response Code</th>
-                  <th >Response Code</th>
-                  <th >Message</th>
+                  <th>Sl.no</th>
+                  <th>HTTP Response Code</th>
+                  <th>Response Code</th>
+                  <th>Message</th>
                 </tr>
               </thead>
               <tbody>
@@ -178,7 +175,6 @@ function RemitterInfoPage() {
                   <td>501</td>
                   <td>Remitter Doesn't exist</td>
                 </tr>
-
               </tbody>
             </Table>
 
@@ -188,50 +184,45 @@ function RemitterInfoPage() {
                 http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify
               </code>
 
-
               <h3 className="m-0 link-font-size">Request:</h3>
-              <p className="output    m-0" ><br /> <code>"remitterPhone"</code>
-                <span>
-                  :
-                </span>
-                "7902900295"<br />
+              <p className="output    m-0">
+                <br /> <code>"remitterPhone"</code>
+                <span>:</span>
+                "7902900295"
+                <br />
               </p>
 
-
               <h3 className="m-0 link-font-size">Header:</h3>
-              <p className="output " ><br /> <code>"apiKey"</code>
-                <span>
-                  :
-                </span>
-                <code className="code-yellow "> "abs1nxxxxx"</code><br />
+              <p className="output ">
+                <br /> <code>"apiKey"</code>
+                <span>:</span>
+                <code className="code-yellow "> "abs1nxxxxx"</code>
+                <br />
               </p>
             </Row>
           </div>
-
-
         </Row>
-
       </Col>
 
-      <Col id="style-1" className="col-12 col-sm-5 link-heading scrollbar pt-5 " >
+      <Col
+        id="style-1"
+        className="col-12 col-sm-5 link-heading scrollbar pt-5 "
+      >
+        {toggleState === 0 && <JavaRemitter />}
+        {toggleState === 1 && <PythonRemitter />}
+        {toggleState === 2 && <ShellRemitter />}
+        {toggleState === 3 && <PHPRemitter />}
+        {toggleState === 4 && <NodeRemitterInfoCode />}
+        {toggleState === 5 && <JavascriptRemitterInfoCode />}
+        {toggleState === 6 && <SwiftRemitterInfoCode />}
+        {toggleState === 7 && <GonativeRemitterInfo />}
+        {toggleState === 8 && <ClibcurlRemitterInfo />}
+        {toggleState === 9 && <CrestsharpRemitterInfo />}
+        {toggleState === 10 && <RubyRemitterInfo />}
+        {toggleState === 11 && <PowerShellRemitterInfo />}
 
-      
-      {toggleState === 0 && <JavaRemitter />}
-      {toggleState === 1 && <PythonRemitter />}
-      {toggleState === 2 && <ShellRemitter />}
-      {toggleState === 3 && <PHPRemitter />}
-      {toggleState === 4 && <NodeRemitterInfoCode />}
-      {toggleState === 5 && <JavascriptRemitterInfoCode />}
-      {toggleState === 6 && <SwiftRemitterInfoCode />}
-      {toggleState === 7 && <GonativeRemitterInfo />}
-      {toggleState === 8 && <ClibcurlRemitterInfo />}
-      {toggleState === 9 && <CrestsharpRemitterInfo />}
-      {toggleState === 10 && <RubyRemitterInfo />}
-      {toggleState === 11 && <PowerShellRemitterInfo />}
-      
-
-      <div className="lang-btns d-flex justify-content-evenly">
-      {horizontalIconArray.map((iconName,id, index) => {
+        <div className="lang-btns d-flex justify-content-evenly">
+          {horizontalIconArray.map((iconName, id, index) => {
             return (
               <button
                 style={{
@@ -241,7 +232,7 @@ function RemitterInfoPage() {
                 }}
                 id={iconName.icon}
                 key={id}
-                onClick={() => toggleTab(id)} 
+                onClick={() => toggleTab(id)}
                 className="togglebuttton"
               >
                 <img src={iconName.icon} height="20" width="20" />
@@ -249,18 +240,19 @@ function RemitterInfoPage() {
             );
           })}
 
-{/* =========================== */}
-        <Dropdown>
-          <Dropdown.Toggle variant="light" id="dropdown-basic">
+          {/* =========================== */}
+          <Dropdown>
+            <Dropdown.Toggle
+              variant="light"
+              id="dropdown-basic"
+            ></Dropdown.Toggle>
 
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-          {verticalIconArray.map(({ icon, text,id }, index) => {
+            <Dropdown.Menu>
+              {verticalIconArray.map(({ icon, text, id }, index) => {
                 // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text,id}, index)}
+                    onClick={() => pushItem({ icon, text, id }, index)}
                     key={id}
                   >
                     <img src={icon} height="20" width="20" />
@@ -268,24 +260,14 @@ function RemitterInfoPage() {
                   </Dropdown.Item>
                 );
               })}
-              </Dropdown.Menu>
-        </Dropdown>
+            </Dropdown.Menu>
+          </Dropdown>
 
-{/* =========================== */}
-
-
-
-</div>
-
-
+          {/* =========================== */}
+        </div>
       </Col>
 
-
       {/* Remitter Information  ends...*/}
-
-
-
-
     </>
   );
 }
