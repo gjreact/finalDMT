@@ -3,7 +3,6 @@ import React from 'react';
 function RemitterInfoResponse({response}) {
   return (
     <>
-
         {response === 1 ? (
         <>
           <h6 className="text-secondary ">If Remitter Exist : </h6>
