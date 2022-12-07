@@ -45,7 +45,7 @@ function RemitterSendOtpResponse({response}) {
         </>
       ) : response === 2 ? (
         <>
-          <h5 className="text-white">UNKNOWN RESPONSE </h5>
+        <h5 className="text-white">UNKNOWN RESPONSE </h5>
           <span className="output  text-white ">
             <br /> <code>"status"</code> <span>: </span>
             <code className="code-cyan">"404"</code>

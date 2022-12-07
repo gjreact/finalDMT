@@ -4,6 +4,7 @@ import JavaWrapper from "../../../CodeWrapper/JavaWrapper";
 import ShellWrapper from "../../../CodeWrapper//ShellWrapper";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
+import RemitterSendOtpResponse from '../ResponseCode/RemitterSendOtpResponse'
 
 const copyToClipboard = (id) => {
 
@@ -35,71 +36,17 @@ export const JavaSendOtp = () => {
 
    </CodeWrapper>
 
-   <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
-
-         <div className="response-wrapper">
-            {response===1?
-            (<>
-             <h5 className="text-white">SUCCESS </h5>
-               <span className="output text-white">
-                <br /> <code>"status" </code>
-                <span>: </span> <code className="code-cyan">"201"</code>
-                <br /> <code>"success"</code> <span>: </span>
-                <code className="code-cyan">"true"</code>
-                <br /> <code>"message"</code> <span>: </span>
-                <code>"OTP send successfully"</code>
-                <br /> <code>"responseCode"</code> <span>: </span>
-                <code className="code-cyan">"0"</code>
-                <br /> <code>"data"</code><br/>
-                <span className="output-two text-white"><br/>
-                  <span />
-                  <code>"remitterId"</code> <span>: </span>
-                  <code className="code-cyan">15</code>
-                  <br />
-                  <code>"otpRefferenceId"</code> <span>: </span>
-                  <code className="code-yellow">"2NEBGNVgCJ92agZg"</code>
-                  <br />
-                  <code>"mobile"</code> <span>: </span>
-                  <code className="code-cyan">"7902666443"</code>
-                  <br />
-                  <code>"name"</code> <span>: </span>
-                  <code className="code-yellow">"Anju"</code>
-                  <br />
-                  <code>"userId"</code> <span>: </span>
-                  <code className="code-cyan">3</code>
-                  <br />
-                  <code>"remitterType"</code> <span>: </span>
-                  <code className="code-cyan">3</code>
-                  <br />
-                </span><br/>
-                </span>
-            </>):response===2?(
-            <>
-             <h5 className="text-white">UNKNOWN RESPONSE </h5>
-              <span className="output  text-white ">
-                <br /> <code>"status"</code> <span>: </span>
-                <code className="code-cyan">"404"</code>
-                <br /> <code>"success"</code> <span>: </span>
-                <code className="code-cyan">"false"</code>
-                <br /> <code>"message"</code> <span>: </span>
-                <code className="code-yellow">" "</code>
-                <br /> <code>"responseCode"</code> <span>: </span>
-                <code className="code-yellow">" "</code>
-                <br />
-              </span>
-            </>
-            ):<>
-              <h6>Please choose responce code</h6>
-            </>
-            }
-   
-         </div>
-      </CodeWrapper>
+    <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <RemitterSendOtpResponse response={response}/>
+        </div>
+    </CodeWrapper>
 
    </>
 };
 
 export const PythonSendOtp = () => {
+  const [response , setResponse]=useState(0)
    return <>
       <CodeWrapper heading="Request">
 
@@ -135,16 +82,16 @@ export const PythonSendOtp = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>python responce</code>
-          {/* <code>code area</code> */}
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
    </>
 }
 
 export const ShellSendOtp = () => {
+  const [response , setResponse]=useState(0)
    return <>
       <CodeWrapper heading="Request">
          <div className="request-wrapper" id="shell">
@@ -164,16 +111,16 @@ export const ShellSendOtp = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>shell responce</code>
-          {/* <code>code area</code> */}
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
    </>
 }
 
 export const PHPSendOtp = () => {
+  const [response , setResponse]=useState(0)
    return <>
       <CodeWrapper heading="Request">
 
@@ -213,18 +160,18 @@ export const PHPSendOtp = () => {
   
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>php responce</code>
-          {/* <code>code area</code> */}
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
 
 
    </>
 }
 
 export const NodeSendOtpCode= () => {
+  const [response , setResponse]=useState(0)
    return <> <CodeWrapper heading="Request">
 
       <div className="request-wrapper" id="node" >
@@ -256,17 +203,17 @@ export const NodeSendOtpCode= () => {
 
    </CodeWrapper>
    
-   <CodeWrapper heading="Response">
+   <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>node responce</code>
-          {/* <code>code area</code> */}
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
    
     </>
 };
 
 export const JavascriptSendOtpCode = () => {
+  const [response , setResponse]=useState(0)
    return <>
       <CodeWrapper heading="Request">
 
@@ -297,16 +244,16 @@ export const JavascriptSendOtpCode = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>js responce</code>
-          {/* <code>code area</code> */}
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
    </>
 }
 
 export const SwiftSendOtpCode = () => {
+  const [response , setResponse]=useState(0)
    return <>
       <CodeWrapper heading="Request">
          <div className="request-wrapper" id="swift">
@@ -348,16 +295,16 @@ export const SwiftSendOtpCode = () => {
 
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>swift responce</code>
-          {/* <code>code area</code> */}
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
    </>
 }
 
 export function CrestsharpSendOtp(){
+  const [response , setResponse]=useState(0)
    return(
      <>
     
@@ -393,18 +340,18 @@ export function CrestsharpSendOtp(){
  </div>
  </CodeWrapper>
 
- <CodeWrapper heading="Response">
+ <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>C# responce</code>
-          {/* <code>code area</code> */}
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
    
      </>
    )
  }
 
  export function GonativeSendOtp(){
+  const [response , setResponse]=useState(0)
    return(
      <>
        <CodeWrapper heading="Request">
@@ -469,18 +416,18 @@ export function CrestsharpSendOtp(){
    </div>
    </CodeWrapper>
 
-   <CodeWrapper heading="Response">
+   <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>GO responce</code>
-          {/* <code>code area</code> */}
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
   
      </>
    )
  }
 
  export function ClibcurlSendOtp(){
+  const [response , setResponse]=useState(0)
    return(
      <>
     <CodeWrapper heading="Request">
@@ -510,18 +457,18 @@ export function CrestsharpSendOtp(){
     </div>
  </CodeWrapper>
 
- <CodeWrapper heading="Response">
+ <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>C responce</code>
-          {/* <code>code area</code> */}
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
      </>
    )
  }
 
 
  export const RubySendOtpCode = () => {
+  const [response , setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -605,18 +552,17 @@ export function CrestsharpSendOtp(){
       
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <div>
-            <code>Ruby response</code>
-          </div>
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
     </>
   );
 };
 
 export const PowershellSendOtpCode = () => {
+  const [response , setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -672,11 +618,11 @@ export const PowershellSendOtpCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Powershell response</code>
+          <RemitterSendOtpResponse response={response}/>
         </div>
-      </CodeWrapper>
+    </CodeWrapper>
     </>
   );
 };
