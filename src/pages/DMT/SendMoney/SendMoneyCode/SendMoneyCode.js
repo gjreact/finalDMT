@@ -78,7 +78,7 @@ export const JavaSendMoney = () => {
         </code>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -135,7 +135,7 @@ export const PythonSendMoney = () => {
         </code>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -189,7 +189,7 @@ export const ShellSendMoney = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -283,7 +283,7 @@ export const PHPSendMoney = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -378,7 +378,7 @@ export const NodeSendMoney = () => {
           </code>
         </div>
       </CodeWrapper>
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -485,7 +485,7 @@ export const JavascriptSendMoney = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -624,7 +624,7 @@ export const SwiftSendMoney = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -718,7 +718,7 @@ export function ClibcurlSendMoney() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -881,7 +881,7 @@ export function GonativeSendMoney() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -1025,7 +1025,7 @@ export function CrestsharpSendMoney() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -1121,7 +1121,7 @@ export const RubySendMoneyCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
@@ -1189,7 +1189,7 @@ export const PowershellSendMoneyCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+      <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
         <div className="response-wrapper">
           <SendMoneyResponse response={response} />
         </div>
