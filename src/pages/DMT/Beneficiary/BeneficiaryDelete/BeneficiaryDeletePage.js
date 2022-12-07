@@ -210,7 +210,7 @@ const BeneficiaryDeletePage = () => {
                 className="togglebuttton"
                 id={iconName.icon}
                 key={index}
-                onClick={() => toggleTab(index)}
+                onClick={() => toggleTab(iconName.id)}
               >
                 <img
                   src={iconName.icon}
