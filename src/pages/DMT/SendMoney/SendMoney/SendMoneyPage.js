@@ -251,62 +251,6 @@ const SendMoneyPage = () => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-
-        {/* <Row className="link-heading">
-                 
-
-
-                  <h3 className="text-white link-section p-3">Response:</h3>
-                  <h5 className="text-white link-heading">Success Response : </h5>
-                   <p className="output link-heading text-white " >
-                    <br/> <code>"status"</code> <span>: </span> <code className="code-cyan">"200"</code>
-                    <br/> <code>"success"</code> <span>: </span> <code className="code-cyan">"true"</code>
-                    <br/> <code>"message"</code> <span>: </span> <code className="code-yellow">"Sendmoney Success"</code>
-                    <br/> <code>"responseCode"</code> <span>: </span> <code className="code-cyan">1</code>
-                    <br/> <code>"data"</code> 
-                    <p className="output-two link-heading text-white">
-                       <br/><code>"statusCode"</code> <span>: </span> <code className="code-yellow">0</code>
-                       <br/><code>"transactionId"</code> <span>: </span> <code className="code-yellow">"I22313011897"</code>
-                       <br/><code>"amount"</code> <span>: </span> <code className="code-yellow">200.0</code>
-                       <br/><code>"utrNumber"</code> <span>: </span> <code className="code-yellow">"927019161118"</code><br/>
-                       
-                    </p>
-                   
-                   </p>
-                  <h5 className="text-white link-heading p-3">Send money failed response: </h5>
-                   <p className="output link-heading text-white " >
-                    <br/> <code>"status"</code> <span>: </span> <code className="code-cyan">"400"</code>
-                    <br/> <code>"success"</code> <span>: </span><code className="code-cyan"> "false"</code>
-                    <br/> <code>"message"</code> <span>: </span> <code className="code-yellow">"Sendmoney Failed"</code>
-                    <br/> <code>"responseCode"</code> <span>: </span><code className="code-cyan"> 0</code>
-                    <br/> <code>"data"</code> 
-                    <p className="output-two link-heading text-white">
-                       <br/><code>"statusCode"</code> <span>: </span> <code className="code-yellow">0</code>
-                       <br/><code>"transactionId"</code> <span>: </span> <code className="code-yellow">"I22313011919"</code>
-                       <br/><code>"amount"</code> <span>: </span> <code className="code-yellow">200.0</code>
-                       <br/><code>"utrNumber" </code><span>: </span> <code className="code-yellow">"927019161118"</code>
-                       
-                    </p>
-
-                   
-                   </p>
-                  <h5 className="text-white link-heading p-3">Send money processing response: </h5>
-                   <p className="output link-heading text-white " >
-                    <br/> <code>"status"</code> <span>: </span> <code className="code-cyan">"201"</code>
-                    <br/> <code>"success"</code> <span>: </span> <code className="code-cyan">"true"</code>
-                    <br/> <code>"message"</code> <span>: </span> <code className="code-yellow">"Sendmoney processing"</code>
-                    <br/> <code>"responseCode"</code> <span>: </span> <code className="code-cyan">2</code>
-                    <br/> <code>"data"</code> 
-                    <p className="output-two link-heading text-white">
-                       <br/><code>"statusCode"</code> <span>: </span> <code className="code-cyan">0</code>
-                       <br/><code>"transactionId"</code> <span>: </span> <code className="code-cyan">"I22313011920"</code>
-                       <br/><code>"amount"</code> <span>: </span> <code className="code-cyan">200.0</code>
-                       <br/><code>"utrNumber"</code> <span>: </span> <code className="code-cyan">"927019161118"</code><br/>
-                       
-                    </p>
-                   
-                   </p>
-                </Row> */}
       </Col>
 
       {/* Beneficiary create page  ends...*/}
