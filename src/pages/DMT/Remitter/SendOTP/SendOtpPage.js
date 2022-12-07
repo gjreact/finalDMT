@@ -50,50 +50,42 @@ const SendOtpPage = () => {
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
+      id: 4,
       icon: node,
       text: "Node JS",
     },
     {
+      id: 5,
       icon: powershell,
       text: "Powershell",
     },
     {
+      id: 6,
       icon: csharp,
       text: "Csharp",
     },
     {
-      icon: http,
-      text: "HTTP",
-    },
-    {
+      id: 7,
       icon: js,
       text: "Javascript",
     },
     {
-      icon: kotlin,
-      text: "Kotlin",
-    },
-    {
-      icon: objectiveC,
-      text: "ObjectiveC",
-    },
-    {
+      id: 8,
       icon: C,
       text: "C",
     },
     {
-      icon: CPlusPlus,
-      text: "C++",
-    },
-    {
+      id: 9,
       icon: swift,
       text: "Swift",
     },
     {
+      id: 10,
       icon: Go,
       text: "Go",
     },
     {
+      id: 11,
       icon: ruby,
       text: "ruby",
     },
@@ -225,16 +217,12 @@ const SendOtpPage = () => {
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
+                className="togglebuttton"
                 id={iconName.icon}
                 key={index}
                 onClick={() => toggleTab(index)}
               >
-                <img src={iconName.icon} height="20" width="20" />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  />
               </button>
             );
           })}

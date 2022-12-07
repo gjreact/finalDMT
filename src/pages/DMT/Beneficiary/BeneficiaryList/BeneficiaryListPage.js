@@ -128,11 +128,7 @@ const BeneficiaryListPage = () => {
 
         <div className="lang-btns d-flex justify-content-evenly">
           <button
-            style={{
-              outline: "none",
-              border: "none",
-              background: "transparent",
-            }}
+            className="togglebuttton"
             id="java"
             onClick={() => toggleTab(1)}
           >
@@ -147,7 +143,7 @@ const BeneficiaryListPage = () => {
             id="python"
             onClick={() => toggleTab(2)}
           >
-            <img src={python} height="20" width="20" />
+            <img src={python} height="20" width="20" className="togglebutttonimg"  />
           </button>
           <button
             style={{
