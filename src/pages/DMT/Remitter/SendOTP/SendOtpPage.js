@@ -19,29 +19,40 @@ import objectiveC from "../../../../asset/images/objectiveC.png";
 import C from "../../../../asset/images/C.png";
 import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import {
-  JavaSendOtp,
-  PythonSendOtp,
-  ShellSendOtp,
-  PHPSendOtp,
-} from "../ResponseCodeRemitter/SendOtpCode";
 import Bar from "../../../Bar";
+import { ClibcurlSendOtp, 
+        CrestsharpSendOtp,
+        GonativeSendOtp, 
+        JavascriptSendOtpCode, 
+        JavaSendOtp, 
+        NodeSendOtpCode, 
+        PHPSendOtp, 
+        PowershellSendOtpCode, 
+        PythonSendOtp, 
+        RubySendOtpCode, 
+        ShellSendOtp, 
+        SwiftSendOtpCode } from "../ResponseCodeRemitter/RequestCode/SendOtpCode"
+
 
 const SendOtpPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
+      id: 0,
       icon: java,
       text: "java",
     },
     {
+      id: 1,
       icon: python,
       text: "python",
     },
     {
+      id: 2,
       icon: shell,
       text: "shell",
     },
     {
+      id: 3,
       icon: php,
       text: "php",
     },
@@ -94,11 +105,13 @@ const SendOtpPage = () => {
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const toggleTab = (id) => {
+    console.log(id);
+    setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
+    toggleTab(icon.id);
     dummyArray[0] = icon;
 
     setVerticalIconArray([
@@ -212,6 +225,15 @@ const SendOtpPage = () => {
         {toggleState === 1 && <PythonSendOtp />}
         {toggleState === 2 && <ShellSendOtp />}
         {toggleState === 3 && <PHPSendOtp />}
+        {toggleState === 4 && <NodeSendOtpCode />}
+        {toggleState === 5 && <PowershellSendOtpCode />}
+        {toggleState === 6 && <CrestsharpSendOtp />}
+        {toggleState === 7 && <JavascriptSendOtpCode />}
+        {toggleState === 8 && <ClibcurlSendOtp />}
+        {toggleState === 9 && <SwiftSendOtpCode />}
+        {toggleState === 10 && <GonativeSendOtp />}
+        {toggleState === 11 && <RubySendOtpCode/>}
+
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
@@ -234,11 +256,11 @@ const SendOtpPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text }, index) => {
+              {verticalIconArray.map(({ icon, text,id }, index) => {
                 // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text }, index)}
+                    onClick={() => pushItem({ icon, text,id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
@@ -15,6 +15,7 @@ const copyToClipboard = (id) => {
 };
 
 export const CreateBeneficiaryCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -76,12 +77,19 @@ export const CreateBeneficiaryCode = () => {
           </code>
         </div>
       </CodeWrapper>
-      <CreateBeneficiaryResponse />
+
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+      
     </>
   );
 };
 
 export const PythonBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -151,12 +159,17 @@ export const PythonBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const ShellBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -200,12 +213,17 @@ export const ShellBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const PHPBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -325,12 +343,17 @@ export const PHPBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const NodeRegisterBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -426,12 +449,17 @@ export const NodeRegisterBeneficiary = () => {
           </code>
         </div>
       </CodeWrapper>
-      <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const JavascriptRegisterBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -538,12 +566,17 @@ export const JavascriptRegisterBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const SwiftRegisterBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -670,12 +703,17 @@ export const SwiftRegisterBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export function GonativeBeneficiaryRegister() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -864,12 +902,17 @@ export function GonativeBeneficiaryRegister() {
           </code>
         </div>
       </CodeWrapper>
-      <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 }
 
 export function ClibcurlBeneficiaryRegister() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -959,12 +1002,17 @@ export function ClibcurlBeneficiaryRegister() {
         </div>
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 }
 
 export function CrestsharpBeneficiaryRegister() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1166,12 +1214,17 @@ export function CrestsharpBeneficiaryRegister() {
         </div>
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 }
 
 export const RubyRegisterBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1285,11 +1338,9 @@ export const RubyRegisterBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <div>
-            <code>Ruby response</code>
-          </div>
+          <CreateBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -1297,6 +1348,7 @@ export const RubyRegisterBeneficiary = () => {
 };
 
 export const PowershellRegisterBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1374,9 +1426,9 @@ export const PowershellRegisterBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Powershell response</code>
+          <CreateBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
     </>

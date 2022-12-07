@@ -24,24 +24,37 @@ import {
   PythonRemitterBalance,
   ShellRemitterBalance,
   PHPRemitterBalance,
-} from "../ResponseCodeRemitter/RemitterBalanceCode";
+  NodeRemitterBalanceCode,
+  JavascriptRemitterBalanceCode,
+  SwiftRemitterBalanceCode,
+  ClibcurlRemitterinfo,
+  CrestsharpRemitterBalance,
+  GonativeRemitterBalance,
+  RubyRemitterBalanceCode,
+  PowershellRemitterBalanceCode,
+  
+} from "../ResponseCodeRemitter/RequestCode/RemitterBalanceCode";
 import Bar from "../../../Bar";
 
 const RemitterBalancePage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
+      id: 0,
       icon: java,
       text: "java",
     },
     {
+      id: 1,
       icon: python,
       text: "python",
     },
     {
+      id: 2,
       icon: shell,
       text: "shell",
     },
     {
+      id: 3,
       icon: php,
       text: "php",
     },
@@ -50,50 +63,42 @@ const RemitterBalancePage = () => {
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
+      id: 4,
       icon: node,
       text: "Node JS",
     },
     {
+      id: 5,
       icon: powershell,
       text: "Powershell",
     },
     {
+      id: 6,
       icon: csharp,
       text: "Csharp",
     },
     {
-      icon: http,
-      text: "HTTP",
-    },
-    {
+      id: 7,
       icon: js,
       text: "Javascript",
     },
     {
-      icon: kotlin,
-      text: "Kotlin",
-    },
-    {
-      icon: objectiveC,
-      text: "ObjectiveC",
-    },
-    {
+      id: 8,
       icon: C,
       text: "C",
     },
     {
-      icon: CPlusPlus,
-      text: "C++",
-    },
-    {
+      id: 9,
       icon: swift,
       text: "Swift",
     },
     {
+      id: 10,
       icon: Go,
       text: "Go",
     },
     {
+      id: 11,
       icon: ruby,
       text: "ruby",
     },
@@ -102,11 +107,13 @@ const RemitterBalancePage = () => {
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const toggleTab = (id) => {
+    console.log(id);
+    setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
+    toggleTab(icon.id);
     dummyArray[0] = icon;
 
     setVerticalIconArray([
@@ -196,6 +203,14 @@ const RemitterBalancePage = () => {
         {toggleState === 1 && <PythonRemitterBalance />}
         {toggleState === 2 && <ShellRemitterBalance />}
         {toggleState === 3 && <PHPRemitterBalance />}
+        {toggleState === 4 && <NodeRemitterBalanceCode />}
+        {toggleState === 5 && <JavascriptRemitterBalanceCode />}
+        {toggleState === 6 && <SwiftRemitterBalanceCode />}
+        {toggleState === 7 && <ClibcurlRemitterinfo />}
+        {toggleState === 8 && <CrestsharpRemitterBalance />}
+        {toggleState === 9 && <GonativeRemitterBalance />}
+        {toggleState === 10 && <RubyRemitterBalanceCode />}
+        {toggleState === 11 && <PowershellRemitterBalanceCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
@@ -218,11 +233,11 @@ const RemitterBalancePage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text }, index) => {
+              {verticalIconArray.map(({ icon, text,id }, index) => {
                 // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text }, index)}
+                    onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />
