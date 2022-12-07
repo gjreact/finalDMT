@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 import ShellWrapper from "../../CodeWrapper/ShellWrapper";
+import SendMoneyResponse from "./ResponseCode/SendMoneyResponse";
 
 const copyToClipboard = (id) => {
   var c = document.getElementById(id).innerText;
@@ -10,6 +11,7 @@ const copyToClipboard = (id) => {
 };
 
 export const JavaSendMoney = () => {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -76,10 +78,9 @@ export const JavaSendMoney = () => {
         </code>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>java responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -87,6 +88,7 @@ export const JavaSendMoney = () => {
 };
 
 export const PythonSendMoney = () => {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -133,10 +135,9 @@ export const PythonSendMoney = () => {
         </code>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Python responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -144,6 +145,7 @@ export const PythonSendMoney = () => {
 };
 
 export const ShellSendMoney = () => {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -187,10 +189,9 @@ export const ShellSendMoney = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Shell responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -198,6 +199,7 @@ export const ShellSendMoney = () => {
 };
 
 export const PHPSendMoney = () => {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -281,10 +283,9 @@ export const PHPSendMoney = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>php responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -292,6 +293,7 @@ export const PHPSendMoney = () => {
 };
 
 export const NodeSendMoney = () => {
+  const [response,setResponse]=useState(0)
   return (
     <>
       {" "}
@@ -376,10 +378,9 @@ export const NodeSendMoney = () => {
           </code>
         </div>
       </CodeWrapper>
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>node responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -387,6 +388,7 @@ export const NodeSendMoney = () => {
 };
 
 export const JavascriptSendMoney = () => {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -483,10 +485,9 @@ export const JavascriptSendMoney = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>JS responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -494,6 +495,7 @@ export const JavascriptSendMoney = () => {
 };
 
 export const SwiftSendMoney = () => {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -622,10 +624,9 @@ export const SwiftSendMoney = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Swift responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -633,6 +634,7 @@ export const SwiftSendMoney = () => {
 };
 
 export function ClibcurlSendMoney() {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -716,10 +718,9 @@ export function ClibcurlSendMoney() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>C responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -727,6 +728,7 @@ export function ClibcurlSendMoney() {
 }
 
 export function GonativeSendMoney() {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -879,10 +881,9 @@ export function GonativeSendMoney() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>GO responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -890,6 +891,7 @@ export function GonativeSendMoney() {
 }
 
 export function CrestsharpSendMoney() {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1023,10 +1025,9 @@ export function CrestsharpSendMoney() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>C# responce</code>
-          {/* <code>code area</code> */}
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1034,6 +1035,7 @@ export function CrestsharpSendMoney() {
 }
 
 export const RubySendMoneyCode = () => {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1119,11 +1121,9 @@ export const RubySendMoneyCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <div>
-            <code>Ruby response</code>
-          </div>
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1131,6 +1131,7 @@ export const RubySendMoneyCode = () => {
 };
 
 export const PowershellSendMoneyCode = () => {
+  const [response,setResponse]=useState(0)
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1188,9 +1189,9 @@ export const PowershellSendMoneyCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Powershell response</code>
+          <SendMoneyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
