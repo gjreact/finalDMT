@@ -218,14 +218,14 @@ function RemitterInfoPage() {
         {toggleState === 11 && <PowerShellRemitterInfo />}
 
         <div className="lang-btns d-flex justify-content-evenly">
-          {horizontalIconArray.map((iconName, id, index) => {
+          {horizontalIconArray.map((iconName, index) => {
             return (
               <button
               className="togglebuttton"
                
                 id={iconName.icon}
-                key={id}
-                onClick={() => toggleTab(id)}
+                key={iconName.id}
+                onClick={() => toggleTab(iconName.id)}
                 
               >
                 <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"/>

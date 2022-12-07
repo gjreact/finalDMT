@@ -223,6 +223,7 @@ export const PHPVerifyOtp = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
           <div>
+          <code> &#60;&#63;php</code>
             <br /> <code className="text-white">$curl = curl_init();</code>
             <br />
             <code className="text-white">

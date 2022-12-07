@@ -236,7 +236,7 @@ const SendOtpPage = () => {
                 className="togglebuttton"
                 id={iconName.icon}
                 key={index}
-                onClick={() => toggleTab(index)}
+                onClick={() => toggleTab(iconName.id)}
               >
                 <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  />
               </button>

@@ -125,7 +125,7 @@ export const PHPSendOtp = () => {
       <CodeWrapper heading="Request">
 
          <div className="request-wrapper" id="php">
-      
+         <code> &#60;&#63;php</code>
          <span className="d-flex justify-content-between"><code className="text-white">$curl = curl_init();</code><AiOutlineCopy className="copyicon" onClick={()=>copyToClipboard("php")} /></span>
           <code className="text-white">curl_setopt_array($curl, <code>array</code>(</code>
           <br/><code>CURLOPT_URL =&#62;<code> 'http://194.195.113.218:8090/paymento/remitter-reg/send-otp'</code>,</code>
