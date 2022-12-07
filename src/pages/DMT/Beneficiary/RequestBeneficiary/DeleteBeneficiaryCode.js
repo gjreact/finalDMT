@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Row } from "react-bootstrap";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
@@ -12,6 +12,7 @@ const copyToClipboard = (id) => {
   copy(c);
 };
 export const DeleteBeneficiaryCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -53,12 +54,17 @@ export const DeleteBeneficiaryCode = () => {
         </div>
       </CodeWrapper>
 
-      <DeleteBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const PythonDeleteBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -115,12 +121,17 @@ export const PythonDeleteBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <DeleteBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const ShellDeleteBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -141,12 +152,17 @@ export const ShellDeleteBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <DeleteBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const PHPDeleteBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -245,12 +261,17 @@ export const PHPDeleteBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <DeleteBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const NodeDeleteBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -323,12 +344,18 @@ export const NodeDeleteBeneficiary = () => {
           </code>
         </div>
       </CodeWrapper>
-      <DeleteBeneficiaryResponse />
+      
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const JavascriptDeleteBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -412,12 +439,17 @@ export const JavascriptDeleteBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <DeleteBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const SwiftDeleteBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -538,12 +570,17 @@ export const SwiftDeleteBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <DeleteBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export function ClibcurlBeneficiaryDelete() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -626,12 +663,17 @@ export function ClibcurlBeneficiaryDelete() {
         </div>
       </CodeWrapper>
 
-      <DeleteBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 }
 
 export function GonativeBeneficiaryDelete() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -762,12 +804,17 @@ export function GonativeBeneficiaryDelete() {
         </div>
       </CodeWrapper>
 
-      <DeleteBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 }
 
 export function CrestsharpBeneficiaryDelete() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -856,12 +903,17 @@ export function CrestsharpBeneficiaryDelete() {
         </div>
       </CodeWrapper>
 
-      <DeleteBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <DeleteBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 }
 
 export const RubyDeleteBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -943,11 +995,9 @@ export const RubyDeleteBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <div>
-            <code>Ruby response</code>
-          </div>
+          <DeleteBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -955,6 +1005,7 @@ export const RubyDeleteBeneficiary = () => {
 };
 
 export const PowershellDeleteBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1005,9 +1056,9 @@ export const PowershellDeleteBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Powershell response</code>
+          <DeleteBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
     </>

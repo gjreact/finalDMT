@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Row } from "react-bootstrap";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
@@ -12,6 +12,7 @@ const copyToClipboard = (id) => {
   copy(c);
 };
 export const ListBeneficiaryCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -55,12 +56,17 @@ export const ListBeneficiaryCode = () => {
         </div>
       </CodeWrapper>
 
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const PythonListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -117,12 +123,17 @@ export const PythonListBeneficiary = () => {
           <code className="text-white">(response.text)</code>
         </div>
       </CodeWrapper>
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const ShellListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -143,12 +154,17 @@ export const ShellListBeneficiary = () => {
           </code>
         </div>
       </CodeWrapper>
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const PHPListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -255,12 +271,17 @@ export const PHPListBeneficiary = () => {
           <br />
         </div>
       </CodeWrapper>
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const NodeListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -328,12 +349,17 @@ export const NodeListBeneficiary = () => {
           </code>
         </div>
       </CodeWrapper>
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const JavascriptListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -413,12 +439,17 @@ export const JavascriptListBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export const SwiftListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -537,12 +568,17 @@ export const SwiftListBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 };
 
 export function CrestsharpBeneficiaryList() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -642,12 +678,17 @@ export function CrestsharpBeneficiaryList() {
         </div>
       </CodeWrapper>
 
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 }
 
 export function GonativeBeneficiaryList() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -773,11 +814,16 @@ export function GonativeBeneficiaryList() {
         </div>
       </CodeWrapper>
 
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 }
 export function ClibcurlBeneficiaryList() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -859,12 +905,17 @@ export function ClibcurlBeneficiaryList() {
         </div>
       </CodeWrapper>
 
-      <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   );
 }
 
 export const RubyListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -946,11 +997,9 @@ export const RubyListBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <div>
-            <code>Ruby response</code>
-          </div>
+          <ListBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -958,6 +1007,7 @@ export const RubyListBeneficiary = () => {
 };
 
 export const PowershellListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1007,9 +1057,9 @@ export const PowershellListBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Powershell response</code>
+          <ListBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
     </>

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { Col, Container, Dropdown, Row, Table } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
-import CPlus from "../../../../asset/images/Cplus.png";
 import Go from "../../../../asset/images/Go.png";
 import java from "../../../../asset/images/java.png";
 import python from "../../../../asset/images/python.png";
@@ -10,39 +9,158 @@ import php from "../../../../asset/images/php.png";
 import node from "../../../../asset/images/node.png";
 import powershell from "../../../../asset/images/powershell.svg";
 import csharp from "../../../../asset/images/csharp.png";
-import http from "../../../../asset/images/http.png";
 import js from "../../../../asset/images/js.png";
-import kotlin from "../../../../asset/images/kotlin.jpeg";
 import ruby from "../../../../asset/images/ruby.png";
-import objectiveC from "../../../../asset/images/objectiveC.png";
 import C from "../../../../asset/images/C.png";
-import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
 import swift from "../../../../asset/images/swift.jpeg";
+import { ClibcurlBeneficiaryList,
+    CrestsharpBeneficiaryList, 
+    GonativeBeneficiaryList, 
+    JavascriptListBeneficiary, 
+    ListBeneficiaryCode, 
+    NodeListBeneficiary, 
+    PHPListBeneficiary, 
+    PowershellListBeneficiary,
+    PythonListBeneficiary, 
+    RubyListBeneficiary, 
+    ShellListBeneficiary, 
+    SwiftListBeneficiary } from "../RequestBeneficiary/ListBeneficiaryCode";
 
-import {
-  ListBeneficiaryCode,
-  PHPListBeneficiary,
-  PythonListBeneficiary,
-  ShellListBeneficiary,
-} from "../RequestBeneficiary/ListBeneficiaryCode";
-import { CreateBeneficiaryCode } from "../RequestBeneficiary/CreateBeneficiaryCode";
-import Bar from "../../../Bar";
 
-const BeneficiaryListPage = () => {
-  const [toggleState, setToggleState] = useState(0);
+const BeneficiaryCreatePage = () => {
+  const [horizontalIconArray, setHorizontalIconArray] = useState([
+    {
+      id: 0,
+      icon: java,
+      text: "java",
+    },
+    {
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+      id: 1,
+      icon: python,
+      text: "python",
+    },
+    {
+      id: 2,
+      icon: shell,
+      text: "shell",
+    },
+    {
+      id: 3,
+      icon: php,
+      text: "php",
+    }
+  ]);
+  const dummyArray = [];
+  const cacheArray = [];
+  const [verticalIconArray, setVerticalIconArray] = useState([
+    {
+      id: 4,
+      icon: node,
+      text: "Node JS",
+    },
+    {
+      id: 5,
+      icon: powershell,
+      text: "Powershell",
+    },
+    {
+      id: 6,
+      icon: csharp,
+      text: "Csharp",
+    },
+
+    {
+      id: 7,
+      icon: js,
+      text: "Javascript",
+    },
+
+
+    {
+      id: 8,
+      icon: C,
+      text: "C",
+    },
+
+    {
+      id: 9,
+      icon: swift,
+      text: "Swift",
+    },
+    {
+      id: 10,
+      icon: Go,
+      text: "Go",
+    },
+    {
+      id: 11,
+      icon: ruby,
+      text: "ruby",
+    }
+  ]);
+
+  // console.log("verticalIconArray-above",verticalIconArray);
+  const [toggleState, setToggleState] = useState(1);
+
+  const toggleTab = (id) => {
+    // console.log(id);
+    
+    setToggleState(id);
   };
+
+  const pushItem = (icon, index) => {
+    console.log(icon);
+    
+    dummyArray[0] = icon;
+    // console.log("DummyArray", dummyArray);
+   
+
+    setVerticalIconArray([
+      ...verticalIconArray,
+      verticalIconArray.splice(index, 1),
+    ]);
+    cacheArray[0] = horizontalIconArray[horizontalIconArray.length - 1];
+
+    // console.log("CacheArray", cacheArray);
+
+
+    setHorizontalIconArray(
+      ...horizontalIconArray,
+      horizontalIconArray.splice(horizontalIconArray.length - 1, 1)
+    );
+
+    setHorizontalIconArray([
+      ...horizontalIconArray,
+      (horizontalIconArray[horizontalIconArray.length - 1] = dummyArray[0]),
+    ]);
+
+    setVerticalIconArray([
+      ...verticalIconArray,
+      (verticalIconArray[index] = cacheArray[0]),
+    ]);
+  };
+
   return (
     <>
       {/* Beneficiary create page starts... */}
 
-      <Col className="col-12 col-sm-7 border">
-        <Bar />
+      <Col className="col-12 col-sm-7 boder">
         <Row>
-          <h2 className="mb-0 ">List Beneficiary</h2>
-          <p className="px-4 mb-5 content-bg">Get list of recipients for a Remitter</p>
+          <h1 className="heading mb-0">Beneficiary</h1>
+          <p className="content-bg">
+            Beneficiary is the bank account who receives the funds remitted by
+            the remitter mobile number.
+            <br />A beneficiary is someone to whom one can transfer money or to
+            be able to transfer money, the customer must add a beneficiary using
+            the beneficiary's bank account details. By using our APIs, you can
+            Create, Delete and Fetch beneficiaries for your customers.
+          </p>
+          <h2 className="mb-0 mt-0">Register Beneficiary</h2>
+          <p className="px-4  mb-5 content-bg">
+            Beneficiary need to be registered in the system through the
+            remitter's mobile number and bank details.
+          </p>
           <div className="m">
             <Table striped bordered hover responsive>
               <thead>
@@ -57,129 +175,127 @@ const BeneficiaryListPage = () => {
                 <tr>
                   <td>1</td>
                   <td>404</td>
-                  <td>0</td>
-                  <td>Not found</td>
+                  <td>501</td>
+                  <td>Beneficiary already exist</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>404</td>
+                  <td>4104</td>
+                  <td>Enter a valid name</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>404</td>
+                  <td>105</td>
+                  <td>Invalid bank code</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>404</td>
+                  <td>106</td>
+                  <td>Sender Does Not exist</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>404</td>
+                  <td>107</td>
+                  <td>Invalid Account number</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>404</td>
+                  <td>108</td>
+                  <td>Invalid bank IFSC</td>
                 </tr>
               </tbody>
             </Table>
           </div>
-          <h3 className=" p-3 link-font-size">URL:</h3>
-          <code className="py-4 url-link">
-            http://194.195.113.218:8090/paymento/remitter-reg/getbeneficiary
-          </code>
-          <h3 className="py-2 link-font-size">Method:</h3>
-          <p className="content-bg">POST</p>
 
-          <h3 className="py-2 link-font-size">Header:</h3>
-          <p className="output content-bg">
+          <h3 className=" p-3 link-font-size">URL:</h3>
+          <code className=" pt-5 pb-5 url-link">
+            http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary
+          </code>
+          <h3 className=" p-3 link-font-size">Method:</h3>
+          <p className="p-3">POST</p>
+
+          <h3 className=" p-3 link-font-size">Header:</h3>
+          <p className="output ">
             <br /> <code>"apiKey"</code>
             <span>:</span>
-            <code className="code-yellow">abs1nxxxxx"</code>"<br />
+            "abs1nxxxxx"
+            <br />
           </p>
 
-          <h3 className="py-2 link-font-size">Request:</h3>
-          <p className="output content-bg">
+          <h3 className=" p-3 p-3link-font-size">Request:</h3>
+          <p className="output">
             <br />
-            <code>"remitterid"</code> <span>: </span>{" "}
-            <code className="code-yellow">""</code> <br />
+            <code>"beneficiaryName"</code> <span>: </span>{" "}
+            <code className="code-yellow">"anu",</code>
+            <br />
+            <code>"beneficiaryBankId" </code> <span>: </span>
+            <code className="code-cyan"> 36,</code>
+            <br />
+            <code>"remitterMobileNumber" </code> <span>: </span>
+            <code className="code-cyan"> "7902900295,</code>
+            <br />
+            <code>"beneficiaryMobileNumber"</code> <span>: </span>{" "}
+            <code className="code-cyan">790290029,</code>
+            <br />
+            <code>"accountNumber"</code> <span>: </span>{" "}
+            <code className="code-cyan">8865488888,</code>
+            <br />
+            <code>"address" </code> <span>: </span>{" "}
+            <code className="code-yellow">Calicut,</code>
+            <br />
+            <code>"ifscCode" </code> <span>: </span>{" "}
+            <code className="code-yellow">UTIB0002916,</code>
+            <br />
+            <code>"accountHolderName" </code> <span>: </span>
+            <code className="code-yellow"> Venu,</code>
+            <br />
+            <code>"branchName"</code> <span>: </span>{" "}
+            <code className="code-yellow">Mavoor Road</code> <br />
           </p>
         </Row>
       </Col>
-      <Col id="style-1" className="col-12 col-sm-5 link-heading scrollbar pt-5">
-        {toggleState === 1 && <ListBeneficiaryCode />}
-        {toggleState === 2 && <PythonListBeneficiary />}
-        {toggleState === 3 && <ShellListBeneficiary />}
-        {toggleState === 4 && <PHPListBeneficiary />}
-        {toggleState === 5 && <PHPListBeneficiary />}
-        {toggleState === 6 && <PHPListBeneficiary />}
-        {toggleState === 7 && <PHPListBeneficiary />}
-        {toggleState === 8 && <PHPListBeneficiary />}
-        {toggleState === 9 && <PHPListBeneficiary />}
-        {toggleState === 10 && <PHPListBeneficiary />}
-        {toggleState === 11 && <PHPListBeneficiary />}
-        {toggleState === 12 && <PHPListBeneficiary />}
-
-        {/* <Tabs defaultActiveKey="java">
-        <Tab eventKey="java" title={java} className="text-white" >
-          <ListBeneficiaryCode/>
-        </Tab>
-        
-        <Tab eventKey="python" title={<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="30px" height="30px"><path fill="#0277BD" d="M24.047,5c-1.555,0.005-2.633,0.142-3.936,0.367c-3.848,0.67-4.549,2.077-4.549,4.67V14h9v2H15.22h-4.35c-2.636,0-4.943,1.242-5.674,4.219c-0.826,3.417-0.863,5.557,0,9.125C5.851,32.005,7.294,34,9.931,34h3.632v-5.104c0-2.966,2.686-5.896,5.764-5.896h7.236c2.523,0,5-1.862,5-4.377v-8.586c0-2.439-1.759-4.263-4.218-4.672C27.406,5.359,25.589,4.994,24.047,5z M19.063,9c0.821,0,1.5,0.677,1.5,1.502c0,0.833-0.679,1.498-1.5,1.498c-0.837,0-1.5-0.664-1.5-1.498C17.563,9.68,18.226,9,19.063,9z"/><path fill="#FFC107" d="M23.078,43c1.555-0.005,2.633-0.142,3.936-0.367c3.848-0.67,4.549-2.077,4.549-4.67V34h-9v-2h9.343h4.35c2.636,0,4.943-1.242,5.674-4.219c0.826-3.417,0.863-5.557,0-9.125C41.274,15.995,39.831,14,37.194,14h-3.632v5.104c0,2.966-2.686,5.896-5.764,5.896h-7.236c-2.523,0-5,1.862-5,4.377v8.586c0,2.439,1.759,4.263,4.218,4.672C19.719,42.641,21.536,43.006,23.078,43z M28.063,39c-0.821,0-1.5-0.677-1.5-1.502c0-0.833,0.679-1.498,1.5-1.498c0.837,0,1.5,0.664,1.5,1.498C29.563,38.32,28.899,39,28.063,39z"/></svg>} className="text-white">
-         <PythonListBeneficiary/>
-        </Tab>
-
-        <Tab eventKey="shell" title={<img src={shell} height="30px" width="25px"></img>} className="text-white" >
-          <ShellListBeneficiary/>
-        </Tab>
-
-        <Tab eventKey="PHP" title={<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 80 80" width="30px" height="30px"><path fill="#dcd5f2" d="M40,61.5C18.22,61.5,0.5,51.855,0.5,40S18.22,18.5,40,18.5S79.5,28.145,79.5,40S61.78,61.5,40,61.5z"/><path fill="#8b75a1" d="M40,19c21.505,0,39,9.421,39,21S61.505,61,40,61S1,51.579,1,40S18.495,19,40,19 M40,18 C17.909,18,0,27.85,0,40s17.909,22,40,22s40-9.85,40-22S62.091,18,40,18L40,18z"/><path fill="#36404d" d="M25.112 34c1.725 0 3.214.622 4.084 1.706.749.934.981 2.171.668 3.577C29.023 43.074 27.395 44 21.57 44h-4.14l1.75-10H25.112M25.112 32H17.5L14 52h2l1.056-6h4.515c5.863 0 9.053-.905 10.246-6.284C32.842 35.096 29.436 32 25.112 32L25.112 32zM61.112 34c1.725 0 3.214.622 4.084 1.706.749.934.981 2.171.668 3.577C65.023 43.074 63.395 44 57.57 44h-4.14l1.75-10H61.112M61.112 32H53.5L50 52h2l1.056-6h4.515c5.863 0 9.053-.905 10.246-6.284C68.842 35.096 65.436 32 61.112 32L61.112 32z"/><g><path fill="#36404d" d="M49.072,33.212C48.193,32.348,46.644,32,44.334,32h-5.538L40,26h-2.1L34,46h1.99l2.388-12h0.419 h5.538c2.338,0,3.094,0.4,3.335,0.637c0.343,0.338,0.424,1.226,0.217,2.363l-1.767,9h2.106l1.626-8.63 C50.199,35.462,49.936,34.062,49.072,33.212z"/></g></svg>} >
-         <PHPListBeneficiary/>
-        </Tab>
-        
-        <Tab eventKey="CPlus"  title={<img src={CPlus} height="30px" width="25px"></img>} ></Tab>
-        <Tab eventKey="Go"  title={<img src={Go} height="30px" width="25px"></img>} ></Tab>
+      <Col
+        id="style-1"
+        className="col-12 col-sm-5  link-heading scrollbar pt-5 "
+      >
+        {toggleState === 0 && <ListBeneficiaryCode />}
+        {toggleState === 1 && <PythonListBeneficiary />}
+        {toggleState === 2 && <ShellListBeneficiary />}
+        {toggleState === 3 && <PHPListBeneficiary />}
+        {toggleState === 4 && < NodeListBeneficiary />}
+        {toggleState === 5 && <  PowershellListBeneficiary/>}
+        {toggleState === 6 && < CrestsharpBeneficiaryList/>}
+        {toggleState === 7 && <  JavascriptListBeneficiary/>}
+        {toggleState === 8 && < ClibcurlBeneficiaryList />}
+        {toggleState === 9 && < SwiftListBeneficiary />}
+        {toggleState === 10 && < GonativeBeneficiaryList />}
+        {toggleState === 11 && < RubyListBeneficiary />}
        
-
-       
-         
-
-         
-      </Tabs> */}
+      
 
         <div className="lang-btns d-flex justify-content-evenly">
-          <button
-            className="togglebuttton"
-            id="java"
-            onClick={() => toggleTab(1)}
-          >
-            <img src={java} height="20" width="20" />
-          </button>
-          <button
-            style={{
-              outline: "none",
-              border: "none",
-              background: "transparent",
-            }}
-            id="python"
-            onClick={() => toggleTab(2)}
-          >
-            <img src={python} height="20" width="20" className="togglebutttonimg"  />
-          </button>
-          <button
-            style={{
-              outline: "none",
-              border: "none",
-              background: "transparent",
-            }}
-            id="shell"
-            onClick={() => toggleTab(3)}
-          >
-            <img src={shell} height="20" width="20" />
-          </button>
-          <button
-            style={{
-              outline: "none",
-              border: "none",
-              background: "transparent",
-            }}
-            id=""
-            onClick={() => toggleTab(4)}
-          >
-            <img src={php} height="20" width="20" />
-          </button>
-          <button
-            style={{
-              outline: "none",
-              border: "none",
-              background: "transparent",
-            }}
-            id=""
-            onClick={() => toggleTab(5)}
-          >
-            <img src={Go} height="20" width="20" />
-          </button>
-          {/* <button style={{outline:"none",border:"none",background:"transparent"}} id="php" onClick={() =>setDropdown(!dropdown)}>
-         </svg></button> */}
+          {horizontalIconArray.map(({ icon, id }, index) => {
+            return (
+              <button
+                style={{
+                  outline: "none",
+                  border: "none",
+                  background: "transparent",
+                }}
+                id={icon}
+                key={index}
+                onClick={() => toggleTab(id)}
+              >
+                <img src={icon} height="20" width="20" />
+              </button>
+            );
+          })}
+
           <Dropdown>
             <Dropdown.Toggle
               variant="light"
@@ -187,60 +303,29 @@ const BeneficiaryListPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">
-                <img src={node} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}>Node js</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-2">
-                <img src={powershell} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}>Powershell</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                <img src={csharp} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}> Csharp</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                <img src={http} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}> HTTP</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                <img src={js} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}> Javascript</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                <img src={kotlin} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}> Kotlin</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                <img src={ruby} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}> Ruby</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                <img src={objectiveC} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}> Objective C</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                <img src={C} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}> C</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                <img src={CPlusPlus} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}> C++</span>
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                <img src={swift} height="20" width="20" />{" "}
-                <span style={{ fontSize: "13px" }}> Swift</span>
-              </Dropdown.Item>
+              {verticalIconArray.map(({ icon, text, id }, index) => {
+                // console.log("icon", icon);
+
+                return (
+                  <Dropdown.Item
+                    onClick={() => {
+                      toggleTab(id);
+                      pushItem({ icon, text,id }, index)
+                    }
+                    }
+                    key={index}
+                  >
+                    <img src={icon} height="20" width="20" />
+                    <span style={{ fontSize: "13px" }}>{text}</span>
+                  </Dropdown.Item>
+                );
+              })}
             </Dropdown.Menu>
           </Dropdown>
         </div>
-
-        <Row className="link-heading"></Row>
       </Col>
-
-      {/* Beneficiary create page  ends...*/}
     </>
   );
 };
 
-export default BeneficiaryListPage;
+export default BeneficiaryCreatePage;

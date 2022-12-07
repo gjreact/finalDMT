@@ -1,80 +1,72 @@
-import React,{useState} from "react";
-import CodeWrapper from "../../CodeWrapper/CodeWrapper";
-import ShellWrapper from "../../CodeWrapper/ShellWrapper";
+import React ,{useState} from "react";
+import CodeWrapper from "../../../CodeWrapper/CodeWrapper";
+import JavaWrapper from "../../../CodeWrapper/JavaWrapper";
+import ShellWrapper from "../../../CodeWrapper/ShellWrapper";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
-import RemitterReSendResponse from "./ResponseCode/RemitterReSendResponse"
+import RemitterInfoResponse from "../ResponseCode/RemitterInfoResponse";
 
 const copyToClipboard = (id) => {
   var c = document.getElementById(id).innerText;
   copy(c);
 };
 
-export const JavaResendOtp = () => {
+export const JavaRemitter = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
+      {" "}
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
-          <br />
-          <code className="text-white">
-            OkHttpClient client = <code>new</code>{" "}
-            OkHttpClient().newnewBuilder()
+          <JavaWrapper />
+          <br />{" "}
+          <code className="code-yellow">
+            \"beneficiaryName\": \"anu\",\r\n \"beneficiaryBankId\": \"36\"
           </code>
-          <br />
-          <code className="text-white">.build();</code>
-          <br />
-          <code className="text-white">
-            MediaType mediaType = MediaType.parse({" "}
-            <code className="code-yellow">"application/json"</code>);
+          ,
+          <br />{" "}
+          <code className="code-yellow">
+            \r\n \"remitterMobileNumber\": \"7902900295\",\r\n{" "}
           </code>
-          <br />
-          <code className="text-white">
-            RequestBody body = RequestBody.create(mediaType,{" "}
-            <code className="code-yellow">
-              {" "}
-              <span className="output">
-                \r\n \"remitterphone\":\7902900295\r\n{" "}
-              </span>{" "}
-              \r\n" <code className="text-white">);</code>{" "}
-            </code>
+          <br />{" "}
+          <code className="code-yellow">
+            \"beneficiaryMobileNumber\":\"8596321478\",\r\n \"accountNumber\":{" "}
+          </code>
+          <br />{" "}
+          <code className="code-yellow">
+            \"88654888892\",\r\n \"address\": \"Calicut \",\r\n{" "}
+          </code>
+          <br />{" "}
+          <code className="code-yellow">
+            \"ifscCode\": \"UTIB0002916\",\r\n \"accountHolderName\": \"Venu\",{" "}
+          </code>
+          <br />{" "}
+          <code className="code-yellow">
+            \r\n \"branchName\": \"Mavoor Road\"\r\n");
           </code>
           <br />
           <code className="text-white">
             Request request = <code>new</code> Request.Builder()
-          </code>
+          </code>{" "}
           <br />
-          <code className="text-white">
-            .url({" "}
-            <code className="code-yellow">
-              "localhost:8084/paymento/remitter-reg/resend-otp"
-            </code>
-            )
+          <code className="text-white">.url(</code>
+          <code className="code-yellow">
+            "http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"
           </code>
+          ) <br />
+          <code className="text-white">.method(</code>
+          <code className="code-yellow">"POST"</code>
+          <code className="text-white">,body)</code>
           <br />
-          <code className="text-white">
-            .method(<code className="code-yellow">"POST"</code>, body)
-          </code>
-          <br />
-          <code className="text-white">
-            .addHeader(<code className="code-yellow">"apiKey"</code>,{" "}
-            <code className="code-yellow">"apiKey"</code>)
-          </code>
-          <br />
-          <code className="text-white">
-            .addHeader(
-            <code className="code-yellow">"Authorization", "Bearer token"</code>
-            )
-          </code>
-          <br />
-          <code className="text-white">
-            .addHeader(
-            <code className="code-yellow">
-              "Content-Type", "application/json"
-            </code>
-            )
-          </code>
-          <br />
+          <code className="text-white">.addHeader(</code>
+          <code className="code-yellow">"apiKey"</code>
+          <code className="code-yellow">, apiKey</code>) <br />
+          <code className="text-white">.addHeader(</code>
+          <code className="code-yellow">"Authorization"</code>
+          <code className="code-yellow">, "Bearer token"</code>) <br />
+          <code className="text-white">.addHeader(</code>
+          <code className="code-yellow">"Content-Type"</code>
+          <code className="code-yellow">, "application/json"</code>) <br />
           <code className="text-white">.build();</code>
           <br />
           <code className="text-white">
@@ -85,14 +77,14 @@ export const JavaResendOtp = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
 };
 
-export const PythonResendOtp = () => {
+export const PythonRemitter = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
@@ -104,82 +96,129 @@ export const PythonResendOtp = () => {
           <br />
           <code className="text-white"> url =</code>{" "}
           <code className="code-yellow">
-            "localhost:8084/paymento/remitter-reg/resend-otp"
+            "http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"
           </code>
           <br />
-          <code className="text-white">payload = json.dumps(</code>
-          <code className="outputtext-white">
+          <code className="text-white">payload = json.dumps</code>({" "}
+          <span className="output  text-white">
             <br />
-            <code>"remitterPhone" </code> <span>: </span>
-            <code className="code-cyan"> "7902900295",</code>
-            <br />)
-          </code>
-          <br />
+            <code>"beneficiaryName"</code> <span>: </span>{" "}
+            <code className="code-yellow">"anu",</code>
+            <br />
+            <code>"beneficiaryBankId" </code> <span>: </span>
+            <code className="code-cyan"> 36,</code>
+            <br />
+            <code>"remitterMobileNumber" </code> <span>: </span>
+            <code className="code-cyan"> 7902900295,</code>
+            <br />
+            <code>"beneficiaryMobileNumber"</code> <span>: </span>{" "}
+            <code className="code-cyan">8596321478,</code>
+            <br />
+            <code>"accountNumber"</code> <span>: </span>{" "}
+            <code className="code-cyan">88654888892,</code>
+            <br />
+            <code>"address" </code> <span>: </span>{" "}
+            <code className="code-yellow">Calicut,</code>
+            <br />
+            <code>"ifscCode" </code> <span>: </span>{" "}
+            <code className="code-yellow">UTIB0002916,</code>
+            <br />
+            <code>"accountHolderName" </code> <span>: </span>
+            <code className="code-yellow"> Venu,</code>
+            <br />
+            <code>"branchName"</code> <span>: </span>{" "}
+            <code className="code-yellow">Mavoor Road</code> <br />
+          </span>
+          ) <br />
           <code className="text-white">
             headers ={" "}
-            <span className="output ">
+            <span className="output  text-white">
               <br />
               <code>'apiKey'</code>:{" "}
               <code className="code-yellow">'apiKey'</code> ,<br />
               <code>'Authorization'</code>:{" "}
-              <code className="code-yellow">'Bearer token'</code> ,<br />
+              <code className="code-yellow">'Bearer token'</code>,<br />
               <code>'Content-Type'</code>:
               <code className="code-yellow"> 'application/json'</code>
               <br />
             </span>
           </code>
           <br />
+          <code className="text-white">response = requests.request(</code>
+          <code className="code-yellow">"POST"</code>
           <code className="text-white">
-            response = requests.request(
-            <code className="code-yellow">"POST"</code>, url, headers=headers,
-            data=payload)
-            <br />
-            <code>print</code>
-            <code className="text-white">(response.text)</code>
+            , url, headers=headers, data=payload)
           </code>
+          <br />
+          <code>print</code>
+          <code className="text-white">(response.text)</code>
         </div>
       </CodeWrapper>
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
 };
 
-export const ShellResendOtp = () => {
+export const ShellRemitter = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
           <ShellWrapper />
+          <br /> <code className="text-white"> --body-data </code>
+          <span>'</span>
           <span className="output  text-white">
             <br />
-            <code>"remitterPhone" </code> <span>: </span>
-            <code className="code-cyan"> 7902900295</code>
+            <code>"beneficiaryName"</code> <span>: </span>{" "}
+            <code className="code-yellow">"anu",</code>
             <br />
+            <code>"beneficiaryBankId" </code> <span>: </span>
+            <code className="code-cyan"> 36,</code>
+            <br />
+            <code>"remitterMobileNumber" </code> <span>: </span>
+            <code className="code-cyan"> "7902900295,</code>
+            <br />
+            <code>"beneficiaryMobileNumber"</code> <span>: </span>{" "}
+            <code className="code-cyan">8596321478,</code>
+            <br />
+            <code>"accountNumber"</code> <span>: </span>{" "}
+            <code className="code-cyan">88654888892,</code>
+            <br />
+            <code>"address" </code> <span>: </span>{" "}
+            <code className="code-yellow">Calicut,</code>
+            <br />
+            <code>"ifscCode" </code> <span>: </span>{" "}
+            <code className="code-yellow">UTIB0002916,</code>
+            <br />
+            <code>"accountHolderName" </code> <span>: </span>
+            <code className="code-yellow"> Venu,</code>
+            <br />
+            <code>"branchName"</code> <span>: </span>{" "}
+            <code className="code-yellow">Mavoor Road</code> <br />
           </span>
-          <br /> <code className="code-yellow">' \</code>
-          <br />
+          <span>' \</span> <br />
           <code className="code-yellow">
-            'localhost:8084/paymento/remitter-reg/resend-otp'
+            'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary'
           </code>
         </div>
       </CodeWrapper>
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
 };
 
-export const PHPResendOtp = () => {
+export const PHPRemitter = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
@@ -188,7 +227,6 @@ export const PHPResendOtp = () => {
           <code> &#60;&#63;php</code>
           <br />
           <code className="text-white">$curl = curl_init();</code>
-          <br />
           <code className="text-white">
             curl_setopt_array(
             <code className="code-yelllow">
@@ -199,7 +237,7 @@ export const PHPResendOtp = () => {
           <code>
             CURLOPT_URL =&#62;{" "}
             <code className="code-yellow">
-              'localhost:8084/paymento/remitter-reg/resend-otp',
+              'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary',
             </code>
           </code>
           <br />
@@ -241,9 +279,32 @@ export const PHPResendOtp = () => {
           <br />
           <span className="output text-white">
             <br />
-            <code>"remitterPhone"</code> <span>: </span>{" "}
-            <code className="code-yellow">7902900295</code>
+            <code>"beneficiaryName"</code> <span>: </span>{" "}
+            <code className="code-yellow">"anu",</code>
             <br />
+            <code>"beneficiaryBankId" </code> <span>: </span>
+            <code className="code-cyan"> 36,</code>
+            <br />
+            <code>"remitterMobileNumber" </code> <span>: </span>
+            <code className="code-cyan"> "7902900295,</code>
+            <br />
+            <code>"beneficiaryMobileNumber"</code> <span>: </span>{" "}
+            <code className="code-cyan">8596321478,</code>
+            <br />
+            <code>"accountNumber"</code> <span>: </span>{" "}
+            <code className="code-cyan">88654888892,</code>
+            <br />
+            <code>"address" </code> <span>: </span>{" "}
+            <code className="code-yellow">Calicut,</code>
+            <br />
+            <code>"ifscCode" </code> <span>: </span>{" "}
+            <code className="code-yellow">UTIB0002916,</code>
+            <br />
+            <code>"accountHolderName" </code> <span>: </span>
+            <code className="code-yellow"> Venu,</code>
+            <br />
+            <code>"branchName"</code> <span>: </span>{" "}
+            <code className="code-yellow">Mavoor Road</code> <br />
           </span>
           <code>',</code>
           <br />
@@ -280,14 +341,15 @@ export const PHPResendOtp = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
 };
+// arya mol code started================================
 
-export const NodeResendOtpCode = () => {
+export const NodeRemitterInfoCode = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
@@ -314,7 +376,7 @@ export const NodeResendOtpCode = () => {
             <code>
               'url' :
               <code className="code-yellow">
-                'http://194.195.113.218:8090/paymento/remitter-reg/resend-otp'
+                'http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify',
               </code>
             </code>
             <br />
@@ -330,7 +392,6 @@ export const NodeResendOtpCode = () => {
                 <code className="code-yellow"> 'application/json'</code>
                 <br />
               </span>
-              ,
             </code>
             <br />
             <code className="text-white"> body :</code>
@@ -340,7 +401,7 @@ export const NodeResendOtpCode = () => {
               <span className="output">
                 <br />
                 <code>"remitterPhone" :</code>
-                <code>"7902626443" ,</code>
+                <code>"7902900295"</code>
                 <br />
               </span>
               )
@@ -367,24 +428,23 @@ export const NodeResendOtpCode = () => {
           </code>
         </div>
       </CodeWrapper>
-      
+
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
 };
 
-export const JavascriptResendOtpCode = () => {
+export const JavascriptRemitterInfoCode = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="javascript">
           <span className="d-flex justify-content-between ">
-            {" "}
             <code>
               var myHeaders = <code>new</code>{" "}
               <code className="text-white">Headers();</code>
@@ -392,7 +452,7 @@ export const JavascriptResendOtpCode = () => {
             <AiOutlineCopy
               className="copyicon"
               onClick={() => copyToClipboard("javascript")}
-            />
+            />{" "}
           </span>
           <code className="text-white">myHeaders.</code>
           <code>append</code>
@@ -420,7 +480,7 @@ export const JavascriptResendOtpCode = () => {
             <span className="output text-white">
               <br />
               <code>"remitterPhone" :</code>
-              <code>"7902626443"</code>
+              <code>"7902900295"</code>
               <br />
             </span>
             )
@@ -448,7 +508,7 @@ export const JavascriptResendOtpCode = () => {
           <code>fetch</code>
           <code className="text-white">(</code>
           <code className="code-yellow">
-            "http://194.195.113.218:8090/paymento/remitter-reg/resend-otp",
+            "http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify",
             requestOptions{" "}
           </code>
           <code className="text-white">)</code>
@@ -474,28 +534,27 @@ export const JavascriptResendOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
 };
 
-export const SwiftResendOtpCode = () => {
+export const SwiftRemitterInfoCode = () => {
   const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="swift">
           <span className="d-flex justify-content-between ">
-            {" "}
             <code>
               import<code className="text-white">Foundation</code>
             </code>
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("java")}
-            />{" "}
+              onClick={() => copyToClipboard("swift")}
+            />
           </span>
           <code>#if</code>
           <code className="text-white"> canImport</code>
@@ -519,7 +578,7 @@ export const SwiftResendOtpCode = () => {
             "
             <span className="output text-white">
               <code className="code-yellow">
-                \r\n \"remitterPhone\":\"7902626443\",\r\n
+                \r\n \"remitterPhone\":\"7902900295\"\r\n
               </code>
             </span>
           </code>
@@ -536,7 +595,7 @@ export const SwiftResendOtpCode = () => {
             <code className="text-white">(</code>
             <code className="text-white">string:</code>{" "}
             <code className="code-yellow">
-              "http://194.195.113.218:8090/paymento/remitter-reg/resend-otp"
+              "http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify"
             </code>
             <code className="text-white">)</code>
             <code className="code-yellow">
@@ -613,17 +672,17 @@ export const SwiftResendOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
 };
 
-export function GonativeResendOtp() {
+export function GonativeRemitterInfo() {
   const [response, setResponse] = useState(0);
   return (
-    <>
+    <div>
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
           <br />
@@ -649,7 +708,7 @@ export function GonativeResendOtp() {
             <br />
             <code className="text-white"> url := </code>
             <code className="code-yellow">
-              "http://194.195.113.218:8090/paymento/remitter-reg/resend-otp"
+              "http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify"
             </code>
             <br />
             <code className="text-white">method := </code>
@@ -666,7 +725,7 @@ export function GonativeResendOtp() {
                   <br />
                   <code className="text-white">
                     "remitterPhone":
-                    <code className="code-yellow">"7902626443"</code>`+"
+                    <code className="code-yellow">"7902900295"</code>`+"
                   </code>
                   <br />
                   <code className="code-yellow">"+`</code>
@@ -750,14 +809,107 @@ export function GonativeResendOtp() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </div>
+  );
+}
+
+export function ClibcurlRemitterInfo() {
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper">
+          <br />
+          <code className="text-white">CURL *curl;</code>
+          <br />
+          <code className="text-white">CURLcode res;</code>
+          <br />
+          <code className="text-white">curl = curl_easy_init();</code>
+          <br />
+          <code>if</code>
+          <code className="text-white">
+            (curl){" "}
+            <code className="output text-white ">
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST,{" "}
+                <code className="code-yellow">"POST"</code> );
+              </code>
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_URL,{" "}
+                <code className="code-yellow">
+                  "http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify"
+                </code>
+                );
+              </code>
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+              </code>
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL,
+                <code className="code-yellow"> "https"</code>);
+              </code>
+              <br />
+              <code>struct </code>
+              <code className="text-white">curl_slist *headers = NULL;</code>
+              <br />{" "}
+              <code className="text-white">
+                headers = curl_slist_append(headers,{" "}
+                <code className="code-yellow">"apiKey: "</code>);
+              </code>
+              <br />
+              <code className="text-white">
+                headers = curl_slist_append(headers,{" "}
+                <code className="code-yellow">
+                  "Content-Type: application/json"
+                </code>
+                );
+              </code>
+              <br />
+              <code className="text-white">
+                {" "}
+                curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+              </code>
+              <br />
+              <code>const char</code>{" "}
+              <code className="code-yellow">
+                <code className="text-white">*data = </code>"
+                <code className="output code-yellow">
+                  \r\n \"remitterPhone\":\"7902900295\"\r\n{" "}
+                </code>{" "}
+                \r\n "
+              </code>
+              ;
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+              </code>
+              <br />
+              <code className="text-white">res = curl_easy_perform(curl);</code>
+              <br />
+            </code>
+          </code>
+          <br />
+          <code className="text-white">curl_easy_cleanup(curl);</code>
+        </div>
+      </CodeWrapper>
+
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
 }
 
-export function CrestsharpResendOtp() {
+export function CrestsharpRemitterInfo() {
   const [response, setResponse] = useState(0);
   return (
     <>
@@ -770,7 +922,7 @@ export function CrestsharpResendOtp() {
             {" "}
             RestClient
             <code className="code-yellow">
-              ("http://194.195.113.218:8090/paymento/remitter-reg/resend-otp"
+              ("http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify"
             </code>
             );
           </code>
@@ -808,7 +960,7 @@ export function CrestsharpResendOtp() {
 
             <br />
             <code className="code-yellow">
-              @" ""remitterphone"":""7902626443"",
+              @" ""remitterphone"":""7902900295""
             </code>
 
             <br />
@@ -827,15 +979,6 @@ export function CrestsharpResendOtp() {
             "{" "}
             <code className="text-white">
               + <code className="code-yellow">"\n"</code> +{" "}
-            </code>
-          </code>
-          <br />
-          <code className="code-yellow">@"</code>
-          <br />
-          <code className="code-yellow">
-            "{" "}
-            <code className="text-white">
-              + <code className="code-yellow">"\n"</code>+{" "}
             </code>
           </code>
           <br /> <code className="code-yellow">@"";</code>
@@ -858,114 +1001,19 @@ export function CrestsharpResendOtp() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
 }
 
-export function ClibcurlResendOtp() {
+export function RubyRemitterInfo() {
   const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
-          <br />
-          <code className="text-white">CURL *curl;</code>
-          <br />
-          <code className="text-white">CURLcode res;</code>
-          <br />
-          <code className="text-white">curl = curl_easy_init();</code>
-          <br />
-          <code>if</code>
-          <code className="text-white">
-            (curl){" "}
-            <code className="output text-white ">
-              <br />
-              <code className="text-white">
-                curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST,{" "}
-                <code className="code-yellow">"POST"</code> );
-              </code>
-              <br />
-              <code className="text-white">
-                curl_easy_setopt(curl, CURLOPT_URL,{" "}
-                <code className="code-yellow">
-                  "http://194.195.113.218:8090/paymento/remitter-reg/resend-otp"
-                </code>
-                );
-              </code>
-              <br />
-              <code className="text-white">
-                curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-              </code>
-              <br />
-              <code className="text-white">
-                curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL,
-                <code className="code-yellow"> "https"</code>);
-              </code>
-              <br />
-              <code>struct </code>
-              <code className="text-white">curl_slist *headers = NULL;</code>
-              <br />{" "}
-              <code className="text-white">
-                headers = curl_slist_append(headers,{" "}
-                <code className="code-yellow">"apiKey: "</code>);
-              </code>
-              <br />
-              <code className="text-white">
-                headers = curl_slist_append(headers,{" "}
-                <code className="code-yellow">
-                  "Content-Type: application/json"
-                </code>
-                );
-              </code>
-              <br />
-              <code className="text-white">
-                {" "}
-                curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-              </code>
-              <br />
-              <code>const char</code>{" "}
-              <code className="code-yellow">
-                <code className="text-white">*data =</code>"
-                <code className="output code-yellow">
-                  {" "}
-                  \r\n \"remitterPhone\":\"7902626443\",\r\n
-                </code>
-                \r\n\r\n\r\n ";
-              </code>
-              <br />
-              <code className="text-white">
-                curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-              </code>
-              <br />
-              <code className="text-white">res = curl_easy_perform(curl);</code>
-              <br />
-            </code>
-          </code>
-          <br />
-          <code className="text-white">curl_easy_cleanup(curl);</code>
-        </div>
-      </CodeWrapper>
-      
-      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
-        <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
-        </div>
-      </CodeWrapper>
-    </>
-  );
-}
-
-//  rashid code ==========
-
-export const RubyResendOtpCode = () => {
-  const [response, setResponse] = useState(0);
-  return (
-    <>
-      <CodeWrapper heading="Request">
-        <div className="request-wrapper" id="Ruby">
           <div>
             <code className="text-white">require</code>
             <code className="code-yellow">"uri"</code>
@@ -978,7 +1026,7 @@ export const RubyResendOtpCode = () => {
             <br />
             <code className="text-white">url = URI</code>
             <code className="code-yellow">
-              ("http://194.195.113.218:8090/paymento/remitter-reg/resend-otp")
+              ("http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify")
             </code>
             <br />
             <code className="text-white">
@@ -989,7 +1037,6 @@ export const RubyResendOtpCode = () => {
               request = Net<code>::</code>HTTP<code>::</code>Post.new(url)
             </code>
             <br />
-
             <code className="text-white">
               {" "}
               request
@@ -1039,25 +1086,26 @@ export const RubyResendOtpCode = () => {
             <code className="text-white">response = http.request(request)</code>
             <br />
             <code className="text-white">puts response.read_body</code>
+                  
           </div>
         </div>
       </CodeWrapper>
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
-};
+}
 
-export const PowershellResendOtpCode = () => {
+export function PowerShellRemitterInfo() {
   const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper" id="Powershell">
+        <div className="request-wrapper">
           <div>
             <code className="text-white">$headers = New-Object</code>
             <code className="code-yellow">
@@ -1077,7 +1125,6 @@ export const PowershellResendOtpCode = () => {
               </span>
               )
             </code>
-            <br />
             <code className="text-white">$headers.Add</code>
             <code className="code-yellow">
               ("Content-Type", "application/json")
@@ -1086,19 +1133,16 @@ export const PowershellResendOtpCode = () => {
             <code className="text-white">
               $body ={" "}
               <span className="output code-yellow">
-                <br /> <span className="text-white">'n</span>{" "}
-                `"remitterPhone`":`"7902900295`",
+                {" "}
+                <span className="text-white">'n</span>{" "}
+                `"remitterPhone`":`"7902900295`"
                 <br />
-                <code className="text-white">
-                  'n"
-                  <br />
-                </code>
+                <code className="text-white">'n"</code>
               </span>
             </code>
-            <br />
             <code className="text-white">$response = Invoke-RestMethod</code>
             <code className="code-yellow">
-              'http://194.195.113.218:8090/paymento/remitter-reg/resend-otp'
+              'http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify'
               <span className="text-white">-Method </span>'POST'
               <span className="text-white">-Headers $headers -Body $body</span>
             </code>
@@ -1110,9 +1154,9 @@ export const PowershellResendOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
   );
-};
+}

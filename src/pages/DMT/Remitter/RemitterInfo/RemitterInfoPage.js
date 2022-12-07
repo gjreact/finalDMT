@@ -30,7 +30,7 @@ import {
   CrestsharpRemitterInfo,
   RubyRemitterInfo,
   PowerShellRemitterInfo,
-} from "../ResponseCodeRemitter/RemitterInfoCode";
+} from "../ResponseCodeRemitter/RequestCode/RemitterInfoCode";
 import Bar from "../../../Bar";
 
 function RemitterInfoPage() {

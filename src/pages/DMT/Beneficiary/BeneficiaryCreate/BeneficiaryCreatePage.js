@@ -22,23 +22,35 @@ import {
   PHPBeneficiary,
   PythonBeneficiary,
   ShellBeneficiary,
+  NodeRegisterBeneficiary,
+  JavascriptRegisterBeneficiary,
+  SwiftRegisterBeneficiary,
+  GonativeBeneficiaryRegister,
+  ClibcurlBeneficiaryRegister,
+  CrestsharpBeneficiaryRegister,
+  RubyRegisterBeneficiary,
+  PowershellRegisterBeneficiary
 } from "../RequestBeneficiary/CreateBeneficiaryCode";
 
 const BeneficiaryCreatePage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
+      id: 0,
       icon: java,
       text: "java",
     },
     {
+      id: 1,
       icon: python,
       text: "python",
     },
     {
+      id: 2,
       icon: shell,
       text: "shell",
     },
     {
+      id: 3,
       icon: php,
       text: "php",
     },
@@ -47,50 +59,42 @@ const BeneficiaryCreatePage = () => {
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
+      id: 4,
       icon: node,
       text: "Node JS",
     },
     {
+      id: 5,
       icon: powershell,
       text: "Powershell",
     },
     {
+      id: 6,
       icon: csharp,
       text: "Csharp",
     },
     {
-      icon: http,
-      text: "HTTP",
-    },
-    {
+      id: 7,
       icon: js,
       text: "Javascript",
     },
     {
-      icon: kotlin,
-      text: "Kotlin",
-    },
-    {
-      icon: objectiveC,
-      text: "ObjectiveC",
-    },
-    {
+      id: 8,
       icon: C,
       text: "C",
     },
     {
-      icon: CPlusPlus,
-      text: "C++",
-    },
-    {
+      id: 9,
       icon: swift,
       text: "Swift",
     },
     {
+      id: 10,
       icon: Go,
       text: "Go",
     },
     {
+      id: 11,
       icon: ruby,
       text: "ruby",
     },
@@ -99,11 +103,13 @@ const BeneficiaryCreatePage = () => {
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const toggleTab = (id) => {
+    console.log(id);
+    setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
+    toggleTab(icon.id);
     dummyArray[0] = icon;
 
     setVerticalIconArray([
@@ -255,7 +261,14 @@ const BeneficiaryCreatePage = () => {
         {toggleState === 1 && <PythonBeneficiary />}
         {toggleState === 2 && <ShellBeneficiary />}
         {toggleState === 3 && <PHPBeneficiary />}
-        {toggleState === 4 && <PHPBeneficiary />}
+        {toggleState === 4 && <NodeRegisterBeneficiary />}
+        {toggleState === 5 && <JavascriptRegisterBeneficiary />}
+        {toggleState === 6 && <SwiftRegisterBeneficiary />}
+        {toggleState === 7 && <GonativeBeneficiaryRegister />}
+        {toggleState === 8 && <ClibcurlBeneficiaryRegister />}
+        {toggleState === 9 && <CrestsharpBeneficiaryRegister />}
+        {toggleState === 10 && <RubyRegisterBeneficiary />}
+        {toggleState === 11 && <PowershellRegisterBeneficiary />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
@@ -278,11 +291,11 @@ const BeneficiaryCreatePage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text }, index) => {
+              {verticalIconArray.map(({ icon, text,id }, index) => {
                 // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text }, index)}
+                    onClick={() => pushItem({ icon, text,id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />
