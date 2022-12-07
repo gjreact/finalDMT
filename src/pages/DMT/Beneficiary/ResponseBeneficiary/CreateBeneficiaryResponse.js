@@ -1,5 +1,4 @@
 import React from "react";
-import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 
 const CreateBeneficiaryResponse = ({response}) => {
   return (

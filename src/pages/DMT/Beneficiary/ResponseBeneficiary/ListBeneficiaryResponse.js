@@ -1,5 +1,4 @@
 import React from "react";
-import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 
 function ListBeneficiaryResponse({response}) {
   return (
