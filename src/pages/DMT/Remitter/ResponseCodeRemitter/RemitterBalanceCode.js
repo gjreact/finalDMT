@@ -1,8 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 import ShellWrapper from "../../CodeWrapper/ShellWrapper";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
+import RemitterBalanceResponse from "./ResponseCode/RemitterBalanceResponse"
 
 const copyToClipboard = (id) => {
   var c = document.getElementById(id).innerText;
@@ -10,6 +11,7 @@ const copyToClipboard = (id) => {
 };
 
 export const JavaRemitterBalance = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -81,10 +83,9 @@ export const JavaRemitterBalance = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>java responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -92,6 +93,7 @@ export const JavaRemitterBalance = () => {
 };
 
 export const PythonRemitterBalance = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -137,10 +139,10 @@ export const PythonRemitterBalance = () => {
           </code>
         </div>
       </CodeWrapper>
-      <CodeWrapper heading="Response">
+
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>python responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -148,6 +150,7 @@ export const PythonRemitterBalance = () => {
 };
 
 export const ShellRemitterBalance = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -166,10 +169,10 @@ export const ShellRemitterBalance = () => {
           </code>
         </div>
       </CodeWrapper>
-      <CodeWrapper heading="Response">
+
+     <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>shell responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -177,6 +180,7 @@ export const ShellRemitterBalance = () => {
 };
 
 export const PHPRemitterBalance = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -273,10 +277,9 @@ export const PHPRemitterBalance = () => {
           ;
         </div>
       </CodeWrapper>
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>php responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -284,6 +287,7 @@ export const PHPRemitterBalance = () => {
 };
 
 export const NodeRemitterBalanceCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -361,10 +365,10 @@ export const NodeRemitterBalanceCode = () => {
           </code>
         </div>
       </CodeWrapper>
-      <CodeWrapper heading="Response">
+      
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>node responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -372,6 +376,7 @@ export const NodeRemitterBalanceCode = () => {
 };
 
 export const JavascriptRemitterBalanceCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -465,10 +470,9 @@ export const JavascriptRemitterBalanceCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>js responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -476,6 +480,7 @@ export const JavascriptRemitterBalanceCode = () => {
 };
 
 export const SwiftRemitterBalanceCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -604,10 +609,9 @@ export const SwiftRemitterBalanceCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>swift responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -615,6 +619,7 @@ export const SwiftRemitterBalanceCode = () => {
 };
 
 export function ClibcurlRemitterinfo() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -697,10 +702,9 @@ export function ClibcurlRemitterinfo() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>C responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -708,6 +712,7 @@ export function ClibcurlRemitterinfo() {
 }
 
 export function CrestsharpRemitterBalance() {
+  const [response, setResponse] = useState(0);
   return (
     <div>
       <CodeWrapper heading="Request">
@@ -805,10 +810,9 @@ export function CrestsharpRemitterBalance() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>C# responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </div>
@@ -816,6 +820,7 @@ export function CrestsharpRemitterBalance() {
 }
 
 export function GonativeRemitterBalance() {
+  const [response, setResponse] = useState(0);
   return (
     <div>
       <CodeWrapper heading="Request">
@@ -946,10 +951,9 @@ export function GonativeRemitterBalance() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>GO responce</code>
-          {/* <code>code area</code> */}
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </div>
@@ -959,6 +963,7 @@ export function GonativeRemitterBalance() {
 // rashid code -----------------
 
 export const RubyRemitterBalanceCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1040,11 +1045,9 @@ export const RubyRemitterBalanceCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <div>
-            <code>Ruby response</code>
-          </div>
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -1052,6 +1055,7 @@ export const RubyRemitterBalanceCode = () => {
 };
 
 export const PowershellRemitterBalanceCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1105,9 +1109,9 @@ export const PowershellRemitterBalanceCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Powershell response</code>
+          <RemitterBalanceResponse response={response}/>
         </div>
       </CodeWrapper>
     </>

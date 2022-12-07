@@ -29,7 +29,7 @@ import { CreateBeneficiaryCode } from "../RequestBeneficiary/CreateBeneficiaryCo
 import Bar from "../../../Bar";
 
 const BeneficiaryListPage = () => {
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (index) => {
     setToggleState(index);
