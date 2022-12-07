@@ -74,6 +74,7 @@ export const JavaRemitter = () => {
           </code>
         </div>
       </CodeWrapper>
+
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
           <RemitterInfoResponse response={response}/>
@@ -84,6 +85,7 @@ export const JavaRemitter = () => {
 };
 
 export const PythonRemitter = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -153,9 +155,9 @@ export const PythonRemitter = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -163,6 +165,7 @@ export const PythonRemitter = () => {
 };
 
 export const ShellRemitter = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -206,9 +209,9 @@ export const ShellRemitter = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -216,6 +219,7 @@ export const ShellRemitter = () => {
 };
 
 export const PHPRemitter = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -335,9 +339,9 @@ export const PHPRemitter = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-        <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -346,6 +350,7 @@ export const PHPRemitter = () => {
 // arya mol code started================================
 
 export const NodeRemitterInfoCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       {" "}
@@ -423,9 +428,10 @@ export const NodeRemitterInfoCode = () => {
           </code>
         </div>
       </CodeWrapper>
-      <CodeWrapper heading="Response">
+
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-        <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -433,6 +439,7 @@ export const NodeRemitterInfoCode = () => {
 };
 
 export const JavascriptRemitterInfoCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -525,9 +532,9 @@ export const JavascriptRemitterInfoCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-        <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -535,6 +542,7 @@ export const JavascriptRemitterInfoCode = () => {
 };
 
 export const SwiftRemitterInfoCode = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -662,9 +670,9 @@ export const SwiftRemitterInfoCode = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-        <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -672,6 +680,7 @@ export const SwiftRemitterInfoCode = () => {
 };
 
 export function GonativeRemitterInfo() {
+  const [response, setResponse] = useState(0);
   return (
     <div>
       <CodeWrapper heading="Request">
@@ -798,9 +807,9 @@ export function GonativeRemitterInfo() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-        <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </div>
@@ -808,6 +817,7 @@ export function GonativeRemitterInfo() {
 }
 
 export function ClibcurlRemitterInfo() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -890,9 +900,9 @@ export function ClibcurlRemitterInfo() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-        <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -900,6 +910,7 @@ export function ClibcurlRemitterInfo() {
 }
 
 export function CrestsharpRemitterInfo() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -988,9 +999,9 @@ export function CrestsharpRemitterInfo() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-        <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -998,6 +1009,7 @@ export function CrestsharpRemitterInfo() {
 }
 
 export function RubyRemitterInfo() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1079,9 +1091,9 @@ export function RubyRemitterInfo() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-        <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -1089,6 +1101,7 @@ export function RubyRemitterInfo() {
 }
 
 export function PowerShellRemitterInfo() {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -1139,9 +1152,9 @@ export function PowerShellRemitterInfo() {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-        <RemitterInfoResponse />
+          <RemitterInfoResponse response={response}/>
         </div>
       </CodeWrapper>
     </>

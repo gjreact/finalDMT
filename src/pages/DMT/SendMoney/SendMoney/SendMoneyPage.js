@@ -103,7 +103,7 @@ const SendMoneyPage = () => {
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
     setToggleState(id);
@@ -227,17 +227,12 @@ const SendMoneyPage = () => {
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                  hover: "red",
-                }}
+                className="togglebuttton"
                 id={iconName.icon}
                 key={index}
                 onClick={() => toggleTab(iconName.id)}
               >
-                <img src={iconName.icon} height="20" width="20" />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"/>
               </button>
             );
           })}

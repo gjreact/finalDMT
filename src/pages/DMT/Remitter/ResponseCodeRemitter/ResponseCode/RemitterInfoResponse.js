@@ -3,7 +3,6 @@ import React from 'react';
 function RemitterInfoResponse({response}) {
   return (
     <>
-
         {response === 1 ? (
         <>
           <h6 className="text-secondary ">If Remitter Exist : </h6>
@@ -58,7 +57,7 @@ function RemitterInfoResponse({response}) {
         </>
       ) : response === 2 ? (
         <>
-          <h5 className="text-white">UNKNOWN RESPONSE </h5>
+          <h6 className="text-secondary ">UNKNOWN RESPONSE </h6>
           <span className="output  text-white ">
             <br /> <code>"status"</code> <span>: </span>
             <code className="code-cyan">"404"</code>

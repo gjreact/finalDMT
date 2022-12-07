@@ -100,7 +100,7 @@ const VerifyOtpPage = () => {
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -215,16 +215,12 @@ const VerifyOtpPage = () => {
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
+                className="togglebuttton"
                 id={iconName.icon}
                 key={index}
                 onClick={() => toggleTab(index)}
               >
-                <img src={iconName.icon} height="20" width="20" />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  />
               </button>
             );
           })}
