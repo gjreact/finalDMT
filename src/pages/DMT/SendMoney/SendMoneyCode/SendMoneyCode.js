@@ -4,6 +4,7 @@ import { AiOutlineCopy } from "react-icons/ai";
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
 import ShellWrapper from "../../CodeWrapper/ShellWrapper";
 import SendMoneyResponse from "./ResponseCode/SendMoneyResponse";
+import JavaWrapper from "../../CodeWrapper/JavaWrapper";
 
 const copyToClipboard = (id) => {
   var c = document.getElementById(id).innerText;
@@ -15,25 +16,9 @@ export const JavaSendMoney = () => {
   return (
     <>
       <CodeWrapper heading="Request">
+      <div className="request-wrapper">
+      <JavaWrapper />
         <br />
-        <code className="text-white">
-          OkHttpClient client = <code>new</code> OkHttpClient().newnewBuilder()
-        </code>
-        <AiOutlineCopy
-          className="copyicon"
-          onClick={() => copyToClipboard("python")}
-        />
-        <br />
-        <code className="text-white">.build();</code>
-        <br />
-        <code className="text-white">
-          MediaType mediaType = MediaType.parse({" "}
-          <code className="code-yellow">"application/json"</code>);
-        </code>
-        <br />
-        <code className="text-white">
-          RequestBody body = RequestBody.create(mediaType,
-        </code>{" "}
         <code className="code-yellow">
           "\r\n{" "}
           <span className="output">
@@ -76,6 +61,7 @@ export const JavaSendMoney = () => {
         <code className="text-white">
           Response response = client.newCall(request).execute();
         </code>
+        </div>
       </CodeWrapper>
 
       <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
@@ -92,8 +78,15 @@ export const PythonSendMoney = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <br /> <code>import</code> <code className="text-white">requests</code>
-        <br /> <code>import</code> <code className="text-white">json</code>
+      <div className="request-wrapper" id="python">
+        <br />
+        <span className="d-flex justify-content-between"><code> <code>import</code> <span className="text-white">requests</span></code>
+        <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("python")}
+            />
+        </span>
+        <code>import</code> <code className="text-white">json</code>
         <br />
         <code className="text-white"> url =</code>{" "}
         <code className="code-yellow">
@@ -133,6 +126,7 @@ export const PythonSendMoney = () => {
           <br />
           <code>print</code>(response.text className="text-white")
         </code>
+       </div>
       </CodeWrapper>
 
       <CodeWrapper heading={"Response"} btnview={2} setResponse={setResponse}>
@@ -149,11 +143,17 @@ export const ShellSendMoney = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="shell">
+          <code className="d-flex justify-content-between">
           <code className="text-white">
             wget --no-check-certificate --quiet \
           </code>
-          <br /> <code className="text-white">--method POST \</code>
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("shell")}
+            />
+          </code>
+          <code className="text-white">--method POST \</code>
           <br /> <code className="text-white"> --timeout=0 \</code>
           <br />{" "}
           <code className="text-white">
@@ -203,9 +203,13 @@ export const PHPSendMoney = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <br /> <code className="text-white">$curl = curl_init();</code>
-          <br />
+        <div className="request-wrapper" id="php">
+          <br /><span className="d-flex justify-content-between"> <code className="text-white">$curl = curl_init();</code>
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("php")}
+            />
+          </span>
           <code className="text-white">
             curl_setopt_array($curl, <code>array</code>(
           </code>
@@ -392,7 +396,7 @@ export const JavascriptSendMoney = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="javascript">
           <span className="d-flex justify-content-between">
             {" "}
             <code>
@@ -638,10 +642,15 @@ export function ClibcurlSendMoney() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="c">
           <br />
+          <span className="d-flex justify-content-between">
           <code className="text-white">CURL *curl;</code>
-          <br />
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("c")}
+            />
+          </span>
           <code className="text-white">CURLcode res;</code>
           <br />
           <code className="text-white">curl = curl_easy_init();</code>
@@ -732,11 +741,16 @@ export function GonativeSendMoney() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="go">
           <br />
-          <code>package</code>
-          <code className="text-white">main</code>
-          <br />
+          <span className="d-flex justify-content-between">
+          <span><code>package</code>
+          <code className="text-white">main</code></span>
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("go")}
+            />
+          </span>
           <code> import </code>
           <code className="text-white">
             (
@@ -895,10 +909,16 @@ export function CrestsharpSendMoney() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="csharp">
+          <span className="d-flex justify-content-between">
           <code>
             var<code className="text-white">client =</code> new{" "}
           </code>
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("csharp")}
+            />
+          </span>
           <code className="text-white">
             {" "}
             RestClient
@@ -1041,8 +1061,14 @@ export const RubySendMoneyCode = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="Ruby">
           <div>
+            <span className="d-flex justify-content-between"><span>
             <code className="text-white">require</code>
-            <code className="code-yellow">"uri"</code>
+            <code className="code-yellow">"uri"</code></span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("Ruby")}
+            />
+            </span>
             <br />
             <code className="text-white">require</code>
             <code className="code-yellow">"json"</code>
@@ -1136,6 +1162,10 @@ export const PowershellSendMoneyCode = () => {
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="Powershell">
+            <span className="d-flex justify-content-end"><AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("Powershell")}
+            /></span>
           <div>
             <code className="text-white">$headers = New-Object</code>
             <code className="code-yellow">

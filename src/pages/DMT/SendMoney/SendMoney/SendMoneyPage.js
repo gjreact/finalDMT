@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Col, Container, NavLink, Dropdown, Row, Table } from "react-bootstrap";
+import { Col, Dropdown, Row, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
-import SideMenu from "../../../../pages/SideBar/SideMenu";
-import logo from "../../../../asset/images/logo.png";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
 import java from "../../../../asset/images/java.png";
@@ -11,13 +9,9 @@ import php from "../../../../asset/images/php.png";
 import node from "../../../../asset/images/node.png";
 import powershell from "../../../../asset/images/powershell.svg";
 import csharp from "../../../../asset/images/csharp.png";
-import http from "../../../../asset/images/http.png";
 import js from "../../../../asset/images/js.png";
-import kotlin from "../../../../asset/images/kotlin.jpeg";
 import ruby from "../../../../asset/images/ruby.png";
-import objectiveC from "../../../../asset/images/objectiveC.png";
 import C from "../../../../asset/images/C.png";
-import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
 import swift from "../../../../asset/images/swift.jpeg";
 import {
   JavaSendMoney,
@@ -102,7 +96,6 @@ const SendMoneyPage = () => {
     },
   ]);
 
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
