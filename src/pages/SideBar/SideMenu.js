@@ -222,9 +222,9 @@ function SideMenu(props) {
                     borderRadius: isActive ? "30px" : "",
                   })}
                 >
-                  Transaction Money
+                  Transaction Requery
                 </NavLink>
-               
+                {/* <a href="# ">Transaction Requery</a> */}
               </ListGroup.Item>
             </ListGroup>
           </Accordion.Body>

@@ -28,9 +28,7 @@ import {
   RubyRemitterInfo,
   PowerShellRemitterInfo,
 } from "../ResponseCodeRemitter/RequestCode/RemitterInfoCode";
-
-
-const RemitterInfoPage = () => {
+import Bar from "../../../Bar";
 
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
@@ -105,6 +103,7 @@ const RemitterInfoPage = () => {
     }
   ]);
 
+  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
@@ -231,21 +230,18 @@ const RemitterInfoPage = () => {
         {toggleState === 10 && <GonativeRemitterInfo />}
         {toggleState === 11 && <RubyRemitterInfo />}
 
-        <div className="lang-btns d-flex justify-content-evenly ">
-          {horizontalIconArray.map(({ icon, id }, index) => {
+        <div className="lang-btns d-flex justify-content-evenly">
+          {horizontalIconArray.map((iconName, index) => {
             return (
               <button
-
-              className="togglebutton"
-              id={icon}
-              key={index}
-           
-              onClick={() =>{ 
-             
-                toggleTab(id)
-              }}
+              className="togglebuttton"
+               
+                id={iconName.icon}
+                key={iconName.id}
+                onClick={() => toggleTab(iconName.id)}
+                
               >
-                <img src={icon} height="20" width="20" />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"/>
               </button>
             );
           })}

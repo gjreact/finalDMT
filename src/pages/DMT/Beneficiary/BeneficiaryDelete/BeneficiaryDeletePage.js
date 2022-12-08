@@ -2,44 +2,53 @@ import React,{useState} from "react";
 import { Col, Container, Row,Dropdown, Table } from "react-bootstrap";
 import '../../../../asset/css/basiclayout.css'
 import shell from "../../../../asset/images/shell.jpg";
-import Go from '../../../../asset/images/Go.png';
-import java from '../../../../asset/images/java.png';
-import python from '../../../../asset/images/python.png';
-import php from '../../../../asset/images/php.png';
-import node from '../../../../asset/images/node.png';
-import powershell from '../../../../asset/images/powershell.svg';
-import csharp from '../../../../asset/images/csharp.png';
-import http from '../../../../asset/images/http.png';
-import js from '../../../../asset/images/js.png';
-import kotlin from '../../../../asset/images/kotlin.jpeg';
-import ruby from '../../../../asset/images/ruby.png';
-import objectiveC from '../../../../asset/images/objectiveC.png';
-import C from '../../../../asset/images/C.png';
-import CPlusPlus from '../../../../asset/images/CPlusPlus.png';
-import swift from '../../../../asset/images/swift.jpeg';
-import { ClibcurlBeneficiaryDelete, CrestsharpBeneficiaryDelete, DeleteBeneficiaryCode, GonativeBeneficiaryDelete, JavascriptDeleteBeneficiary, NodeDeleteBeneficiary, PHPDeleteBeneficiary, PowershellDeleteBeneficiary, PythonDeleteBeneficiary, RubyDeleteBeneficiary, ShellDeleteBeneficiary, SwiftDeleteBeneficiary } from "../RequestBeneficiary/DeleteBeneficiaryCode";
+import Go from "../../../../asset/images/Go.png";
+import java from "../../../../asset/images/java.png";
+import python from "../../../../asset/images/python.png";
+import php from "../../../../asset/images/php.png";
+import node from "../../../../asset/images/node.png";
+import powershell from "../../../../asset/images/powershell.svg";
+import csharp from "../../../../asset/images/csharp.png";
+import js from "../../../../asset/images/js.png";
+import ruby from "../../../../asset/images/ruby.png";
+import C from "../../../../asset/images/C.png";
+import swift from "../../../../asset/images/swift.jpeg";
+import {
+  ClibcurlBeneficiaryDelete,
+  CrestsharpBeneficiaryDelete,
+  DeleteBeneficiaryCode,
+  GonativeBeneficiaryDelete,
+  JavascriptDeleteBeneficiary,
+  NodeDeleteBeneficiary,
+  PHPDeleteBeneficiary,
+  PowershellDeleteBeneficiary,
+  PythonDeleteBeneficiary,
+  RubyDeleteBeneficiary,
+  ShellDeleteBeneficiary,
+  SwiftDeleteBeneficiary,
+} from "../RequestBeneficiary/DeleteBeneficiaryCode";
 import Bar from "../../../Bar";
 
 const BeneficiaryDeletePage = () => {
 
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
-      id:0,
+      id: 0,
       icon: java,
       text: "java",
     },
     {
-      id:1,
+      id: 1,
       icon: python,
       text: "python",
     },
     {
-      id:2,
+      id: 2,
       icon: shell,
       text: "shell",
     },
     {
-      id:3,
+      id: 3,
       icon: php,
       text: "php",
     }
@@ -54,42 +63,42 @@ const BeneficiaryDeletePage = () => {
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
-      id:4,
+      id: 4,
       icon: node,
       text: "Node JS",
     },
     {
-      id:5,
+      id: 5,
       icon: powershell,
       text: "Powershell",
     },
     {
-      id:6,
+      id: 6,
       icon: csharp,
       text: "Csharp",
     },
     {
-      id:7,
+      id: 7,
       icon: js,
       text: "Javascript",
     },
     {
-      id:8,
+      id: 8,
       icon: C,
       text: "C",
     },
     {
-      id:9,
+      id: 9,
       icon: swift,
       text: "Swift",
     },
     {
-      id:10,
+      id: 10,
       icon: Go,
       text: "Go",
     },
     {
-      id:11,
+      id: 11,
       icon: ruby,
       text: "ruby",
     }
@@ -98,11 +107,13 @@ const BeneficiaryDeletePage = () => {
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const toggleTab = (id) => {
+    console.log(id);
+    setToggleState(id);
   };
 
-  const pushItem = (icon,index) => {
+  const pushItem = (icon, index) => {
+    toggleTab(icon.id);
     dummyArray[0] = icon;
 
     setVerticalIconArray([
@@ -181,51 +192,44 @@ const BeneficiaryDeletePage = () => {
           <code className="code-yellow">"abs1nxxxxx"</code><br />
         </p>
 
-        <h3 className=" p-3  link-font-size">Request:</h3>
-        <p className="output " ><br /> <code>"remitterPhone"</code>
-          <span>
-            :
-          </span>
-          <code className="code-cyan"> "7902626443"</code><br />
+          <h3 className="py-2 link-font-size">Request:</h3>
+          <p className="output content-bg">
+            <br /> <code>"remitterPhone"</code>
+            <span>:</span>
+            <code className="code-cyan"> "7902626443"</code>
+            <br />
+          </p>
+        </Row>
+      </Col>
+      <Col id="style-1" className="col-12 col-sm-5 link-heading scrollbar pt-5">
+        {toggleState === 0 && <DeleteBeneficiaryCode />}
+        {toggleState === 1 && <PythonDeleteBeneficiary />}
+        {toggleState === 2 && <ShellDeleteBeneficiary />}
+        {toggleState === 3 && <PHPDeleteBeneficiary />}
+        {toggleState === 4 && <NodeDeleteBeneficiary />}
+        {toggleState === 5 && <PowershellDeleteBeneficiary />}
+        {toggleState === 6 && <CrestsharpBeneficiaryDelete />}
+        {toggleState === 7 && <JavascriptDeleteBeneficiary />}
+        {toggleState === 8 && <ClibcurlBeneficiaryDelete />}
+        {toggleState === 9 && <SwiftDeleteBeneficiary />}
+        {toggleState === 10 && <GonativeBeneficiaryDelete />}
+        {toggleState === 11 && <RubyDeleteBeneficiary />}
 
-        </p>
-
-
-      </Row>
-
-
-    </Col>
-    <Col id="style-1" className="col-12 col-sm-5 link-heading scrollbar pt-5" >
-
-
-      {toggleState === 0 && <DeleteBeneficiaryCode />}
-      {toggleState === 1 && <PythonDeleteBeneficiary />}
-      {toggleState === 2 && <ShellDeleteBeneficiary />}
-      {toggleState === 3 && <PHPDeleteBeneficiary />}
-      {toggleState === 4 && < NodeDeleteBeneficiary/>}
-      {toggleState === 5 && < PowershellDeleteBeneficiary/>}
-      {toggleState === 6 && <CrestsharpBeneficiaryDelete />}
-      {toggleState === 7 && <JavascriptDeleteBeneficiary />}
-      {toggleState === 8 && <ClibcurlBeneficiaryDelete />}
-      {toggleState === 9 && <SwiftDeleteBeneficiary />}
-      {toggleState === 10 && <GonativeBeneficiaryDelete />}
-      {toggleState === 11 && <RubyDeleteBeneficiary />}   
-      
-
-      <div className="lang-btns d-flex justify-content-evenly">
-      {horizontalIconArray.map(({icon,id}, index) => {
+        <div className="lang-btns d-flex justify-content-evenly">
+          {horizontalIconArray.map((iconName, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-                id={icon}
+                className="togglebuttton"
+                id={iconName.icon}
                 key={index}
-                onClick={() => toggleTab(id)}
+                onClick={() => toggleTab(iconName.id)}
               >
-                <img src={icon} height="20" width="20" />
+                <img
+                  src={iconName.icon}
+                  height="20"
+                  width="20"
+                  className="togglebutttonimg"
+                />
               </button>
             );
           })}
@@ -238,15 +242,10 @@ const BeneficiaryDeletePage = () => {
 
             <Dropdown.Menu>
               {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log("icon", icon);
-
+                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => {
-                      toggleTab(id);
-                      pushItem({ icon, text,id }, index)
-                    }
-                    }
+                    onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

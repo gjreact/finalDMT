@@ -308,6 +308,8 @@ a {
 .request-wrapper {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 30px 10px 30px 30px;
+  /* border-top-right-radius: 17px;
+  border-top-left-radius: 17px; */
 }
 
 .response-text-heading {
@@ -317,9 +319,16 @@ a {
 .response-wrapper {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 30px 10px 30px 30px;
+  /* border-top-right-radius: 17px;
+  border-top-left-radius: 17px; */
 }
 /* aryas code end */
 
+.togglebuttton {
+  outline: none;
+  border: 1px solid rgba(225, 214, 214, 0.477);
+  background: transparent;
+  border-radius: 10px;
 .togglebutton{
   outline:none;
   border: none;
@@ -342,3 +351,8 @@ a {
   width:480px;
   max-width: 480px;
 }
+.togglebutttonimg{
+  border:1px silid red;
+  border-radius:2px;
+}
+/* STYLE END */

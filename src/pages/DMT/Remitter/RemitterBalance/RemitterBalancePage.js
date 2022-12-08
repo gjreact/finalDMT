@@ -13,9 +13,22 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
-
-import Bar from '../../.././Bar'
-import { ClibcurlRemitterBalance, CrestsharpRemitterBalance, GonativeRemitterBalance, JavaRemitterBalance, JavascriptRemitterBalanceCode, NodeRemitterBalanceCode, PHPRemitterBalance, PowershellRemitterBalanceCode, PythonRemitterBalance, RubyRemitterBalanceCode, ShellRemitterBalance, SwiftRemitterBalanceCode } from "../ResponseCodeRemitter/RequestCode/RemitterBalanceCode";
+import {
+  JavaRemitterBalance,
+  PythonRemitterBalance,
+  ShellRemitterBalance,
+  PHPRemitterBalance,
+  NodeRemitterBalanceCode,
+  JavascriptRemitterBalanceCode,
+  SwiftRemitterBalanceCode,
+  ClibcurlRemitterinfo,
+  CrestsharpRemitterBalance,
+  GonativeRemitterBalance,
+  RubyRemitterBalanceCode,
+  PowershellRemitterBalanceCode,
+  
+} from "../ResponseCodeRemitter/RequestCode/RemitterBalanceCode";
+import Bar from "../../../Bar";
 
 const RemitterBalancePage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
@@ -25,7 +38,6 @@ const RemitterBalancePage = () => {
       text: "java",
     },
     {
-
       id: 1,
       icon: python,
       text: "python",
@@ -94,14 +106,12 @@ const RemitterBalancePage = () => {
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
-    // console.log(id);
-    
+    console.log(id);
     setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
-    console.log(icon);
-    
+    toggleTab(icon.id);
     dummyArray[0] = icon;
     // console.log("DummyArray", dummyArray);
    
@@ -195,28 +205,24 @@ const RemitterBalancePage = () => {
         {toggleState === 2 && <ShellRemitterBalance />}
         {toggleState === 3 && <PHPRemitterBalance />}
         {toggleState === 4 && <NodeRemitterBalanceCode />}
-        {toggleState === 5 && <PowershellRemitterBalanceCode />}
-        {toggleState === 6 && <CrestsharpRemitterBalance />}
-        {toggleState === 7 && <JavascriptRemitterBalanceCode/>}
-        {toggleState === 8 && <ClibcurlRemitterBalance />}
-        {toggleState === 9 && <SwiftRemitterBalanceCode />}
-        {toggleState === 10 && <GonativeRemitterBalance />}
-        {toggleState === 11 && <RubyRemitterBalanceCode />}
+        {toggleState === 5 && <JavascriptRemitterBalanceCode />}
+        {toggleState === 6 && <SwiftRemitterBalanceCode />}
+        {toggleState === 7 && <ClibcurlRemitterinfo />}
+        {toggleState === 8 && <CrestsharpRemitterBalance />}
+        {toggleState === 9 && <GonativeRemitterBalance />}
+        {toggleState === 10 && <RubyRemitterBalanceCode />}
+        {toggleState === 11 && <PowershellRemitterBalanceCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-                id={icon}
+                className="togglebuttton"
+                id={iconName.icon}
                 key={index}
-                onClick={() => toggleTab(id)}
+                onClick={() => toggleTab(iconName.id)}
               >
-                <img src={icon} height="20" width="20" />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  />
               </button>
             );
           })}
@@ -228,16 +234,11 @@ const RemitterBalancePage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log("icon", icon);
-
+              {verticalIconArray.map(({ icon, text,id }, index) => {
+                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => {
-                      toggleTab(id);
-                      pushItem({ icon, text,id }, index)
-                    }
-                    }
+                    onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

@@ -13,16 +13,18 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import {
-  CreateBeneficiaryCode,
-  JavascriptRegisterBeneficiary,
-  NodeRegisterBeneficiary,
-  PHPBeneficiary,
-  PythonBeneficiary,
-  ShellBeneficiary,
-  ClibcurlBeneficiaryRegister, CrestsharpBeneficiaryRegister, GonativeBeneficiaryRegister, SwiftRegisterBeneficiary 
-} from "../RequestBeneficiary/CreateBeneficiaryCode";
-import { ClibcurlBeneficiaryList, CrestsharpBeneficiaryList, GonativeBeneficiaryList, JavascriptListBeneficiary, ListBeneficiaryCode, NodeListBeneficiary, PHPListBeneficiary, PowershellListBeneficiary, PythonListBeneficiary, RubyListBeneficiary, ShellListBeneficiary, SwiftListBeneficiary } from "../RequestBeneficiary/ListBeneficiaryCode";
+import { ClibcurlBeneficiaryList,
+    CrestsharpBeneficiaryList, 
+    GonativeBeneficiaryList, 
+    JavascriptListBeneficiary, 
+    ListBeneficiaryCode, 
+    NodeListBeneficiary, 
+    PHPListBeneficiary, 
+    PowershellListBeneficiary,
+    PythonListBeneficiary, 
+    RubyListBeneficiary, 
+    ShellListBeneficiary, 
+    SwiftListBeneficiary } from "../RequestBeneficiary/ListBeneficiaryCode";
 
 
 const BeneficiaryCreatePage = () => {
@@ -99,7 +101,7 @@ const BeneficiaryCreatePage = () => {
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
-  const [toggleState, setToggleState] = useState(0);
+  const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (id) => {
     // console.log(id);
@@ -146,7 +148,7 @@ const BeneficiaryCreatePage = () => {
       <Col className="col-12 col-sm-7 boder">
         <Row>
           <h1 className="heading mb-0">Beneficiary</h1>
-          <p className="px-4 mb-0 backroundP-tag">
+          <p className="content-bg">
             Beneficiary is the bank account who receives the funds remitted by
             the remitter mobile number.
             <br />A beneficiary is someone to whom one can transfer money or to
@@ -154,8 +156,8 @@ const BeneficiaryCreatePage = () => {
             the beneficiary's bank account details. By using our APIs, you can
             Create, Delete and Fetch beneficiaries for your customers.
           </p>
-          <h2 className="mb-0 mt-0 p-3">Register Beneficiary</h2>
-          <p className="px-4  mb-5">
+          <h2 className="mb-0 mt-0">Register Beneficiary</h2>
+          <p className="px-4  mb-5 content-bg">
             Beneficiary need to be registered in the system through the
             remitter's mobile number and bank details.
           </p>

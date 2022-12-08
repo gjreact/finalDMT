@@ -13,9 +13,21 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
-
-import { ClibcurlVerifyOtp, CrestsharpVerifyOtp, GonativeVerifyOtp, JavascriptVerifyOtpCode, JavaVerifyOtp, NodeVerifyOtpCode, PHPVerifyOtp, PowershellVerifyOtpCode, PythonVerifyOtp, RubyVerifyOtpCode, ShellVerifyOtp, SwiftVerifyOtpCode } from "../ResponseCodeRemitter/RequestCode/VerifyOtpCode";
-import Bar from '../../.././Bar'
+import Bar from "../../../Bar";
+import {
+  JavaVerifyOtp,
+  PythonVerifyOtp,
+  ShellVerifyOtp,
+  PHPVerifyOtp,
+  NodeVerifyOtpCode,
+  JavascriptVerifyOtpCode,
+  SwiftVerifyOtpCode,
+  GonativeVerifyOtp,
+  CrestsharpVerifyOtp,
+  ClibcurlVerifyOtp,
+  RubyVerifyOtpCode,
+  PowershellVerifyOtpCode
+} from "../ResponseCodeRemitter/RequestCode/VerifyOtpCode";
 
 const VerifyOtpPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
@@ -25,7 +37,6 @@ const VerifyOtpPage = () => {
       text: "java",
     },
     {
-
       id: 1,
       icon: python,
       text: "python",
@@ -94,14 +105,12 @@ const VerifyOtpPage = () => {
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
-    // console.log(id);
-    
+    console.log(id);
     setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
-    console.log(icon);
-    
+    toggleTab(icon.id);
     dummyArray[0] = icon;
     // console.log("DummyArray", dummyArray);
    
@@ -129,7 +138,7 @@ const VerifyOtpPage = () => {
       ...verticalIconArray,
       (verticalIconArray[index] = cacheArray[0]),
     ]);
-  };
+  }; 
 
   return (
     <>
@@ -210,28 +219,24 @@ const VerifyOtpPage = () => {
         {toggleState === 2 && <ShellVerifyOtp />}
         {toggleState === 3 && <PHPVerifyOtp />}
         {toggleState === 4 && <NodeVerifyOtpCode />}
-        {toggleState === 5 && <PowershellVerifyOtpCode />}
-        {toggleState === 6 && <CrestsharpVerifyOtp />}
-        {toggleState === 7 && <JavascriptVerifyOtpCode />}
-        {toggleState === 8 && <ClibcurlVerifyOtp />}
-        {toggleState === 9 && <SwiftVerifyOtpCode />}
-        {toggleState === 10 && <GonativeVerifyOtp />}
-        {toggleState === 11 && <RubyVerifyOtpCode />}
+        {toggleState === 5 && <JavascriptVerifyOtpCode />}
+        {toggleState === 6 && <SwiftVerifyOtpCode />}
+        {toggleState === 7 && <GonativeVerifyOtp />}
+        {toggleState === 8 && <CrestsharpVerifyOtp />}
+        {toggleState === 9 && <ClibcurlVerifyOtp />}
+        {toggleState === 10 && <RubyVerifyOtpCode />}
+        {toggleState === 11 && <PowershellVerifyOtpCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-                id={icon}
+                className="togglebuttton"
+                id={iconName.icon}
                 key={index}
-                onClick={() => toggleTab(id)}
+                onClick={() => toggleTab(iconName.id)}
               >
-                <img src={icon} height="20" width="20" />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  />
               </button>
             );
           })}
@@ -243,16 +248,11 @@ const VerifyOtpPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log("icon", icon);
-
+              {verticalIconArray.map(({ icon, text,id }, index) => {
+                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => {
-                      toggleTab(id);
-                      pushItem({ icon, text,id }, index)
-                    }
-                    }
+                    onClick={() => pushItem({ icon, text,id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

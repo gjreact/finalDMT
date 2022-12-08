@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Row } from "react-bootstrap";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
@@ -13,172 +13,360 @@ const copyToClipboard = (id) => {
   copy(c);
 };
 export const ListBeneficiaryCode = () => {
-  return <><CodeWrapper heading="Request">
-    <div className="request-wrapper" id="java">
-      <JavaWrapper />
-        <br /> <code className="code-yellow">\"beneficiaryId\":10\r\n"</code><code className="text-white">);</code>
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper" id="java">
+          <JavaWrapper />
+          <br /> <code className="code-yellow">\"beneficiaryId\":10\r\n"</code>
+          <code className="text-white">);</code>
+          <br />
+          <code className="text-white">
+            Request request = <code>new</code> Request.Builder()
+          </code>{" "}
+          <br />
+          <code className="text-white">.url(</code>
+          <code className="code-yellow">
+            "http://194.195.113.218:8090/paymento/beneficiary-reg/getbeneficiary"
+          </code>
+          <code className="text-white">)</code> <br />
+          <code className="text-white">.method(</code>
+          <code className="code-yellow">"POST"</code>
+          <code className="text-white">,body)</code>
+          <br />
+          <code className="text-white">.addHeader(</code>
+          <code className="code-yellow">"apiKey"</code>
+          <code className="code-yellow">
+            , "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No"
+          </code>
+          <code className="text-white">)</code> <br />
+          <code className="text-white">.addHeader(</code>
+          <code className="code-yellow">"Authorization"</code>
+          <code className="code-yellow">, "Bearer token"</code>
+          <code className="text-white">)</code> <br />
+          <code className="text-white">.addHeader(</code>
+          <code className="code-yellow">"Content-Type"</code>
+          <code className="code-yellow">, "application/json"</code>
+          <code className="text-white">)</code> <br />
+          <code className="text-white">.build();</code>
+          <br />
+          <code className="text-white">
+            Response response = client.newCall(request).execute();
+          </code>
+        </div>
+      </CodeWrapper>
 
-
-        <br /><code className="text-white">Request request = <code>new</code> Request.Builder()</code> <br />
-        <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/getbeneficiary"</code><code className="text-white">)</code> <br />
-        <code className="text-white">.method(</code><code className="code-yellow">"POST"</code><code className="text-white">,body)</code><br />
-        <code className="text-white">.addHeader(</code><code className="code-yellow">"apiKey"</code><code className="code-yellow">, "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No"</code><code className="text-white">)</code> <br />
-        <code className="text-white">.addHeader(</code><code className="code-yellow">"Authorization"</code><code className="code-yellow">, "Bearer token"</code><code className="text-white">)</code> <br />
-        <code className="text-white">.addHeader(</code><code className="code-yellow">"Content-Type"</code><code className="code-yellow">, "application/json"</code><code className="text-white">)</code>  <br />
-        <code className="text-white">.build();</code><br />
-        <code className="text-white">Response response = client.newCall(request).execute();</code>
-
-
-
-
-    </div>
-  </CodeWrapper>
-
-  <ListBeneficiaryResponse />
-</>
-
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
 };
 
 
 export const PythonListBeneficiary = () => {
-  return <> <CodeWrapper heading="Request">
-    <div className="request-wrapper" id="python" >
-      <br /> <span className="d-flex justify-content-between"><code>import<code className="text-white">  requests</code></code><AiOutlineCopy className="copyicon" onClick={() => copyToClipboard("python")} /></span>
-      <code>import</code> <code className="text-white"> json</code><br />
-      <code className="text-white"> url =</code> <code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/getbeneficiary"</code><br /><br />
-      <code className="text-white">payload = json.dumps</code>( <span className="output  text-white"><br />
-        <code>"remitterPhone"</code>  <span>: </span> <code className="code-yellow">7902900295</code><br />
-
-
-
-      </span>) <br /><br />
-
-      <code className="text-white">
-        headers = <span className="output  text-white"><br />
-          <code>'apiKey'</code>: <code className="code-yellow">'apiKey'</code> ,<br />
-          <code >'Authorization'</code>: <code className="code-yellow">'Bearer  token'</code>,<br />
-          <code>'Content-Type'</code>:<code className="code-yellow"> 'application/json'</code><br />
-        </span>
-      </code><br />
-
-      <code className="text-white">response = requests.request(</code><code className="code-yellow">"POST"</code><code className="text-white">, url, headers=headers, data=payload)</code><br />
-      <code>print</code><code className="text-white">(response.text)</code>
-    </div>
-
-
-  </CodeWrapper>
-  <ListBeneficiaryResponse />
-
-  </>
-}
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      {" "}
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper" id="python">
+          <br />{" "}
+          <span className="d-flex justify-content-between">
+            <code>
+              import<code className="text-white"> requests</code>
+            </code>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("python")}
+            />
+          </span>
+          <code>import</code> <code className="text-white"> json</code>
+          <br />
+          <code className="text-white"> url =</code>{" "}
+          <code className="code-yellow">
+            "http://194.195.113.218:8090/paymento/beneficiary-reg/getbeneficiary"
+          </code>
+          <br />
+          <br />
+          <code className="text-white">payload = json.dumps</code>({" "}
+          <span className="output  text-white">
+            <br />
+            <code>"remitterPhone"</code> <span>: </span>{" "}
+            <code className="code-yellow">7902900295</code>
+            <br />
+          </span>
+          ) <br />
+          <br />
+          <code className="text-white">
+            headers ={" "}
+            <span className="output  text-white">
+              <br />
+              <code>'apiKey'</code>:{" "}
+              <code className="code-yellow">'apiKey'</code> ,<br />
+              <code>'Authorization'</code>:{" "}
+              <code className="code-yellow">'Bearer token'</code>,<br />
+              <code>'Content-Type'</code>:
+              <code className="code-yellow"> 'application/json'</code>
+              <br />
+            </span>
+          </code>
+          <br />
+          <code className="text-white">response = requests.request(</code>
+          <code className="code-yellow">"POST"</code>
+          <code className="text-white">
+            , url, headers=headers, data=payload)
+          </code>
+          <br />
+          <code>print</code>
+          <code className="text-white">(response.text)</code>
+        </div>
+      </CodeWrapper>
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
 
 export const ShellListBeneficiary = () => {
-  return <> <CodeWrapper heading="Request">
-    <div className="response-wrapper" id="shell">
-
-      <ShellWrapper/>
-        <br /> <code className="text-white"> --body-data </code>
-        <span>'</span><span className="output  text-white" ><br />
-          <code>"beneficiaryId"</code>  <span>: </span> <code className="code-yellow">10</code><br />
-
-        </span><span>'\</span> <br />
-        <code className="code-yellow">'http://194.195.113.218:8090/paymento/beneficiary-reg/getbeneficiary'</code>
-      
-    </div>
-
-  </CodeWrapper>
-
-  <ListBeneficiaryResponse />
-
-  
-  </>
-}
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      {" "}
+      <CodeWrapper heading="Request">
+        <div className="response-wrapper" id="shell">
+          <ShellWrapper />
+          <br /> <code className="text-white"> --body-data </code>
+          <span>'</span>
+          <span className="output  text-white">
+            <br />
+            <code>"beneficiaryId"</code> <span>: </span>{" "}
+            <code className="code-yellow">10</code>
+            <br />
+          </span>
+          <span>'\</span> <br />
+          <code className="code-yellow">
+            'http://194.195.113.218:8090/paymento/beneficiary-reg/getbeneficiary'
+          </code>
+        </div>
+      </CodeWrapper>
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
 
 export const PHPListBeneficiary = () => {
-  return <> <CodeWrapper heading="Request">
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      {" "}
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper" id="php">
+          <span className="d-flex justify-content-between">
+            <code> &#60;&#63;php</code>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("php")}
+            />
+          </span>
+          <br />
+          <code className="text-white">$curl = curl_init();</code>
+          <br />
+          <code className="text-white">
+            curl_setopt_array(
+            <code className="code-yelllow">
+              $curl,<code className="text-white"> array(</code>
+            </code>
+          </code>
+          <br />
+          <code>
+            CURLOPT_URL =&#62;{" "}
+            <code className="code-yellow">
+              'http://194.195.113.218:8090/paymento/beneficiary-reg/getbeneficiary',
+            </code>
+          </code>
+          <br />
+          <code>
+            CURLOPT_RETURNTRANSFER =&#62;{" "}
+            <code className="code-yellow">true,</code>
+          </code>{" "}
+          <br />
+          <code>
+            CURLOPT_ENCODING =&#62; <code className="code-yellow">'',</code>
+          </code>
+          <br />
+          <code>
+            CURLOPT_MAXREDIRS =&#62; <code className="code-cyan">10,</code>
+          </code>
+          <br />
+          <code>
+            CURLOPT_TIMEOUT =&#62; <code className="code-cyan">0,</code>
+          </code>
+          <br />
+          <code>
+            CURLOPT_FOLLOWLOCATION =&#62;{" "}
+            <code className="code-yelllow">true,</code>
+          </code>
+          <br />
+          <code>
+            CURLOPT_HTTP_VERSION =&#62;{" "}
+            <code className="code-yellow">CURL_HTTP_VERSION_1_1,</code>
+          </code>
+          <br />
+          <code>
+            CURLOPT_CUSTOMREQUEST =&#62;{" "}
+            <code className="code-yellow">'POST',</code>
+          </code>
+          <br />
+          <code>
+            CURLOPT_POSTFIELDS =&#62; <code>'</code>
+          </code>
+          <br />
+          <span className="output text-white">
+            <br />
+            <code>"beneficiaryId"</code> <span>: </span>{" "}
+            <code className="code-yellow">10</code>
+            <br />
+          </span>
+          <code>',</code>
+          <br />
+          <code>
+            CURLOPT_HTTPHEADER =&#62; <code>array(</code>
+          </code>
+          <br />
+          <code>
+            'apiKey <span>: </span>{" "}
+            <code className="code-yellow">apiKey',</code>
+          </code>{" "}
+          <br />
+          <code>
+            "Authorization <span>: </span>
+            <code className="code-cyan">Bearer token', </code>
+          </code>
+          <br />
+          <code>
+            'Content-Type <span>: </span>
+            <code className="code-cyan"> application/json'</code>
+          </code>
+          <br />
+          <code>)</code>
+          <br />
+          <code>));</code>
+          <br />
+          <code className="code-yellow">$response = curl_exec($curl);</code>
+          <br />
+          <code className="code-yellow">curl_close($curl);</code>
+          <br />
+          <code>
+            echo <code className="code-yellow">$response;</code>
+          </code>
+          <br />
+        </div>
+      </CodeWrapper>
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
-    <div className="request-wrapper" id="php">
-      <span className="d-flex justify-content-between"><code>	&#60;&#63;php</code><AiOutlineCopy className="copyicon" onClick={() => copyToClipboard("php")} /></span>
-
-      <code className="text-white">$curl = curl_init();</code><br />
-
-      <code className="text-white">curl_setopt_array(<code className="code-yelllow">$curl,<code className="text-white"> array(</code></code></code><br />
-      <code>CURLOPT_URL =&#62; <code className="code-yellow">'http://194.195.113.218:8090/paymento/beneficiary-reg/getbeneficiary',</code></code><br />
-      <code>CURLOPT_RETURNTRANSFER =&#62; <code className="code-yellow">true,</code></code> <br />
-      <code>CURLOPT_ENCODING =&#62;  <code className="code-yellow">'',</code></code><br />
-      <code>CURLOPT_MAXREDIRS =&#62;  <code className="code-cyan">10,</code></code><br />
-      <code>CURLOPT_TIMEOUT =&#62;  <code className="code-cyan">0,</code></code><br />
-      <code>CURLOPT_FOLLOWLOCATION =&#62;  <code className="code-yelllow">true,</code></code><br />
-      <code>CURLOPT_HTTP_VERSION =&#62;  <code className="code-yellow">CURL_HTTP_VERSION_1_1,</code></code><br />
-      <code>CURLOPT_CUSTOMREQUEST =&#62;  <code className="code-yellow">'POST',</code></code><br />
-      <code>CURLOPT_POSTFIELDS =&#62; <code>'</code></code><br />
-      <span className="output text-white"><br />
-        <code>"beneficiaryId"</code>  <span>: </span> <code className="code-yellow">10</code><br />
-
-      </span><code>',</code><br />
-
-
-      <code>CURLOPT_HTTPHEADER =&#62; <code>array(</code></code><br />
-      <code>'apiKey <span>: </span> <code className="code-yellow">apiKey',</code></code> <br />
-      <code>"Authorization <span>: </span><code className="code-cyan">Bearer  token', </code></code><br />
-      <code>'Content-Type  <span>: </span><code className="code-cyan"> application/json'</code></code><br />
-      <code>)</code><br />
-      <code>));</code><br />
-      <code className="code-yellow">$response = curl_exec($curl);</code><br />
-      <code className="code-yellow">curl_close($curl);</code><br />
-      <code>echo <code className="code-yellow">$response;</code></code><br />
-
-    </div>
-  </CodeWrapper>
-  
-  <ListBeneficiaryResponse />
-
-  </>
-}
-
-export const NodeListBeneficiary= () => {
-  return <> <CodeWrapper heading="Request">
-
-     <div className="request-wrapper" >
-    <span className="d-flex justify-content-between"><code>var <code className="text-white"> request =</code> <code>require</code><code>('request');</code>  </code><AiOutlineCopy className="copyicon" onClick={() => copyToClipboard("python")} /></span>
-    <code>var </code> <code className="text-white">options = </code><span className="output text-white"><br />
-       <code>'method' :</code><code className="code-yellow">'POST'</code><br />
-       <code>'url' :<code className="code-yellow">'http://194.195.113.218:8090/paymento/remitter-reg/getbeneficiary\n\n',</code></code><br />
-       <code className="text-white">
-              headers = <span className="output  text-white"><br />
-                 <code>'apiKey'</code>: <code className="code-yellow">'apiKey'</code> ,<br />
-                 <code >'Authorization'</code>: <code className="code-yellow">'Bearer  token'</code>,<br />
-                 <code>'Content-Type'</code>:<code className="code-yellow"> 'application/json'</code><br />
+export const NodeListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      {" "}
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper">
+          <code>
+            var <code className="text-white"> request =</code>{" "}
+            <code>require</code>
+            <code>('request');</code>{" "}
+          </code>
+          <br />
+          <code>var </code> <code className="text-white">options = </code>
+          <span className="output text-white">
+            <br />
+            <code>'method' :</code>
+            <code className="code-yellow">'POST'</code>
+            <br />
+            <code>
+              'url' :
+              <code className="code-yellow">
+                'http://194.195.113.218:8090/paymento/remitter-reg/getbeneficiary\n\n',
+              </code>
+            </code>
+            <br />
+            <code className="text-white">
+              headers ={" "}
+              <span className="output  text-white">
+                <br />
+                <code>'apiKey'</code>:{" "}
+                <code className="code-yellow">'apiKey'</code> ,<br />
+                <code>'Authorization'</code>:{" "}
+                <code className="code-yellow">'Bearer token'</code>,<br />
+                <code>'Content-Type'</code>:
+                <code className="code-yellow"> 'application/json'</code>
+                <br />
               </span>
-           </code><br />
-           <code className="text-white"> body :</code><code className="text-white"><span className="output text-white"><br />
-           <code>\r\n        "remitterid":"”\r\n</code>  <span>: </span> <br />
-           </span></code><br />
-    </span><code className="text-white">;</code><br />
-    <code className="text-white">
-     request(options,<code>function</code><code className="text-white">(error,response)</code><br />
-     <span className="output"><br />
-        <code>if</code> <code className="text-white">(error)</code> <code>throw new Error<code className="text-white">(error);</code></code><br />
-        <code>console.log(response.body)</code><br />
-     </span><code className="text-white">);</code>
-    </code>
-
-     </div>
-
-  </CodeWrapper>
-  
-  <ListBeneficiaryResponse />
-
-  
-   </>
+            </code>
+            <br />
+            <code className="text-white"> body :</code>
+            <code className="text-white">
+              <span className="output text-white">
+                <br />
+                <code>\r\n "remitterid":"”\r\n</code> <span>: </span> <br />
+              </span>
+            </code>
+            <br />
+          </span>
+          <code className="text-white">;</code>
+          <br />
+          <code className="text-white">
+            request(options,<code>function</code>
+            <code className="text-white">(error,response)</code>
+            <br />
+            <span className="output">
+              <br />
+              <code>if</code> <code className="text-white">(error)</code>{" "}
+              <code>
+                throw new Error<code className="text-white">(error);</code>
+              </code>
+              <br />
+              <code>console.log(response.body)</code>
+              <br />
+            </span>
+            <code className="text-white">);</code>
+          </code>
+        </div>
+      </CodeWrapper>
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
 };
 
 export const JavascriptListBeneficiary = () => {
-  return <>
-     <CodeWrapper heading="Request">
-
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      <CodeWrapper heading="Request">
         <div className="request-wrapper">
           <span className="d-flex justify-content-between"><code>var myHeaders = <code>new</code> <code className="text-white">Headers();</code></code><AiOutlineCopy className="copyicon" onClick={() => copyToClipboard("python")} /></span>
            <code className="text-white">myHeaders.</code><code>append</code><code className="text-white">(</code><code className="code-yellow">"apiKey", apiKey</code><code className="text-white">);</code><br />
@@ -205,14 +393,20 @@ export const JavascriptListBeneficiary = () => {
 
      </CodeWrapper>
 
-     <ListBeneficiaryResponse />
-
-  </>
-}
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
 export const SwiftListBeneficiary = () => {
-  return <>
-     <CodeWrapper heading="Request">
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      <CodeWrapper heading="Request">
         <div className="request-wrapper">
 
 
@@ -252,13 +446,18 @@ export const SwiftListBeneficiary = () => {
 
      </CodeWrapper>
 
-     <ListBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
-</>
-}
-
-export function CrestsharpBeneficiaryList(){
-  return(
+export function CrestsharpBeneficiaryList() {
+  const [response, setResponse] = useState(0);
+  return (
     <>
 <CodeWrapper heading="Request">
 
@@ -291,14 +490,18 @@ export function CrestsharpBeneficiaryList(){
  </div>
  </CodeWrapper>
 
- <ListBeneficiaryResponse />
-
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   )
 }
 
-export function GonativeBeneficiaryList(){
-  return(
+export function GonativeBeneficiaryList() {
+  const [response, setResponse] = useState(0);
+  return (
     <>
     <CodeWrapper heading="Request">
 
@@ -359,15 +562,17 @@ export function GonativeBeneficiaryList(){
   </div>
  </CodeWrapper>
 
- <ListBeneficiaryResponse />
-
-
-
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   )
 }
-export function ClibcurlBeneficiaryList(){
-  return(
+export function ClibcurlBeneficiaryList() {
+  const [response, setResponse] = useState(0);
+  return (
     <>
     <CodeWrapper heading="Request">
 
@@ -396,13 +601,17 @@ export function ClibcurlBeneficiaryList(){
    </div>
  </CodeWrapper>
 
- <ListBeneficiaryResponse />
-
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <ListBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
   )
 }
 
 export const RubyListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -484,11 +693,9 @@ export const RubyListBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <div>
-            <code>Ruby response</code>
-          </div>
+          <ListBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
     </>
@@ -496,6 +703,7 @@ export const RubyListBeneficiary = () => {
 };
 
 export const PowershellListBeneficiary = () => {
+  const [response, setResponse] = useState(0);
   return (
     <>
       <CodeWrapper heading="Request">
@@ -545,9 +753,9 @@ export const PowershellListBeneficiary = () => {
         </div>
       </CodeWrapper>
 
-      <CodeWrapper heading="Response">
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <code>Powershell response</code>
+          <ListBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
     </>

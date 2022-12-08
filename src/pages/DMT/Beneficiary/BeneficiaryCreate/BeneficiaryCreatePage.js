@@ -20,7 +20,14 @@ import {
   PHPBeneficiary,
   PythonBeneficiary,
   ShellBeneficiary,
-  ClibcurlBeneficiaryRegister, CrestsharpBeneficiaryRegister, GonativeBeneficiaryRegister, SwiftRegisterBeneficiary, RubyRegisterBeneficiary, PowershellRegisterBeneficiary 
+  NodeRegisterBeneficiary,
+  JavascriptRegisterBeneficiary,
+  SwiftRegisterBeneficiary,
+  GonativeBeneficiaryRegister,
+  ClibcurlBeneficiaryRegister,
+  CrestsharpBeneficiaryRegister,
+  RubyRegisterBeneficiary,
+  PowershellRegisterBeneficiary
 } from "../RequestBeneficiary/CreateBeneficiaryCode";
 
 
@@ -32,7 +39,6 @@ const BeneficiaryCreatePage = () => {
       text: "java",
     },
     {
-
       id: 1,
       icon: python,
       text: "python",
@@ -101,14 +107,12 @@ const BeneficiaryCreatePage = () => {
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
-    // console.log(id);
-    
+    console.log(id);
     setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
-    console.log(icon);
-    
+    toggleTab(icon.id);
     dummyArray[0] = icon;
     // console.log("DummyArray", dummyArray);
    
@@ -264,34 +268,25 @@ const BeneficiaryCreatePage = () => {
         {toggleState === 1 && <PythonBeneficiary />}
         {toggleState === 2 && <ShellBeneficiary />}
         {toggleState === 3 && <PHPBeneficiary />}
-        {toggleState === 4 && < NodeRegisterBeneficiary />}
-        {toggleState === 5 && < PowershellRegisterBeneficiary />}
-        {toggleState === 6 && < CrestsharpBeneficiaryRegister/>}
-        {toggleState === 7 && <  JavascriptRegisterBeneficiary/>}
-        {toggleState === 8 && < ClibcurlBeneficiaryRegister />}
-        {toggleState === 9 && < SwiftRegisterBeneficiary />}
-        {toggleState === 10 && < GonativeBeneficiaryRegister />}
-        {toggleState === 11 && < RubyRegisterBeneficiary />}
-        
-
-
-        {toggleState === 7 && < JavascriptRegisterBeneficiary />}
-      
+        {toggleState === 4 && <NodeRegisterBeneficiary />}
+        {toggleState === 5 && <JavascriptRegisterBeneficiary />}
+        {toggleState === 6 && <SwiftRegisterBeneficiary />}
+        {toggleState === 7 && <GonativeBeneficiaryRegister />}
+        {toggleState === 8 && <ClibcurlBeneficiaryRegister />}
+        {toggleState === 9 && <CrestsharpBeneficiaryRegister />}
+        {toggleState === 10 && <RubyRegisterBeneficiary />}
+        {toggleState === 11 && <PowershellRegisterBeneficiary />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-                id={icon}
+                className="togglebuttton"
+                id={iconName.icon}
                 key={index}
-                onClick={() => toggleTab(id)}
+                onClick={() => toggleTab(iconName.id)}
               >
-                <img src={icon} height="20" width="20" />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg" />
               </button>
             );
           })}
@@ -303,16 +298,11 @@ const BeneficiaryCreatePage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log("icon", icon);
-
+              {verticalIconArray.map(({ icon, text,id }, index) => {
+                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => {
-                      toggleTab(id);
-                      pushItem({ icon, text,id }, index)
-                    }
-                    }
+                    onClick={() => pushItem({ icon, text,id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

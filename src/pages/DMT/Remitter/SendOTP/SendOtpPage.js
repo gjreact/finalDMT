@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Col, Row, Dropdown, Table } from "react-bootstrap";
+import React, { useState } from "react";
+import { Col,  Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
@@ -13,8 +13,20 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import { ClibcurlSendOtp, CrestsharpSendOtp, GonativeSendOtp, JavascriptSendOtpCode, JavaSendOtp, NodeSendOtpCode, PHPSendOtp, PowershellSendOtpCode, PythonSendOtp, RubySendOtpCode, ShellSendOtp, SwiftSendOtpCode } from "../ResponseCodeRemitter/RequestCode/SendOtpCode";
-import Bar from '../../.././Bar'
+import Bar from "../../../Bar";
+import { ClibcurlSendOtp, 
+        CrestsharpSendOtp,
+        GonativeSendOtp, 
+        JavascriptSendOtpCode, 
+        JavaSendOtp, 
+        NodeSendOtpCode, 
+        PHPSendOtp, 
+        PowershellSendOtpCode, 
+        PythonSendOtp, 
+        RubySendOtpCode, 
+        ShellSendOtp, 
+        SwiftSendOtpCode } from "../ResponseCodeRemitter/RequestCode/SendOtpCode"
+
 
 const SendOtpPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
@@ -24,7 +36,6 @@ const SendOtpPage = () => {
       text: "java",
     },
     {
-
       id: 1,
       icon: python,
       text: "python",
@@ -93,14 +104,12 @@ const SendOtpPage = () => {
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
-    // console.log(id);
-    
+    console.log(id);
     setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
-    console.log(icon);
-    
+    toggleTab(icon.id);
     dummyArray[0] = icon;
     // console.log("DummyArray", dummyArray);
    
@@ -226,23 +235,18 @@ const SendOtpPage = () => {
         {toggleState === 9 && <SwiftSendOtpCode />}
         {toggleState === 10 && <GonativeSendOtp />}
         {toggleState === 11 && <RubySendOtpCode/>}
-        
 
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-                id={icon}
+                className="togglebuttton"
+                id={iconName.icon}
                 key={index}
-                onClick={() => toggleTab(id)}
+                onClick={() => toggleTab(iconName.id)}
               >
-                <img src={icon} height="20" width="20" />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  />
               </button>
             );
           })}
@@ -254,16 +258,11 @@ const SendOtpPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log("icon", icon);
-
+              {verticalIconArray.map(({ icon, text,id }, index) => {
+                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => {
-                      toggleTab(id);
-                      pushItem({ icon, text,id }, index)
-                    }
-                    }
+                    onClick={() => pushItem({ icon, text,id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
@@ -17,37 +17,82 @@ const copyToClipboard = (id) => {
 
 
 export const CreateBeneficiaryCode = () => {
-   return <> <CodeWrapper heading="Request">
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      {" "}
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper">
+          <JavaWrapper />
+          <br />{" "}
+          <code className="code-yellow">
+            \"beneficiaryName\": \"anu\",\r\n \"beneficiaryBankId\": \"36\"
+          </code>
+          ,
+          <br />{" "}
+          <code className="code-yellow">
+            \r\n \"remitterMobileNumber\": \"7902900295\",\r\n{" "}
+          </code>
+          <br />{" "}
+          <code className="code-yellow">
+            \"beneficiaryMobileNumber\":\"8596321478\",\r\n \"accountNumber\":{" "}
+          </code>
+          <br />{" "}
+          <code className="code-yellow">
+            \"88654888892\",\r\n \"address\": \"Calicut \",\r\n{" "}
+          </code>
+          <br />{" "}
+          <code className="code-yellow">
+            \"ifscCode\": \"UTIB0002916\",\r\n \"accountHolderName\": \"Venu\",{" "}
+          </code>
+          <br />{" "}
+          <code className="code-yellow">
+            \r\n \"branchName\": \"Mavoor Road\"\r\n");
+          </code>
+          <br />
+          <code className="text-white">
+            Request request = <code>new</code> Request.Builder()
+          </code>{" "}
+          <br />
+          <code className="text-white">.url(</code>
+          <code className="code-yellow">
+            "http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"
+          </code>
+          ) <br />
+          <code className="text-white">.method(</code>
+          <code className="code-yellow">"POST"</code>
+          <code className="text-white">,body)</code>
+          <br />
+          <code className="text-white">.addHeader(</code>
+          <code className="code-yellow">"apiKey"</code>
+          <code className="code-yellow">, apiKey</code>) <br />
+          <code className="text-white">.addHeader(</code>
+          <code className="code-yellow">"Authorization"</code>
+          <code className="code-yellow">, "Bearer token"</code>) <br />
+          <code className="text-white">.addHeader(</code>
+          <code className="code-yellow">"Content-Type"</code>
+          <code className="code-yellow">, "application/json"</code>) <br />
+          <code className="text-white">.build();</code>
+          <br />
+          <code className="text-white">
+            Response response = client.newCall(request).execute();
+          </code>
+        </div>
+      </CodeWrapper>
 
-      <div className="request-wrapper" >
-
-         <JavaWrapper />
-         <br /> <code className="code-yellow">\"beneficiaryName\": \"anu\",\r\n  \"beneficiaryBankId\": \"36\"</code>,
-         <br /> <code className="code-yellow">\r\n        \"remitterMobileNumber\": \"7902900295\",\r\n </code>
-         <br /> <code className="code-yellow">\"beneficiaryMobileNumber\":\"8596321478\",\r\n        \"accountNumber\":  </code>
-         <br /> <code className="code-yellow">\"88654888892\",\r\n        \"address\": \"Calicut \",\r\n </code>
-         <br /> <code className="code-yellow">\"ifscCode\": \"UTIB0002916\",\r\n        \"accountHolderName\": \"Venu\", </code>
-         <br /> <code className="code-yellow">\r\n        \"branchName\": \"Mavoor Road\"\r\n");</code>
-         <br /><code className="text-white">Request request = <code>new</code> Request.Builder()</code> <br />
-         <code className="text-white">.url(</code><code className="code-yellow">"http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code>) <br />
-         <code className="text-white">.method(</code><code className="code-yellow">"POST"</code><code className="text-white">,body)</code><br />
-         <code className="text-white">.addHeader(</code><code className="code-yellow">"apiKey"</code><code className="code-yellow">, apiKey</code>) <br />
-         <code className="text-white">.addHeader(</code><code className="code-yellow">"Authorization"</code><code className="code-yellow">, "Bearer token"</code>) <br />
-         <code className="text-white">.addHeader(</code><code className="code-yellow">"Content-Type"</code><code className="code-yellow">, "application/json"</code>)  <br />
-         <code className="text-white">.build();</code><br />
-         <code className="text-white">Response response = client.newCall(request).execute();</code>
-
-      </div>
-
-   </CodeWrapper>
-   
-   <CreateBeneficiaryResponse />
-   
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+      
     </>
 };
 
 export const PythonBeneficiary = () => {
-   return <>
+  const [response, setResponse] = useState(0);
+  return (
+    <>
       <CodeWrapper heading="Request">
 
          <div className="request-wrapper">
@@ -87,12 +132,19 @@ export const PythonBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
-   </>
-}
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
 export const ShellBeneficiary = () => {
-   return <>
+  const [response, setResponse] = useState(0);
+  return (
+    <>
       <CodeWrapper heading="Request">
          <div className="request-wrapper">
 
@@ -114,12 +166,19 @@ export const ShellBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
-   </>
-}
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
 export const PHPBeneficiary = () => {
-   return <>
+  const [response, setResponse] = useState(0);
+  return (
+    <>
       <CodeWrapper heading="Request">
 
          <div className="request-wrapper">
@@ -165,61 +224,124 @@ export const PHPBeneficiary = () => {
          </div>
          </CodeWrapper>
 
-         <CreateBeneficiaryResponse />
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
-      
-            </>
-}
-
-export const NodeRegisterBeneficiary= () => {
-   return <> <CodeWrapper heading="Request">
-
-      <div className="request-wrapper" >
-       <span className="d-flex justify-content-between"><code>var <code className="text-white"> request =</code> <code>require</code><code>('request');</code>  </code> <AiOutlineCopy
-          className="copyicon"
-          onClick={() => copyToClipboard("java")}
-        />
-      </span>
-     <code>var </code> <code className="text-white">options = </code><span className="output text-white"><br />
-        <code>'method' :</code><code className="code-yellow">'POST'</code><br />
-        <code>'url' :<code className="code-yellow">'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary',</code></code><br />
-        <code className="text-white">
-               headers = <span className="output  text-white"><br />
-                  <code>'apiKey'</code>: <code className="code-yellow">'apiKey'</code> ,<br />
-                  <code >'Authorization'</code>: <code className="code-yellow">'Bearer  token'</code>,<br />
-                  <code>'Content-Type'</code>:<code className="code-yellow"> 'application/json'</code><br />
-               </span>
-            </code><br />
-            <code className="text-white"> body :</code><code className="text-white">JSON.stringify</code><code className="code-yellow">(<span className="output"><br />
-            <code>"beneficiaryName"</code>  <span>: </span> <code className="code-yellow">"anu",</code><br />
-               <code>"beneficiaryBankId" </code> <span>: </span><code className="code-cyan"> 36,</code><br />
-               <code>"remitterMobileNumber" </code> <span>: </span><code className="code-cyan"> 7902900295,</code><br />
-               <code>"beneficiaryMobileNumber"</code>  <span>: </span> <code className="code-cyan">7902900295,</code><br />
-               <code>"accountNumber"</code>  <span>: </span> <code className="code-cyan">88654888882,</code><br />
-               <code>"address" </code> <span>: </span> <code className="code-yellow">Calicut,</code><br />
-               <code>"ifscCode" </code> <span>: </span> <code className="code-yellow">UTIB0002916,</code><br />
-               <code>"accountHolderName" </code> <span>: </span><code className="code-yellow"> Venu,</code><br />
-               <code>"branchName"</code>  <span>: </span> <code className="code-yellow">Mavoor Road</code>  <br />               </span>)</code><br />
-     </span><code className="text-white">;</code><br />
-     <code className="text-white">
-      request(options,<code>function</code><code className="text-white">(error,response)</code><br />
-      <span className="output"><br />
-         <code>if</code> <code className="text-white">(error)</code> <code>throw new Error<code className="text-white">(error);</code></code><br />
-         <code>console.log(response.body)</code><br />
-      </span><code className="text-white">);</code>
-     </code>
-
-      </div>
-
-   </CodeWrapper>
-   
-   <CreateBeneficiaryResponse />
-   
+export const NodeRegisterBeneficiary = () => {
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      {" "}
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper">
+          <code>
+            var <code className="text-white"> request =</code>{" "}
+            <code>require</code>
+            <code>('request');</code>{" "}
+          </code>
+          <br />
+          <code>var </code> <code className="text-white">options = </code>
+          <span className="output text-white">
+            <br />
+            <code>'method' :</code>
+            <code className="code-yellow">'POST'</code>
+            <br />
+            <code>
+              'url' :
+              <code className="code-yellow">
+                'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary',
+              </code>
+            </code>
+            <br />
+            <code className="text-white">
+              headers ={" "}
+              <span className="output  text-white">
+                <br />
+                <code>'apiKey'</code>:{" "}
+                <code className="code-yellow">'apiKey'</code> ,<br />
+                <code>'Authorization'</code>:{" "}
+                <code className="code-yellow">'Bearer token'</code>,<br />
+                <code>'Content-Type'</code>:
+                <code className="code-yellow"> 'application/json'</code>
+                <br />
+              </span>
+            </code>
+            <br />
+            <code className="text-white"> body :</code>
+            <code className="text-white">JSON.stringify</code>
+            <code className="code-yellow">
+              (
+              <span className="output">
+                <br />
+                <code>"beneficiaryName"</code> <span>: </span>{" "}
+                <code className="code-yellow">"anu",</code>
+                <br />
+                <code>"beneficiaryBankId" </code> <span>: </span>
+                <code className="code-cyan"> 36,</code>
+                <br />
+                <code>"remitterMobileNumber" </code> <span>: </span>
+                <code className="code-cyan"> 7902900295,</code>
+                <br />
+                <code>"beneficiaryMobileNumber"</code> <span>: </span>{" "}
+                <code className="code-cyan">7902900295,</code>
+                <br />
+                <code>"accountNumber"</code> <span>: </span>{" "}
+                <code className="code-cyan">88654888882,</code>
+                <br />
+                <code>"address" </code> <span>: </span>{" "}
+                <code className="code-yellow">Calicut,</code>
+                <br />
+                <code>"ifscCode" </code> <span>: </span>{" "}
+                <code className="code-yellow">UTIB0002916,</code>
+                <br />
+                <code>"accountHolderName" </code> <span>: </span>
+                <code className="code-yellow"> Venu,</code>
+                <br />
+                <code>"branchName"</code> <span>: </span>{" "}
+                <code className="code-yellow">Mavoor Road</code> <br />{" "}
+              </span>
+              )
+            </code>
+            <br />
+          </span>
+          <code className="text-white">;</code>
+          <br />
+          <code className="text-white">
+            request(options,<code>function</code>
+            <code className="text-white">(error,response)</code>
+            <br />
+            <span className="output">
+              <br />
+              <code>if</code> <code className="text-white">(error)</code>{" "}
+              <code>
+                throw new Error<code className="text-white">(error);</code>
+              </code>
+              <br />
+              <code>console.log(response.body)</code>
+              <br />
+            </span>
+            <code className="text-white">);</code>
+          </code>
+        </div>
+      </CodeWrapper>
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
     </>
 };
 
 export const JavascriptRegisterBeneficiary = () => {
-   return <>
+  const [response, setResponse] = useState(0);
+  return (
+    <>
       <CodeWrapper heading="Request">
 
          <div className="request-wrapper">
@@ -260,12 +382,19 @@ export const JavascriptRegisterBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
-   </>
-}
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
 export const SwiftRegisterBeneficiary = () => {
-   return <>
+  const [response, setResponse] = useState(0);
+  return (
+    <>
       <CodeWrapper heading="Request">
          <div className="request-wrapper">
 
@@ -310,148 +439,318 @@ export const SwiftRegisterBeneficiary = () => {
 
       </CodeWrapper>
 
-      <CreateBeneficiaryResponse />
-   </>
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
+
+export function GonativeBeneficiaryRegister() {
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper">
+          <br />
+          <code>package</code>
+          <code className="text-white">main</code>
+          <br />
+          <code> import </code>
+          <code className="text-white">
+            (
+            <br />
+            <code className="code-yellow">
+              "fmt"
+              <br /> "strings"
+              <br /> "net/http"
+              <br />
+              "io/ioutil"
+            </code>
+            <br />)
+          </code>
+          <br />
+          <code>func</code> <code className="text-white">main()</code>{" "}
+          <code className="output text-white ">
+            <br />
+            <code className="text-white"> url := </code>
+            <code className="code-yellow">
+              "ttp://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"
+            </code>
+            <br />
+            <code className="text-white">method := </code>
+            <code className="code-yellow">"POST"</code>
+            <br />
+            <code className="text-white">
+              payload := strings.NewReader(
+              <code className="code-yellow">
+                `
+                <code className="output text-white ">
+                  `+<code className="code-yellow">"</code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                  <code className="text-white">
+                    "beneficiaryName"<code className="code-yellow">"anu"</code>
+                    `+"
+                  </code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                  <code className="text-white">
+                    "beneficiaryBankId"<code className="code-yellow">"36"</code>
+                    `+"
+                  </code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                  <code className="text-white">
+                    "remitterMobileNumber"
+                    <code className="code-yellow">"7902900295"</code>`+"
+                  </code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                  <code className="text-white">
+                    "beneficiaryMobileNumber"
+                    <code className="code-yellow">"7902900295"</code>`+"
+                  </code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                  <code className="text-white">
+                    "accountNumber"
+                    <code className="code-yellow">"88654888882"</code>`+"
+                  </code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                  <code className="text-white">
+                    "address"<code className="code-yellow">"Calicut"</code>`+"
+                  </code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                  <code className="text-white">
+                    "ifscCode"<code className="code-yellow">"UTIB0002916"</code>
+                    `+"
+                  </code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                  <code className="text-white">
+                    "accountHolderName"
+                    <code className="code-yellow">"Venu"</code>`+"
+                  </code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                  <code className="text-white">
+                    "branchName"
+                    <code className="code-yellow">"Mavoor Road"</code>`+"
+                  </code>
+                  <br />
+                  <code className="code-yellow">"+`</code>
+                  <br />
+                </code>
+              </code>
+            </code>
+            <code className="code-yellow">'+"</code>
+            <br />
+            <code className="code-yellow">"+`</code>
+            <br />
+            <code className="code-yellow">'+"</code>
+            <br />
+            <code className="code-yellow">"+`</code>
+            <br />
+            <code className="code-yellow">'+"</code>
+            <br />
+            <code className="code-yellow">"+`</code>
+            <br />
+            <code className="code-yellow">'+"</code>
+            <br />
+            <code className="code-yellow">"+`</code>
+            <br />
+            <code className="code-yellow">'+"</code>
+            <br />
+            <code className="code-yellow">"+`</code>
+            <br />
+            <code className="code-yellow">`</code>
+            <code className="code-yellow">)</code>
+            <br />
+            <code className="code-yellow">client := &http.Client </code>
+            <code className="output code-yellow">
+              <br />
+            </code>
+            <br />
+            <code className="code-yellow">
+              {" "}
+              req, err := http.NewRequest(method, url, payload)
+            </code>
+            <br />
+            <code className="code-yellow">if err != nil </code>{" "}
+            <code className="output code-yellow">
+              <br />
+              <code className="code-yellow">fmt.Println(err)</code>
+              <br />
+              <code className="code-yellow"> return</code>
+              <br />
+            </code>
+            <br />
+            <code className="code-yellow"> req.Header.Add("apiKey", "")</code>
+            <br />
+            <code className="code-yellow">
+              {" "}
+              req.Header.Add("Content-Type", "application/json")
+            </code>
+            <br />
+            <code className="code-yellow">res, err := client.Do(req)</code>
+            <br />
+            <code className="code-yellow">if err != nil</code>{" "}
+            <code className="output code-yellow">
+              <br />
+              <code className="code-yellow">fmt.Println(err)</code>
+              <br />
+              <code className="code-yellow"> return</code>
+              <br />
+            </code>
+            <br />
+            <code className="code-yellow">defer res.Body.Close()</code>
+            <br />
+            <code className="code-yellow">
+              {" "}
+              body, err := ioutil.ReadAll(res.Body)
+            </code>
+            <br />
+            <code className="code-yellow">if err != nil </code>
+            <code className="output code-yellow ">
+              <br />
+              <code className="code-yellow">fmt.Println(err)</code>
+              <br />
+              <code className="code-yellow">return</code>
+              <br />
+            </code>
+            <br />
+            <code className="code-yellow">fmt.Println(string(body))</code>
+            <br />
+          </code>
+        </div>
+      </CodeWrapper>
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
 }
 
-export function GonativeBeneficiaryRegister(){
-   return(
-     <>
- 
- <CodeWrapper heading="Request">
- 
- <div className="request-wrapper">
-    <br/>  <span className="d-flex justify-content-between"><code>package <code className="text-white"> main</code></code> <AiOutlineCopy
-          className="copyicon"
-          onClick={() => copyToClipboard("java")}
-        />
-      </span> 
-   <code> import </code><code className="text-white" >(
-   <br/><code className="code-yellow">"fmt"
-   <br/> "strings"
-   <br/> "net/http"
-   <br/>"io/ioutil"</code>
-   <br/>
-   )</code>
-   <br/><code>func</code> <code className="text-white">main()</code> <code className="output text-white ">
-   <br/><code className="text-white"> url := </code><code className="code-yellow">"ttp://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code>
-   <br/><code className="text-white">method := </code><code  className="code-yellow">"POST"</code>
-   <br/><code className="text-white" >payload := strings.NewReader(<code className="code-yellow">`<code className="output text-white ">`+<code className="code-yellow">"</code>
-   <br/><code className="code-yellow">"+`</code>
-    <br/><code className="text-white">"beneficiaryName"<code className="code-yellow">"anu"</code>`+"</code>
-   <br/><code className="code-yellow">"+`</code>
-   <br/><code className="text-white">"beneficiaryBankId"<code className="code-yellow">"36"</code>`+"</code>
-   <br/><code className="code-yellow">"+`</code>
-    <br/><code className="text-white">"remitterMobileNumber"<code className="code-yellow">"7902900295"</code>`+"</code>
-    <br/><code className="code-yellow">"+`</code>
-    <br/><code className="text-white">"beneficiaryMobileNumber"<code className="code-yellow">"7902900295"</code>`+"</code>
-    <br/><code className="code-yellow">"+`</code>
-    <br/><code className="text-white">"accountNumber"<code className="code-yellow">"88654888882"</code>`+"</code>
-    <br/><code className="code-yellow">"+`</code>
-    <br/><code className="text-white">"address"<code className="code-yellow">"Calicut"</code>`+"</code>
-    <br/><code className="code-yellow">"+`</code>
-    <br/><code className="text-white">"ifscCode"<code className="code-yellow">"UTIB0002916"</code>`+"</code>
-    <br/><code className="code-yellow">"+`</code>
-    <br/><code className="text-white">"accountHolderName"<code className="code-yellow">"Venu"</code>`+"</code>
-    <br/><code className="code-yellow">"+`</code>
-    <br/><code className="text-white">"branchName"<code className="code-yellow">"Mavoor Road"</code>`+"</code>
- 
- 
- 
-   <br/><code className="code-yellow">"+`</code>
-   <br/></code></code></code><code className="code-yellow">'+"</code>
- 
- 
- 
-   <br/><code className="code-yellow">"+`</code>
-   <br/><code className="code-yellow">'+"</code>
-   <br/><code className="code-yellow">"+`</code>
-   <br/><code className="code-yellow">'+"</code>
-   <br/><code className="code-yellow">"+`</code>
-   <br/><code className="code-yellow">'+"</code>
-   <br/><code className="code-yellow">"+`</code>
-   <br/><code className="code-yellow">'+"</code>
-   <br/><code className="code-yellow">"+`</code>
- 
- 
-   <br/><code className="code-yellow">`</code><code className="code-yellow">)</code>
-   <br/><code className="code-yellow">client := &http.Client </code ><code className="output code-yellow">
- 
-   <br/></code>
-   <br/><code className="code-yellow">  req, err := http.NewRequest(method, url, payload)</code>
-   <br/><code className="code-yellow">if err != nil  </code>   <code className="output code-yellow">
-   <br/><code className="code-yellow">fmt.Println(err)</code>  
-   <br/><code className="code-yellow"> return</code>  
-   <br/>
-   </code>
-   <br/><code className="code-yellow"> req.Header.Add("apiKey", "")</code>
-   <br/><code className="code-yellow">  req.Header.Add("Content-Type", "application/json")</code>
-   <br/><code className="code-yellow">res, err := client.Do(req)</code>
-   <br/><code className="code-yellow">if err != nil</code> <code className="output code-yellow">
-     <br/><code className="code-yellow">fmt.Println(err)</code>
-     <br/><code className="code-yellow"> return</code>
-     <br/></code>
-     <br/><code className="code-yellow">defer res.Body.Close()</code>
-     <br/><code className="code-yellow"> body, err := ioutil.ReadAll(res.Body)</code>
-     <br/><code className="code-yellow">if err != nil </code><code className="output code-yellow ">
-     <br/><code className="code-yellow">fmt.Println(err)</code>
-     <br/><code className="code-yellow">return</code>
-     <br/></code >
-     <br/><code className="code-yellow">fmt.Println(string(body))</code>
- 
-  <br/>
- 
-   </code>
-   </div>
-  </CodeWrapper>
-  <CreateBeneficiaryResponse />
-     </>
-   )
- }
+export function ClibcurlBeneficiaryRegister() {
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper">
+          <br />
+          <code className="text-white">CURL *curl;</code>
+          <br />
+          <code className="text-white">CURLcode res;</code>
+          <br />
+          <code className="text-white">curl = curl_easy_init();</code>
+          <br />
+          <code>if</code>
+          <code className="text-white">
+            (curl){" "}
+            <code className="output text-white ">
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST,{" "}
+                <code className="code-yellow">"POST"</code> );
+              </code>
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_URL,{" "}
+                <code className="code-yellow">
+                  "http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"
+                </code>
+                );
+              </code>
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+              </code>
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL,
+                <code className="code-yellow"> "https"</code>);
+              </code>
+              <br />
+              <code>struct </code>
+              <code className="text-white">curl_slist *headers = NULL;</code>
+              <br />{" "}
+              <code className="text-white">
+                headers = curl_slist_append(headers,{" "}
+                <code className="code-yellow">"apiKey: "</code>);
+              </code>
+              <br />
+              <code className="text-white">
+                headers = curl_slist_append(headers,{" "}
+                <code className="code-yellow">
+                  "Content-Type: application/json"
+                </code>
+                );
+              </code>
+              <br />
+              <code className="text-white">
+                {" "}
+                curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+              </code>
+              <br />
+              <code>const char</code>{" "}
+              <code className="code-yellow">
+                <code className="text-white">*data = </code>"
+                <code className="output code-yellow">
+                  {" "}
+                  \r\n \"beneficiaryName\": \"anu\",\r\n \"beneficiaryBankId\":
+                  \"36\",\r\n \"remitterMobileNumber\": \"7902900295\",\r\n
+                  \"beneficiaryMobileNumber\":\"7902900295\",\r\n
+                  \"accountNumber\": \"88654888882\",\r\n \"address\": \"Calicut
+                  \",\r\n \"ifscCode\": \"UTIB0002916\",\r\n
+                  \"accountHolderName\": \"Venu\",\r\n \"branchName\": \"Mavoor
+                  Road\",\r\n
+                </code>{" "}
+                \r\n\r\n\r\n\r\n "
+              </code>
+              ;
+              <br />
+              <code className="text-white">
+                curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+              </code>
+              <br />
+              <code className="text-white">res = curl_easy_perform(curl);</code>
+              <br />
+            </code>
+          </code>
+          <br />
+          <code className="text-white">curl_easy_cleanup(curl);</code>
+        </div>
+      </CodeWrapper>
 
- export function ClibcurlBeneficiaryRegister(){
-   return(
-     <>
-        <CodeWrapper heading="Request">
- 
- <div className="request-wrapper">
-   <br/>  <span className="d-flex justify-content-between"><code className="text-white">CURL *curl;</code> <AiOutlineCopy
-          className="copyicon"
-          onClick={() => copyToClipboard("java")}
-        />
-      </span>
-   <code className="text-white">CURLcode res;</code>
-   <br/><code className="text-white">curl = curl_easy_init();</code>
-   <br/><code>if</code><code className="text-white" >(curl) <code className="output text-white "> 
-   <br/><code className="text-white">curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, <code className="code-yellow" >"POST"</code> );</code>
-   <br/><code className="text-white">curl_easy_setopt(curl, CURLOPT_URL, <code className="code-yellow" >"http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"</code>);</code>
-   <br/><code className="text-white">curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);</code>
-   <br/><code className="text-white">curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL,<code className="code-yellow"> "https"</code>);</code>
-   <br/><code >struct </code><code className="text-white">curl_slist *headers = NULL;</code>
-   <br/> <code className="text-white">headers = curl_slist_append(headers, <code className="code-yellow">"apiKey: "</code>);</code>
-   <br/><code className="text-white">headers = curl_slist_append(headers, <code className="code-yellow">"Content-Type: application/json"</code>);</code>
-    <br/><code className="text-white"> curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);</code>
- 
-    <br/><code>const char</code> <code className="code-yellow"><code className="text-white">*data = </code>"<code className="output code-yellow"> \r\n        \"beneficiaryName\": \"anu\",\r\n        \"beneficiaryBankId\": \"36\",\r\n        \"remitterMobileNumber\": \"7902900295\",\r\n        \"beneficiaryMobileNumber\":\"7902900295\",\r\n        \"accountNumber\": \"88654888882\",\r\n        \"address\": \"Calicut \",\r\n        \"ifscCode\": \"UTIB0002916\",\r\n        \"accountHolderName\": \"Venu\",\r\n        \"branchName\": \"Mavoor Road\",\r\n</code> \r\n\r\n\r\n\r\n "</code>;
-    <br/><code className="text-white">curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);</code>
-    <br/><code className="text-white">res = curl_easy_perform(curl);</code>
-    
- 
-    <br/>
-    </code></code>
-    <br/><code className="text-white">curl_easy_cleanup(curl);</code>
-    </div>
-  </CodeWrapper>
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+}
 
-  <CreateBeneficiaryResponse />
-     </>
-   )
- }
-
-
- export function CrestsharpBeneficiaryRegister(){
-   return(
-     <>
+export function CrestsharpBeneficiaryRegister() {
+  const [response, setResponse] = useState(0);
+  return (
+    <>
       <CodeWrapper heading="Request">
  
  <div className="request-wrapper">
@@ -519,231 +818,226 @@ export function GonativeBeneficiaryRegister(){
   </div>
   </CodeWrapper>
 
-  
-  <CreateBeneficiaryResponse />
-  </>
- 
-   )
- }
- export const RubyRegisterBeneficiary = () => {
-   return (
-     <>
-       <CodeWrapper heading="Request">
-         <div className="request-wrapper" id="Ruby">
-           <div>
-               <span className="d-flex justify-content-between"><code className="text-white">require <code className="code-yellow"> "uri"</code></code> <AiOutlineCopy
-          className="copyicon"
-          onClick={() => copyToClipboard("java")}
-        /> 
-      </span>
-             
-           
-             <code className="text-white">require </code>
-             <code className="code-yellow">"json"</code>
-             <br />
-             <code className="text-white">require</code>
-             <code className="code-yellow">"net/http"</code>
-             <br />
-             <code className="text-white">url = URI</code>
-             <code className="code-yellow">
-               ("http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary")
-             </code>
-             <br />
-             <code className="text-white">
-               http = Net<code>::</code>HTTP.new(url.host, url.port);
-             </code>
-             <br />
-             <code className="text-white">
-               request = Net<code>::</code>HTTP<code>::</code>Post.new(url)
-             </code>
-             <br />
- 
-             <code className="text-white">
-               {" "}
-               request
-               <span className="code-yellow">
-                 {" "}
-                 ["apikey"]<span className="text-white"> = </span>
-                 "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No"
-                 <br />
-               </span>
-             </code>
-             <code className="text-white">
-               {" "}
-               request
-               <span className="code-yellow">
-                 {" "}
-                 ["Authorization"]<span className="text-white"> = </span>"Bearer"
-                 <span className="output">
-                   <span className="output">token</span>
-                 </span>
-                 <br />
-               </span>
-             </code>
-             <br />
-             <code className="text-white">
-               {" "}
-               request
-               <span className="code-yellow">
-                 {" "}
-                 ["Content-Type"]<span className="text-white"> = </span>
-                 "application/json"
-                 <br />
-               </span>
-             </code>
-             <br />
-             <code className="text-white">
-               request.body = JSON.dump(
-               <span className="output">
-                 <br />
-                 <code className="code-yellow">
-                   "beneficiaryName" : "anu",
-                   <br />
-                 </code>
-                 <code className="code-yellow">
-                   "beneficiaryBankId" : 36,
-                   <br />
-                 </code>
-                 <code className="code-yellow">
-                   "remitterMobileNumber" : 7902900295,
-                   <br />
-                 </code>
-                 <code className="code-yellow">
-                   "beneficiaryMobileNumber" : 790290029,
-                   <br />
-                 </code>
-                 <code className="code-yellow">
-                   "accountNumber" : 8865488888,
-                   <br />
-                 </code>
-                 <code className="code-yellow">
-                   "address" : "Calicut",
-                   <br />
-                 </code>
-                 <code className="code-yellow">
-                   "ifscCode" : UTIB0002916,
-                   <br />
-                 </code>
-                 <code className="code-yellow">
-                   "accountHolderName" : "Venu",
-                   <br />
-                 </code>
-                 <code className="code-yellow">
-                   "branchName" : "Mavoor Road"
-                   <br />
-                 </code>
-               </span>
-               )
-             </code>
-             <br />
-             <code className="text-white">response = http.request(request)</code>
-             <br />
-             <code className="text-white">puts response.read_body</code>
-           </div>
-         </div>
-       </CodeWrapper>
- 
-       <CodeWrapper heading="Response">
-         <div className="response-wrapper">
-           <div>
-             <code>Ruby response</code>
-           </div>
-         </div>
-       </CodeWrapper>
-     </>
-   );
- };
- 
- export const PowershellRegisterBeneficiary = () => {
-   return (
-     <>
-       <CodeWrapper heading="Request">
-         <div className="request-wrapper" id="Powershell">
-           <div>
-               <span className="d-flex justify-content-between"><code className="text-white">$headers = New-Object</code> <AiOutlineCopy
-          className="copyicon"
-          onClick={() => copyToClipboard("java")}
-        />
-      </span>
-             <code className="code-yellow">
-               "System.collections.Generic.Dictionary[String],[String]"
-             </code>
-             <br />
-             <code className="text-white">$headers.Add</code>
-             <code className="code-yellow">
-               ("apikey", "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No")
-             </code>
-             <br />
-             <code className="text-white">$headers.Add</code>
-             <code className="code-yellow">
-               ("Authorization", "Bearer
-               <span className="output">
-                 <span className="output">tokken</span>
-               </span>
-               )
-             </code>
-             <br />
-             <code className="text-white">$headers.Add</code>
-             <code className="code-yellow">
-               ("Content-Type", "application/json")
-             </code>
-             <br />
-             <code className="text-white">
-               $body ={" "}
-               <span className="output code-yellow">
-                 <br /> <span className="text-white">'n</span> "beneficiaryName`"
-                 : `"anu`",
-                 <br />
-                 <span className="text-white">'n</span> "beneficiaryBankId`" :
-                 36,
-                 <br />
-                 <span className="text-white">'n</span> "remitterMobileNumber`" :
-                 7902900295,
-                 <br />
-                 <span className="text-white">'n</span>{" "}
-                 `n`"beneficiaryMobileNumber`" : 790290029,
-                 <br />
-                 <span className="text-white">'n</span> "accountNumber`" :
-                 8865488888,
-                 <br />
-                 <span className="text-white">'n</span> "address`" : `"Calicut`",
-                 <br />
-                 <span className="text-white">'n</span> "ifscCode`" :
-                 UTIB0002916,
-                 <br />
-                 <span className="text-white">'n</span> "accountHolderName`" :
-                 `"Venu`",
-                 <br />
-                 <span className="text-white">'n</span> `n`"branchName`" :
-                 `"Mavoor Road`"
-                 <br />
-                 <code className="text-white">
-                   'n"
-                   <br />
-                 </code>
-               </span>
-             </code>
-             <br />
-             <code className="text-white">$response = Invoke-RestMethod</code>
-             <code className="code-yellow">
-               'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary'
-               <span className="text-white">-Method </span>'POST'
-               <span className="text-white">-Headers $headers -Body $body</span>
-             </code>
-             <br />
-             <code className="text-white">$response | ConvertTo-Json</code>
-           </div>
-         </div>
-       </CodeWrapper>
- 
-       <CodeWrapper heading="Response">
-         <div className="response-wrapper">
-           <code>Powershell response</code>
-         </div>
-       </CodeWrapper>
-     </>
-   );
- };
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+}
+
+export const RubyRegisterBeneficiary = () => {
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper" id="Ruby">
+          <div>
+            <code className="text-white">require</code>
+            <code className="code-yellow">"uri"</code>
+            <br />
+            <code className="text-white">require</code>
+            <code className="code-yellow">"json"</code>
+            <br />
+            <code className="text-white">require</code>
+            <code className="code-yellow">"net/http"</code>
+            <br />
+            <code className="text-white">url = URI</code>
+            <code className="code-yellow">
+              ("http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary")
+            </code>
+            <br />
+            <code className="text-white">
+              http = Net<code>::</code>HTTP.new(url.host, url.port);
+            </code>
+            <br />
+            <code className="text-white">
+              request = Net<code>::</code>HTTP<code>::</code>Post.new(url)
+            </code>
+            <br />
+
+            <code className="text-white">
+              {" "}
+              request
+              <span className="code-yellow">
+                {" "}
+                ["apikey"]<span className="text-white"> = </span>
+                "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No"
+                <br />
+              </span>
+            </code>
+            <code className="text-white">
+              {" "}
+              request
+              <span className="code-yellow">
+                {" "}
+                ["Authorization"]<span className="text-white"> = </span>"Bearer"
+                <span className="output">
+                  <span className="output">token</span>
+                </span>
+                <br />
+              </span>
+            </code>
+            <br />
+            <code className="text-white">
+              {" "}
+              request
+              <span className="code-yellow">
+                {" "}
+                ["Content-Type"]<span className="text-white"> = </span>
+                "application/json"
+                <br />
+              </span>
+            </code>
+            <br />
+            <code className="text-white">
+              request.body = JSON.dump(
+              <span className="output">
+                <br />
+                <code className="code-yellow">
+                  "beneficiaryName" : "anu",
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "beneficiaryBankId" : 36,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "remitterMobileNumber" : 7902900295,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "beneficiaryMobileNumber" : 790290029,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "accountNumber" : 8865488888,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "address" : "Calicut",
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "ifscCode" : UTIB0002916,
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "accountHolderName" : "Venu",
+                  <br />
+                </code>
+                <code className="code-yellow">
+                  "branchName" : "Mavoor Road"
+                  <br />
+                </code>
+              </span>
+              )
+            </code>
+            <br />
+            <code className="text-white">response = http.request(request)</code>
+            <br />
+            <code className="text-white">puts response.read_body</code>
+          </div>
+        </div>
+      </CodeWrapper>
+
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
+
+export const PowershellRegisterBeneficiary = () => {
+  const [response, setResponse] = useState(0);
+  return (
+    <>
+      <CodeWrapper heading="Request">
+        <div className="request-wrapper" id="Powershell">
+          <div>
+            <code className="text-white">$headers = New-Object</code>
+            <code className="code-yellow">
+              "System.collections.Generic.Dictionary[String],[String]"
+            </code>
+            <br />
+            <code className="text-white">$headers.Add</code>
+            <code className="code-yellow">
+              ("apikey", "lScaZNyjCrMrTq1AeTWFK9zEEnlMl9No")
+            </code>
+            <br />
+            <code className="text-white">$headers.Add</code>
+            <code className="code-yellow">
+              ("Authorization", "Bearer
+              <span className="output">
+                <span className="output">tokken</span>
+              </span>
+              )
+            </code>
+            <br />
+            <code className="text-white">$headers.Add</code>
+            <code className="code-yellow">
+              ("Content-Type", "application/json")
+            </code>
+            <br />
+            <code className="text-white">
+              $body ={" "}
+              <span className="output code-yellow">
+                <br /> <span className="text-white">'n</span> "beneficiaryName`"
+                : `"anu`",
+                <br />
+                <span className="text-white">'n</span> "beneficiaryBankId`" :
+                36,
+                <br />
+                <span className="text-white">'n</span> "remitterMobileNumber`" :
+                7902900295,
+                <br />
+                <span className="text-white">'n</span>{" "}
+                `n`"beneficiaryMobileNumber`" : 790290029,
+                <br />
+                <span className="text-white">'n</span> "accountNumber`" :
+                8865488888,
+                <br />
+                <span className="text-white">'n</span> "address`" : `"Calicut`",
+                <br />
+                <span className="text-white">'n</span> "ifscCode`" :
+                UTIB0002916,
+                <br />
+                <span className="text-white">'n</span> "accountHolderName`" :
+                `"Venu`",
+                <br />
+                <span className="text-white">'n</span> `n`"branchName`" :
+                `"Mavoor Road`"
+                <br />
+                <code className="text-white">
+                  'n"
+                  <br />
+                </code>
+              </span>
+            </code>
+            <br />
+            <code className="text-white">$response = Invoke-RestMethod</code>
+            <code className="code-yellow">
+              'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary'
+              <span className="text-white">-Method </span>'POST'
+              <span className="text-white">-Headers $headers -Body $body</span>
+            </code>
+            <br />
+            <code className="text-white">$response | ConvertTo-Json</code>
+          </div>
+        </div>
+      </CodeWrapper>
+
+      <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
+        <div className="response-wrapper">
+          <CreateBeneficiaryResponse response={response}/>
+        </div>
+      </CodeWrapper>
+    </>
+  );
+};
 
 
 

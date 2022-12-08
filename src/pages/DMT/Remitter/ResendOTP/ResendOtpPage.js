@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Col, Row, Dropdown, Table } from "react-bootstrap";
+import React, { useState } from "react";
+import { Col,Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
@@ -13,10 +13,21 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import Bar from '../../.././Bar'
-
-import { ClibcurlResendOtp, CrestsharpResendOtp, GonativeResendOtp, JavaResendOtp, JavascriptResendOtpCode, NodeResendOtpCode, PHPResendOtp, PowershellResendOtpCode, PythonResendOtp, RubyResendOtpCode, ShellResendOtp, SwiftResendOtpCode } from "../ResponseCodeRemitter/RequestCode/ResendOtpCode";
-
+import Bar from "../../../Bar";
+import {
+  JavaResendOtp,
+  PythonResendOtp,
+  ShellResendOtp,
+  PHPResendOtp,
+  NodeResendOtpCode,
+  JavascriptResendOtpCode,
+  SwiftResendOtpCode,
+  GonativeResendOtp,
+  CrestsharpResendOtp,
+  ClibcurlResendOtp,
+  RubyResendOtpCode,
+  PowershellResendOtpCode
+} from "../ResponseCodeRemitter/RequestCode/ResendOtpCode";
 
 const ResendOtpPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
@@ -26,7 +37,6 @@ const ResendOtpPage = () => {
       text: "java",
     },
     {
-
       id: 1,
       icon: python,
       text: "python",
@@ -95,14 +105,12 @@ const ResendOtpPage = () => {
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
-    // console.log(id);
-    
+    console.log(id);
     setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
-    console.log(icon);
-    
+    toggleTab(icon.id);
     dummyArray[0] = icon;
     // console.log("DummyArray", dummyArray);
    
@@ -211,28 +219,24 @@ const ResendOtpPage = () => {
         {toggleState === 2 && <ShellResendOtp />}
         {toggleState === 3 && <PHPResendOtp />}
         {toggleState === 4 && <NodeResendOtpCode />}
-        {toggleState === 5 && <PowershellResendOtpCode />}
-        {toggleState === 6 && <CrestsharpResendOtp />}
-        {toggleState === 7 && <JavascriptResendOtpCode />}
-        {toggleState === 8 && <ClibcurlResendOtp />}
-        {toggleState === 9 && <SwiftResendOtpCode />}
-        {toggleState === 10 && <GonativeResendOtp />}
-        {toggleState === 11 && <RubyResendOtpCode />}
+        {toggleState === 5 && <JavascriptResendOtpCode />}
+        {toggleState === 6 && <SwiftResendOtpCode />}
+        {toggleState === 7 && <GonativeResendOtp />}
+        {toggleState === 8 && <CrestsharpResendOtp />}
+        {toggleState === 9 && <ClibcurlResendOtp />}
+        {toggleState === 10 && <RubyResendOtpCode />}
+        {toggleState === 11 && <PowershellResendOtpCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-                id={icon}
+                className="togglebuttton"
+                id={iconName.icon}
                 key={index}
-                onClick={() => toggleTab(id)}
+                onClick={() => toggleTab(iconName.id)}
               >
-                <img src={icon} height="20" width="20" />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg" />
               </button>
             );
           })}
@@ -244,16 +248,11 @@ const ResendOtpPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log("icon", icon);
-
+              {verticalIconArray.map(({ icon, text,id }, index) => {
+                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
-                    onClick={() => {
-                      toggleTab(id);
-                      pushItem({ icon, text,id }, index)
-                    }
-                    }
+                    onClick={() => pushItem({ icon, text,id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

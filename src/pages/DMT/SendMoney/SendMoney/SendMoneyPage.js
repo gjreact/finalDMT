@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Col, Container, NavLink, Dropdown, Row, Table } from "react-bootstrap";
+import { Col, Dropdown, Row, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
-import SideMenu from "../../../../pages/SideBar/SideMenu";
-import logo from "../../../../asset/images/logo.png";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
 import java from "../../../../asset/images/java.png";
@@ -11,13 +9,9 @@ import php from "../../../../asset/images/php.png";
 import node from "../../../../asset/images/node.png";
 import powershell from "../../../../asset/images/powershell.svg";
 import csharp from "../../../../asset/images/csharp.png";
-import http from "../../../../asset/images/http.png";
 import js from "../../../../asset/images/js.png";
-import kotlin from "../../../../asset/images/kotlin.jpeg";
 import ruby from "../../../../asset/images/ruby.png";
-import objectiveC from "../../../../asset/images/objectiveC.png";
 import C from "../../../../asset/images/C.png";
-import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
 import swift from "../../../../asset/images/swift.jpeg";
 import {
   JavaSendMoney,
@@ -32,7 +26,7 @@ import {
   SwiftSendMoney,
   RubySendMoneyCode,
   GonativeSendMoney,
-} from "../SendMoneyCode/SendMoneyCode";
+} from "../RequestSendmoney/SendMoneyCode";
 import Bar from "../../../Bar";
 const SendMoneyPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
@@ -137,8 +131,6 @@ const SendMoneyPage = () => {
 
   return (
     <>
-      {/* Beneficiary create page starts... */}
-
       <Col className="col-12 col-sm-7 border">
         <Bar />
         <Row>
@@ -226,17 +218,18 @@ const SendMoneyPage = () => {
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                  hover: "red",
-                }}
+                className="togglebuttton"
                 id={iconName.icon}
                 key={index}
                 onClick={() => toggleTab(iconName.id)}
               >
-                <img src={iconName.icon} height="20" width="20" />
+                <img
+                  src={iconName.icon}
+                  height="20"
+                  width="20"
+                  className="togglebutttonimg"
+                  alt="icon"
+                />
               </button>
             );
           })}
@@ -247,14 +240,13 @@ const SendMoneyPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text,id }, index) => {
-                // console.log(verticalIconArray, "view");
+              {verticalIconArray.map(({ icon, text, id }, index) => {
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text,id }, index)}
+                    onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" />
+                    <img src={icon} height="20" width="20" alt="icon" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );
@@ -262,13 +254,10 @@ const SendMoneyPage = () => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-
-       
       </Col>
-
-      {/* Beneficiary create page  ends...*/}
     </>
   );
 };
 
 export default SendMoneyPage;
+// send moneygit
