@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
-import ShellWrapper from "../../CodeWrapper/ShellWrapper";
-import SendMoneyResponse from "./ResponseCode/SendMoneyResponse";
+import SendMoneyResponse from "../ResponseSendmoney/SendMoneyResponse";
 import JavaWrapper from "../../CodeWrapper/JavaWrapper";
 
 const copyToClipboard = (id) => {
