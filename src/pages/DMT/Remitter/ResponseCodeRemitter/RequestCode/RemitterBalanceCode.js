@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import CodeWrapper from "../../../CodeWrapper/CodeWrapper";
 import ShellWrapper from "../../../CodeWrapper/ShellWrapper";
+import JavaWrapper from "../../../CodeWrapper/JavaWrapper"
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
 import RemitterBalanceResponse from "../ResponseCode/RemitterBalanceResponse"
@@ -15,22 +16,9 @@ export const JavaRemitterBalance = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <br />
+        <div className="request-wrapper" id="java">
+          <JavaWrapper />
           <code className="text-white">
-            OkHttpClient client = <code>new</code>{" "}
-            OkHttpClient().newnewBuilder()
-          </code>
-          <br />
-          <code className="text-white">.build();</code>
-          <br />
-          <code className="text-white">
-            MediaType mediaType = MediaType.parse({" "}
-            <code className="code-yellow">"application/json"</code>);
-          </code>
-          <br />
-          <code className="text-white">
-            RequestBody body = RequestBody.create(mediaType,{" "}
             <code className="code-yellow">
               {" "}
               <span className="output">
@@ -97,10 +85,16 @@ export const PythonRemitterBalance = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <br /> <code>import</code>{" "}
-          <code className="text-white">requests</code>
-          <br /> <code>import</code> <code className="text-white">json</code>
+        <div className="request-wrapper" id="python">
+          <span className="d-flex justify-content-between"><span>
+          <br /> <code>import </code>
+          <code className="text-white">requests</code></span>
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("python")}
+            />
+            </span>
+          <code>import</code> <code className="text-white">json</code>
           <br />
           <code className="text-white"> url =</code>{" "}
           <code className="code-yellow">
@@ -154,7 +148,7 @@ export const ShellRemitterBalance = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="shell">
           <ShellWrapper />
           <span className="output  text-white">
             <br />
@@ -184,9 +178,14 @@ export const PHPRemitterBalance = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="php">
+          <span className="d-flex justify-content-between">
           <code> &#60;&#63;php</code>
-          <br />
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("php")}
+            />
+            </span>
           <code className="text-white">$curl = curl_init();</code>
           <br />
           <code className="text-white">
@@ -292,7 +291,7 @@ export const NodeRemitterBalanceCode = () => {
     <>
       {" "}
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="node">
           <span className="d-flex justify-content-between ">
             <code>
               var <code className="text-white"> request =</code>{" "}
@@ -301,7 +300,7 @@ export const NodeRemitterBalanceCode = () => {
             </code>
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("java")}
+              onClick={() => copyToClipboard("node")}
             />{" "}
           </span>
           <code>var </code> <code className="text-white">options = </code>
@@ -380,7 +379,7 @@ export const JavascriptRemitterBalanceCode = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="javascript">
           <span className="d-flex justify-content-between ">
             {" "}
             <code>
@@ -389,7 +388,7 @@ export const JavascriptRemitterBalanceCode = () => {
             </code>
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("java")}
+              onClick={() => copyToClipboard("javascript")}
             />
           </span>
           <code className="text-white">myHeaders.</code>
@@ -484,7 +483,7 @@ export const SwiftRemitterBalanceCode = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="swift">
           <span className="d-flex justify-content-between ">
             {" "}
             <code>
@@ -492,7 +491,7 @@ export const SwiftRemitterBalanceCode = () => {
             </code>
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("java")}
+              onClick={() => copyToClipboard("swift")}
             />
           </span>
           <code>#if</code>
@@ -623,11 +622,15 @@ export function ClibcurlRemitterinfo() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <h6>clibcrl</h6>
+        <div className="request-wrapper" id="c">
           <br />
+          <span className="d-flex justify-content-between">
           <code className="text-white">CURL *curl;</code>
-          <br />
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("c")}
+            />
+            </span>
           <code className="text-white">CURLcode res;</code>
           <br />
           <code className="text-white">curl = curl_easy_init();</code>
@@ -716,7 +719,11 @@ export function CrestsharpRemitterBalance() {
   return (
     <div>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="csharp">
+          <span className="d-flex justify-content-end"><AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("csharp")}
+            /></span>
           <code>
             var<code className="text-white">client =</code> new{" "}
           </code>
@@ -824,11 +831,15 @@ export function GonativeRemitterBalance() {
   return (
     <div>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="go">
           <br />
-          <code>package</code>
-          <code className="text-white">main</code>
-          <br />
+          <span className="d-flex justify-content-between"><span>
+          <code className="text-white">main</code></span>
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("go")}
+            />
+         </span>
           <code> import </code>
           <code className="text-white">
             (
@@ -960,8 +971,6 @@ export function GonativeRemitterBalance() {
   );
 }
 
-// rashid code -----------------
-
 export const RubyRemitterBalanceCode = () => {
   const [response, setResponse] = useState(0);
   return (
@@ -969,10 +978,15 @@ export const RubyRemitterBalanceCode = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="Ruby">
           <div>
-            <code className="text-white">require</code>
-            <code className="code-yellow">"uri"</code>
-            <br />
-            <code className="text-white">require</code>
+            <span className="d-flex justify-content-between"><span>
+            <code className="text-white">require </code>
+            <code className="code-yellow">"uri"</code></span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("Ruby")}
+            />
+            </span>
+            <code className="text-white">require </code>
             <code className="code-yellow">"json"</code>
             <br />
             <code className="text-white">require</code>
@@ -1061,7 +1075,13 @@ export const PowershellRemitterBalanceCode = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="Powershell">
           <div>
+            <span className="d-flex justify-content-between">
             <code className="text-white">$headers = New-Object</code>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("Powershell")}
+            />
+            </span>
             <code className="code-yellow">
               "System.collections.Generic.Dictionary[String],[String]"
             </code>

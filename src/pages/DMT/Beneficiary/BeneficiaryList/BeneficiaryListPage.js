@@ -279,7 +279,7 @@ const BeneficiaryCreatePage = () => {
                 key={index}
                 onClick={() => toggleTab(id)}
               >
-                <img src={icon} height="20" width="20" />
+                <img src={icon} height="20" width="20" alt="icon" />
               </button>
             );
           })}
@@ -300,7 +300,7 @@ const BeneficiaryCreatePage = () => {
                     }}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" />
+                    <img src={icon} height="20" width="20" alt="icon" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

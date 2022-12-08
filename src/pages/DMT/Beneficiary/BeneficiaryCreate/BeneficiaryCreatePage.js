@@ -277,6 +277,7 @@ const BeneficiaryCreatePage = () => {
                   height="20"
                   width="20"
                   className="togglebutttonimg"
+                  alt="icon"
                 />
               </button>
             );
@@ -295,7 +296,7 @@ const BeneficiaryCreatePage = () => {
                     onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" />
+                    <img src={icon} height="20" width="20" alt="icon" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

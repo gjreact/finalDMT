@@ -235,7 +235,7 @@ const SendOtpPage = () => {
                 key={index}
                 onClick={() => toggleTab(iconName.id)}
               >
-                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg" alt="icon" />
               </button>
             );
           })}
@@ -253,7 +253,7 @@ const SendOtpPage = () => {
                     onClick={() => pushItem({ icon, text,id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" />
+                    <img src={icon} height="20" width="20" alt=" icon" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

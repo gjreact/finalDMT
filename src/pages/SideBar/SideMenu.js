@@ -2,8 +2,7 @@ import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import "../../asset/css/basiclayout.css";
 import ListGroup from "react-bootstrap/ListGroup";
-import { NavLink, Link } from "react-router-dom";
-// import icon from "../../asset/images/list.svg"
+import { NavLink} from "react-router-dom";
 
 function SideMenu(props) {
   return (
