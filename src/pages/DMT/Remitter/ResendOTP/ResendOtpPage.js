@@ -92,7 +92,7 @@ const ResendOtpPage = () => {
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
     // console.log(id);
