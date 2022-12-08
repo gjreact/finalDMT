@@ -224,7 +224,7 @@ function SideMenu(props) {
                 >
                   Transaction Money
                 </NavLink>
-                {/* <a href="# ">Transaction Money</a> */}
+               
               </ListGroup.Item>
             </ListGroup>
           </Accordion.Body>

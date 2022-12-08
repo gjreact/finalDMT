@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Dropdown, Table } from "react-bootstrap";
+import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
-import SideMenu from "../../../../pages/SideBar/SideMenu";
-import logo from "../../../../asset/images/logo.png";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
 import java from "../../../../asset/images/java.png";
@@ -11,110 +9,112 @@ import php from "../../../../asset/images/php.png";
 import node from "../../../../asset/images/node.png";
 import powershell from "../../../../asset/images/powershell.svg";
 import csharp from "../../../../asset/images/csharp.png";
-import http from "../../../../asset/images/http.png";
 import js from "../../../../asset/images/js.png";
-import kotlin from "../../../../asset/images/kotlin.jpeg";
 import ruby from "../../../../asset/images/ruby.png";
-import objectiveC from "../../../../asset/images/objectiveC.png";
 import C from "../../../../asset/images/C.png";
-import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import Bar from "../../../Bar";
-import {
-  JavaResendOtp,
-  PythonResendOtp,
-  ShellResendOtp,
-  PHPResendOtp,
-} from "../ResponseCodeRemitter/ResendOtpCode";
+import Bar from '../../.././Bar'
+
+import { ClibcurlResendOtp, CrestsharpResendOtp, GonativeResendOtp, JavaResendOtp, JavascriptResendOtpCode, NodeResendOtpCode, PHPResendOtp, PowershellResendOtpCode, PythonResendOtp, RubyResendOtpCode, ShellResendOtp, SwiftResendOtpCode } from "../ResponseCodeRemitter/RequestCode/ResendOtpCode";
+
 
 const ResendOtpPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
+      id: 0,
       icon: java,
       text: "java",
     },
     {
+
+      id: 1,
       icon: python,
       text: "python",
     },
     {
+      id: 2,
       icon: shell,
       text: "shell",
     },
     {
+      id: 3,
       icon: php,
       text: "php",
-    },
+    }
   ]);
   const dummyArray = [];
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
+      id: 4,
       icon: node,
       text: "Node JS",
     },
     {
+      id: 5,
       icon: powershell,
       text: "Powershell",
     },
     {
+      id: 6,
       icon: csharp,
       text: "Csharp",
     },
+
     {
-      icon: http,
-      text: "HTTP",
-    },
-    {
+      id: 7,
       icon: js,
       text: "Javascript",
     },
+
+
     {
-      icon: kotlin,
-      text: "Kotlin",
-    },
-    {
-      icon: objectiveC,
-      text: "ObjectiveC",
-    },
-    {
+      id: 8,
       icon: C,
       text: "C",
     },
+
     {
-      icon: CPlusPlus,
-      text: "C++",
-    },
-    {
+      id: 9,
       icon: swift,
       text: "Swift",
     },
     {
+      id: 10,
       icon: Go,
       text: "Go",
     },
     {
+      id: 11,
       icon: ruby,
       text: "ruby",
-    },
+    }
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(1);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const toggleTab = (id) => {
+    // console.log(id);
+    
+    setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
+    console.log(icon);
+    
     dummyArray[0] = icon;
+    // console.log("DummyArray", dummyArray);
+   
 
     setVerticalIconArray([
       ...verticalIconArray,
       verticalIconArray.splice(index, 1),
     ]);
-
     cacheArray[0] = horizontalIconArray[horizontalIconArray.length - 1];
+
+    // console.log("CacheArray", cacheArray);
+
 
     setHorizontalIconArray(
       ...horizontalIconArray,
@@ -134,6 +134,8 @@ const ResendOtpPage = () => {
 
   return (
     <>
+      {/* Beneficiary create page starts... */}
+
       <Col className="col-12 col-sm-7 border">
         <Bar />
         <Row>
@@ -200,14 +202,25 @@ const ResendOtpPage = () => {
           </p>
         </Row>
       </Col>
-      <Col id="style-1" className="col-12 col-sm-5 link-heading scrollbar pt-5">
-        {toggleState === 0 && <JavaResendOtp />}
+      <Col
+        id="style-1"
+        className="col-12 col-sm-5  link-heading scrollbar pt-5 "
+      >
+       {toggleState === 0 && <JavaResendOtp />}
         {toggleState === 1 && <PythonResendOtp />}
         {toggleState === 2 && <ShellResendOtp />}
         {toggleState === 3 && <PHPResendOtp />}
+        {toggleState === 4 && <NodeResendOtpCode />}
+        {toggleState === 5 && <PowershellResendOtpCode />}
+        {toggleState === 6 && <CrestsharpResendOtp />}
+        {toggleState === 7 && <JavascriptResendOtpCode />}
+        {toggleState === 8 && <ClibcurlResendOtp />}
+        {toggleState === 9 && <SwiftResendOtpCode />}
+        {toggleState === 10 && <GonativeResendOtp />}
+        {toggleState === 11 && <RubyResendOtpCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
-          {horizontalIconArray.map((iconName, index) => {
+          {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
                 style={{
@@ -215,11 +228,11 @@ const ResendOtpPage = () => {
                   border: "none",
                   background: "transparent",
                 }}
-                id={iconName.icon}
+                id={icon}
                 key={index}
-                onClick={() => toggleTab(index)}
+                onClick={() => toggleTab(id)}
               >
-                <img src={iconName.icon} height="20" width="20" />
+                <img src={icon} height="20" width="20" />
               </button>
             );
           })}
@@ -231,11 +244,16 @@ const ResendOtpPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text }, index) => {
-                // console.log(verticalIconArray, "view");
+              {verticalIconArray.map(({ icon, text, id }, index) => {
+                // console.log("icon", icon);
+
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text }, index)}
+                    onClick={() => {
+                      toggleTab(id);
+                      pushItem({ icon, text,id }, index)
+                    }
+                    }
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />
@@ -246,31 +264,7 @@ const ResendOtpPage = () => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-
-        <div class="force-overflow"></div>
-        {/* <Row className="link-heading">
-                  <h3 className="text-white link-section p-3">Response:</h3>
-                  <h5 className="text-white link-heading p-3">SUCCESS </h5>
-                   <p className="output link-heading text-white " >
-                    <br/> <code>"status"</code> <span>: </span> <code className="code-cyan">"201"</code>
-                    <br/> <code>"success"</code> <span>: </span> <code className="code-yellow">"true"</code>
-                    <br/> <code>"message"</code> <span>: </span> <code className="code-yellow">"OTP send successfully"</code>
-                    <br/> <code>"responseCode"</code> <span>: </span> <code className="code-cyan">"0"</code>
-                    <br/> <code>"data" </code>
-                    <p className="output-two link-heading text-white">
-                       <br/><code>"remitterId"</code> <span>: </span> <code className="code-cyan">16</code>
-                       <br/><code>"otpRefferenceId"</code> <span>: </span> <code className="code-yellow">"FLf0YdvZqx6lA9eg"</code>
-                       <br/><code>"mobile"</code> <span>: </span> <code className="code-cyan">"9895924936"</code>
-                       <br/><code>"name"</code> <span>: </span> <code className="code-yellow">"dil"</code>
-                       <br/><code>"userId"</code> <span>: </span> <code className="code-cyan">3</code>
-                       <br/><code>"remitterType"</code> <span>: </span> <code className="code-cyan">3</code><br/>
-                      
-                    </p>
-                   </p>
-                </Row> */}
       </Col>
-
-      {/* Remitter Resend otp ends...*/}
     </>
   );
 };

@@ -320,14 +320,15 @@ a {
 }
 /* aryas code end */
 
-.togglebuttton {
-  outline: "none" l;
-  border: "none";
-  background: "transparent";
+.togglebutton{
+  outline:none;
+  border: none;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-
-.togglebuttton::hover {
-  background-color: "red";
+.togglebutton:active{
+  box-shadow: 0 0 5px gray;
 }
 
 .content-bg{
@@ -337,3 +338,7 @@ a {
   padding: 20px;
 }
 
+.maxWidth{
+  width:480px;
+  max-width: 480px;
+}

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Col, Container, NavLink, Dropdown, Row, Table } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
@@ -9,14 +9,11 @@ import php from "../../../../asset/images/php.png";
 import node from "../../../../asset/images/node.png";
 import powershell from "../../../../asset/images/powershell.svg";
 import csharp from "../../../../asset/images/csharp.png";
-import http from "../../../../asset/images/http.png";
 import js from "../../../../asset/images/js.png";
-import kotlin from "../../../../asset/images/kotlin.jpeg";
 import ruby from "../../../../asset/images/ruby.png";
-import objectiveC from "../../../../asset/images/objectiveC.png";
 import C from "../../../../asset/images/C.png";
-import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
 import swift from "../../../../asset/images/swift.jpeg";
+import Bar from '../../.././Bar'
 import {
   JavaRemitter,
   PythonRemitter,
@@ -30,10 +27,11 @@ import {
   CrestsharpRemitterInfo,
   RubyRemitterInfo,
   PowerShellRemitterInfo,
-} from "../ResponseCodeRemitter/RemitterInfoCode";
-import Bar from "../../../Bar";
+} from "../ResponseCodeRemitter/RequestCode/RemitterInfoCode";
 
-function RemitterInfoPage() {
+
+const RemitterInfoPage = () => {
+
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
       id: 0,
@@ -41,6 +39,7 @@ function RemitterInfoPage() {
       text: "java",
     },
     {
+
       id: 1,
       icon: python,
       text: "python",
@@ -54,8 +53,9 @@ function RemitterInfoPage() {
       id: 3,
       icon: php,
       text: "php",
-    },
+    }
   ]);
+
   const dummyArray = [];
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
@@ -74,16 +74,20 @@ function RemitterInfoPage() {
       icon: csharp,
       text: "Csharp",
     },
+
     {
       id: 7,
       icon: js,
       text: "Javascript",
     },
+
+
     {
       id: 8,
       icon: C,
       text: "C",
     },
+
     {
       id: 9,
       icon: swift,
@@ -98,26 +102,31 @@ function RemitterInfoPage() {
       id: 11,
       icon: ruby,
       text: "ruby",
-    },
+    }
   ]);
 
-  // console.log("verticalIconArray-above",verticalIconArray);
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
-    console.log(id);
+
+    
     setToggleState(id);
   };
 
+
+
+
+
   const pushItem = (icon, index) => {
-    toggleTab(icon.id);
+    console.log(icon);
+    
     dummyArray[0] = icon;
+   
 
     setVerticalIconArray([
       ...verticalIconArray,
       verticalIconArray.splice(index, 1),
     ]);
-
     cacheArray[0] = horizontalIconArray[horizontalIconArray.length - 1];
 
     setHorizontalIconArray(
@@ -135,11 +144,12 @@ function RemitterInfoPage() {
       (verticalIconArray[index] = cacheArray[0]),
     ]);
   };
+
   return (
     <>
-      {/* Remitter Information */}
+      {/* Beneficiary create page starts... */}
 
-      <Col className="col-12 col-sm-7 border">
+      <Col className="col-12 col-sm-7 border" >
         <Bar />
 
         <Row>
@@ -203,45 +213,44 @@ function RemitterInfoPage() {
           </div>
         </Row>
       </Col>
-
       <Col
         id="style-1"
-        className="col-12 col-sm-5 link-heading scrollbar pt-5 "
+        className="col-12   link-heading scrollbar pt-5 "
+        style={{width:"500px"}}
       >
         {toggleState === 0 && <JavaRemitter />}
         {toggleState === 1 && <PythonRemitter />}
         {toggleState === 2 && <ShellRemitter />}
-        {toggleState === 3 && <PHPRemitter />}
+        {toggleState === 3 && <PHPRemitter />}   
         {toggleState === 4 && <NodeRemitterInfoCode />}
-        {toggleState === 5 && <JavascriptRemitterInfoCode />}
-        {toggleState === 6 && <SwiftRemitterInfoCode />}
-        {toggleState === 7 && <GonativeRemitterInfo />}
+        {toggleState === 5 && <PowerShellRemitterInfo />}
+        {toggleState === 6 && <CrestsharpRemitterInfo />}
+        {toggleState === 7 && <JavascriptRemitterInfoCode />}
         {toggleState === 8 && <ClibcurlRemitterInfo />}
-        {toggleState === 9 && <CrestsharpRemitterInfo />}
-        {toggleState === 10 && <RubyRemitterInfo />}
-        {toggleState === 11 && <PowerShellRemitterInfo />}
+        {toggleState === 9 && <SwiftRemitterInfoCode />}
+        {toggleState === 10 && <GonativeRemitterInfo />}
+        {toggleState === 11 && <RubyRemitterInfo />}
 
-        <div className="lang-btns d-flex justify-content-evenly">
-          {horizontalIconArray.map((iconName, id, index) => {
+        <div className="lang-btns d-flex justify-content-evenly ">
+          {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
-                style={{
-                  outline: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-                id={iconName.icon}
-                key={id}
-                onClick={() => toggleTab(id)}
-                className="togglebuttton"
+
+              className="togglebutton"
+              id={icon}
+              key={index}
+           
+              onClick={() =>{ 
+             
+                toggleTab(id)
+              }}
               >
-                <img src={iconName.icon} height="20" width="20" />
+                <img src={icon} height="20" width="20" />
               </button>
             );
           })}
 
-          {/* =========================== */}
-          <Dropdown>
+          <Dropdown >
             <Dropdown.Toggle
               variant="light"
               id="dropdown-basic"
@@ -249,11 +258,17 @@ function RemitterInfoPage() {
 
             <Dropdown.Menu>
               {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log(verticalIconArray, "view");
-                return (
+               return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text, id }, index)}
-                    key={id}
+                    onClick={() => {
+                      toggleTab(id);
+                      pushItem({ icon, text,id }, index)
+                    }
+
+                   
+                    }
+                    style={{maxWidth:"480px"}}
+                    key={index}
                   >
                     <img src={icon} height="20" width="20" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
@@ -262,14 +277,10 @@ function RemitterInfoPage() {
               })}
             </Dropdown.Menu>
           </Dropdown>
-
-          {/* =========================== */}
         </div>
       </Col>
-
-      {/* Remitter Information  ends...*/}
     </>
   );
-}
+};
 
 export default RemitterInfoPage;

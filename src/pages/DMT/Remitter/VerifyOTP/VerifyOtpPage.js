@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Dropdown, Table } from "react-bootstrap";
+import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
-import SideMenu from "../../../../pages/SideBar/SideMenu";
-import logo from "../../../../asset/images/logo.png";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
 import java from "../../../../asset/images/java.png";
@@ -11,110 +9,111 @@ import php from "../../../../asset/images/php.png";
 import node from "../../../../asset/images/node.png";
 import powershell from "../../../../asset/images/powershell.svg";
 import csharp from "../../../../asset/images/csharp.png";
-import http from "../../../../asset/images/http.png";
 import js from "../../../../asset/images/js.png";
-import kotlin from "../../../../asset/images/kotlin.jpeg";
 import ruby from "../../../../asset/images/ruby.png";
-import objectiveC from "../../../../asset/images/objectiveC.png";
 import C from "../../../../asset/images/C.png";
-import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import Bar from "../../../Bar";
-import {
-  JavaVerifyOtp,
-  PythonVerifyOtp,
-  ShellVerifyOtp,
-  PHPVerifyOtp,
-} from "../ResponseCodeRemitter/VerifyOtpCode";
+
+import { ClibcurlVerifyOtp, CrestsharpVerifyOtp, GonativeVerifyOtp, JavascriptVerifyOtpCode, JavaVerifyOtp, NodeVerifyOtpCode, PHPVerifyOtp, PowershellVerifyOtpCode, PythonVerifyOtp, RubyVerifyOtpCode, ShellVerifyOtp, SwiftVerifyOtpCode } from "../ResponseCodeRemitter/RequestCode/VerifyOtpCode";
+import Bar from '../../.././Bar'
 
 const VerifyOtpPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
+      id: 0,
       icon: java,
       text: "java",
     },
     {
+
+      id: 1,
       icon: python,
       text: "python",
     },
     {
+      id: 2,
       icon: shell,
       text: "shell",
     },
     {
+      id: 3,
       icon: php,
       text: "php",
-    },
+    }
   ]);
   const dummyArray = [];
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
+      id: 4,
       icon: node,
       text: "Node JS",
     },
     {
+      id: 5,
       icon: powershell,
       text: "Powershell",
     },
     {
+      id: 6,
       icon: csharp,
       text: "Csharp",
     },
+
     {
-      icon: http,
-      text: "HTTP",
-    },
-    {
+      id: 7,
       icon: js,
       text: "Javascript",
     },
+
+
     {
-      icon: kotlin,
-      text: "Kotlin",
-    },
-    {
-      icon: objectiveC,
-      text: "ObjectiveC",
-    },
-    {
+      id: 8,
       icon: C,
       text: "C",
     },
+
     {
-      icon: CPlusPlus,
-      text: "C++",
-    },
-    {
+      id: 9,
       icon: swift,
       text: "Swift",
     },
     {
+      id: 10,
       icon: Go,
       text: "Go",
     },
     {
+      id: 11,
       icon: ruby,
       text: "ruby",
-    },
+    }
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(1);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const toggleTab = (id) => {
+    // console.log(id);
+    
+    setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
+    console.log(icon);
+    
     dummyArray[0] = icon;
+    // console.log("DummyArray", dummyArray);
+   
 
     setVerticalIconArray([
       ...verticalIconArray,
       verticalIconArray.splice(index, 1),
     ]);
-
     cacheArray[0] = horizontalIconArray[horizontalIconArray.length - 1];
+
+    // console.log("CacheArray", cacheArray);
+
 
     setHorizontalIconArray(
       ...horizontalIconArray,
@@ -134,7 +133,7 @@ const VerifyOtpPage = () => {
 
   return (
     <>
-      {/* Remitter verify otp starts... */}
+      {/* Beneficiary create page starts... */}
 
       <Col className="col-12 col-sm-7 border ">
         <Bar />
@@ -204,15 +203,23 @@ const VerifyOtpPage = () => {
       </Col>
       <Col
         id="style-1"
-        className="col-12 col-sm-5  link-heading scrollbar pt-5"
+        className="col-12 col-sm-5  link-heading scrollbar pt-5 "
       >
-        {toggleState === 0 && <JavaVerifyOtp />}
+       {toggleState === 0 && <JavaVerifyOtp />}
         {toggleState === 1 && <PythonVerifyOtp />}
         {toggleState === 2 && <ShellVerifyOtp />}
         {toggleState === 3 && <PHPVerifyOtp />}
+        {toggleState === 4 && <NodeVerifyOtpCode />}
+        {toggleState === 5 && <PowershellVerifyOtpCode />}
+        {toggleState === 6 && <CrestsharpVerifyOtp />}
+        {toggleState === 7 && <JavascriptVerifyOtpCode />}
+        {toggleState === 8 && <ClibcurlVerifyOtp />}
+        {toggleState === 9 && <SwiftVerifyOtpCode />}
+        {toggleState === 10 && <GonativeVerifyOtp />}
+        {toggleState === 11 && <RubyVerifyOtpCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
-          {horizontalIconArray.map((iconName, index) => {
+          {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
                 style={{
@@ -220,11 +227,11 @@ const VerifyOtpPage = () => {
                   border: "none",
                   background: "transparent",
                 }}
-                id={iconName.icon}
+                id={icon}
                 key={index}
-                onClick={() => toggleTab(index)}
+                onClick={() => toggleTab(id)}
               >
-                <img src={iconName.icon} height="20" width="20" />
+                <img src={icon} height="20" width="20" />
               </button>
             );
           })}
@@ -236,11 +243,16 @@ const VerifyOtpPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text }, index) => {
-                // console.log(verticalIconArray, "view");
+              {verticalIconArray.map(({ icon, text, id }, index) => {
+                // console.log("icon", icon);
+
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text }, index)}
+                    onClick={() => {
+                      toggleTab(id);
+                      pushItem({ icon, text,id }, index)
+                    }
+                    }
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />
@@ -252,8 +264,6 @@ const VerifyOtpPage = () => {
           </Dropdown>
         </div>
       </Col>
-
-      {/* Remitter verify otp  ends...*/}
     </>
   );
 };

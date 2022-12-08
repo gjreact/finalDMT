@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Dropdown, Table } from "react-bootstrap";
+import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
@@ -9,109 +9,118 @@ import php from "../../../../asset/images/php.png";
 import node from "../../../../asset/images/node.png";
 import powershell from "../../../../asset/images/powershell.svg";
 import csharp from "../../../../asset/images/csharp.png";
-import http from "../../../../asset/images/http.png";
 import js from "../../../../asset/images/js.png";
-import kotlin from "../../../../asset/images/kotlin.jpeg";
 import ruby from "../../../../asset/images/ruby.png";
-import objectiveC from "../../../../asset/images/objectiveC.png";
 import C from "../../../../asset/images/C.png";
-import CPlusPlus from "../../../../asset/images/CPlusPlus.png";
 import swift from "../../../../asset/images/swift.jpeg";
 import {
   CreateBeneficiaryCode,
+  JavascriptRegisterBeneficiary,
+  NodeRegisterBeneficiary,
   PHPBeneficiary,
   PythonBeneficiary,
   ShellBeneficiary,
+  ClibcurlBeneficiaryRegister, CrestsharpBeneficiaryRegister, GonativeBeneficiaryRegister, SwiftRegisterBeneficiary, RubyRegisterBeneficiary, PowershellRegisterBeneficiary 
 } from "../RequestBeneficiary/CreateBeneficiaryCode";
+
 
 const BeneficiaryCreatePage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
+      id: 0,
       icon: java,
       text: "java",
     },
     {
+
+      id: 1,
       icon: python,
       text: "python",
     },
     {
+      id: 2,
       icon: shell,
       text: "shell",
     },
     {
+      id: 3,
       icon: php,
       text: "php",
-    },
+    }
   ]);
   const dummyArray = [];
   const cacheArray = [];
   const [verticalIconArray, setVerticalIconArray] = useState([
     {
+      id: 4,
       icon: node,
       text: "Node JS",
     },
     {
+      id: 5,
       icon: powershell,
       text: "Powershell",
     },
     {
+      id: 6,
       icon: csharp,
       text: "Csharp",
     },
+
     {
-      icon: http,
-      text: "HTTP",
-    },
-    {
+      id: 7,
       icon: js,
       text: "Javascript",
     },
+
+
     {
-      icon: kotlin,
-      text: "Kotlin",
-    },
-    {
-      icon: objectiveC,
-      text: "ObjectiveC",
-    },
-    {
+      id: 8,
       icon: C,
       text: "C",
     },
+
     {
-      icon: CPlusPlus,
-      text: "C++",
-    },
-    {
+      id: 9,
       icon: swift,
       text: "Swift",
     },
     {
+      id: 10,
       icon: Go,
       text: "Go",
     },
     {
+      id: 11,
       icon: ruby,
       text: "ruby",
-    },
+    }
   ]);
 
   // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(1);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const toggleTab = (id) => {
+    // console.log(id);
+    
+    setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
+    console.log(icon);
+    
     dummyArray[0] = icon;
+    // console.log("DummyArray", dummyArray);
+   
 
     setVerticalIconArray([
       ...verticalIconArray,
       verticalIconArray.splice(index, 1),
     ]);
-
     cacheArray[0] = horizontalIconArray[horizontalIconArray.length - 1];
+
+    // console.log("CacheArray", cacheArray);
+
 
     setHorizontalIconArray(
       ...horizontalIconArray,
@@ -136,7 +145,7 @@ const BeneficiaryCreatePage = () => {
       <Col className="col-12 col-sm-7 boder">
         <Row>
           <h1 className="heading mb-0">Beneficiary</h1>
-          <p className="px-4 mb-0 content-bg">
+          <p className="px-4 mb-0 backroundP-tag">
             Beneficiary is the bank account who receives the funds remitted by
             the remitter mobile number.
             <br />A beneficiary is someone to whom one can transfer money or to
@@ -145,12 +154,12 @@ const BeneficiaryCreatePage = () => {
             Create, Delete and Fetch beneficiaries for your customers.
           </p>
           <h2 className="mb-0 mt-0 p-3">Register Beneficiary</h2>
-          <p className="px-4  mb-5 content-bg">
+          <p className="px-4  mb-5">
             Beneficiary need to be registered in the system through the
             remitter's mobile number and bank details.
           </p>
           <div className="m">
-            <Table striped bordered hover responsive id="tableDesign">
+            <Table striped bordered hover responsive>
               <thead>
                 <tr>
                   <th>Sl.no</th>
@@ -201,22 +210,22 @@ const BeneficiaryCreatePage = () => {
           </div>
 
           <h3 className=" p-3 link-font-size">URL:</h3>
-          <code className="py-4 url-link">
+          <code className=" pt-5 pb-5 url-link">
             http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary
           </code>
-          <h3 className="py-2 link-font-size">Method:</h3>
-          <p className="content-bg">POST</p>
+          <h3 className=" p-3 link-font-size">Method:</h3>
+          <p className="p-3">POST</p>
 
-          <h3 className="py-2 link-font-size">Header:</h3>
-          <p className="output content-bg">
+          <h3 className=" p-3 link-font-size">Header:</h3>
+          <p className="output ">
             <br /> <code>"apiKey"</code>
             <span>:</span>
             "abs1nxxxxx"
             <br />
           </p>
 
-          <h3 className="py-2 p-3link-font-size">Request:</h3>
-          <p className="output content-bg">
+          <h3 className=" p-3 p-3link-font-size">Request:</h3>
+          <p className="output">
             <br />
             <code>"beneficiaryName"</code> <span>: </span>{" "}
             <code className="code-yellow">"anu",</code>
@@ -255,10 +264,22 @@ const BeneficiaryCreatePage = () => {
         {toggleState === 1 && <PythonBeneficiary />}
         {toggleState === 2 && <ShellBeneficiary />}
         {toggleState === 3 && <PHPBeneficiary />}
-        {toggleState === 4 && <PHPBeneficiary />}
+        {toggleState === 4 && < NodeRegisterBeneficiary />}
+        {toggleState === 5 && < PowershellRegisterBeneficiary />}
+        {toggleState === 6 && < CrestsharpBeneficiaryRegister/>}
+        {toggleState === 7 && <  JavascriptRegisterBeneficiary/>}
+        {toggleState === 8 && < ClibcurlBeneficiaryRegister />}
+        {toggleState === 9 && < SwiftRegisterBeneficiary />}
+        {toggleState === 10 && < GonativeBeneficiaryRegister />}
+        {toggleState === 11 && < RubyRegisterBeneficiary />}
+        
+
+
+        {toggleState === 7 && < JavascriptRegisterBeneficiary />}
+      
 
         <div className="lang-btns d-flex justify-content-evenly">
-          {horizontalIconArray.map((iconName, index) => {
+          {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
                 style={{
@@ -266,11 +287,11 @@ const BeneficiaryCreatePage = () => {
                   border: "none",
                   background: "transparent",
                 }}
-                id={iconName.icon}
+                id={icon}
                 key={index}
-                onClick={() => toggleTab(index)}
+                onClick={() => toggleTab(id)}
               >
-                <img src={iconName.icon} height="20" width="20" />
+                <img src={icon} height="20" width="20" />
               </button>
             );
           })}
@@ -282,11 +303,16 @@ const BeneficiaryCreatePage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text }, index) => {
-                // console.log(verticalIconArray, "view");
+              {verticalIconArray.map(({ icon, text, id }, index) => {
+                // console.log("icon", icon);
+
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text }, index)}
+                    onClick={() => {
+                      toggleTab(id);
+                      pushItem({ icon, text,id }, index)
+                    }
+                    }
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

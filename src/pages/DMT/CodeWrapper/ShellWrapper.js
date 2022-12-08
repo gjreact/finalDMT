@@ -9,7 +9,7 @@ const copyToClipboard = (id) => {
 const ShellWrapper = () => {
   return (
     <>
-      <br />{" "}
+      {" "}
       <span className="d-flex justify-content-between">
         <code className="text-white">
           wget --no-check-certificate --quiet \
@@ -19,7 +19,7 @@ const ShellWrapper = () => {
           onClick={() => copyToClipboard("shell")}
         />
       </span>
-      <br /> <code className="text-white"> --method POST \</code>
+   <code className="text-white"> --method POST \</code>
       <br /> <code className="text-white"> --timeout=0 \</code>
       <br />{" "}
       <code className="text-white">
