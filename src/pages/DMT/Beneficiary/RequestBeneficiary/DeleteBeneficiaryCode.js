@@ -347,7 +347,7 @@ export const NodeDeleteBeneficiary = () => {
           <DeleteBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
-    </>
+    </>)
 };
 
 export const JavascriptDeleteBeneficiary = () => {

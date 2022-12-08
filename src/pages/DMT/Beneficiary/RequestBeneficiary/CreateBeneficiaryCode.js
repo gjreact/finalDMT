@@ -86,7 +86,7 @@ export const CreateBeneficiaryCode = () => {
         </div>
       </CodeWrapper>
       
-    </>
+    </>)
 };
 
 export const PythonBeneficiary = () => {
@@ -335,7 +335,7 @@ export const NodeRegisterBeneficiary = () => {
           <CreateBeneficiaryResponse response={response}/>
         </div>
       </CodeWrapper>
-    </>
+    </>)
 };
 
 export const JavascriptRegisterBeneficiary = () => {

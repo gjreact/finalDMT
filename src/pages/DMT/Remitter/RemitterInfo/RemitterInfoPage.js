@@ -13,7 +13,6 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import Bar from '../../.././Bar'
 import {
   JavaRemitter,
   PythonRemitter,
@@ -30,6 +29,7 @@ import {
 } from "../ResponseCodeRemitter/RequestCode/RemitterInfoCode";
 import Bar from "../../../Bar";
 
+const RemitterInfoPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
       id: 0,

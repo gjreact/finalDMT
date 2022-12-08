@@ -20,8 +20,6 @@ import {
   PHPBeneficiary,
   PythonBeneficiary,
   ShellBeneficiary,
-  NodeRegisterBeneficiary,
-  JavascriptRegisterBeneficiary,
   SwiftRegisterBeneficiary,
   GonativeBeneficiaryRegister,
   ClibcurlBeneficiaryRegister,
@@ -278,7 +276,7 @@ const BeneficiaryCreatePage = () => {
         {toggleState === 11 && <PowershellRegisterBeneficiary />}
 
         <div className="lang-btns d-flex justify-content-evenly">
-          {horizontalIconArray.map(({ icon, id }, index) => {
+          {horizontalIconArray.map((iconName, index) => {
             return (
               <button
                 className="togglebuttton"

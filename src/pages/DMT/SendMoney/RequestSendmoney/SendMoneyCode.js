@@ -90,7 +90,7 @@ export const PythonSendMoney = () => {
         <code className="text-white"> url =</code>{" "}
         <code className="code-yellow">
           "http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money"
-        </code></code>
+        </code>
         <br />
         <code className="text-white">payload = json.dumps</code>(
         <p className="output link-heading text-white">
@@ -925,12 +925,13 @@ export function CrestsharpSendMoney() {
               ("http://194.195.113.218:8090/paymento/sendmoney-api/api-send-money"
             </code>
             );
-          </code></code><AiOutlineCopy
+          </code>
+          
+          <AiOutlineCopy
               className="copyicon"
               style={{width:"50px"}}
               onClick={() => copyToClipboard("node")}
             />
-          </span>
          
           <code className="text-white">client.Timeout = -1;</code>
           <br />

@@ -329,15 +329,17 @@ a {
   border: 1px solid rgba(225, 214, 214, 0.477);
   background: transparent;
   border-radius: 10px;
-.togglebutton{
+}
+
+/* .togglebutton{
   outline:none;
   border: none;
   background-color: white;
   padding-left: 10px;
   padding-right: 10px;
-}
+} */
 .togglebutton:active{
-  box-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px rgb(216, 20, 20);
 }
 
 .content-bg{

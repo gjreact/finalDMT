@@ -214,7 +214,7 @@ const RemitterBalancePage = () => {
         {toggleState === 11 && <PowershellRemitterBalanceCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
-          {horizontalIconArray.map(({ icon, id }, index) => {
+          {horizontalIconArray.map((iconName , index) => {
             return (
               <button
                 className="togglebuttton"
