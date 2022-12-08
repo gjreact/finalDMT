@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Dropdown, Table } from "react-bootstrap";
+import React, { useState } from "react";
+import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
@@ -25,7 +25,7 @@ import {
   ClibcurlBeneficiaryRegister,
   CrestsharpBeneficiaryRegister,
   RubyRegisterBeneficiary,
-  PowershellRegisterBeneficiary
+  PowershellRegisterBeneficiary,
 } from "../RequestBeneficiary/CreateBeneficiaryCode";
 
 const BeneficiaryCreatePage = () => {
@@ -96,7 +96,6 @@ const BeneficiaryCreatePage = () => {
     },
   ]);
 
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
@@ -133,8 +132,6 @@ const BeneficiaryCreatePage = () => {
 
   return (
     <>
-      {/* Beneficiary create page starts... */}
-
       <Col className="col-12 col-sm-7 boder">
         <Row>
           <h1 className="heading mb-0">Beneficiary</h1>
@@ -258,13 +255,13 @@ const BeneficiaryCreatePage = () => {
         {toggleState === 2 && <ShellBeneficiary />}
         {toggleState === 3 && <PHPBeneficiary />}
         {toggleState === 4 && <NodeRegisterBeneficiary />}
-        {toggleState === 5 && <JavascriptRegisterBeneficiary />}
-        {toggleState === 6 && <SwiftRegisterBeneficiary />}
-        {toggleState === 7 && <GonativeBeneficiaryRegister />}
+        {toggleState === 5 && <PowershellRegisterBeneficiary />}
+        {toggleState === 6 && <CrestsharpBeneficiaryRegister />}
+        {toggleState === 7 && <JavascriptRegisterBeneficiary />}
         {toggleState === 8 && <ClibcurlBeneficiaryRegister />}
-        {toggleState === 9 && <CrestsharpBeneficiaryRegister />}
-        {toggleState === 10 && <RubyRegisterBeneficiary />}
-        {toggleState === 11 && <PowershellRegisterBeneficiary />}
+        {toggleState === 9 && <SwiftRegisterBeneficiary />}
+        {toggleState === 10 && <GonativeBeneficiaryRegister />}
+        {toggleState === 11 && <RubyRegisterBeneficiary />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
@@ -275,7 +272,12 @@ const BeneficiaryCreatePage = () => {
                 key={index}
                 onClick={() => toggleTab(iconName.id)}
               >
-                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg" />
+                <img
+                  src={iconName.icon}
+                  height="20"
+                  width="20"
+                  className="togglebutttonimg"
+                />
               </button>
             );
           })}
@@ -287,11 +289,10 @@ const BeneficiaryCreatePage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text,id }, index) => {
-                // console.log(verticalIconArray, "view");
+              {verticalIconArray.map(({ icon, text, id }, index) => {
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text,id }, index)}
+                    onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

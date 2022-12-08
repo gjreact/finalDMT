@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
@@ -13,19 +13,20 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import { ClibcurlBeneficiaryList,
-    CrestsharpBeneficiaryList, 
-    GonativeBeneficiaryList, 
-    JavascriptListBeneficiary, 
-    ListBeneficiaryCode, 
-    NodeListBeneficiary, 
-    PHPListBeneficiary, 
-    PowershellListBeneficiary,
-    PythonListBeneficiary, 
-    RubyListBeneficiary, 
-    ShellListBeneficiary, 
-    SwiftListBeneficiary } from "../RequestBeneficiary/ListBeneficiaryCode";
-
+import {
+  ClibcurlBeneficiaryList,
+  CrestsharpBeneficiaryList,
+  GonativeBeneficiaryList,
+  JavascriptListBeneficiary,
+  ListBeneficiaryCode,
+  NodeListBeneficiary,
+  PHPListBeneficiary,
+  PowershellListBeneficiary,
+  PythonListBeneficiary,
+  RubyListBeneficiary,
+  ShellListBeneficiary,
+  SwiftListBeneficiary,
+} from "../RequestBeneficiary/ListBeneficiaryCode";
 
 const BeneficiaryCreatePage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
@@ -35,7 +36,6 @@ const BeneficiaryCreatePage = () => {
       text: "java",
     },
     {
-
       id: 1,
       icon: python,
       text: "python",
@@ -49,7 +49,7 @@ const BeneficiaryCreatePage = () => {
       id: 3,
       icon: php,
       text: "php",
-    }
+    },
   ]);
   const dummyArray = [];
   const cacheArray = [];
@@ -76,7 +76,6 @@ const BeneficiaryCreatePage = () => {
       text: "Javascript",
     },
 
-
     {
       id: 8,
       icon: C,
@@ -97,33 +96,26 @@ const BeneficiaryCreatePage = () => {
       id: 11,
       icon: ruby,
       text: "ruby",
-    }
+    },
   ]);
 
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (id) => {
-    // console.log(id);
-    
+
     setToggleState(id);
   };
 
   const pushItem = (icon, index) => {
     console.log(icon);
-    
+
     dummyArray[0] = icon;
-    // console.log("DummyArray", dummyArray);
-   
 
     setVerticalIconArray([
       ...verticalIconArray,
       verticalIconArray.splice(index, 1),
     ]);
     cacheArray[0] = horizontalIconArray[horizontalIconArray.length - 1];
-
-    // console.log("CacheArray", cacheArray);
-
 
     setHorizontalIconArray(
       ...horizontalIconArray,
@@ -143,8 +135,6 @@ const BeneficiaryCreatePage = () => {
 
   return (
     <>
-      {/* Beneficiary create page starts... */}
-
       <Col className="col-12 col-sm-7 boder">
         <Row>
           <h1 className="heading mb-0">Beneficiary</h1>
@@ -267,16 +257,14 @@ const BeneficiaryCreatePage = () => {
         {toggleState === 1 && <PythonListBeneficiary />}
         {toggleState === 2 && <ShellListBeneficiary />}
         {toggleState === 3 && <PHPListBeneficiary />}
-        {toggleState === 4 && < NodeListBeneficiary />}
-        {toggleState === 5 && <  PowershellListBeneficiary/>}
-        {toggleState === 6 && < CrestsharpBeneficiaryList/>}
-        {toggleState === 7 && <  JavascriptListBeneficiary/>}
-        {toggleState === 8 && < ClibcurlBeneficiaryList />}
-        {toggleState === 9 && < SwiftListBeneficiary />}
-        {toggleState === 10 && < GonativeBeneficiaryList />}
-        {toggleState === 11 && < RubyListBeneficiary />}
-       
-      
+        {toggleState === 4 && <NodeListBeneficiary />}
+        {toggleState === 5 && <PowershellListBeneficiary />}
+        {toggleState === 6 && <CrestsharpBeneficiaryList />}
+        {toggleState === 7 && <JavascriptListBeneficiary />}
+        {toggleState === 8 && <ClibcurlBeneficiaryList />}
+        {toggleState === 9 && <SwiftListBeneficiary />}
+        {toggleState === 10 && <GonativeBeneficiaryList />}
+        {toggleState === 11 && <RubyListBeneficiary />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map(({ icon, id }, index) => {
@@ -304,15 +292,12 @@ const BeneficiaryCreatePage = () => {
 
             <Dropdown.Menu>
               {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log("icon", icon);
-
                 return (
                   <Dropdown.Item
                     onClick={() => {
                       toggleTab(id);
-                      pushItem({ icon, text,id }, index)
-                    }
-                    }
+                      pushItem({ icon, text, id }, index);
+                    }}
                     key={index}
                   >
                     <img src={icon} height="20" width="20" />

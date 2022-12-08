@@ -1,5 +1,4 @@
-import React ,{useState} from "react";
-import { Row } from "react-bootstrap";
+import React, { useState } from "react";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
 import CodeWrapper from "../../CodeWrapper/CodeWrapper";
@@ -58,7 +57,7 @@ export const ListBeneficiaryCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -125,7 +124,7 @@ export const PythonListBeneficiary = () => {
       </CodeWrapper>
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -156,7 +155,7 @@ export const ShellListBeneficiary = () => {
       </CodeWrapper>
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -273,7 +272,7 @@ export const PHPListBeneficiary = () => {
       </CodeWrapper>
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -286,12 +285,20 @@ export const NodeListBeneficiary = () => {
     <>
       {" "}
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <code>
-            var <code className="text-white"> request =</code>{" "}
-            <code>require</code>
-            <code>('request');</code>{" "}
-          </code>
+        <div className="request-wrapper" id="node">
+          <span className="d-flex justify-content-between">
+            <span>
+              <code>
+                var <code className="text-white"> request =</code>{" "}
+                <code>require</code>
+                <code>('request');</code>{" "}
+              </code>
+            </span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("node")}
+            />
+          </span>
           <br />
           <code>var </code> <code className="text-white">options = </code>
           <span className="output text-white">
@@ -351,7 +358,7 @@ export const NodeListBeneficiary = () => {
       </CodeWrapper>
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -363,10 +370,18 @@ export const JavascriptListBeneficiary = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <br /> <code>var myHeaders =</code> <code>new</code>{" "}
-          <code className="text-white">Headers();</code>
+        <div className="request-wrapper" id="javascript">
           <br />
+          <span className="d-flex justify-content-between">
+            <span>
+              <code>var myHeaders =</code> <code>new</code>{" "}
+              <code className="text-white">Headers();</code>
+            </span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("javascript")}
+            />
+          </span>
           <code className="text-white">myHeaders.</code>
           <code>append</code>
           <code className="text-white">(</code>
@@ -441,7 +456,7 @@ export const JavascriptListBeneficiary = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -453,9 +468,17 @@ export const SwiftListBeneficiary = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <code>import</code> <code className="text-white">Foundation</code>
-          <br />
+        <div className="request-wrapper" id="swift">
+          <span className="d-flex justify-content-between">
+            <span>
+              <code>import</code> <code className="text-white">Foundation</code>
+              <br />
+            </span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("swift")}
+            />
+          </span>
           <code>#if</code>
           <code className="text-white"> canImport</code>
           <code className="text-white">(</code>
@@ -570,7 +593,7 @@ export const SwiftListBeneficiary = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -582,10 +605,18 @@ export function CrestsharpBeneficiaryList() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <code>
-            var<code className="text-white">client =</code> new{" "}
-          </code>
+        <div className="request-wrapper" id="csharp">
+          <span className="d-flex justify-content-between">
+            <span>
+              <code>
+                var <code className="text-white"> client =</code> new{" "}
+              </code>
+            </span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("csharp")}
+            />
+          </span>
           <code className="text-white">
             {" "}
             RestClient
@@ -680,7 +711,7 @@ export function CrestsharpBeneficiaryList() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -692,11 +723,18 @@ export function GonativeBeneficiaryList() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="go">
           <br />
-          <code>package</code>
-          <code className="text-white">main</code>
-          <br />
+          <span className="d-flex justify-content-between">
+            <span>
+              <code>package </code>
+              <code className="text-white"> main</code>
+            </span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("go")}
+            />
+          </span>
           <code> import </code>
           <code className="text-white">
             (
@@ -816,7 +854,7 @@ export function GonativeBeneficiaryList() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -827,10 +865,16 @@ export function ClibcurlBeneficiaryList() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="c">
           <br />
-          <code className="text-white">CURL *curl;</code>
-          <br />
+          <span className="d-flex justify-content-between">
+            <code className="text-white">CURL *curl;</code>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("c")}
+            />
+          </span>
+
           <code className="text-white">CURLcode res;</code>
           <br />
           <code className="text-white">curl = curl_easy_init();</code>
@@ -907,7 +951,7 @@ export function ClibcurlBeneficiaryList() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -921,9 +965,14 @@ export const RubyListBeneficiary = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="Ruby">
           <div>
+            <span className="d-flex justify-content-between"><span>
             <code className="text-white">require</code>
-            <code className="code-yellow">"uri"</code>
-            <br />
+            <code className="code-yellow">"uri"</code></span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("Ruby")}
+            />
+            </span>
             <code className="text-white">require</code>
             <code className="code-yellow">"json"</code>
             <br />
@@ -999,7 +1048,7 @@ export const RubyListBeneficiary = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1013,6 +1062,11 @@ export const PowershellListBeneficiary = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="Powershell">
           <div>
+            <span className="d-flex justify-content-end">
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("Powershell")}
+            /></span>
             <code className="text-white">$headers = New-Object</code>
             <code className="code-yellow">
               "System.collections.Generic.Dictionary[String],[String]"
@@ -1059,7 +1113,7 @@ export const PowershellListBeneficiary = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <ListBeneficiaryResponse response={response}/>
+          <ListBeneficiaryResponse response={response} />
         </div>
       </CodeWrapper>
     </>

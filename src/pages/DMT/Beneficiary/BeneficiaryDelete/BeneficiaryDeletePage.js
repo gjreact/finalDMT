@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Dropdown, Table } from "react-bootstrap";
+import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
@@ -97,7 +97,6 @@ const BeneficiaryDeletePage = () => {
     },
   ]);
 
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
@@ -134,8 +133,6 @@ const BeneficiaryDeletePage = () => {
 
   return (
     <>
-      {/* Beneficiary delete page starts... */}
-
       <Col className="col-12 col-sm-7 border">
         <Bar />
         <Row>
@@ -230,7 +227,6 @@ const BeneficiaryDeletePage = () => {
 
             <Dropdown.Menu>
               {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
                     onClick={() => pushItem({ icon, text, id }, index)}
@@ -245,8 +241,6 @@ const BeneficiaryDeletePage = () => {
           </Dropdown>
         </div>
       </Col>
-
-      {/* Beneficiary delete page  ends...*/}
     </>
   );
 };
