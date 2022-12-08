@@ -97,7 +97,6 @@ const ResendOtpPage = () => {
     },
   ]);
 
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
@@ -206,13 +205,13 @@ const ResendOtpPage = () => {
         {toggleState === 2 && <ShellResendOtp />}
         {toggleState === 3 && <PHPResendOtp />}
         {toggleState === 4 && <NodeResendOtpCode />}
-        {toggleState === 5 && <JavascriptResendOtpCode />}
-        {toggleState === 6 && <SwiftResendOtpCode />}
-        {toggleState === 7 && <GonativeResendOtp />}
-        {toggleState === 8 && <CrestsharpResendOtp />}
-        {toggleState === 9 && <ClibcurlResendOtp />}
-        {toggleState === 10 && <RubyResendOtpCode />}
-        {toggleState === 11 && <PowershellResendOtpCode />}
+        {toggleState === 5 && <PowershellResendOtpCode />}
+        {toggleState === 6 && <CrestsharpResendOtp />}
+        {toggleState === 7 && <JavascriptResendOtpCode />}
+        {toggleState === 8 && <ClibcurlResendOtp />}
+        {toggleState === 9 && <SwiftResendOtpCode />}
+        {toggleState === 10 && <GonativeResendOtp />}
+        {toggleState === 11 && <RubyResendOtpCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
@@ -236,7 +235,6 @@ const ResendOtpPage = () => {
 
             <Dropdown.Menu>
               {verticalIconArray.map(({ icon, text,id }, index) => {
-                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
                     onClick={() => pushItem({ icon, text,id }, index)}
@@ -252,29 +250,7 @@ const ResendOtpPage = () => {
         </div>
 
         <div class="force-overflow"></div>
-        {/* <Row className="link-heading">
-                  <h3 className="text-white link-section p-3">Response:</h3>
-                  <h5 className="text-white link-heading p-3">SUCCESS </h5>
-                   <p className="output link-heading text-white " >
-                    <br/> <code>"status"</code> <span>: </span> <code className="code-cyan">"201"</code>
-                    <br/> <code>"success"</code> <span>: </span> <code className="code-yellow">"true"</code>
-                    <br/> <code>"message"</code> <span>: </span> <code className="code-yellow">"OTP send successfully"</code>
-                    <br/> <code>"responseCode"</code> <span>: </span> <code className="code-cyan">"0"</code>
-                    <br/> <code>"data" </code>
-                    <p className="output-two link-heading text-white">
-                       <br/><code>"remitterId"</code> <span>: </span> <code className="code-cyan">16</code>
-                       <br/><code>"otpRefferenceId"</code> <span>: </span> <code className="code-yellow">"FLf0YdvZqx6lA9eg"</code>
-                       <br/><code>"mobile"</code> <span>: </span> <code className="code-cyan">"9895924936"</code>
-                       <br/><code>"name"</code> <span>: </span> <code className="code-yellow">"dil"</code>
-                       <br/><code>"userId"</code> <span>: </span> <code className="code-cyan">3</code>
-                       <br/><code>"remitterType"</code> <span>: </span> <code className="code-cyan">3</code><br/>
-                      
-                    </p>
-                   </p>
-                </Row> */}
       </Col>
-
-      {/* Remitter Resend otp ends...*/}
     </>
   );
 };

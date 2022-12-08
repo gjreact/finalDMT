@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Container, NavLink, Dropdown, Row, Table } from "react-bootstrap";
+import { Col, Dropdown, Row, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
@@ -96,8 +96,6 @@ function RemitterInfoPage() {
       text: "ruby",
     },
   ]);
-
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
@@ -133,8 +131,6 @@ function RemitterInfoPage() {
   };
   return (
     <>
-      {/* Remitter Information */}
-
       <Col className="col-12 col-sm-7 border">
         <Bar />
 
@@ -209,13 +205,13 @@ function RemitterInfoPage() {
         {toggleState === 2 && <ShellRemitter />}
         {toggleState === 3 && <PHPRemitter />}
         {toggleState === 4 && <NodeRemitterInfoCode />}
-        {toggleState === 5 && <JavascriptRemitterInfoCode />}
-        {toggleState === 6 && <SwiftRemitterInfoCode />}
-        {toggleState === 7 && <GonativeRemitterInfo />}
+        {toggleState === 5 && <PowerShellRemitterInfo />}
+        {toggleState === 6 && <CrestsharpRemitterInfo />}
+        {toggleState === 7 && <JavascriptRemitterInfoCode />}
         {toggleState === 8 && <ClibcurlRemitterInfo />}
-        {toggleState === 9 && <CrestsharpRemitterInfo />}
-        {toggleState === 10 && <RubyRemitterInfo />}
-        {toggleState === 11 && <PowerShellRemitterInfo />}
+        {toggleState === 9 && <SwiftRemitterInfoCode />}
+        {toggleState === 10 && <GonativeRemitterInfo />}
+        {toggleState === 11 && <RubyRemitterInfo />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
@@ -233,7 +229,6 @@ function RemitterInfoPage() {
             );
           })}
 
-          {/* =========================== */}
           <Dropdown>
             <Dropdown.Toggle
               variant="light"
@@ -242,7 +237,6 @@ function RemitterInfoPage() {
 
             <Dropdown.Menu>
               {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
                     onClick={() => pushItem({ icon, text, id }, index)}
@@ -255,12 +249,8 @@ function RemitterInfoPage() {
               })}
             </Dropdown.Menu>
           </Dropdown>
-
-          {/* =========================== */}
         </div>
       </Col>
-
-      {/* Remitter Information  ends...*/}
     </>
   );
 }

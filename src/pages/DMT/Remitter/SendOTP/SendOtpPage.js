@@ -96,7 +96,6 @@ const SendOtpPage = () => {
     },
   ]);
 
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
@@ -133,8 +132,6 @@ const SendOtpPage = () => {
 
   return (
     <>
-      {/* Remitter Information */}
-
       <Col className="col-12 col-sm-7 border">
         <Bar />
         <Row>
@@ -251,7 +248,6 @@ const SendOtpPage = () => {
 
             <Dropdown.Menu>
               {verticalIconArray.map(({ icon, text,id }, index) => {
-                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
                     onClick={() => pushItem({ icon, text,id }, index)}
@@ -265,35 +261,7 @@ const SendOtpPage = () => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-
-        {/* <Row className="link-heading">
-                   <h3 className="text-white link-section p-3">Response:</h3>
-                   <h5 className="text-white link-heading p-3">SUCCESS </h5>
-                   <p className="output link-heading text-white " >
-                     <br /> <code>"status" </code><span>: </span> <code className="code-cyan">"201"</code>
-                     <br /> <code>"success"</code> <span>: </span> <code className="code-cyan">"true"</code>
-                     <br /> <code>"message"</code> <span>: </span> <code>"OTP send successfully"</code>
-                     <br /> <code>"responseCode"</code> <span>: </span> <code className="code-cyan">"0"</code>
-                     <br /> <code>"data"</code>
-                     <p className="output-two link-heading text-white">
-                       <br /><code>"remitterId"</code> <span>: </span> <code className="code-cyan">15</code>
-                       <br /><code>"otpRefferenceId"</code> <span>: </span> <code className="code-yellow">"2NEBGNVgCJ92agZg"</code>
-                       <br /><code>"mobile"</code> <span>: </span> <code className="code-cyan">"7902666443"</code>
-                       <br /><code>"name"</code> <span>: </span> <code className="code-yellow">"Anju"</code>
-                       <br /><code>"userId"</code> <span>: </span> <code className="code-cyan">3</code>
-                       <br /><code>"remitterType"</code> <span>: </span> <code className="code-cyan">3</code><br />
-                     </p>
-                  </p>
-                  <h5 className="text-white link-heading p-3 ">UNKNOWN RESPONSE </h5>
-                   <p className="output link-heading text-white " >
-                     <br /> <code>"status"</code> <span>: </span><code className="code-cyan">"404"</code>
-                     <br /> <code>"success"</code> <span>: </span><code className="code-cyan">"false"</code>
-                     <br /> <code>"message"</code> <span>: </span><code className="code-yellow">" "</code>
-                     <br /> <code>"responseCode"</code> <span>: </span><code className="code-yellow">" "</code><br />
-                   </p>
-                 </Row> */}
       </Col>
-      {/* Remitter Information  ends...*/}
     </>
   );
 };
