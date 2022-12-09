@@ -136,21 +136,9 @@ const BeneficiaryCreatePage = () => {
   return (
     <>
       <Col className="col-12 col-sm-7 boder">
-        <Row>
-          <h1 className="heading mb-0">Beneficiary</h1>
-          <p className="content-bg">
-            Beneficiary is the bank account who receives the funds remitted by
-            the remitter mobile number.
-            <br />A beneficiary is someone to whom one can transfer money or to
-            be able to transfer money, the customer must add a beneficiary using
-            the beneficiary's bank account details. By using our APIs, you can
-            Create, Delete and Fetch beneficiaries for your customers.
-          </p>
-          <h2 className="mb-0 mt-0">Register Beneficiary</h2>
-          <p className="px-4  mb-5 content-bg">
-            Beneficiary need to be registered in the system through the
-            remitter's mobile number and bank details.
-          </p>
+         <Row>
+          <h2 className="mb-0 ">List Beneficiary</h2>
+          <p className="px-4 mb-5 content-bg">Get list of recipients for a Remitter</p>
           <div className="m">
             <Table striped bordered hover responsive>
               <thead>
@@ -165,87 +153,31 @@ const BeneficiaryCreatePage = () => {
                 <tr>
                   <td>1</td>
                   <td>404</td>
-                  <td>501</td>
-                  <td>Beneficiary already exist</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>404</td>
-                  <td>4104</td>
-                  <td>Enter a valid name</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>404</td>
-                  <td>105</td>
-                  <td>Invalid bank code</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>404</td>
-                  <td>106</td>
-                  <td>Sender Does Not exist</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>404</td>
-                  <td>107</td>
-                  <td>Invalid Account number</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>404</td>
-                  <td>108</td>
-                  <td>Invalid bank IFSC</td>
+                  <td>0</td>
+                  <td>Not found</td>
                 </tr>
               </tbody>
             </Table>
           </div>
-
           <h3 className=" p-3 link-font-size">URL:</h3>
-          <code className=" pt-5 pb-5 url-link">
-            http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary
+          <code className="py-4 url-link">
+            http://194.195.113.218:8090/paymento/remitter-reg/getbeneficiary
           </code>
-          <h3 className=" p-3 link-font-size">Method:</h3>
-          <p className="p-3">POST</p>
+          <h3 className="py-2 link-font-size">Method:</h3>
+          <p className="content-bg">POST</p>
 
-          <h3 className=" p-3 link-font-size">Header:</h3>
-          <p className="output ">
+          <h3 className="py-2 link-font-size">Header:</h3>
+          <p className="output content-bg">
             <br /> <code>"apiKey"</code>
             <span>:</span>
-            "abs1nxxxxx"
-            <br />
+            <code className="code-yellow">abs1nxxxxx"</code>"<br />
           </p>
 
-          <h3 className=" p-3 p-3link-font-size">Request:</h3>
-          <p className="output">
+          <h3 className="py-2 link-font-size">Request:</h3>
+          <p className="output content-bg">
             <br />
-            <code>"beneficiaryName"</code> <span>: </span>{" "}
-            <code className="code-yellow">"anu",</code>
-            <br />
-            <code>"beneficiaryBankId" </code> <span>: </span>
-            <code className="code-cyan"> 36,</code>
-            <br />
-            <code>"remitterMobileNumber" </code> <span>: </span>
-            <code className="code-cyan"> "7902900295,</code>
-            <br />
-            <code>"beneficiaryMobileNumber"</code> <span>: </span>{" "}
-            <code className="code-cyan">790290029,</code>
-            <br />
-            <code>"accountNumber"</code> <span>: </span>{" "}
-            <code className="code-cyan">8865488888,</code>
-            <br />
-            <code>"address" </code> <span>: </span>{" "}
-            <code className="code-yellow">Calicut,</code>
-            <br />
-            <code>"ifscCode" </code> <span>: </span>{" "}
-            <code className="code-yellow">UTIB0002916,</code>
-            <br />
-            <code>"accountHolderName" </code> <span>: </span>
-            <code className="code-yellow"> Venu,</code>
-            <br />
-            <code>"branchName"</code> <span>: </span>{" "}
-            <code className="code-yellow">Mavoor Road</code> <br />
+            <code>"remitterid"</code> <span>: </span>{" "}
+            <code className="code-yellow">""</code> <br />
           </p>
         </Row>
       </Col>
