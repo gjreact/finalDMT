@@ -413,3 +413,50 @@ a {
   border-radius:2px;
 }
 /* STYLE END */
+   
+
+/* Bar */
+.offcanvas{
+  background-color:var(--SideMenueBgColor);
+  width: 270px
+}
+
+.offcanvasheader{
+ background-color:  var(--SideMenueBgColor);
+
+
+}
+.offcanvasdiv{
+  width:70%
+
+}
+
+.imagecanvas{
+  max-width: 150px;
+  width:100%
+}
+.offcanvasbody{
+  background-color: 10102C;
+
+}
+/* pan verification introduction */
+.introcol{
+  height: 100h;
+
+}
+.introp{
+  padding-bottom: 300px;
+}
+.introh1{
+  height: 10h;
+}
+
+/* pan verification  */
+.panverificationh6{
+  font-size: 20px;
+
+}
+.panverificationcol{
+  max-width: 560px;
+  min-width: 300px;
+}

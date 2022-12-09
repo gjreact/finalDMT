@@ -32,7 +32,7 @@ function Pan_verification() {
             </p>
 
 
-            <h6 className="mb-0 mt-0 heading " style={{fontSize:"20px"}}>HOW TO GENERATE AN API KEY</h6>
+            <h6 className="mb-0 mt-0 heading panverificationh6" >HOW TO GENERATE AN API KEY</h6>
             <p className="px-4   content-bg">
             
             Production developer key will be shared after the following is done:
@@ -44,7 +44,7 @@ function Pan_verification() {
             </ol>
             </p>
 
-            <h6 className="mb-0 mt-0 heading " style={{fontSize:"20px"}}> IP ADDRESS RESTRICTION</h6>
+            <h6 className="mb-0 mt-0 heading panverificationh6" > IP ADDRESS RESTRICTION</h6>
             <p className="px-4   content-bg mb-1">
             We only whitelist Indian IP addresses and the server location must be of India only, We
             accept requests only from the whitelisted IP. you need to contact our team for
@@ -84,9 +84,9 @@ function Pan_verification() {
      
 
  
-      <Col style={{maxWidth:"560px",minWidth:"300px"}}
+      <Col 
         id="style-1"
-        className="  h-100 link-heading scrollbar pt-5 "
+        className="  h-100 link-heading scrollbar pt-5 panverificationcol"
       >
        <CodeWrapper heading="Response">
         <div className="request-wrapper">

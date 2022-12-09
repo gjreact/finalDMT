@@ -8,12 +8,12 @@ import Bar from "../../Bar";
 function Introduction() {
   return (
     <div>
-       <Col style={{height:"100h"}} className="col-lg-10  col-md-12 col-sm-12   ">
+       <Col  className="col-lg-10  col-md-12 col-sm-12  introcol ">
         <Bar />
        
         <Row >
-        <h1  style={{height:"10h"}} className=" mb-0 mt-0 heading border">Introduction</h1>
-          <p style={{paddingBottom:"300px"}}   className="  border  content-bg ">
+        <h1  className=" mb-0 mt-0 heading border">Introduction</h1>
+          <p className="  border  content-bg introp">
             
             PAN Verification feature enables you to instantly verify PAN details of individuals or
             businesses before you onboard them or make any transactions with them. The feature

@@ -15,33 +15,18 @@ function Bar() {
       <div className="bars">
         <FaBars onClick={handleShow}></FaBars>
       </div>
-      <Offcanvas
-        style={{ backgroundColor: "var(--SideMenueBgColor)", width: "270px" }}
-        show={show}
-        onHide={handleClose}
-      >
-        <Offcanvas.Header
-          style={{
-            backgroundColor: "var(--SideMenueBgColor)",
-            variant: "white",
-          }}
-          closeButton
-          closeVariant="white"
-        >
-          <div
-            style={{ width: "70%" }}
-            className=" d-flex justify-content-center"
-          >
+      <Offcanvas className="offcanvas" show={show} onHide={handleClose}>
+        <Offcanvas.Header className="offcanvasheader" closeButton>
+          <div className=" d-flex justify-content-center offcanvasdiv">
             <img
-              className="align-center"
-              style={{ width: "100%", maxWidth: "150px" }}
+              className="align-center imagecanvas"
               src={logo}
               alt="paymento"
             />
           </div>
         </Offcanvas.Header>
         <hr className="hrline" />
-        <Offcanvas.Body style={{ backgroundColor: "10102C" }}>
+        <Offcanvas.Body>
           <SideMenu onClick={handleClose} />
         </Offcanvas.Body>
         <hr className="hrline" />
