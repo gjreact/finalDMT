@@ -17,6 +17,8 @@ import BeneficiaryListPage from "./pages/DMT/Beneficiary/BeneficiaryList/Benefic
 import BeneficiaryDeletePage from "./pages/DMT/Beneficiary/BeneficiaryDelete/BeneficiaryDeletePage";
 import SendMoneyPage from "./pages/DMT/SendMoney/SendMoney/SendMoneyPage";
 import TransactionRequeryPage from "./pages/DMT/TransactionRequery/TransactionRequeryPage";
+import Introduction from "./pages/DMT/Pan Verification/Introduction"
+import Pan_verification from "./pages/DMT/Pan Verification/Pan_verification"
 
 function App() {
   return (
@@ -107,10 +109,27 @@ function App() {
             }
           />
           <Route
-            path="/transaction-requery"
+            path="/*"
             element={
               <BasicLayout>
                 <TransactionRequeryPage />
+              </BasicLayout>
+            }
+          />
+
+        <Route
+            path="/pan-introduction"
+            element={
+              <BasicLayout>
+                <Introduction />
+              </BasicLayout>
+            }
+          />
+          <Route
+            path="/pan-verification"
+            element={
+              <BasicLayout>
+                <Pan_verification />
               </BasicLayout>
             }
           />

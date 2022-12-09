@@ -9,7 +9,7 @@ const CodeWrapper = ({ children, heading, setResponse, btnview }) => {
       style={{ maxHeight: "350px", overflow: "scroll", overflowX: "hidden" }}
     >
       <div className="text-white p-2 request-text-heading d-flex justify-content-between">
-        <div> {heading} </div>
+        <div>{heading}</div>
         {btnview === 1 ? (
           <>
             <span className="margin-right-0">

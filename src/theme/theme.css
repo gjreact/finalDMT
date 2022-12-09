@@ -5,7 +5,7 @@
   --SideMenueBgColor: #ffffff;
   --hambergerButton: #495274;
   --ContentBgColor: #495274;
-  --textColor: #f60c0c;
+  --textColor: #D0482A;
   --codebg: #090125d5;
   --codehead: #000010db;
   --code-cyan: rgb(19, 192, 192);
@@ -13,4 +13,5 @@
   --accordion-button-color: #37415e;
   --accordian-logo: url("../asset/images/down-arrow-red.png");
   --paymento-logo: url("../asset/images/logo_blue.png");
+  --accordion-active-color:#D0482A;
 }

@@ -13,6 +13,7 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
+import Bar from "../../../Bar"
 import {
   CreateBeneficiaryCode,
   PHPBeneficiary,
@@ -134,7 +135,7 @@ const BeneficiaryCreatePage = () => {
   return (
     <>
       {/* Beneficiary create page starts... */}
-
+      <Bar />
       <Col className="col-12 col-sm-7 boder">
         <Row>
           <h1 className="heading mb-0">Beneficiary</h1>

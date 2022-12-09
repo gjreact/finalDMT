@@ -1,10 +1,10 @@
-import React ,{useState} from "react";
+import React, { useState } from "react";
 import CodeWrapper from "../../../CodeWrapper/CodeWrapper";
 import JavaWrapper from "../../../CodeWrapper/JavaWrapper";
 import ShellWrapper from "../../../CodeWrapper/ShellWrapper";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
-import RemitterVerifyResponse from "../ResponseCode/RemitterVerifyResponse"
+import RemitterVerifyResponse from "../ResponseCode/RemitterVerifyResponse";
 
 const copyToClipboard = (id) => {
   var c = document.getElementById(id).innerText;
@@ -21,19 +21,6 @@ export const JavaVerifyOtp = () => {
           <JavaWrapper />
           <br />
           <code className="text-white">
-            OkHttpClient client = <code>new</code>{" "}
-            OkHttpClient().newnewBuilder()
-          </code>
-          <br />
-          <code className="text-white">.build();</code>
-          <br />
-          <code className="text-white">
-            MediaType mediaType = MediaType.parse({" "}
-            <code className="code-yellow">"application/json"</code>);
-          </code>
-          <br />
-          <code className="text-white">
-            RequestBody body = RequestBody.create(mediaType,{" "}
             <code className="code-yellow">
               "\r\n"{" "}
               <span className="output">
@@ -80,10 +67,9 @@ export const JavaVerifyOtp = () => {
           </code>
         </div>
       </CodeWrapper>
-      
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -148,7 +134,7 @@ export const PythonVerifyOtp = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -209,7 +195,7 @@ export const ShellVerifyOtp = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -223,7 +209,7 @@ export const PHPVerifyOtp = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
           <div>
-          <code> &#60;&#63;php</code>
+            <code> &#60;&#63;php</code>
             <br /> <code className="text-white">$curl = curl_init();</code>
             <br />
             <code className="text-white">
@@ -311,7 +297,7 @@ export const PHPVerifyOtp = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -407,10 +393,9 @@ export const NodeVerifyOtpCode = () => {
           </code>
         </div>
       </CodeWrapper>
-      
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -522,7 +507,7 @@ export const JavascriptVerifyOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -662,7 +647,7 @@ export const SwiftVerifyOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -825,7 +810,7 @@ export function GonativeVerifyOtp() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -963,7 +948,7 @@ export function CrestsharpVerifyOtp() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1056,7 +1041,7 @@ export function ClibcurlVerifyOtp() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1156,7 +1141,7 @@ export const RubyVerifyOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1228,7 +1213,7 @@ export const PowershellVerifyOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterVerifyResponse response={response}/>
+          <RemitterVerifyResponse response={response} />
         </div>
       </CodeWrapper>
     </>

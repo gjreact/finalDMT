@@ -4,6 +4,7 @@ import ShellWrapper from "../../../CodeWrapper/ShellWrapper";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
 import RemitterBalanceResponse from "../ResponseCode/RemitterBalanceResponse"
+import JavaWrapper from "../../../CodeWrapper/JavaWrapper";
 
 const copyToClipboard = (id) => {
   var c = document.getElementById(id).innerText;
@@ -16,21 +17,9 @@ export const JavaRemitterBalance = () => {
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
+          <JavaWrapper />
           <br />
           <code className="text-white">
-            OkHttpClient client = <code>new</code>{" "}
-            OkHttpClient().newnewBuilder()
-          </code>
-          <br />
-          <code className="text-white">.build();</code>
-          <br />
-          <code className="text-white">
-            MediaType mediaType = MediaType.parse({" "}
-            <code className="code-yellow">"application/json"</code>);
-          </code>
-          <br />
-          <code className="text-white">
-            RequestBody body = RequestBody.create(mediaType,{" "}
             <code className="code-yellow">
               {" "}
               <span className="output">

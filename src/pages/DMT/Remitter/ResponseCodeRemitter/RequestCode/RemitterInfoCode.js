@@ -1,4 +1,4 @@
-import React ,{useState} from "react";
+import React, { useState } from "react";
 import CodeWrapper from "../../../CodeWrapper/CodeWrapper";
 import JavaWrapper from "../../../CodeWrapper/JavaWrapper";
 import ShellWrapper from "../../../CodeWrapper/ShellWrapper";
@@ -74,10 +74,9 @@ export const JavaRemitter = () => {
           </code>
         </div>
       </CodeWrapper>
-
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -89,9 +88,16 @@ export const PythonRemitter = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <br /> <code>import</code>{" "}
-          <code className="text-white">requests</code>
+        <div className="request-wrapper" id="python">
+          <span className="d-flex justify-content-end">
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("python")}
+            />
+          </span>
+            <code>
+              import <code className="text-white">requests</code>
+            </code>
           <br /> <code>import</code> <code className="text-white">json</code>
           <br />
           <code className="text-white"> url =</code>{" "}
@@ -157,7 +163,7 @@ export const PythonRemitter = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -211,7 +217,7 @@ export const ShellRemitter = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -224,6 +230,12 @@ export const PHPRemitter = () => {
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
+        <span className="d-flex justify-content-end">
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("python")}
+            />
+          </span>
           <code> &#60;&#63;php</code>
           <br />
           <code className="text-white">$curl = curl_init();</code>
@@ -341,7 +353,7 @@ export const PHPRemitter = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -428,10 +440,9 @@ export const NodeRemitterInfoCode = () => {
           </code>
         </div>
       </CodeWrapper>
-
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -534,7 +545,7 @@ export const JavascriptRemitterInfoCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -672,7 +683,7 @@ export const SwiftRemitterInfoCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -685,6 +696,12 @@ export function GonativeRemitterInfo() {
     <div>
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
+        <span className="d-flex justify-content-end">
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("python")}
+            />
+          </span>
           <br />
           <code>package</code>
           <code className="text-white">main</code>
@@ -809,7 +826,7 @@ export function GonativeRemitterInfo() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </div>
@@ -822,6 +839,12 @@ export function ClibcurlRemitterInfo() {
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
+        <span className="d-flex justify-content-end">
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("python")}
+            />
+          </span>
           <br />
           <code className="text-white">CURL *curl;</code>
           <br />
@@ -902,7 +925,7 @@ export function ClibcurlRemitterInfo() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1001,7 +1024,7 @@ export function CrestsharpRemitterInfo() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1093,7 +1116,7 @@ export function RubyRemitterInfo() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1154,7 +1177,7 @@ export function PowerShellRemitterInfo() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterInfoResponse response={response}/>
+          <RemitterInfoResponse response={response} />
         </div>
       </CodeWrapper>
     </>

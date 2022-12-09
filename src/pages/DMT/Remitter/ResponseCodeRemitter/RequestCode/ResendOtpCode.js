@@ -4,6 +4,7 @@ import ShellWrapper from "../../../CodeWrapper//ShellWrapper";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
 import RemitterReSendResponse from "../ResponseCode/RemitterReSendResponse"
+import JavaWrapper from "../../../CodeWrapper/JavaWrapper";
 
 const copyToClipboard = (id) => {
   var c = document.getElementById(id).innerText;
@@ -16,25 +17,14 @@ export const JavaResendOtp = () => {
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper">
+        <JavaWrapper />
+        
           <br />
           <code className="text-white">
-            OkHttpClient client = <code>new</code>{" "}
-            OkHttpClient().newnewBuilder()
-          </code>
-          <br />
-          <code className="text-white">.build();</code>
-          <br />
-          <code className="text-white">
-            MediaType mediaType = MediaType.parse({" "}
-            <code className="code-yellow">"application/json"</code>);
-          </code>
-          <br />
-          <code className="text-white">
-            RequestBody body = RequestBody.create(mediaType,{" "}
             <code className="code-yellow">
               {" "}
               <span className="output">
-                \r\n \"remitterphone\":\7902900295\r\n{" "}
+                 \"remitterphone\":\7902900295\r\n{" "}
               </span>{" "}
               \r\n" <code className="text-white">);</code>{" "}
             </code>
