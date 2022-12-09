@@ -159,7 +159,6 @@ button.accordion-button.collapsed::after {
 #style-2::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(255, 255, 255, 0.3);
 }
-
 /* border start */
 /* .codeBorderoutset{
   border:3px solid rgba(0, 0, 0, 0.667);
@@ -169,7 +168,6 @@ button.accordion-button.collapsed::after {
   box-shadow: 5px 5px 5px 3px ;
 } */
 /* border end */
-
 .scrollbar {
   overflow: hidden;
   overflow-x: hidden;
