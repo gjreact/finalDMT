@@ -42,7 +42,6 @@
   color: white;
 }
 .list-group-item:active {
-  background-color: rgb(180, 179, 179);
   font-size: 16px;
 }
 .activeMenu :hover {
