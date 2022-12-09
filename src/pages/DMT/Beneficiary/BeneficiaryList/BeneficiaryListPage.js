@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
@@ -13,7 +13,6 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import Bar from "../../../Bar"
 import {
   ClibcurlBeneficiaryList,
   CrestsharpBeneficiaryList,
@@ -28,6 +27,7 @@ import {
   ShellListBeneficiary,
   SwiftListBeneficiary,
 } from "../RequestBeneficiary/ListBeneficiaryCode";
+
 
 const BeneficiaryCreatePage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
@@ -100,11 +100,9 @@ const BeneficiaryCreatePage = () => {
     },
   ]);
 
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (id) => {
-    // console.log(id);
 
     setToggleState(id);
   };
@@ -113,15 +111,12 @@ const BeneficiaryCreatePage = () => {
     console.log(icon);
 
     dummyArray[0] = icon;
-    // console.log("DummyArray", dummyArray);
 
     setVerticalIconArray([
       ...verticalIconArray,
       verticalIconArray.splice(index, 1),
     ]);
     cacheArray[0] = horizontalIconArray[horizontalIconArray.length - 1];
-
-    // console.log("CacheArray", cacheArray);
 
     setHorizontalIconArray(
       ...horizontalIconArray,
@@ -141,17 +136,12 @@ const BeneficiaryCreatePage = () => {
 
   return (
     <>
-      {/* Beneficiary create page starts... */}
-
-      <Col className="col-12 col-sm-7 border">
-        <Bar />
-        <Row>
-          <h2 className="mb-0 mt-0 p-3">List Beneficiary</h2>
-          <p className="px-4 mb-5 content-bg">
-            Get list of recipients for a Remitter
-          </p>
-          <span className="m">
-            <Table bordered>
+      <Col className="col-12 col-sm-7 boder">
+         <Row>
+          <h2 className="mb-0 ">List Beneficiary</h2>
+          <p className="px-4 mb-5 content-bg">Get list of recipients for a Remitter</p>
+          <div className="m">
+            <Table striped bordered hover responsive>
               <thead>
                 <tr>
                   <th>Si no.</th> <th>HTTP Response Conde</th>
@@ -160,25 +150,32 @@ const BeneficiaryCreatePage = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td> <td>404</td> <td>0</td> <td>Not found</td>
+                  <td>1</td>
+                  <td>404</td>
+                  <td>0</td>
+                  <td>Not found</td>
                 </tr>
               </tbody>
             </Table>
-          </span>
-          <h4 className="py-2 link-font-size">URL:</h4>
+          </div>
+          <h3 className=" p-3 link-font-size">URL:</h3>
           <code className="py-4 url-link">
             http://194.195.113.218:8090/paymento/remitter-reg/getbeneficiary
           </code>
-          <h4 className="py-2 link-font-size">Method:</h4>
+          <h3 className="py-2 link-font-size">Method:</h3>
           <p className="content-bg">POST</p>
-          <h4 className="py-2 link-font-size">Header:</h4>
+
+          <h3 className="py-2 link-font-size">Header:</h3>
           <p className="output content-bg">
-            <br /> <code>"apiKey"</code> <span> : </span>
+            <br /> <code>"apiKey"</code>
+            <span>:</span>
             <code className="code-yellow">abs1nxxxxx"</code>"<br />
           </p>
-          <h4 className="py-2 link-font-size">Request:</h4>
+
+          <h3 className="py-2 link-font-size">Request:</h3>
           <p className="output content-bg">
-            <br /> <code>"remitterid"</code> <span>: </span>
+            <br />
+            <code>"remitterid"</code> <span>: </span>{" "}
             <code className="code-yellow">""</code> <br />
           </p>
         </Row>
@@ -215,7 +212,7 @@ const BeneficiaryCreatePage = () => {
                 key={index}
                 onClick={() => toggleTab(id)}
               >
-                <img src={icon} height="20" width="20" />
+                <img src={icon} height="20" width="20" alt="icon" />
               </button>
             );
           })}
@@ -228,8 +225,6 @@ const BeneficiaryCreatePage = () => {
 
             <Dropdown.Menu>
               {verticalIconArray.map(({ icon, text, id }, index) => {
-                // console.log("icon", icon);
-
                 return (
                   <Dropdown.Item
                     onClick={() => {
@@ -238,7 +233,7 @@ const BeneficiaryCreatePage = () => {
                     }}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" />
+                    <img src={icon} height="20" width="20" alt="icon" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

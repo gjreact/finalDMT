@@ -18,14 +18,27 @@ export const JavaSendOtp = () => {
     <>
       {" "}
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="java">
           <JavaWrapper />
           <br />
           <code className="text-white">
+            OkHttpClient client = <code>new</code>{" "}
+            OkHttpClient().newnewBuilder()
+          </code>
+          <br />
+          <code className="text-white">.build();</code>
+          <br />
+          <code className="text-white">
+            MediaType mediaType = MediaType.parse({" "}
+            <code className="code-yellow">"application/json"</code>);
+          </code>
+          <br />
+          <code className="text-white">
+            RequestBody body = RequestBody.create(mediaType,{" "}
             <code className="code-yellow">
               {" "}
               <span className="output">
-                 \"remitterphone\":\"7902626443\",\r\n
+                \r\n \"remitterphone\":\"7902626443\",\r\n
                 \"remitterName\":\"anu\"\r\n{" "}
               </span>{" "}
               \r\n" <code className="text-white">);</code>{" "}
@@ -282,11 +295,17 @@ export const NodeSendOtpCode = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="node">
           <span className="d-flex justify-content-between ">
-            <code>
-              var <code className="text-white"> request =</code>{" "}
-              <code>require</code>
-              <code>('request');</code>
-            </code>{" "}
+            <span>
+              <code>
+                var <code className="text-white"> request =</code>{" "}
+                <code>require</code>
+                <code>('request');</code>
+              </code>{" "}
+            </span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("node")}
+            />
           </span>
           <code>var </code> <code className="text-white">options = </code>
           <span className="output text-white">
@@ -727,14 +746,14 @@ export function GonativeSendOtp() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="go">
           <span className="d-flex justify-content-between">
             <code>
               package <code className="text-white">main</code>
             </code>
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("C-sharp")}
+              onClick={() => copyToClipboard("go")}
             />{" "}
           </span>
           <code> import </code>
@@ -875,12 +894,12 @@ export function ClibcurlSendOtp() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="c">
           <span className="d-flex justify-content-between">
             <code className="text-white">CURL *curl;</code>
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("C-sharp")}
+              onClick={() => copyToClipboard("c")}
             />{" "}
           </span>
           <code className="text-white">CURLcode res;</code>
@@ -974,14 +993,16 @@ export const RubySendOtpCode = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="ruby">
           <span className="d-flex justify-content-between">
-            <code className="text-white">require</code>
+            <span>
+              <code className="text-white">require</code>
+              <code className="code-yellow">"uri"</code>
+            </span>
             <AiOutlineCopy
               className="copyicon"
               onClick={() => copyToClipboard("ruby")}
             />{" "}
           </span>
-          <code className="code-yellow">"uri"</code>
-          <br />
+
           <code className="text-white">require</code>
           <code className="code-yellow">"json"</code>
           <br />
@@ -1076,7 +1097,7 @@ export const PowershellSendOtpCode = () => {
               <code className="text-white">$headers = New-Object</code>
               <AiOutlineCopy
                 className="copyicon"
-                onClick={() => copyToClipboard("powershell")}
+                onClick={() => copyToClipboard("Powershell")}
               />{" "}
             </span>
             <code className="code-yellow">

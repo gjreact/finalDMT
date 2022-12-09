@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Dropdown, Table } from "react-bootstrap";
+import React, {  useState } from "react";
+import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
@@ -97,8 +97,6 @@ const RemitterBalancePage = () => {
       text: "ruby",
     },
   ]);
-
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
@@ -135,7 +133,6 @@ const RemitterBalancePage = () => {
 
   return (
     <>
-      {/* Remitter balance page starts... */}
 
       <Col className="col-12 col-sm-7 border">
         <Bar />
@@ -198,13 +195,13 @@ const RemitterBalancePage = () => {
         {toggleState === 2 && <ShellRemitterBalance />}
         {toggleState === 3 && <PHPRemitterBalance />}
         {toggleState === 4 && <NodeRemitterBalanceCode />}
-        {toggleState === 5 && <JavascriptRemitterBalanceCode />}
-        {toggleState === 6 && <SwiftRemitterBalanceCode />}
-        {toggleState === 7 && <ClibcurlRemitterinfo />}
-        {toggleState === 8 && <CrestsharpRemitterBalance />}
-        {toggleState === 9 && <GonativeRemitterBalance />}
-        {toggleState === 10 && <RubyRemitterBalanceCode />}
-        {toggleState === 11 && <PowershellRemitterBalanceCode />}
+        {toggleState === 5 && <PowershellRemitterBalanceCode />}
+        {toggleState === 6 && <CrestsharpRemitterBalance />}
+        {toggleState === 7 && <JavascriptRemitterBalanceCode />}
+        {toggleState === 8 && <ClibcurlRemitterinfo />}
+        {toggleState === 9 && <SwiftRemitterBalanceCode />}
+        {toggleState === 10 && <GonativeRemitterBalance />}
+        {toggleState === 11 && <RubyRemitterBalanceCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
@@ -215,7 +212,7 @@ const RemitterBalancePage = () => {
                 key={index}
                 onClick={() => toggleTab(iconName.id)}
               >
-                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  />
+                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  alt="icon" />
               </button>
             );
           })}
@@ -228,13 +225,12 @@ const RemitterBalancePage = () => {
 
             <Dropdown.Menu>
               {verticalIconArray.map(({ icon, text,id }, index) => {
-                // console.log(verticalIconArray, "view");
                 return (
                   <Dropdown.Item
                     onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" />
+                    <img src={icon} height="20" width="20" alt="icon" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );
@@ -242,29 +238,7 @@ const RemitterBalancePage = () => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-
-        {/* <div class="force-overflow"></div>
-            <Row className="link-heading">
-                <h3 className="text-white link-section p-3">Response:</h3>
-                <h5 className="text-white link-heading p-3">SUCCESS </h5>
-                <p className="output link-heading text-white " >
-                    <br /> <code>"status"</code> <span>: </span> <code className="code-cyan">"200"</code>
-                    <br /> <code>"success" </code><span>: </span> <code className="code-cyan">"true"</code>
-                    <br /> <code>"message"</code> <span>: </span> <code className="code-yellow">"Remitter Balance"</code>
-                    <br /> <code>"responseCode"</code> <span>: </span> <code className="code-cyan">"0"</code>
-                    <br /> <code>"data" </code>
-                    <p className="output-two link-heading text-white">
-                        <br /><code>"remitterId"</code> <span>: </span> <code className="code-cyan">29</code>
-                        <br /><code>"remitterName"</code> <span>: </span> <code className="code-yellow">"dil"</code>
-                        <br /><code>"mobileNumber"</code> <span>: </span> <code className="code-cyan">"7902626443"</code>
-                        <br /><code>"availableBalance" </code><span>: </span> <code className="code-cyan">25000.0</code>
-                        <br /><code>"totalBalance" </code><span>: </span> <code className="code-cyan">25000.0</code><br />
-                    </p>
-                </p>
-            </Row> */}
       </Col>
-
-      {/* Remitter balance page  ends...*/}
     </>
   );
 };

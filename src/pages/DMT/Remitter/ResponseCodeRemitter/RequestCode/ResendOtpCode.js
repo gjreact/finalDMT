@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import CodeWrapper from "../../../CodeWrapper//CodeWrapper";
 import ShellWrapper from "../../../CodeWrapper//ShellWrapper";
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
-import RemitterReSendResponse from "../ResponseCode/RemitterReSendResponse"
+import RemitterReSendResponse from "../ResponseCode/RemitterReSendResponse";
 import JavaWrapper from "../../../CodeWrapper/JavaWrapper";
 
 const copyToClipboard = (id) => {
@@ -16,13 +16,11 @@ export const JavaResendOtp = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-        <JavaWrapper />
-        
+        <div className="request-wrapper" id="java">
           <br />
+          <JavaWrapper />
           <code className="text-white">
             <code className="code-yellow">
-              {" "}
               <span className="output">
                  \"remitterphone\":\7902900295\r\n{" "}
               </span>{" "}
@@ -75,7 +73,7 @@ export const JavaResendOtp = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -87,10 +85,18 @@ export const PythonResendOtp = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <br /> <code>import</code>{" "}
-          <code className="text-white">requests</code>
-          <br /> <code>import</code> <code className="text-white">json</code>
+        <div className="request-wrapper" id="python">
+          <span className="d-flex justify-content-between">
+            <span>
+              <br /> <code>import </code>
+              <code className="text-white"> requests</code>
+            </span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("python")}
+            />
+          </span>
+          <code>import</code> <code className="text-white">json</code>
           <br />
           <code className="text-white"> url =</code>{" "}
           <code className="code-yellow">
@@ -132,7 +138,7 @@ export const PythonResendOtp = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -144,7 +150,7 @@ export const ShellResendOtp = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="shell">
           <ShellWrapper />
           <span className="output  text-white">
             <br />
@@ -162,7 +168,7 @@ export const ShellResendOtp = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -174,9 +180,14 @@ export const PHPResendOtp = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
-          <code> &#60;&#63;php</code>
-          <br />
+        <div className="request-wrapper" id="php">
+          <span className="d-flex justify-content-between">
+            <code> &#60;&#63;php</code>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("php")}
+            />
+          </span>
           <code className="text-white">$curl = curl_init();</code>
           <br />
           <code className="text-white">
@@ -270,7 +281,7 @@ export const PHPResendOtp = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -293,7 +304,7 @@ export const NodeResendOtpCode = () => {
             <AiOutlineCopy
               className="copyicon"
               onClick={() => copyToClipboard("node")}
-            />{" "}
+            />
           </span>
           <code>var </code> <code className="text-white">options = </code>
           <span className="output text-white">
@@ -357,10 +368,9 @@ export const NodeResendOtpCode = () => {
           </code>
         </div>
       </CodeWrapper>
-      
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -464,7 +474,7 @@ export const JavascriptResendOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -476,15 +486,15 @@ export const SwiftResendOtpCode = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="swift">
           <span className="d-flex justify-content-between ">
             {" "}
             <code>
-              import<code className="text-white">Foundation</code>
+              import <code className="text-white"> Foundation</code>
             </code>
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("java")}
+              onClick={() => copyToClipboard("swift")}
             />{" "}
           </span>
           <code>#if</code>
@@ -603,7 +613,7 @@ export const SwiftResendOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -615,11 +625,18 @@ export function GonativeResendOtp() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="go">
           <br />
-          <code>package</code>
-          <code className="text-white">main</code>
-          <br />
+          <span className="d-flex justify-content-between">
+            <span>
+              <code>package </code>
+              <code className="text-white"> main</code>
+            </span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("go")}
+            />
+          </span>
           <code> import </code>
           <code className="text-white">
             (
@@ -740,7 +757,7 @@ export function GonativeResendOtp() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -752,9 +769,15 @@ export function CrestsharpResendOtp() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="csharp">
+          <span className="d-flex justify-content-end">
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("csharp")}
+            />
+          </span>
           <code>
-            var<code className="text-white">client =</code> new{" "}
+            var <code className="text-white">client =</code> new{" "}
           </code>
           <code className="text-white">
             {" "}
@@ -848,7 +871,7 @@ export function CrestsharpResendOtp() {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -860,10 +883,15 @@ export function ClibcurlResendOtp() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="c">
           <br />
-          <code className="text-white">CURL *curl;</code>
-          <br />
+          <span className="d-flex justify-content-between">
+            <code className="text-white">CURL *curl;</code>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("c")}
+            />
+          </span>
           <code className="text-white">CURLcode res;</code>
           <br />
           <code className="text-white">curl = curl_easy_init();</code>
@@ -938,17 +966,15 @@ export function ClibcurlResendOtp() {
           <code className="text-white">curl_easy_cleanup(curl);</code>
         </div>
       </CodeWrapper>
-      
+
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
   );
 }
-
-//  rashid code ==========
 
 export const RubyResendOtpCode = () => {
   const [response, setResponse] = useState(0);
@@ -957,9 +983,16 @@ export const RubyResendOtpCode = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="Ruby">
           <div>
-            <code className="text-white">require</code>
-            <code className="code-yellow">"uri"</code>
-            <br />
+            <span className="d-flex justify-content-between">
+              <span>
+                <code className="text-white">require</code>
+                <code className="code-yellow">"uri"</code>
+              </span>
+              <AiOutlineCopy
+                className="copyicon"
+                onClick={() => copyToClipboard("Ruby")}
+              />
+            </span>
             <code className="text-white">require</code>
             <code className="code-yellow">"json"</code>
             <br />
@@ -1035,7 +1068,7 @@ export const RubyResendOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>
@@ -1047,9 +1080,15 @@ export const PowershellResendOtpCode = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper" id="Powershell">
+        <div className="request-wrapper" id="powershell">
           <div>
-            <code className="text-white">$headers = New-Object</code>
+            <span className="d-flex justify-content-between">
+              <code className="text-white">$headers = New-Object</code>
+              <AiOutlineCopy
+                className="copyicon"
+                onClick={() => copyToClipboard("powershell")}
+              />
+            </span>
             <code className="code-yellow">
               "System.collections.Generic.Dictionary[String],[String]"
             </code>
@@ -1100,7 +1139,7 @@ export const PowershellResendOtpCode = () => {
 
       <CodeWrapper heading={"Response"} btnview={1} setResponse={setResponse}>
         <div className="response-wrapper">
-          <RemitterReSendResponse response={response}/>
+          <RemitterReSendResponse response={response} />
         </div>
       </CodeWrapper>
     </>

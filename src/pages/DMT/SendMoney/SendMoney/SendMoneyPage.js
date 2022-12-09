@@ -26,7 +26,7 @@ import {
   SwiftSendMoney,
   RubySendMoneyCode,
   GonativeSendMoney,
-} from "../SendMoneyCode/SendMoneyCode";
+} from "../RequestSendmoney/SendMoneyCode";
 import Bar from "../../../Bar";
 const SendMoneyPage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
@@ -131,8 +131,6 @@ const SendMoneyPage = () => {
 
   return (
     <>
-      {/* Beneficiary create page starts... */}
-
       <Col className="col-12 col-sm-7 border">
         <Bar />
         <Row>
@@ -225,7 +223,13 @@ const SendMoneyPage = () => {
                 key={index}
                 onClick={() => toggleTab(iconName.id)}
               >
-                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"/>
+                <img
+                  src={iconName.icon}
+                  height="20"
+                  width="20"
+                  className="togglebutttonimg"
+                  alt="icon"
+                />
               </button>
             );
           })}
@@ -236,14 +240,13 @@ const SendMoneyPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text,id }, index) => {
-                // console.log(verticalIconArray, "view");
+              {verticalIconArray.map(({ icon, text, id }, index) => {
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text,id }, index)}
+                    onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" />
+                    <img src={icon} height="20" width="20" alt="icon" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );
@@ -252,8 +255,6 @@ const SendMoneyPage = () => {
           </Dropdown>
         </div>
       </Col>
-
-      {/* Beneficiary create page  ends...*/}
     </>
   );
 };

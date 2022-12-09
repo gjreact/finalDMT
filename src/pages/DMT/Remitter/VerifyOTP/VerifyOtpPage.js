@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Dropdown, Table } from "react-bootstrap";
+import React, { useState } from "react";
+import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
 import Go from "../../../../asset/images/Go.png";
@@ -26,7 +26,7 @@ import {
   CrestsharpVerifyOtp,
   ClibcurlVerifyOtp,
   RubyVerifyOtpCode,
-  PowershellVerifyOtpCode
+  PowershellVerifyOtpCode,
 } from "../ResponseCodeRemitter/RequestCode/VerifyOtpCode";
 
 const VerifyOtpPage = () => {
@@ -97,7 +97,6 @@ const VerifyOtpPage = () => {
     },
   ]);
 
-  // console.log("verticalIconArray-above",verticalIconArray);
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
@@ -130,12 +129,10 @@ const VerifyOtpPage = () => {
       ...verticalIconArray,
       (verticalIconArray[index] = cacheArray[0]),
     ]);
-  }; 
+  };
 
   return (
     <>
-      {/* Remitter verify otp starts... */}
-
       <Col className="col-12 col-sm-7 border ">
         <Bar />
         <Row>
@@ -211,13 +208,13 @@ const VerifyOtpPage = () => {
         {toggleState === 2 && <ShellVerifyOtp />}
         {toggleState === 3 && <PHPVerifyOtp />}
         {toggleState === 4 && <NodeVerifyOtpCode />}
-        {toggleState === 5 && <JavascriptVerifyOtpCode />}
-        {toggleState === 6 && <SwiftVerifyOtpCode />}
-        {toggleState === 7 && <GonativeVerifyOtp />}
-        {toggleState === 8 && <CrestsharpVerifyOtp />}
-        {toggleState === 9 && <ClibcurlVerifyOtp />}
-        {toggleState === 10 && <RubyVerifyOtpCode />}
-        {toggleState === 11 && <PowershellVerifyOtpCode />}
+        {toggleState === 5 && <PowershellVerifyOtpCode />}
+        {toggleState === 6 && <CrestsharpVerifyOtp />}
+        {toggleState === 7 && <JavascriptVerifyOtpCode />}
+        {toggleState === 8 && <ClibcurlVerifyOtp />}
+        {toggleState === 9 && <SwiftVerifyOtpCode />}
+        {toggleState === 10 && <GonativeVerifyOtp />}
+        {toggleState === 11 && <RubyVerifyOtpCode />}
 
         <div className="lang-btns d-flex justify-content-evenly">
           {horizontalIconArray.map((iconName, index) => {
@@ -228,7 +225,13 @@ const VerifyOtpPage = () => {
                 key={index}
                 onClick={() => toggleTab(iconName.id)}
               >
-                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  />
+                <img
+                  src={iconName.icon}
+                  height="20"
+                  width="20"
+                  className="togglebutttonimg"
+                  alt="icon"
+                />
               </button>
             );
           })}
@@ -240,14 +243,13 @@ const VerifyOtpPage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text,id }, index) => {
-                // console.log(verticalIconArray, "view");
+              {verticalIconArray.map(({ icon, text, id }, index) => {
                 return (
                   <Dropdown.Item
-                    onClick={() => pushItem({ icon, text,id }, index)}
+                    onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" />
+                    <img src={icon} height="20" width="20" alt="icon" />
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );
@@ -256,8 +258,6 @@ const VerifyOtpPage = () => {
           </Dropdown>
         </div>
       </Col>
-
-      {/* Remitter verify otp  ends...*/}
     </>
   );
 };

@@ -17,7 +17,7 @@ export const JavaVerifyOtp = () => {
     <>
       {" "}
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="java">
           <JavaWrapper />
           <br />
           <code className="text-white">
@@ -81,11 +81,17 @@ export const PythonVerifyOtp = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="python">
           <div>
-            <br /> <code>import</code>{" "}
-            <code className="text-white">requests</code>
-            <br /> <code>import</code> <code className="text-white">json</code>
+            <span className="d-flex justify-content-between"><span>
+            <br /> <code>import</code>
+            <code className="text-white">requests</code></span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("python")}
+            />
+            </span>
+           <code>import</code> <code className="text-white">json</code>
             <br />
             <code className="text-white"> url =</code>{" "}
             <code className="code-yellow">
@@ -146,7 +152,7 @@ export const ShellVerifyOtp = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="shell">
           <ShellWrapper />
           <div>
             <br />{" "}
@@ -207,10 +213,15 @@ export const PHPVerifyOtp = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper"id="php">
           <div>
-            <code> &#60;&#63;php</code>
-            <br /> <code className="text-white">$curl = curl_init();</code>
+            <span className="d-flex justify-content-between">
+          <code> &#60;&#63;php</code>
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("php")}
+            /></span>
+            <code className="text-white">$curl = curl_init();</code>
             <br />
             <code className="text-white">
               curl_setopt_array($curl, <code>array</code>(
@@ -310,7 +321,7 @@ export const NodeVerifyOtpCode = () => {
     <>
       {" "}
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="node">
           <span className="d-flex justify-content-between ">
             <code>
               var <code className="text-white"> request =</code>{" "}
@@ -319,8 +330,8 @@ export const NodeVerifyOtpCode = () => {
             </code>
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("java")}
-            />{" "}
+              onClick={() => copyToClipboard("node")}
+            />
           </span>
           <code>var </code> <code className="text-white">options = </code>
           <span className="output text-white">
@@ -407,7 +418,7 @@ export const JavascriptVerifyOtpCode = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="javascript">
           <span className="d-flex justify-content-between ">
             <code>
               var myHeaders = <code>new</code>{" "}
@@ -415,7 +426,7 @@ export const JavascriptVerifyOtpCode = () => {
             </code>
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("java")}
+              onClick={() => copyToClipboard("javascript")}
             />
           </span>
           <code className="text-white">myHeaders.</code>
@@ -519,14 +530,14 @@ export const SwiftVerifyOtpCode = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="swift">
           <span className="d-flex justify-content-between ">
             <code>
-              import<code className="text-white">Foundation</code>
+              import <code className="text-white"> Foundation</code>
             </code>{" "}
             <AiOutlineCopy
               className="copyicon"
-              onClick={() => copyToClipboard("java")}
+              onClick={() => copyToClipboard("swift")}
             />
           </span>
           <code>#if</code>
@@ -659,11 +670,15 @@ export function GonativeVerifyOtp() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="go">
           <br />
-          <code>package</code>
-          <code className="text-white">main</code>
-          <br />
+          <span className="d-flex justify-content-between"><span>
+          <code>package </code>
+          <code className="text-white"> main</code></span>
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("go")}
+            /></span>
           <code> import </code>
           <code className="text-white">
             (
@@ -822,9 +837,13 @@ export function CrestsharpVerifyOtp() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="csharp">
+          <span className="d-flex justify-content-end"> <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("csharp")}
+            /></span>
           <code>
-            var<code className="text-white">client =</code> new{" "}
+            var <code className="text-white">client = </code> new{" "}
           </code>
           <code className="text-white">
             {" "}
@@ -959,10 +978,15 @@ export function ClibcurlVerifyOtp() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="c">
           <br />
+          <span className="d-flex justify-content-between">
           <code className="text-white">CURL *curl;</code>
-          <br />
+          <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("c")}
+            />
+            </span>
           <code className="text-white">CURLcode res;</code>
           <br />
           <code className="text-white">curl = curl_easy_init();</code>
@@ -1048,8 +1072,6 @@ export function ClibcurlVerifyOtp() {
   );
 }
 
-//  rashid code ===========
-
 export const RubyVerifyOtpCode = () => {
   const [response, setResponse] = useState(0);
   return (
@@ -1057,9 +1079,14 @@ export const RubyVerifyOtpCode = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="Ruby">
           <div>
-            <code className="text-white">require</code>
-            <code className="code-yellow">"uri"</code>
-            <br />
+            <span className="d-flex justify-content-between"><span>
+            <code className="text-white">require </code>
+            <code className="code-yellow"> "uri"</code></span>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("Ruby")}
+            />
+           </span>
             <code className="text-white">require</code>
             <code className="code-yellow">"json"</code>
             <br />
@@ -1153,9 +1180,15 @@ export const PowershellVerifyOtpCode = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper" id="Powershell">
+        <div className="request-wrapper" id="powershell">
           <div>
+            <span className="d-flex justify-content-between">
             <code className="text-white">$headers = New-Object</code>
+            <AiOutlineCopy
+              className="copyicon"
+              onClick={() => copyToClipboard("powershell")}
+            />
+            </span>
             <code className="code-yellow">
               "System.collections.Generic.Dictionary[String],[String]"
             </code>
