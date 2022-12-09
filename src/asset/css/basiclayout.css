@@ -351,7 +351,7 @@ a {
 .lang-btns {
   position: absolute;
   top: 15px;
-  gap: 50px;
+  gap: 20px;
   left: 50px;
 }
 .scrollbar {

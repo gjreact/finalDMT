@@ -99,7 +99,7 @@ function RemitterInfoPage() {
   const [toggleState, setToggleState] = useState(0);
 
   const toggleTab = (id) => {
-    console.log(id);
+    // console.log(id);
     setToggleState(id);
   };
 

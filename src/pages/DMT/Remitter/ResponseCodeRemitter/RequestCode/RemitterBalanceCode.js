@@ -1,10 +1,9 @@
 import React,{useState} from "react";
 import CodeWrapper from "../../../CodeWrapper/CodeWrapper";
 import ShellWrapper from "../../../CodeWrapper/ShellWrapper";
-import JavaWrapper from "../../../CodeWrapper/JavaWrapper"
 import copy from "copy-to-clipboard";
 import { AiOutlineCopy } from "react-icons/ai";
-import RemitterBalanceResponse from "../ResponseCode/RemitterBalanceResponse"
+import RemitterBalanceResponse from "../ResponseCode/RemitterBalanceResponse";
 import JavaWrapper from "../../../CodeWrapper/JavaWrapper";
 
 const copyToClipboard = (id) => {
