@@ -6,7 +6,7 @@ import { NavLink} from "react-router-dom";
 
 function SideMenu(props) {
   return (
-    <div className="mt-5 bg-dark">
+    <div className="mt-2 bg-dark">
       <Accordion defaultActiveKey="Authentication" className="sideMenuColor" flush>
 
         {/* authentication  start */}

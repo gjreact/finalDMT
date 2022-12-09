@@ -26,7 +26,6 @@ function Bar() {
             variant: "white",
           }}
           closeButton
-          closeVariant="white"
         >
           <div
             style={{ width: "70%" }}

@@ -135,7 +135,7 @@ const SendOtpPage = () => {
       <Col className="col-12 col-sm-7 border">
         <Bar />
         <Row>
-          <h2 className="mb-0 mt-0">Remitter Send OTP</h2>
+          <h2 className="mb-0 mt-0 p-3">Remitter Send OTP</h2>
           <p className="px-4  mb-5 content-bg">
             As mentioned in Remitter Information API, if a remitter is not found
             registered in the system, then by this API remitter can register

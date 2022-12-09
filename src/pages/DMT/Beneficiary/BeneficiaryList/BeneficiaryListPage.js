@@ -27,6 +27,7 @@ import {
   ShellListBeneficiary,
   SwiftListBeneficiary,
 } from "../RequestBeneficiary/ListBeneficiaryCode";
+import Bar from "../../../Bar";
 
 
 const BeneficiaryCreatePage = () => {
@@ -137,8 +138,9 @@ const BeneficiaryCreatePage = () => {
   return (
     <>
       <Col className="col-12 col-sm-7 boder">
+        <Bar />
          <Row>
-          <h2 className="mb-0 ">List Beneficiary</h2>
+          <h2 className="mb-0 mt-0 p-3">List Beneficiary</h2>
           <p className="px-4 mb-5 content-bg">Get list of recipients for a Remitter</p>
           <div className="m">
             <Table striped bordered hover responsive>

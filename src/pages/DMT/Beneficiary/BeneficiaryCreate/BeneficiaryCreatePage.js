@@ -134,6 +134,7 @@ const BeneficiaryCreatePage = () => {
   return (
     <>
       <Col className="col-12 col-sm-7 boder">
+        <Bar />
         <Row>
           <h1 className="heading mb-0">Beneficiary</h1>
           <p className="px-4 mb-0 content-bg">
