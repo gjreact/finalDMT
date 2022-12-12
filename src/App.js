@@ -9,9 +9,6 @@ import SendOtpPage from "./pages/DMT/Remitter/SendOTP/SendOtpPage";
 import ResendOtpPage from "./pages/DMT/Remitter/ResendOTP/ResendOtpPage";
 import VerifyOtpPage from "./pages/DMT/Remitter/VerifyOTP/VerifyOtpPage";
 import RemitterBalancePage from "./pages/DMT/Remitter/RemitterBalance/RemitterBalancePage";
-import { Navbar } from "react-bootstrap";
-
-import BasicLayoutCopy from "./layout/BasicLayoutCopy";
 import BeneficiaryCreatePage from "./pages/DMT/Beneficiary/BeneficiaryCreate/BeneficiaryCreatePage";
 import BeneficiaryListPage from "./pages/DMT/Beneficiary/BeneficiaryList/BeneficiaryListPage";
 import BeneficiaryDeletePage from "./pages/DMT/Beneficiary/BeneficiaryDelete/BeneficiaryDeletePage";
