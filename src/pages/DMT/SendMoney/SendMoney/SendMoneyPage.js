@@ -214,7 +214,7 @@ const SendMoneyPage = () => {
         {toggleState === 10 && <GonativeSendMoney />}
         {toggleState === 11 && <RubySendMoneyCode />}
 
-        <div className="lang-btns d-flex justify-content-evenly">
+        <div className="lang-btns">
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
@@ -225,8 +225,6 @@ const SendMoneyPage = () => {
               >
                 <img
                   src={iconName.icon}
-                  height="20"
-                  width="20"
                   className="togglebutttonimg"
                   alt="icon"
                 />
@@ -246,7 +244,7 @@ const SendMoneyPage = () => {
                     onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" alt="icon" />
+                    <img src={icon} height="20" width="20" alt="icon" />{" "}
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

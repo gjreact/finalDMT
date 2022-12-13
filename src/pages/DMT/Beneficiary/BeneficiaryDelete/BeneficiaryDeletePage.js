@@ -200,7 +200,7 @@ const BeneficiaryDeletePage = () => {
         {toggleState === 10 && <GonativeBeneficiaryDelete />}
         {toggleState === 11 && <RubyDeleteBeneficiary />}
 
-        <div className="lang-btns d-flex justify-content-evenly">
+        <div className="lang-btns">
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
@@ -211,8 +211,6 @@ const BeneficiaryDeletePage = () => {
               >
                 <img
                   src={iconName.icon}
-                  height="20"
-                  width="20"
                   className="togglebutttonimg"
                   alt="icon"
                 />
@@ -233,7 +231,7 @@ const BeneficiaryDeletePage = () => {
                     onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" alt="icon" />
+                    <img src={icon} height="20" width="20" alt="icon" />{" "}
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

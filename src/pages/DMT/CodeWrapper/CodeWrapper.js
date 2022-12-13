@@ -33,8 +33,7 @@ const CodeWrapper = ({ children, heading, setResponse, btnview }) => {
               </Button>
             </span>
           </>
-        ) : 
-        btnview==2? (
+        ) : btnview == 2 ? (
           <>
             <span className="margin-right-0">
               <Button
@@ -66,7 +65,9 @@ const CodeWrapper = ({ children, heading, setResponse, btnview }) => {
               </Button>
             </span>
           </>
-        ):""}
+        ) : (
+          ""
+        )}
       </div>
       {children}
     </Row>

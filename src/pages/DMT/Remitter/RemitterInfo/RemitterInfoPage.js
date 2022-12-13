@@ -213,18 +213,20 @@ function RemitterInfoPage() {
         {toggleState === 10 && <GonativeRemitterInfo />}
         {toggleState === 11 && <RubyRemitterInfo />}
 
-        <div className="lang-btns d-flex justify-content-evenly">
+        <div className="lang-btns ">
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
-              className="togglebuttton"
-               
+                className="togglebuttton"
                 id={iconName.icon}
                 key={iconName.id}
                 onClick={() => toggleTab(iconName.id)}
-                
               >
-                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg" alt="icon" />
+                <img
+                  src={iconName.icon}
+                  className="togglebutttonimg"
+                  alt="icon"
+                />
               </button>
             );
           })}
@@ -242,7 +244,7 @@ function RemitterInfoPage() {
                     onClick={() => pushItem({ icon, text, id }, index)}
                     key={id}
                   >
-                    <img src={icon} height="20" width="20" alt="icon" />
+                    <img src={icon} height="20" width="20" alt="icon" />{" "}
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

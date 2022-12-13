@@ -21,29 +21,9 @@ export const JavaRemitter = () => {
           <JavaWrapper />
           <br />
           <code className="code-yellow">
-            \"beneficiaryName\": \"anu\",\r\n \"beneficiaryBankId\": \"36\"
+         <span className="output"> \r\n\"remitterPhone\":\"7902900295\"\r\n</span>
           </code>
-          ,
-          <br />{" "}
-          <code className="code-yellow">
-            \r\n \"remitterMobileNumber\": \"7902900295\",\r\n{" "}
-          </code>
-          <br />{" "}
-          <code className="code-yellow">
-            \"beneficiaryMobileNumber\":\"8596321478\",\r\n \"accountNumber\":{" "}
-          </code>
-          <br />{" "}
-          <code className="code-yellow">
-            \"88654888892\",\r\n \"address\": \"Calicut \",\r\n{" "}
-          </code>
-          <br />{" "}
-          <code className="code-yellow">
-            \"ifscCode\": \"UTIB0002916\",\r\n \"accountHolderName\": \"Venu\",{" "}
-          </code>
-          <br />{" "}
-          <code className="code-yellow">
-            \r\n \"branchName\": \"Mavoor Road\"\r\n");
-          </code>
+         
           <br />
           <code className="text-white">
             Request request = <code>new</code> Request.Builder()
@@ -51,7 +31,7 @@ export const JavaRemitter = () => {
           <br />
           <code className="text-white">.url(</code>
           <code className="code-yellow">
-            "http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"
+            "http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify"
           </code>
           ) <br />
           <code className="text-white">.method(</code>
@@ -103,38 +83,15 @@ export const PythonRemitter = () => {
           <br />
           <code className="text-white"> url =</code>{" "}
           <code className="code-yellow">
-            "http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary"
+            "http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify"
           </code>
           <br />
           <code className="text-white">payload = json.dumps</code>({" "}
           <span className="output  text-white">
             <br />
-            <code>"beneficiaryName"</code> <span>: </span>{" "}
-            <code className="code-yellow">"anu",</code>
-            <br />
-            <code>"beneficiaryBankId" </code> <span>: </span>
-            <code className="code-cyan"> 36,</code>
-            <br />
-            <code>"remitterMobileNumber" </code> <span>: </span>
-            <code className="code-cyan"> 7902900295,</code>
-            <br />
-            <code>"beneficiaryMobileNumber"</code> <span>: </span>{" "}
-            <code className="code-cyan">8596321478,</code>
-            <br />
-            <code>"accountNumber"</code> <span>: </span>{" "}
-            <code className="code-cyan">88654888892,</code>
-            <br />
-            <code>"address" </code> <span>: </span>{" "}
-            <code className="code-yellow">Calicut,</code>
-            <br />
-            <code>"ifscCode" </code> <span>: </span>{" "}
-            <code className="code-yellow">UTIB0002916,</code>
-            <br />
-            <code>"accountHolderName" </code> <span>: </span>
-            <code className="code-yellow"> Venu,</code>
-            <br />
-            <code>"branchName"</code> <span>: </span>{" "}
-            <code className="code-yellow">Mavoor Road</code> <br />
+            <code>"remitterPhone"</code> <span>: </span>{" "}
+            <code className="code-yellow">7902900295</code><br />
+          
           </span>
           ) <br />
           <code className="text-white">
@@ -182,36 +139,12 @@ export const ShellRemitter = () => {
           <span>'</span>
           <span className="output  text-white">
             <br />
-            <code>"beneficiaryName"</code> <span>: </span>{" "}
-            <code className="code-yellow">"anu",</code>
-            <br />
-            <code>"beneficiaryBankId" </code> <span>: </span>
-            <code className="code-cyan"> 36,</code>
-            <br />
-            <code>"remitterMobileNumber" </code> <span>: </span>
-            <code className="code-cyan"> "7902900295,</code>
-            <br />
-            <code>"beneficiaryMobileNumber"</code> <span>: </span>{" "}
-            <code className="code-cyan">8596321478,</code>
-            <br />
-            <code>"accountNumber"</code> <span>: </span>{" "}
-            <code className="code-cyan">88654888892,</code>
-            <br />
-            <code>"address" </code> <span>: </span>{" "}
-            <code className="code-yellow">Calicut,</code>
-            <br />
-            <code>"ifscCode" </code> <span>: </span>{" "}
-            <code className="code-yellow">UTIB0002916,</code>
-            <br />
-            <code>"accountHolderName" </code> <span>: </span>
-            <code className="code-yellow"> Venu,</code>
-            <br />
-            <code>"branchName"</code> <span>: </span>{" "}
-            <code className="code-yellow">Mavoor Road</code> <br />
-          </span>
+            <code>"remitterPhone"</code> <span>: </span>{" "}
+           <code className="code-cyan"> 7902900295</code>            <br />
+              </span>
           <span>' \</span> <br />
           <code className="code-yellow">
-            'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary'
+            'http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify'
           </code>
         </div>
       </CodeWrapper>
@@ -249,7 +182,7 @@ export const PHPRemitter = () => {
           <code>
             CURLOPT_URL =&#62;{" "}
             <code className="code-yellow">
-              'http://194.195.113.218:8090/paymento/beneficiary-reg/add-beneficiary',
+              'http://194.195.113.218:8090/paymento/remitter-reg/remitter-verify',
             </code>
           </code>
           <br />
@@ -291,32 +224,9 @@ export const PHPRemitter = () => {
           <br />
           <span className="output text-white">
             <br />
-            <code>"beneficiaryName"</code> <span>: </span>{" "}
-            <code className="code-yellow">"anu",</code>
-            <br />
-            <code>"beneficiaryBankId" </code> <span>: </span>
-            <code className="code-cyan"> 36,</code>
-            <br />
-            <code>"remitterMobileNumber" </code> <span>: </span>
-            <code className="code-cyan"> "7902900295,</code>
-            <br />
-            <code>"beneficiaryMobileNumber"</code> <span>: </span>{" "}
-            <code className="code-cyan">8596321478,</code>
-            <br />
-            <code>"accountNumber"</code> <span>: </span>{" "}
-            <code className="code-cyan">88654888892,</code>
-            <br />
-            <code>"address" </code> <span>: </span>{" "}
-            <code className="code-yellow">Calicut,</code>
-            <br />
-            <code>"ifscCode" </code> <span>: </span>{" "}
-            <code className="code-yellow">UTIB0002916,</code>
-            <br />
-            <code>"accountHolderName" </code> <span>: </span>
-            <code className="code-yellow"> Venu,</code>
-            <br />
-            <code>"branchName"</code> <span>: </span>{" "}
-            <code className="code-yellow">Mavoor Road</code> <br />
+            <code>"remitterPhone"</code> <span>: </span>{" "}
+            <code className="code-cyan">"7902900295",</code>
+           <br />
           </span>
           <code>',</code>
           <br />
@@ -841,12 +751,12 @@ export function ClibcurlRemitterInfo() {
         <div className="request-wrapper" id="c">
           <br />
           <span className="d-flex justify-content-between">
-          <code className="text-white">CURL *curl;</code>
-          <AiOutlineCopy
+            <code className="text-white">CURL *curl;</code>
+            <AiOutlineCopy
               className="copyicon"
               onClick={() => copyToClipboard("c")}
             />
-            </span>
+          </span>
           <code className="text-white">CURLcode res;</code>
           <br />
           <code className="text-white">curl = curl_easy_init();</code>
@@ -937,10 +847,12 @@ export function CrestsharpRemitterInfo() {
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="csharp">
-        <span className="d-flex justify-content-end"><AiOutlineCopy
+          <span className="d-flex justify-content-end">
+            <AiOutlineCopy
               className="copyicon"
               onClick={() => copyToClipboard("csharp")}
-            /></span>
+            />
+          </span>
           <code>
             var <code className="text-white"> client = </code> new{" "}
           </code>
@@ -1041,14 +953,15 @@ export function RubyRemitterInfo() {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="ruby">
           <div>
-            <span className="d-flex justify-content-between"><span>
-            <code className="text-white"> require</code>
-            <code className="code-yellow"> "uri"</code>
-            </span>
-            <AiOutlineCopy
-              className="copyicon"
-              onClick={() => copyToClipboard("ruby")}
-            />
+            <span className="d-flex justify-content-between">
+              <span>
+                <code className="text-white"> require</code>
+                <code className="code-yellow"> "uri"</code>
+              </span>
+              <AiOutlineCopy
+                className="copyicon"
+                onClick={() => copyToClipboard("ruby")}
+              />
             </span>
             <code className="text-white">require</code>
             <code className="code-yellow">"json"</code>
@@ -1137,12 +1050,15 @@ export function PowerShellRemitterInfo() {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper">
+        <div className="request-wrapper" id="powershell">
           <div>
-            <span className="d-flex justify-content-end"> <AiOutlineCopy
-              className="copyicon"
-              onClick={() => copyToClipboard("ruby")}
-            /></span>
+            <span className="d-flex justify-content-end">
+              {" "}
+              <AiOutlineCopy
+                className="copyicon"
+                onClick={() => copyToClipboard("powershell")}
+              />
+            </span>
             <code className="text-white">$headers = New-Object</code>
             <code className="code-yellow">
               "System.collections.Generic.Dictionary[String],[String]"

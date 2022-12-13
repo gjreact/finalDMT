@@ -29,7 +29,6 @@ import {
 } from "../RequestBeneficiary/ListBeneficiaryCode";
 import Bar from "../../../Bar";
 
-
 const BeneficiaryCreatePage = () => {
   const [horizontalIconArray, setHorizontalIconArray] = useState([
     {
@@ -104,7 +103,6 @@ const BeneficiaryCreatePage = () => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (id) => {
-
     setToggleState(id);
   };
 
@@ -139,9 +137,11 @@ const BeneficiaryCreatePage = () => {
     <>
       <Col className="col-12 col-sm-7 boder">
         <Bar />
-         <Row>
+        <Row>
           <h2 className="mb-0 mt-0 p-3">List Beneficiary</h2>
-          <p className="px-4 mb-5 content-bg">Get list of recipients for a Remitter</p>
+          <p className="px-4 mb-5 content-bg">
+            Get list of recipients for a Remitter
+          </p>
           <div className="m">
             <Table striped bordered hover responsive>
               <thead>
@@ -183,7 +183,6 @@ const BeneficiaryCreatePage = () => {
         </Row>
       </Col>
 
-      {/* ewrtfyguijo;k */}
       <Col
         id="style-1"
         className="col-12 col-sm-5  link-heading scrollbar pt-5 "
@@ -201,7 +200,7 @@ const BeneficiaryCreatePage = () => {
         {toggleState === 10 && <GonativeBeneficiaryList />}
         {toggleState === 11 && <RubyListBeneficiary />}
 
-        <div className="lang-btns d-flex justify-content-evenly">
+        <div className="lang-btns">
           {horizontalIconArray.map(({ icon, id }, index) => {
             return (
               <button
@@ -214,7 +213,7 @@ const BeneficiaryCreatePage = () => {
                 key={index}
                 onClick={() => toggleTab(id)}
               >
-                <img src={icon} height="20" width="20" alt="icon" />
+                <img src={icon} alt="icon" />
               </button>
             );
           })}
@@ -235,7 +234,7 @@ const BeneficiaryCreatePage = () => {
                     }}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" alt="icon" />
+                    <img src={icon} height="20" width="20" alt="icon" />{" "}
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

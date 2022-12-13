@@ -1,19 +1,20 @@
-import logo from "../asset/images/logo_blue.png";
+import logo from "../asset/images/logo.png";
 import React from "react";
-import { Col, Container, Navbar, Row, Table } from "react-bootstrap";
-import "../asset/css/basiclayout.css";
+import { Col, Container, Row } from "react-bootstrap";
+
 import SideMenu from "../pages/SideBar/SideMenu";
-import '../theme/theme.css';
-import { IconName } from "react-icons/bs";
+import "../asset/css/theme.css";
 import "../asset/css/heading.css";
 
-
-function BasicLayout({children}) {
+function BasicLayout({ children }) {
   return (
     <>
       <Container fluid className="margin-0 containerr">
         <Row className="Roww">
-           <Col className="d-none d-lg-block sideMenuColor col-2 border " style={{ minWidth: "270px" }}>
+          <Col
+            className="d-none d-lg-block sideMenuColor col-2 border "
+            style={{ minWidth: "270px" }}
+          >
             <div className="mt-3 d-flex justify-content-center">
               <img
                 className="align-center"
@@ -22,7 +23,7 @@ function BasicLayout({children}) {
                 alt="Paymento_Logo"
               />
             </div>
-            <hr className="hrline"/>
+            <hr className="hrline" />
             <div>
               <SideMenu />
             </div>
@@ -30,9 +31,7 @@ function BasicLayout({children}) {
             <h6 className="docHead">Documentation Powered by Paymento</h6>
           </Col>
           <Col className="xs-12 md-10 bg-white overflow-scroll">
-            <Row className="Roww1">
-               {children}
-            </Row>
+            <Row className="Roww1">{children}</Row>
           </Col>
         </Row>
       </Container>

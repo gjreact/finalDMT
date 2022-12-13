@@ -1,9 +1,7 @@
-@import "../../theme/theme.css";
+@import '../css/theme.css';
 .containerr {
   height: 100%;
   width: 100%;
-  /* background-color: red; */
-  /* z-index: 10; */
 }
 .Roww1 {
   height: 100vh;
@@ -11,7 +9,7 @@
 }
 .left-section {
   height: 100%;
-  /* z-index: 1; */
+  
 }
 
 .containerr {
@@ -127,7 +125,6 @@ button.accordion-button.collapsed::after {
 
 #style-1::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); */
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: rgba(86, 82, 92, 0.873);
 }
@@ -152,15 +149,7 @@ button.accordion-button.collapsed::after {
 #style-2::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(255, 255, 255, 0.3);
 }
-/* border start */
-/* .codeBorderoutset{
-  border:3px solid rgba(0, 0, 0, 0.667);
-  border-style: outset;
-  padding-left: 10px;
-  padding-top: 10px;
-  box-shadow: 5px 5px 5px 3px ;
-} */
-/* border end */
+
 .scrollbar {
   overflow: hidden;
   overflow-x: hidden;
@@ -183,10 +172,6 @@ button.accordion-button.collapsed::after {
 
 code {
   font-size: 12px;
-}
-fa-copy {
-  color: red;
-  font-size: 30px;
 }
 .code-cyan {
   color: var(--code-cyan);
@@ -289,13 +274,7 @@ a {
 
 /* active navbar */
 
-@media (min-width: 991px) {
-  .hamberger {
-    display: none;
-    background-color: aqua;
-    color: red;
-  }
-}
+
 .table-responsive {
   max-height: 200px;
 }
@@ -320,11 +299,13 @@ a {
   height: 23px;
   color: gray;
 }
-.copyicon :hover {
+.copyicon:hover{
   color: white;
+  cursor: pointer;
 }
 
-/* aryas code start */
+
+
 .lang-btns {
   position: absolute;
   top: 15px;
@@ -352,8 +333,7 @@ a {
 .request-wrapper {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 30px 10px 30px 30px;
-  /* border-top-right-radius: 17px;
-  border-top-left-radius: 17px; */
+ 
 }
 
 .response-text-heading {
@@ -363,10 +343,9 @@ a {
 .response-wrapper {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 30px 10px 30px 30px;
-  /* border-top-right-radius: 17px;
-  border-top-left-radius: 17px; */
+ 
 }
-/* aryas code end */
+
 
 .togglebuttton {
   outline: none;
@@ -407,4 +386,34 @@ a {
 .accordion-button{
   color:var(--accordian-button-text-color)
 }
-/* STYLE END */
+
+.lang-btns{
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  
+}
+.lang-btns img{
+  height: 20px;
+  width: 20px;
+}
+@media (min-width: 991px) {
+  .hamberger {
+    display: none;
+    background-color: aqua;
+    color: red;
+  }
+}
+
+@media (max-width:575px) {
+  .lang-btns{
+    display: flex;
+    justify-content: space-around;
+  width: 80%;
+  }
+  .lang-btns img{
+    height: 15px;
+    width: 15px;
+  }
+  
+}

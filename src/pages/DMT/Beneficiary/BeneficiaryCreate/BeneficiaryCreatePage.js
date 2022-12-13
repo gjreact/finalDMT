@@ -13,7 +13,7 @@ import js from "../../../../asset/images/js.png";
 import ruby from "../../../../asset/images/ruby.png";
 import C from "../../../../asset/images/C.png";
 import swift from "../../../../asset/images/swift.jpeg";
-import Bar from "../../../Bar"
+import Bar from "../../../Bar";
 import {
   CreateBeneficiaryCode,
   PHPBeneficiary,
@@ -265,7 +265,7 @@ const BeneficiaryCreatePage = () => {
         {toggleState === 10 && <GonativeBeneficiaryRegister />}
         {toggleState === 11 && <RubyRegisterBeneficiary />}
 
-        <div className="lang-btns d-flex justify-content-evenly">
+        <div className="lang-btns">
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
@@ -276,8 +276,6 @@ const BeneficiaryCreatePage = () => {
               >
                 <img
                   src={iconName.icon}
-                  height="20"
-                  width="20"
                   className="togglebutttonimg"
                   alt="icon"
                 />
@@ -298,7 +296,7 @@ const BeneficiaryCreatePage = () => {
                     onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" alt="icon" />
+                    <img src={icon} height="20" width="20" alt="icon" />{" "}
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

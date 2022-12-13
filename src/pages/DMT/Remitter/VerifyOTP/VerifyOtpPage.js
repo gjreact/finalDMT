@@ -216,7 +216,7 @@ const VerifyOtpPage = () => {
         {toggleState === 10 && <GonativeVerifyOtp />}
         {toggleState === 11 && <RubyVerifyOtpCode />}
 
-        <div className="lang-btns d-flex justify-content-evenly">
+        <div className="lang-btns ">
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
@@ -227,8 +227,6 @@ const VerifyOtpPage = () => {
               >
                 <img
                   src={iconName.icon}
-                  height="20"
-                  width="20"
                   className="togglebutttonimg"
                   alt="icon"
                 />
@@ -249,7 +247,7 @@ const VerifyOtpPage = () => {
                     onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" alt="icon" />
+                    <img src={icon} height="20" width="20" alt="icon" />{" "}
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

@@ -21,9 +21,7 @@ export const JavaResendOtp = () => {
           <JavaWrapper />
           <code className="text-white">
             <code className="code-yellow">
-              <span className="output">
-                 \"remitterphone\":\7902900295\r\n{" "}
-              </span>{" "}
+              <span className="output">\"remitterphone\":\7902626443\r\n </span>{" "}
               \r\n" <code className="text-white">);</code>{" "}
             </code>
           </code>
@@ -107,7 +105,7 @@ export const PythonResendOtp = () => {
           <code className="outputtext-white">
             <br />
             <code>"remitterPhone" </code> <span>: </span>
-            <code className="code-cyan"> "7902900295",</code>
+            <code className="code-cyan"> "7902626443",</code>
             <br />)
           </code>
           <br />
@@ -243,7 +241,7 @@ export const PHPResendOtp = () => {
           <span className="output text-white">
             <br />
             <code>"remitterPhone"</code> <span>: </span>{" "}
-            <code className="code-yellow">7902900295</code>
+            <code className="code-yellow">7902626443</code>
             <br />
           </span>
           <code>',</code>
@@ -1052,7 +1050,7 @@ export const RubyResendOtpCode = () => {
               <span className="output">
                 <br />
                 <code className="code-yellow">
-                  "remitterPhone": "7902900295"
+                  "remitterPhone": "7902626443"
                   <br />
                 </code>
               </span>
@@ -1116,7 +1114,7 @@ export const PowershellResendOtpCode = () => {
               $body ={" "}
               <span className="output code-yellow">
                 <br /> <span className="text-white">'n</span>{" "}
-                `"remitterPhone`":`"7902900295`",
+                `"remitterPhone`":`"7902626443`",
                 <br />
                 <code className="text-white">
                   'n"

@@ -163,8 +163,6 @@ function SideMenu(props) {
                               color: isActive ? "white" : "black",
                               backgroundColor: isActive ? "#495274" : "",
                               padding: isActive ? "5px 2px 5px 20px" : "",
-                              // border: isActive ? "1px solid yellow" : "",
-                              // borderRadius: isActive ? "30px" : "",
                             })}
                           >
                             Send-OTP
@@ -180,9 +178,7 @@ function SideMenu(props) {
                             style={({ isActive }) => ({
                               color: isActive ? "white" : "black",
                               backgroundColor: isActive ? "#495274" : "",
-                              padding: isActive ? "5px 2px 5px 20px" : "",
-                              // border: isActive ? "1px solid yellow" : "",
-                              // borderRadius: isActive ? "30px" : "",
+                              padding: isActive ? "5px 2px 5px 20px" : "",                          
                             })}
                           >
                             Resend- OTP
@@ -198,8 +194,6 @@ function SideMenu(props) {
                               color: isActive ? "white" : "black",
                               backgroundColor: isActive ? "#495274" : "",
                               padding: isActive ? "5px 2px 5px 20px" : "",
-                              // border: isActive ? "1px solid yellow" : "",
-                              // borderRadius: isActive ? "30px" : "",
                             })}
                           >
                             Verify OTP
@@ -215,8 +209,6 @@ function SideMenu(props) {
                               color: isActive ? "white" : "black",
                               backgroundColor: isActive ? "#495274" : "",
                               padding: isActive ? "5px 2px 5px 20px" : "",
-                              // border: isActive ? "1px solid yellow" : "",
-                              // borderRadius: isActive ? "30px" : "",
                             })}
                           >
                             Balance
@@ -226,9 +218,6 @@ function SideMenu(props) {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  {/* rimitter  END */}
-
-                  {/* Beneficiary  start */}
                   <Accordion.Item
                     className="overflow"
                     eventKey="/beneficiary-create"
@@ -254,8 +243,6 @@ function SideMenu(props) {
                               color: isActive ? "white" : "black",
                               backgroundColor: isActive ? "#495274" : "",
                               padding: isActive ? "5px 2px 5px 20px" : "",
-                              // border: isActive ? "1px solid yellow" : "",
-                              // borderRadius: isActive ? "30px" : "",
                             })}
                           >
                             {" "}
@@ -272,8 +259,6 @@ function SideMenu(props) {
                               color: isActive ? "white" : "black",
                               backgroundColor: isActive ? "#495274" : "",
                               padding: isActive ? "5px 2px 5px 20px" : "",
-                              // border: isActive ? "1px solid yellow" : "",
-                              // borderRadius: isActive ? "30px" : "",
                             })}
                           >
                             Beneficiary List
@@ -289,8 +274,6 @@ function SideMenu(props) {
                               color: isActive ? "white" : "black",
                               backgroundColor: isActive ? "#495274" : "",
                               padding: isActive ? "5px 2px 5px 20px" : "",
-                              // border: isActive ? "1px solid yellow" : "",
-                              // borderRadius: isActive ? "30px" : "",
                             })}
                           >
                             Delete Beneficiary
@@ -299,9 +282,7 @@ function SideMenu(props) {
                       </ListGroup>
                     </Accordion.Body>
                   </Accordion.Item>
-                  {/* Beneficiary  END */}
 
-                  {/* Send Money  start */}
                   <Accordion.Item eventKey="/send-money">
                     <NavLink
                       style={({ isActive }) => ({
@@ -324,8 +305,6 @@ function SideMenu(props) {
                               color: isActive ? "white" : "black",
                               backgroundColor: isActive ? "#495274" : "",
                               padding: isActive ? "5px 2px 5px 20px" : "",
-                              // border: isActive ? "1px solid yellow" : "",
-                              // borderRadius: isActive ? "30px" : "",
                             })}
                           >
                             Send Money
@@ -335,9 +314,6 @@ function SideMenu(props) {
                     </Accordion.Body>
                   </Accordion.Item>
 
-                  {/* Send Money  start */}
-
-                  {/* Send Money  start */}
                   <Accordion.Item eventKey="/transaction-requery">
                     <Accordion.Header className="menuItemHeader">
                       Transaction Requery
@@ -355,25 +331,23 @@ function SideMenu(props) {
                               color: isActive ? "white" : "black",
                               backgroundColor: isActive ? "#495274" : "",
                               padding: isActive ? "5px 2px 5px 20px" : "",
-                              // border: isActive ? "1px solid yellow" : "",
-                              // borderRadius: isActive ? "30px" : "",
                             })}
                           >
                             Transaction Requery
                           </NavLink>
-                          {/* <a href="# ">Transaction Requery</a> */}
+                    
                         </ListGroup.Item>
                       </ListGroup>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
-                {/* sub area ended */}
+         
               </ListGroup.Item>
             </ListGroup>
           </Accordion.Body>
         </Accordion.Item>
 
-        {/* rimitter  start */}
+ 
         <Accordion.Item
           eventKey="/pan-introduction">
           <NavLink
@@ -392,8 +366,6 @@ function SideMenu(props) {
                     color: isActive ? "white" : "black",
                     backgroundColor: isActive ? "#495274" : "",
                     padding: isActive ? "5px 2px 5px 20px" : "",
-                    // border: isActive ? "1px solid yellow" : "",
-                    // borderRadius: isActive ? "30px" : "",
                   })}
                 >
                   Introduction
@@ -407,8 +379,6 @@ function SideMenu(props) {
                     color: isActive ? "white" : "black",
                     backgroundColor: isActive ? "#495274" : "",
                     padding: isActive ? "5px 2px 5px 20px" : "",
-                    // border: isActive ? "1px solid yellow" : "",
-                    // borderRadius: isActive ? "30px" : "",
                   })}
                 >
                   Verification
@@ -417,8 +387,6 @@ function SideMenu(props) {
             </ListGroup>
           </Accordion.Body>
         </Accordion.Item>
-
-        {/* Send Money  start */}
       </Accordion>
     </div>
   );

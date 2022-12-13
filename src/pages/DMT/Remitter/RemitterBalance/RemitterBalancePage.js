@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Col, Row, Dropdown, Table } from "react-bootstrap";
 import "../../../../asset/css/basiclayout.css";
 import shell from "../../../../asset/images/shell.jpg";
@@ -26,7 +26,6 @@ import {
   GonativeRemitterBalance,
   RubyRemitterBalanceCode,
   PowershellRemitterBalanceCode,
-  
 } from "../ResponseCodeRemitter/RequestCode/RemitterBalanceCode";
 import Bar from "../../../Bar";
 
@@ -133,7 +132,6 @@ const RemitterBalancePage = () => {
 
   return (
     <>
-
       <Col className="col-12 col-sm-7 border">
         <Bar />
         <Row>
@@ -203,7 +201,7 @@ const RemitterBalancePage = () => {
         {toggleState === 10 && <GonativeRemitterBalance />}
         {toggleState === 11 && <RubyRemitterBalanceCode />}
 
-        <div className="lang-btns d-flex justify-content-evenly">
+        <div className="lang-btns ">
           {horizontalIconArray.map((iconName, index) => {
             return (
               <button
@@ -212,7 +210,11 @@ const RemitterBalancePage = () => {
                 key={index}
                 onClick={() => toggleTab(iconName.id)}
               >
-                <img src={iconName.icon} height="20" width="20" className="togglebutttonimg"  alt="icon" />
+                <img
+                  src={iconName.icon}
+                  className="togglebutttonimg"
+                  alt="icon"
+                />
               </button>
             );
           })}
@@ -224,13 +226,13 @@ const RemitterBalancePage = () => {
             ></Dropdown.Toggle>
 
             <Dropdown.Menu>
-              {verticalIconArray.map(({ icon, text,id }, index) => {
+              {verticalIconArray.map(({ icon, text, id }, index) => {
                 return (
                   <Dropdown.Item
                     onClick={() => pushItem({ icon, text, id }, index)}
                     key={index}
                   >
-                    <img src={icon} height="20" width="20" alt="icon" />
+                    <img src={icon} height="20" width="20" alt="icon" />{" "}
                     <span style={{ fontSize: "13px" }}>{text}</span>
                   </Dropdown.Item>
                 );

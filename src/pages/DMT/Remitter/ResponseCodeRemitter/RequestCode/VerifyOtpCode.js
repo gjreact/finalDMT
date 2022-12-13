@@ -83,15 +83,17 @@ export const PythonVerifyOtp = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="python">
           <div>
-            <span className="d-flex justify-content-between"><span>
-            <br /> <code>import</code>
-            <code className="text-white">requests</code></span>
-            <AiOutlineCopy
-              className="copyicon"
-              onClick={() => copyToClipboard("python")}
-            />
+            <span className="d-flex justify-content-between">
+              <span>
+                <br /> <code>import</code>
+                <code className="text-white">requests</code>
+              </span>
+              <AiOutlineCopy
+                className="copyicon"
+                onClick={() => copyToClipboard("python")}
+              />
             </span>
-           <code>import</code> <code className="text-white">json</code>
+            <code>import</code> <code className="text-white">json</code>
             <br />
             <code className="text-white"> url =</code>{" "}
             <code className="code-yellow">
@@ -213,14 +215,15 @@ export const PHPVerifyOtp = () => {
   return (
     <>
       <CodeWrapper heading="Request">
-        <div className="request-wrapper"id="php">
+        <div className="request-wrapper" id="php">
           <div>
             <span className="d-flex justify-content-between">
-          <code> &#60;&#63;php</code>
-          <AiOutlineCopy
-              className="copyicon"
-              onClick={() => copyToClipboard("php")}
-            /></span>
+              <code> &#60;&#63;php</code>
+              <AiOutlineCopy
+                className="copyicon"
+                onClick={() => copyToClipboard("php")}
+              />
+            </span>
             <code className="text-white">$curl = curl_init();</code>
             <br />
             <code className="text-white">
@@ -672,13 +675,16 @@ export function GonativeVerifyOtp() {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="go">
           <br />
-          <span className="d-flex justify-content-between"><span>
-          <code>package </code>
-          <code className="text-white"> main</code></span>
-          <AiOutlineCopy
+          <span className="d-flex justify-content-between">
+            <span>
+              <code>package </code>
+              <code className="text-white"> main</code>
+            </span>
+            <AiOutlineCopy
               className="copyicon"
               onClick={() => copyToClipboard("go")}
-            /></span>
+            />
+          </span>
           <code> import </code>
           <code className="text-white">
             (
@@ -838,10 +844,13 @@ export function CrestsharpVerifyOtp() {
     <>
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="csharp">
-          <span className="d-flex justify-content-end"> <AiOutlineCopy
+          <span className="d-flex justify-content-end">
+            {" "}
+            <AiOutlineCopy
               className="copyicon"
               onClick={() => copyToClipboard("csharp")}
-            /></span>
+            />
+          </span>
           <code>
             var <code className="text-white">client = </code> new{" "}
           </code>
@@ -981,12 +990,12 @@ export function ClibcurlVerifyOtp() {
         <div className="request-wrapper" id="c">
           <br />
           <span className="d-flex justify-content-between">
-          <code className="text-white">CURL *curl;</code>
-          <AiOutlineCopy
+            <code className="text-white">CURL *curl;</code>
+            <AiOutlineCopy
               className="copyicon"
               onClick={() => copyToClipboard("c")}
             />
-            </span>
+          </span>
           <code className="text-white">CURLcode res;</code>
           <br />
           <code className="text-white">curl = curl_easy_init();</code>
@@ -1079,14 +1088,16 @@ export const RubyVerifyOtpCode = () => {
       <CodeWrapper heading="Request">
         <div className="request-wrapper" id="Ruby">
           <div>
-            <span className="d-flex justify-content-between"><span>
-            <code className="text-white">require </code>
-            <code className="code-yellow"> "uri"</code></span>
-            <AiOutlineCopy
-              className="copyicon"
-              onClick={() => copyToClipboard("Ruby")}
-            />
-           </span>
+            <span className="d-flex justify-content-between">
+              <span>
+                <code className="text-white">require </code>
+                <code className="code-yellow"> "uri"</code>
+              </span>
+              <AiOutlineCopy
+                className="copyicon"
+                onClick={() => copyToClipboard("Ruby")}
+              />
+            </span>
             <code className="text-white">require</code>
             <code className="code-yellow">"json"</code>
             <br />
@@ -1183,11 +1194,11 @@ export const PowershellVerifyOtpCode = () => {
         <div className="request-wrapper" id="powershell">
           <div>
             <span className="d-flex justify-content-between">
-            <code className="text-white">$headers = New-Object</code>
-            <AiOutlineCopy
-              className="copyicon"
-              onClick={() => copyToClipboard("powershell")}
-            />
+              <code className="text-white">$headers = New-Object</code>
+              <AiOutlineCopy
+                className="copyicon"
+                onClick={() => copyToClipboard("powershell")}
+              />
             </span>
             <code className="code-yellow">
               "System.collections.Generic.Dictionary[String],[String]"

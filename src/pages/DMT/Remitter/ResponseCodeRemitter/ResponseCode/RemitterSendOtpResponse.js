@@ -1,12 +1,11 @@
 import React from "react";
 
-function RemitterSendOtpResponse({response}) {
-
+function RemitterSendOtpResponse({ response }) {
   return (
     <>
       {response === 1 ? (
         <>
-          <h5 className="text-white">SUCCESS </h5>
+          <h6 className="text-secondary">SUCCESS </h6>
           <span className="output text-white">
             <br /> <code>"status" </code>
             <span>: </span> <code className="code-cyan">"201"</code>
@@ -45,7 +44,7 @@ function RemitterSendOtpResponse({response}) {
         </>
       ) : response === 2 ? (
         <>
-        <h5 className="text-white">UNKNOWN RESPONSE </h5>
+          <h6 className="text-secondary">UNKNOWN RESPONSE </h6>
           <span className="output  text-white ">
             <br /> <code>"status"</code> <span>: </span>
             <code className="code-cyan">"404"</code>
