@@ -10,7 +10,6 @@ function Pan_verification() {
       <Row>
         <Col className="h-100 border">
           <Bar />
-
           <h1 className="mb-0 mt-0 heading ">Pan Verification</h1>
           <p className="px-4 content-bg ">
             All API requests must be authenticated with a developer_key in the
@@ -23,16 +22,16 @@ function Pan_verification() {
             We only accept requests from shared IP with us. So you should
             validate your IP with our platform
           </p>
-
-          <h6 className="mb-0 mt-0 heading " style={{ fontSize: "20px" }}>
-            HOW TO GENERATE AN API KEY
+          <h6 className="mb-0 mt-0  panverifyh6 ">
+            {" "}
+            How to generate an api key
           </h6>
           <p className="px-4   content-bg">
             Production developer key will be shared after the following is done:
             <ol>
               <li>Organization's KYC is completed on Paymento’s platform</li>
               <li>
-                Integration has been completed on UAT with signoff from Eko team
+                Integration has been completed on UAT with signoff from team
               </li>
               <li>
                 For UAT, a dummy developer_key can be Given while you contact
@@ -40,18 +39,13 @@ function Pan_verification() {
               </li>
             </ol>
           </p>
-
-          <h6 className="mb-0 mt-0 heading " style={{ fontSize: "20px" }}>
-            {" "}
-            IP ADDRESS RESTRICTION
-          </h6>
+          <h6 className=" panverifyh6 mb-0 mt-0 "> IP Address restriction</h6>
           <p className="px-4   content-bg mb-1">
             We only whitelist Indian IP addresses and the server location must
             be of India only, We accept requests only from the whitelisted IP.
             you need to contact our team for whitelisting your server IP with
             us. You can whitelist 3 IP s at a time.
           </p>
-
           <h3 className="py-2 link-font-size">URL:</h3>
           <p className=" content-bg  m-0">
             <code className="py-4 url-link">
@@ -65,7 +59,6 @@ function Pan_verification() {
             "OPHPS99XXX"
             <br />
           </p>
-
           <h3 className="py-2 link-font-size">Header:</h3>
           <p className="output content-bg">
             <br /> <code>"apiKey"</code>
@@ -74,11 +67,9 @@ function Pan_verification() {
             <br />
           </p>
         </Col>
-
         <Col
-          style={{ maxWidth: "560px", minWidth: "300px" }}
           id="style-1"
-          className="  h-100 link-heading scrollbar pt-5 "
+          className=" panverifycol h-100 link-heading scrollbar pt-5 "
         >
           <CodeWrapper heading="Response">
             <div className="request-wrapper">

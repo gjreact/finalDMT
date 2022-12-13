@@ -417,3 +417,40 @@ a {
   }
   
 }
+
+
+/* pan verification introduction */
+.introp{
+  padding-bottom: 300px;
+  
+}
+
+/* pan verification  */
+.panverifycol{
+  min-width: 300px;
+  max-width: 560px;
+}
+.panverifyh6{
+  font-size: 20px;
+  font-weight: 700;
+}
+/* Bar */
+
+.ofcanvas{
+  background-color:var(--SideMenueBgColor) ;
+  width: 270px !important
+  
+}
+.ofcanvasheader{
+  background-color:var(--SideMenueBgColor) ;
+}
+.ofcanvasbody{
+  background-color:var(--SideMenueBgColor) ;
+}
+.ofcanvasimg{
+  width: 100%;
+   max-width: 150px;
+}
+.canvasdiv{
+ width: 70%;
+}
