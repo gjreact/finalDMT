@@ -1,0 +1,21 @@
+/* theme css */
+:root {
+  --HeadingH1: #170256;
+  --HeadingH2: #085e61;
+  --paragraphBackground: #f3f8f380;
+  --SideMenueBgColor: #ffffff;
+  --hambergerButton: #495274;
+  --ContentBgColor: #495274;
+  --textColor: #D0482A;
+  --codebg: #090125d5;
+  --codehead: #000010db;
+  --code-cyan: rgb(19, 192, 192);
+  --code-yellow: rgb(210, 191, 20);
+  --accordion-button-color: #37415e;
+  --accordian-logo: url("../images/down-arrow-red.png");
+  --paymento-logo: url("../images/logo_blue.png");
+  --accordion-active-color:#120f1c;
+  --menu-hover : #D0482A;
+  --accordion-bar-active:#6fe8f32e;
+  --accordian-button-text-color:#0b0126;
+}

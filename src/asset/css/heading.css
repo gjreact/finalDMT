@@ -1,0 +1,17 @@
+.heading {
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 21px;
+    /* border-top: 1px solid #ccc; */
+    border-bottom: 1px solid #ccc;
+    background-color: #fdfdfd;
+  }
+  h2 {
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 700;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
